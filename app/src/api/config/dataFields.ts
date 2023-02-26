@@ -399,6 +399,116 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
     other_team_source_link: {
         edit: true,
         verify: true
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+    use_building_origin: {
+        edit: true,
+        verify: true
+    },
+    use_building_origin_text: {
+        edit: true,
+        verify: true
+    },
+    use_building_current: {
+        edit: true,
+        verify: true
+    },
+    use_building_current_text: {
+        edit: true,
+        verify: true
+    },
+    basement_type: {
+        edit: true,
+        verify: true
+    },
+    basement_percentage: {
+        edit: true,
+        verify: true
+    },
+    basement_use: {
+        edit: true,
+        verify: true
+    },
+    ground_storey_use: {
+        edit: true,
+        verify: true
+    },
+    upper_storeys_use: {
+        edit: true,
+        verify: true
+    },
+    use_number_residential_units: {
+        edit: true,
+        verify: true
+    },
+    use_number_businesses: {
+        edit: true,
+        verify: true
+    },
+    building_status: {
+        edit: true,
+        verify: true
+    },
+    last_renovation: {
+        edit: true,
+        verify: true
+    },
+    construction_system_type: {
+        edit: true,
+        verify: true
+    },
+    size_roof_shape: {
+        edit: true,
+        verify: true
+    },
+    building_owner: {
+        edit: true,
+        verify: true
+    },
+
+
+    basement_use_source: {
+        edit: true,
+        verify: true
+    },
+    ground_storey_use_source: {
+        edit: true,
+        verify: true
+    },
+    upper_storeys_use_source: {
+        edit: true,
+        verify: true
+    },
+    building_status_source: {
+        edit: true,
+        verify: true
+    },
+    last_renovation_source: {
+        edit: true,
+        verify: true
+    },
+    construction_system_type_source: {
+        edit: true,
+        verify: true
+    },
+    size_roof_shape_source: {
+        edit: true,
+        verify: true
+    },
+    building_owner_source: {
+        edit: true,
+        verify: true
     }
 
 });

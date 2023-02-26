@@ -98,7 +98,7 @@ export const MultiDataEntry: React.FC<MultiDataEntryProps> = ({
                                 !isDisabled &&
                                 <div className="input-group-append">
                                     <button type="button" onClick={() => remove(i)}
-                                        title="Remove"
+                                        title="Entfernen"
                                         data-index={i} className="btn btn-outline-dark data-entry-list-button"><CloseIcon /></button>
                                 </div>
                             }
@@ -134,13 +134,13 @@ export const MultiDataEntry: React.FC<MultiDataEntryProps> = ({
                                         <div className="input-group-append">
                                             <button type="button"
                                                 className="btn btn-primary data-entry-list-button"
-                                                title="Confirm new value"
+                                                title="Neuen Wert bestätigen"
                                                 onClick={() => addNew()}
                                             ><SaveIcon /></button>
                                         </div>
                                         <div className="input-group-append">
                                             <button type="button" onClick={() => clearNew()}
-                                                title="Clear new value"
+                                                title="Neuen Wert zurücksetzen"
                                                 className="btn btn-warning data-entry-list-button"><CloseIcon /></button>
                                         </div>
                                     </>

@@ -278,8 +278,33 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         category: Category.Type,
         title: "Dachform",
         example: "",
-        //tooltip: ,
+        tooltip: "Welche Form weist das Dach des Gebäudes auf?",
+        items: [
+            "Flachdach",
+            "Pultdach",
+            "Satteldach",
+            "Mansarddach",
+            "Walmdach",
+            "Krüppelwalmdach",
+            "Gewölbte Dächer (Tonnen-, Halbtonnen-, Segmentbogendächer)",
+            "Zeltdach",
+            "Graben- bzw. Schmetterlingsdach",
+            "Sheddach",
+            "Schalen- und Membrandächer"
+        ],
     },
+
+
+    size_roof_shape_source: {
+        category: Category.Type,
+        title: "Datenquelle Dachform",
+        tooltip: "Freitextfeld für Datenquelle",
+        example: "",
+    },
+
+
+
+
 
     date_year: {
         category: Category.Age,
@@ -317,7 +342,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
             "lokale historische Veröffentlichung",
             "Andere Veröffentlichung",
             "Datenbank zum Denkmalschutz",
-            "Andere Datenbank order Vezeichnis",
+            "Andere Datenbank oder Vezeichnis",
             "Historische Karte",
             "Anderes Archivdokument",
             "Film/Video",
@@ -575,7 +600,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         category: Category.Team,
         title: "Handelt es sich um ein Wohngebäude?",
         tooltip: "",
-        example: "gemischt (Wohn-/ Nichtwohngebäude)"
+        example: "gemischte Nutzung"
     },
     likes_total: {
         category: Category.Community,
@@ -705,7 +730,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     },
     developer_name: {
         category: Category.Team,
-        title: "Wer waren die Auftraggeber (Personne)?",
+        title: "Wer waren die Auftraggeber (Personen)?",
         tooltip: "Freies Textfeld, z.B. Vorname Leerzeichen Nachname",
         example: ["", "", ""],
     },
@@ -784,6 +809,320 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         title: "Datenquelle weitere wichtige am Bau beteiligte Personen",
         example: ["", "", ""],
     },
+
+
+
+
+
+
+
+
+
+
+
+
+    /* new building features added for Colouring Dresden */
+
+
+
+
+
+
+    use_building_origin: {
+        category: Category.LandUse,
+        title: "Originale Gebäudehauptnutzung",
+        tooltip: "Für welche Nutzung für das Gebäude ursprünglich gebaut?",
+        example: "",
+        items: [
+            "Ein- und Zweifamilienhäuser",
+            "Mehrfamilienhäuser",
+            "Wohnheime",
+            "Kindergärten und -tagesstätten",
+            "Lehrgebäude (Schulen, Hörsalgebäude, VHS etc.)",
+            "Heime (Pflege-, Kranken-, Genesungs-, Erholungsheime etc.)",
+            "Bereitschafts- und Kasernengebäude, JVA",
+            "Kranken-, Ärztehäuser, Kliniken",
+            "Handelsgebäude",
+            "Hotel, Gastronomie, Pension, Gasthaus",
+            "Landwirtschaftliche Betriebsgebäude",
+            "Produktionsstätten, Fabrik- und Werkstattgebäude",
+            "Lagergebäude",
+            "Verkehrsgebäude",
+            "Kultur-, Veranstaltungsbauten",
+            "Religiöse Versammlungsstätten",
+            "Sporteinrichtungen",
+            "Büro- und Verwaltungsgebäude",
+            "Ver- und Entsorgungsbauwerke",
+            "Sonstige Nichtwohngebäude"
+        ]
+    },
+    use_building_origin_text: {
+        category: Category.LandUse,
+        title: "Ergänzung zur originalen Gebäudehauptnutzung",
+        tooltip: "Freitextfeld für weitere Ergänzungen",
+        example: "",
+    },
+
+
+
+    use_building_current: {
+        category: Category.LandUse,
+        title: "Aktuelle Gebäudehauptnutzung",
+        tooltip: "Wie wird das Gebäude aktuell hauptsächlich genutzt?",
+        example: "",
+        items: [
+            "Ein- und Zweifamilienhäuser",
+            "Mehrfamilienhäuser",
+            "Wohnheime",
+            "Kindergärten und -tagesstätten",
+            "Lehrgebäude (Schulen, Hörsalgebäude, VHS etc.)",
+            "Heime (Pflege-, Kranken-, Genesungs-, Erholungsheime etc.)",
+            "Bereitschafts- und Kasernengebäude, JVA",
+            "Kranken-, Ärztehäuser, Kliniken",
+            "Handelsgebäude",
+            "Hotel, Gastronomie, Pension, Gasthaus",
+            "Landwirtschaftliche Betriebsgebäude",
+            "Produktionsstätten, Fabrik- und Werkstattgebäude",
+            "Lagergebäude",
+            "Verkehrsgebäude",
+            "Kultur-, Veranstaltungsbauten",
+            "Religiöse Versammlungsstätten",
+            "Sporteinrichtungen",
+            "Büro- und Verwaltungsgebäude",
+            "Ver- und Entsorgungsbauwerke",
+            "Sonstige Nichtwohngebäude",
+            "Leerstand"
+        ]
+    },
+    use_building_current_text: {
+        category: Category.LandUse,
+        title: "Ergänzung zur aktuellen Gebäudehauptnutzung",
+        tooltip: "Freitextfeld für weitere Ergänzungen",
+        example: "",
+    },
+
+
+
+    basement_type: {
+        category: Category.LandUse,
+        title: "Art der Unterkellerung",
+        tooltip: "Welcher Typ von Unterkellerung ist vorhanden?",
+        example: "",
+        items: [
+            "nicht unterkellert",
+            "teilunterkellert",
+            "vollunterkellert",
+            "vollunterkellert + Tiefgarage"
+        ]
+    },
+    basement_percentage: {
+        category: Category.LandUse,
+        title: "Anteil Unterkellerung",
+        tooltip: "Der Anteil der unterkellerten Fläche der Gebäudefläche (in Prozent)",
+        example: 50
+
+    },
+    basement_use: {
+        category: Category.LandUse,
+        title: "Aktuelle Nutzung des Kellers",
+        tooltip: "Wie wird der Keller aktuell hauptsächlich genutzt?",
+        example: "",
+        items: [
+            "übliche Kellernutzung",
+            "hochwertige Kellernutzung",
+            "Garage",
+            "sonstige Nutzung",
+            "Leerstand"
+        ]
+    },
+
+    basement_use_source: {
+        category: Category.LandUse,
+        title: "Datenquelle aktuelle Nutzung Keller",
+        tooltip: "Freitextfeld für Datenquelle",
+        example: "",
+    },
+
+    ground_storey_use: {
+        category: Category.LandUse,
+        title: "Aktuelle Nutzung des Erdgeschosses",
+        tooltip: "Wie wird das Erdgeschoss aktuell hauptsächlich genutzt?",
+        example: "",
+        items: [
+            "Wohnen",
+            "Büro und Verwaltung",
+            "Praxis",
+            "Laden, Handel",
+            "Kultur",
+            "Gastgewerbe (Gaststätte, Pension, Hotel, Imbiss)",
+            "Lager",
+            "Werkstatt",
+            "Produzierendes Gewerbe",
+            "Landwirtschafltiche Nutzung",
+            "Sporteinrichtung (Fitness etc.)",
+            "Religöse Nutzung",
+            "Garage",
+            "Gesundheit (Ärztehaus, Klinik, Apotheke)",
+            "Verkehr",
+            "Sonstiges",
+            "Leerstand"
+        ]
+    },
+
+    ground_storey_use_source: {
+        category: Category.LandUse,
+        title: "Datenquelle aktuelle Nutzung Erdgeschoss",
+        tooltip: "Freitextfeld für Datenquelle",
+        example: "",
+    },
+
+    upper_storeys_use: {
+        category: Category.LandUse,
+        title: "Aktuelle Nutzung 1. Etage und höher",
+        tooltip: "Wie werden die Etagen über dem Erdgeschoss aktuell hauptsächlich genutzt?",
+        example: "",
+        items: [
+            "Wohnen",
+            "Büro und Verwaltung",
+            "Praxis",
+            "Laden, Handel",
+            "Kultur",
+            "Gastgewerbe (Gaststätte, Pension, Hotel, Imbiss)",
+            "Lager",
+            "Werkstatt",
+            "Produzierendes Gewerbe",
+            "Landwirtschafltiche Nutzung",
+            "Sporteinrichtung (Fitness etc.)",
+            "Religöse Nutzung",
+            "Garage",
+            "Gesundheit (Ärztehaus, Klinik, Apotheke)",
+            "Verkehr",
+            "Sonstiges",
+            "Leerstand"
+        ]
+    },
+
+    upper_storeys_use_source: {
+        category: Category.LandUse,
+        title: "Datenquelle aktuelle Nutzung 1. Etage und höher",
+        tooltip: "Freitextfeld für Datenquelle",
+        example: "",
+    },
+
+    use_number_residential_units: {
+        category: Category.LandUse,
+        title: "Anzahl Wohneinheiten im Gebäude",
+        tooltip: "Anzahl der Wohneinheiten im gesamten Gebäude (Klingelschilder zählen)",
+        example: 12
+
+    },
+
+    use_number_businesses: {
+        category: Category.LandUse,
+        title: "Anzahl Gewerbe im Gebäude",
+        tooltip: "Anzahl der Gewerbe/ Firmen im gesamten Gebäude (Klingelschilder zählen)",
+        example: 2
+
+    },
+
+
+    /* construction */
+
+    building_status: {
+        category: Category.Construction,
+        title: "Aktueller Gebäudezustand",
+        tooltip: "In welchem Zustand befindet sich das Gebäude?",
+        example: "",
+        items: [
+            "Ruine",
+            "Investruine",
+            "unsaniert",
+            "teil-/ vollsaniert",
+            "Neubau (nach 1990)",
+            "aktuell in Sanierung",
+            "aktuell im Aufbau",
+            "aktuell im Abriss"
+        ]
+    },
+
+
+    building_status_source: {
+        category: Category.Construction,
+        title: "Datenquelle aktueller Gebäudezustand",
+        tooltip: "Freitextfeld für Datenquelle",
+        example: "",
+    },
+
+
+    last_renovation: {
+        category: Category.Construction,
+        title: "Jahr der letzten Sanierung",
+        tooltip: "In welchem Jahr wurde das Gebäude das letzte Mal saniert?",
+        example: 2004
+
+    },
+
+
+    last_renovation_source: {
+        category: Category.Construction,
+        title: "Datenquelle Jahr der letzten Sanierung",
+        tooltip: "Freitextfeld für Datenquelle",
+        example: "",
+    },
+
+
+    construction_system_type: {
+        category: Category.Construction,
+        title: "Hauptkonstruktion",
+        tooltip: "Bauweise des Gebäudes",
+        example: "",
+        items: [
+            "Gemischte Bauweise (Holzfachwerk- und Massivbauweise)",
+            "industrielle Bauweise bzw. Großtafelbauweise",
+            "überwiegend massive Bauweise",
+            "Holzskelettbauweise",
+            "Holzblockbauweise"
+        ]
+    },
+
+    construction_system_type_source: {
+        category: Category.Construction,
+        title: "Datenquelle Hauptkonstruktion",
+        tooltip: "Freitextfeld für Datenquelle",
+        example: "",
+    },
+
+    /* typology --> in future: to planning */
+
+    building_owner: {
+        category: Category.Planning,
+        title: "Eigentumsform des Gebäudes",
+        tooltip: "Eigentumsform des Gebäudes",
+        example: "",
+        items: [
+            "öffentl. Eigentümer - Bund",
+            "öffentl. Eigentümer - BIMA (Bundesanstalt für Immobilienaufgaben)",
+            "öffentl. Eigentümer - Bundesland",
+            "öffentl. Eigentümer - Kommune/ Stadt",
+            "öffentl. Eigentümer - kommunale Wohnungsgesellschaft",
+            "öffentl. Eigentümer - städtische Betrieb/ Gesellschaften",
+            "Wohnungsgenossenschaften ",
+            "private Haushalte (natürliche Personen, Personengemeinschaften)",
+            "private Wohnungsunternehmen",
+            "sonstige private Unternehmen (ohne Wohnungsunternehmen)",            
+            "Deutsche Bahn AG",
+            "Kirchliches Eigentum, Stiftungen, gemeinwohlorientierte Eigentümer"
+        ]
+    },
+
+    building_owner_source: {
+        category: Category.Planning,
+        title: "Datenquelle Eigentumsform des Gebäudes",
+        tooltip: "Freitextfeld für Datenquelle",
+        example: "",
+    },
+
+
 };
 
 export const allFieldsConfig = {...dataFields, ...buildingUserFields};

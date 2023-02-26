@@ -5,28 +5,28 @@
 --   Other Natural Material, Other Man-Made Material
 CREATE TYPE construction_materials
     AS ENUM (
-        'Wood',
-        'Stone',
-        'Brick',
-        'Steel',
-        'Reinforced Concrete',
-        'Other Metal',
-        'Other Natural Material',
-        'Other Man-Made Material'
+        'Holz',
+        'Stein',
+        'Ziegel',
+        'Stahl',
+        'Stahlbeton',
+        'anderes Metall',
+        'anderes natürliches Material',
+        'anderes künstliches Material'
     );
 
 -- Roof covering materials: Slate, Clay Tile, Wood, Asphalt, Iron or Steel, Other Metal
 --   Other Natural Material, Other Man-Made Material
 CREATE TYPE roof_covering
     AS ENUM (
-        'Slate',
-        'Clay Tile',
-        'Wood',
+        'Schiefer',
+        'Lehmziegel',
+        'Holz',
         'Asphalt',
-        'Iron or Steel',
-        'Other Metal',
-        'Other Natural Material',
-        'Other Man-Made Material'
+        'Eisen oder Stahl',
+        'anderes Metall',
+        'anderes natürliches Material',
+        'anderes künstliches Material'
     );
 
 -- Core Construction Material

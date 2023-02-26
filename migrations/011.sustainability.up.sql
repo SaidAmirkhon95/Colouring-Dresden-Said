@@ -6,12 +6,12 @@
 -- - Pass
 -- - Unclassified
 CREATE TYPE sust_breeam_rating
-AS ENUM ('Outstanding',
-    'Excellent',
-    'Very good',
-    'Good',
-    'Pass',
-    'Unclassified');
+AS ENUM ('Herausragend',
+    'Exzellent',
+    'Sehr gut',
+    'Gut',
+    'Ausreichend',
+    'nicht klassifiziert');
 
 ALTER TABLE buildings
     ADD COLUMN IF NOT EXISTS sust_breeam_rating sust_breeam_rating;
