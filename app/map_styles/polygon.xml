@@ -245,35 +245,35 @@
     </Style>
     <Style name="construction_core_material">
         <Rule>
-            <Filter>[construction_core_material] = "Wood"</Filter>
+            <Filter>[construction_core_material] = "Holz"</Filter>
             <PolygonSymbolizer fill="#b5a859" />
         </Rule>
         <Rule>
-            <Filter>[construction_core_material] = "Stone"</Filter>
+            <Filter>[construction_core_material] = "Stein"</Filter>
             <PolygonSymbolizer fill="#ffffe3" />
         </Rule>
         <Rule>
-            <Filter>[construction_core_material] = "Brick"</Filter>
+            <Filter>[construction_core_material] = "Ziegel"</Filter>
             <PolygonSymbolizer fill="#f5d96b" />
         </Rule>
         <Rule>
-            <Filter>[construction_core_material] = "Steel"</Filter>
+            <Filter>[construction_core_material] = "Stahl"</Filter>
             <PolygonSymbolizer fill="#beffe8" />
         </Rule>
         <Rule>
-            <Filter>[construction_core_material] = "Reinforced Concrete"</Filter>
+            <Filter>[construction_core_material] = "Stahlbeton"</Filter>
             <PolygonSymbolizer fill="#fca89d" />
         </Rule>
         <Rule>
-            <Filter>[construction_core_material] = "Other Metal"</Filter>
+            <Filter>[construction_core_material] = "anderes Metall"</Filter>
             <PolygonSymbolizer fill="#5c8970" />
         </Rule>
         <Rule>
-            <Filter>[construction_core_material] = "Other Natural Material"</Filter>
+            <Filter>[construction_core_material] = "anderes natürliches Material"</Filter>
             <PolygonSymbolizer fill="#96613b" />
         </Rule>
         <Rule>
-            <Filter>[construction_core_material] = "Other Man-Made Material"</Filter>
+            <Filter>[construction_core_material] = "anderes künstliches Material"</Filter>
             <PolygonSymbolizer fill="#c48a85" />
         </Rule>
 
@@ -572,19 +572,19 @@
     </Style>
     <Style name="building_attachment_form">
         <Rule>
-            <Filter>[building_attachment_form] = "Detached"</Filter>
+            <Filter>[building_attachment_form] = "freistehend"</Filter>
             <PolygonSymbolizer fill="#f2a2b9" />
         </Rule>
         <Rule>
-            <Filter>[building_attachment_form] = "Semi-Detached"</Filter>
+            <Filter>[building_attachment_form] = "Doppelhaushälfte"</Filter>
             <PolygonSymbolizer fill="#ab8fb0" />
         </Rule>
         <Rule>
-            <Filter>[building_attachment_form] = "End-Terrace"</Filter>
+            <Filter>[building_attachment_form] = "Häuserreihe (Ende)"</Filter>
             <PolygonSymbolizer fill="#3891d1" />
         </Rule>
         <Rule>
-            <Filter>[building_attachment_form] = "Mid-Terrace"</Filter>
+            <Filter>[building_attachment_form] = "Häuserreihe (innerhalb)"</Filter>
             <PolygonSymbolizer fill="#226291" />
         </Rule>
 
@@ -601,15 +601,15 @@
     </Style>
     <Style name="is_domestic">
         <Rule>
-            <Filter>[is_domestic] = "yes"</Filter>
+            <Filter>[is_domestic] = "Wohngebäude"</Filter>
             <PolygonSymbolizer fill="#f7ec25" />
         </Rule>
         <Rule>
-            <Filter>[is_domestic] = "mixed domestic/non-domestic"</Filter>
+            <Filter>[is_domestic] = "gemischte Nutzung"</Filter>
             <PolygonSymbolizer fill="#fc9b2a" />
         </Rule>
         <Rule>
-            <Filter>[is_domestic] = "no"</Filter>
+            <Filter>[is_domestic] = "Nichtwohngebäude"</Filter>
             <PolygonSymbolizer fill="#ff2121" />
         </Rule>
         <Rule>
