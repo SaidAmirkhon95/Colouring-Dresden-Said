@@ -124,7 +124,7 @@ const ConstructionView: React.FunctionComponent<CategoryViewProps> = (props) => 
                 slug="building_status_source"
                 value={props.building.building_status_source}
                 mode={props.mode}
-                disabled={true}
+                /* disabled={true} */
                 copy={props.copy}
                 onChange={props.onChange}
             />
@@ -170,7 +170,7 @@ const ConstructionView: React.FunctionComponent<CategoryViewProps> = (props) => 
                 slug="last_renovation_source"
                 value={props.building.last_renovation_source}
                 mode={props.mode}
-                disabled={true}
+                /* disabled={true} */
                 copy={props.copy}
                 onChange={props.onChange}
             />
@@ -213,7 +213,7 @@ const ConstructionView: React.FunctionComponent<CategoryViewProps> = (props) => 
                 slug="construction_system_type_source"
                 value={props.building.construction_system_type_source}
                 mode={props.mode}
-                disabled={true}
+                /* disabled={true} */
                 copy={props.copy}
                 onChange={props.onChange}
             />

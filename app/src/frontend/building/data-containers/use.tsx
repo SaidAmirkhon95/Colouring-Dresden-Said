@@ -79,7 +79,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     slug="use_building_origin_text"
                     value={props.building.use_building_origin_text}
                     mode={props.mode}
-                    disabled={true}
+                    /* disabled={true} */
                     copy={props.copy}
                     onChange={props.onChange}
                 />
@@ -127,7 +127,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     slug="use_building_current_text"
                     value={props.building.use_building_current_text}
                     mode={props.mode}
-                    disabled={true}
+                    /* disabled={true} */
                     copy={props.copy}
                     onChange={props.onChange}
                 />
@@ -215,7 +215,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                         slug="basement_use_source"
                         value={props.building.basement_use_source}
                         mode={props.mode}
-                        disabled={true}
+                        /* disabled={true} */
                         copy={props.copy}
                         onChange={props.onChange}
                     />
@@ -258,7 +258,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     slug="ground_storey_use_source"
                     value={props.building.ground_storey_use_source}
                     mode={props.mode}
-                    disabled={true}
+                    /* disabled={true} */
                     copy={props.copy}
                     onChange={props.onChange}
                 />
@@ -301,7 +301,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     slug="upper_storeys_use_source"
                     value={props.building.upper_storeys_use_source}
                     mode={props.mode}
-                    disabled={true}
+                    /* disabled={true} */
                     copy={props.copy}
                     onChange={props.onChange}
                 />

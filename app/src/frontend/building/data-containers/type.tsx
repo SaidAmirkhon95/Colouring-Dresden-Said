@@ -54,7 +54,7 @@ const TypeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 mode={props.mode}
                 copy={props.copy}
                 onChange={props.onChange}
-                disabled={true}
+                /* disabled={true} */
                 options={dataFields.size_roof_shape.items}
             />
 
@@ -73,7 +73,7 @@ const TypeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 slug="size_roof_shape_source"
                 value={props.building.last_renovation_source}
                 mode={props.mode}
-                disabled={true}
+                /* disabled={true} */
                 copy={props.copy}
                 onChange={props.onChange}
             />
@@ -142,7 +142,7 @@ const TypeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 slug="building_owner_source"
                 value={props.building.building_owner_source}
                 mode={props.mode}
-                disabled={true}
+                /* disabled={true} */
                 copy={props.copy}
                 onChange={props.onChange}
             />
