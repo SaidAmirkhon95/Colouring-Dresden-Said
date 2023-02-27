@@ -253,7 +253,17 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
         }
     ],
     [Category.Planning]: [
+
         {
+            mapStyle: undefined,
+            legend: {
+                title: 'Planung',
+                elements: []
+            },
+        }
+
+        
+/*         {
             // this database commad allows to see statistics about decision dates per year
             // SELECT COUNT(*), date_part('year', decision_date) as year from planning_data WHERE decision_date IS NOT NULL GROUP BY year ORDER BY year ASC;
             // SELECT COUNT(*), date_part('year', registered_with_local_authority_date) as year from planning_data WHERE decision_date IS NOT NULL GROUP BY year ORDER BY year ASC;
@@ -333,7 +343,9 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#8500d4', text: 'In Archaeological Priority Area'},
                 ]
             },
-        }
+        } */
+
+
     ],
     [Category.Sustainability]: [{
         mapStyle: 'sust_dec',
@@ -660,13 +672,18 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             },
         } */
     ],
-    [Category.Streetscape]: [{
-        mapStyle: undefined,
-        legend: {
-            title: 'Straßenraum',
-            elements: []
-        },
-    }],
+    [Category.Streetscape]: [
+        
+        {
+            mapStyle: undefined,
+            legend: {
+                title: 'Straßenraum',
+                elements: []
+            },
+        }
+
+
+    ],
     [Category.Resilience]: [{
         mapStyle: 'dynamics_demolished_count',
         legend: {

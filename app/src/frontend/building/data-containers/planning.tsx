@@ -65,7 +65,14 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
     const communityLinkUrl = `/${props.mode}/${Category.Community}/${props.building.building_id}`;
     return (
     <Fragment>
-        <DataEntryGroup name="Planning application information" collapsed={true} >
+
+
+        <InfoBox>
+            Dieser Abschnitt ist noch in der Entwicklung.
+        </InfoBox>
+
+
+{/*         <DataEntryGroup name="Planning application information" collapsed={true} >
             <DataEntryGroup name="Current/active applications (official data)" collapsed={false} >
                 <InfoBox>
                     This section provides data on active applications. We define these as applications with any activity in the last year.
@@ -179,7 +186,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
             />
             <button className={`map-switcher-inline ${vista}-state btn btn-outline btn-outline-dark ${darkLightTheme}`} onClick={vistaSwitchOnClick}>
                 {(vista === 'enabled')? 'Click to hide Protected Vistas' : 'Click to see Protected Vistas'}
-            </button>
+            </button> */}
             {/*
                 <DataEntry
                 title={dataFields.planning_glher_url.title}
@@ -200,7 +207,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 verified_count={props.building.verified.planning_glher_url}
                 />
             */}
-        </DataEntryGroup>
+{/*         </DataEntryGroup>
         <DataEntryGroup name="Heritage assets and building protection" collapsed={true} >
             <InfoBox>
             Help us produce the most accurate map possible for London's designated/protected buildings. Please add data if missing or click "Verify" where entries are correct.
@@ -317,7 +324,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 user_verified={props.user_verified.hasOwnProperty("planning_local_list_url")}
                 user_verified_as={props.user_verified.planning_local_list_url}
                 verified_count={props.building.verified.planning_local_list_url}
-                />
+                /> */}
 
             {/*
             <DataEntry
@@ -338,7 +345,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 verified_count={props.building.verified.planning_in_conservation_area_id}
                 />
             */}
-            <DataEntry
+{/*             <DataEntry
                 title={dataFields.planning_in_conservation_area_url.title}
                 slug="planning_in_conservation_area_url"
                 value={props.building.planning_in_conservation_area_url}
@@ -357,7 +364,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 user_verified={props.user_verified.hasOwnProperty("planning_in_conservation_area_url")}
                 user_verified_as={props.user_verified.planning_in_conservation_area_url}
                 verified_count={props.building.verified.planning_in_conservation_area_url}
-                />
+                /> */}
             {/*
             <DataEntry
                 title={dataFields.planning_conservation_area_name.title}
@@ -376,7 +383,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 verified_count={props.building.verified.planning_conservation_area_name}
                 />
             */}
-            <DataEntry
+{/*             <DataEntry
                 title={dataFields.planning_historic_area_assessment_url.title}
                 slug="planning_historic_area_assessment_url"
                 value={props.building.planning_historic_area_assessment_url}
@@ -414,13 +421,13 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 />
         </DataEntryGroup>
         <DataEntryGroup name="Forthcoming data (sections to be activated)" collapsed={true} >        
-        <DataEntryGroup name="Active application info (crowdsourced)" collapsed={true} >
+        <DataEntryGroup name="Active application info (crowdsourced)" collapsed={true} > */}
                 {/* will be titled "Other active application info (crowdsourced data)" once active" */}
-                <InfoBox type='warning'>
+{/*                 <InfoBox type='warning'>
                     This category is not yet activated -  Until this section is activated please report inaccuracies or problems on the <a href=" https://github.com/colouring-cities/colouring-london/discussions/categories/planning-section-comments">Discussion Forum</a>.
-                </InfoBox>
+                </InfoBox> */}
                 {/* that is placeholder display, will be replaced by actual code */}
-                <div className="data-title">
+{/*                 <div className="data-title">
                     <div className="data-title-text">
                         <ul>
                             <li>Year of completion if known</li>
@@ -428,7 +435,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                             <li>If any of the active planning applications are not mapped onto the correct site, please tick here</li>
                         </ul>
                     </div>
-                </div>
+                </div> */}
                 {
                     /*
                 <NumericDataEntry
@@ -481,7 +488,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 */
                 }
 
-            </DataEntryGroup>
+{/*             </DataEntryGroup>
             <DataEntryGroup name="Land ownership type" collapsed={true} >
                     <InfoBox type='warning'>
                         This category is not yet activated.
@@ -498,7 +505,7 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                                 <li>What type of owner owns this land parcel?</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/*
                     <SelectDataEntry
@@ -527,8 +534,8 @@ const PlanningView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     />
                     */
                     }
-            </DataEntryGroup>
-        </DataEntryGroup>
+{/*             </DataEntryGroup>
+        </DataEntryGroup> */}
     </Fragment>
 )};
 const PlanningContainer = withCopyEdit(PlanningView);
