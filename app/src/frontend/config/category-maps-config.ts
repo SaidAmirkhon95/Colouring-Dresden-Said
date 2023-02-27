@@ -347,22 +347,34 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
 
     ],
-    [Category.Sustainability]: [{
-        mapStyle: 'sust_dec',
-        legend: {
-            title: 'Energie',
-            description: 'DEC Rating',
-            elements: [
-/*                 { color: "#007f3d", text: 'A' },
-                { color: "#2c9f29", text: 'B' },
-                { color: "#9dcb3c", text: 'C' },
-                { color: "#fff200", text: 'D' },
-                { color: "#f7af1d", text: 'E' },
-                { color: "#ed6823", text: 'F' },
-                { color: "#e31d23", text: 'G' }, */
-            ]
-        },
-    }],
+    [Category.Sustainability]: [
+        
+        {
+            mapStyle: undefined,
+            legend: {
+                title: 'Energie',
+                elements: []
+            },
+        }        
+        
+        
+/*         {
+            mapStyle: 'sust_dec',
+            legend: {
+                title: 'Energie',
+                description: 'DEC Rating',
+                elements: [
+                    { color: "#007f3d", text: 'A' },
+                    { color: "#2c9f29", text: 'B' },
+                    { color: "#9dcb3c", text: 'C' },
+                    { color: "#fff200", text: 'D' },
+                    { color: "#f7af1d", text: 'E' },
+                    { color: "#ed6823", text: 'F' },
+                    { color: "#e31d23", text: 'G' },
+                ]
+            },
+        } */
+    ],
     [Category.Type]: [
         {
             mapStyle: 'building_attachment_form',

@@ -25,6 +25,12 @@ const BreeamRatingOptions = [
 const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) => {
     return (
         <Fragment>
+
+        <InfoBox>
+            Dieser Abschnitt ist noch in der Entwicklung.
+        </InfoBox>
+
+{/*             
             <SelectDataEntry
                 title={dataFields.sust_breeam_rating.title}
                 slug="sust_breeam_rating"
@@ -123,7 +129,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 slug=""
                 value=""
                 mode='view'
-            />
+            /> */}
         </Fragment>
     );
     };
