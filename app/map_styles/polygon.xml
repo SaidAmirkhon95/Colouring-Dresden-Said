@@ -1969,7 +1969,7 @@
 
     <Style name="size_floor_area_ground">
         <Rule>
-            <Filter>[size_floor_area_ground] &gt;= 500+</Filter>
+            <Filter>[size_floor_area_ground] &gt;= 500</Filter>
             <PolygonSymbolizer fill="#bd0026" />
         </Rule>
         <Rule>
