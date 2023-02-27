@@ -135,7 +135,9 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     mode='view'
                 /> */}
             </DataEntryGroup>
-            <DataEntryGroup name="Lebenszyklus und Standortgeschichte" collapsed={true} >
+
+            
+{/*             <DataEntryGroup name="Lebenszyklus und Standortgeschichte" collapsed={true} >
                 <button className={`map-switcher-inline ${historicData}-state btn btn-outline btn-outline-dark ${darkLightTheme}`} onClick={historicDataSwitchOnClick}> 
                     {(historicData === 'enabled')?'Click here to hide historical maps':'Click here to show historical maps'}
                 </button>
@@ -188,17 +190,17 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                                     onChange={props.onSaveChange}
                                     mode={props.mode}
                                     copy={props.copy}
-                                />
-                                {
+                                /> */}
+{/*                                 {
                                     building.dynamics_has_demolished_buildings &&
                                     <>
-                                        <DynamicsDataEntry
+                                        <DynamicsDataEntry */}
                                             
-                                            /* 
+{/*                                              
                                                 Will clear the edits and new record data upon navigating to another building.
                                                 Should get a better way to do this, plus a way to actually keep unsaved edits.
-                                            */
-                                            key={building.building_id} 
+                                            */ }
+{/*                                             key={building.building_id} 
                                             
                                             value={building.demolished_buildings}
                                             editableEntries={true}
@@ -219,12 +221,12 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                                 }
                             </>
                     }
-                </DataEntryGroup>
+                </DataEntryGroup> */}
 {/*                 <InfoBox>
                     This section is under development in collaboration with the historic environment sector.
                     Please let us know your suggestions on the <a href="https://discuss.colouring.london/t/dynamics-category-discussion/107">discussion forum</a>! (external link - save your edits first)
                 </InfoBox> */}
-            </DataEntryGroup>
+{/*             </DataEntryGroup>
             <DataEntryGroup name="Überdauern und Verlust nachzeichnen mit historischen Karten" collapsed={true} >
                 <InfoBox>
                     Dieser Abschnitt ist noch in der Entwicklung.
@@ -241,14 +243,14 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     mode={props.mode}
                     copy={props.copy}
                     onChange={props.onChange}
-                />
+                /> */}
 {/*                 <DataEntry
                     title="Historical land use change"
                     slug=""
                     value=""
                     mode='view'
                 /> */}
-            </DataEntryGroup>
+{/*             </DataEntryGroup> */}
           </Fragment>
         );
       };
