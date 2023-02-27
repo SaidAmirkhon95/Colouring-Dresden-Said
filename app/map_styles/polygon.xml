@@ -1769,4 +1769,237 @@
 
 
 
+    <Style name="facade_year">
+        <Rule>
+            <Filter>[facade_year] &gt;= 2020</Filter>
+            <PolygonSymbolizer fill="#fff9b8" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 2000 and [facade_year] &lt; 2020</Filter>
+            <PolygonSymbolizer fill="#fae269" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1980 and [facade_year] &lt; 2000</Filter>
+            <PolygonSymbolizer fill="#fbaf27" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1960 and [facade_year] &lt; 1980</Filter>
+            <PolygonSymbolizer fill="#e6711d" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1940 and [facade_year] &lt; 1960</Filter>
+            <PolygonSymbolizer fill="#cc1212" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1920 and [facade_year] &lt; 1940</Filter>
+            <PolygonSymbolizer fill="#8f0303" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1900 and [facade_year] &lt; 1920</Filter>
+            <PolygonSymbolizer fill="#8f5385" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1880 and [facade_year] &lt; 1900</Filter>
+            <PolygonSymbolizer fill="#c3e1eb" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1860 and [facade_year] &lt; 1880</Filter>
+            <PolygonSymbolizer fill="#6a9dba" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1840 and [facade_year] &lt; 1860</Filter>
+            <PolygonSymbolizer fill="#3b74a3" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1820 and [facade_year] &lt; 1840</Filter>
+            <PolygonSymbolizer fill="#95ded8" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1800 and [facade_year] &lt; 1820</Filter>
+            <PolygonSymbolizer fill="#68aba5" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1750 and [facade_year] &lt; 1800</Filter>
+            <PolygonSymbolizer fill="#acc98f" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &gt;= 1700 and [facade_year] &lt; 1750</Filter>
+            <PolygonSymbolizer fill="#6d8a51" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_year] &lt; 1700</Filter>
+            <PolygonSymbolizer fill="#d0c291" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>8530</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+
+    <Style name="size_storeys_core">
+        <Rule>
+            <Filter>[size_storeys_core] &gt;= 10</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_core] &gt;= 5 and [size_storeys_core] &lt; 10</Filter>
+            <PolygonSymbolizer fill="#e31a1c" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_core] = 4</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_core] = 3</Filter>
+            <PolygonSymbolizer fill="#fd8d3c" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_core] = 2</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_core] = 1</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_core] = 0</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+
+    <Style name="size_storeys_attic">
+        <Rule>
+            <Filter>[size_storeys_attic] &gt;= 4</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_attic] = 3</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_attic] = 2</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_attic] = 1</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_attic] = 0</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+    <Style name="size_storeys_basement">
+        <Rule>
+            <Filter>[size_storeys_basement] &gt;= 4</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_basement] = 3</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_basement] = 2</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_basement] = 1</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[size_storeys_basement] = 0</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+    <Style name="size_floor_area_ground">
+        <Rule>
+            <Filter>[size_floor_area_ground] &gt;= 500+</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[size_floor_area_ground] &gt;= 250 and [size_floor_area_ground] &lt; 500</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[size_floor_area_ground] &gt;= 100 and [size_floor_area_ground] &lt; 250</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[size_floor_area_ground] &gt;= 50 and [size_floor_area_ground] &lt; 100</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[size_floor_area_ground] &gt;= 0 and [size_floor_area_ground] &lt; 50</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
 </Map>

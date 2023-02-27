@@ -309,6 +309,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     date_year: {
         category: Category.Age,
         title: "Baujahr (ggf. beste Schätzung)",
+        tooltip: "Das Jahr, in dem das Gebäude fertiggestellt worden ist (Fertigstellung).",
         example: 1924,
     },
     date_lower : {

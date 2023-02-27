@@ -4,7 +4,12 @@
  */
 
 export type BuildingMapTileset = 'date_year' | 
+    'facade_year' |
     'size_height' |
+    'size_storeys_core' |
+    'size_storeys_attic' |
+    'size_storeys_basement' |
+    'size_floor_area_ground' |
     'construction_core_material' |
     'location' |
     'is_domestic' |

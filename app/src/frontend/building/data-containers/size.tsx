@@ -15,7 +15,7 @@ import { CategoryViewProps } from './category-view-props';
 */
 const SizeView: React.FunctionComponent<CategoryViewProps> = (props) => (
     <Fragment>
-        <DataEntryGroup name="Geschosse">
+        <DataEntryGroup name="Geschossigkeit" collapsed={false} >
             <NumericDataEntry
                 title={dataFields.size_storeys_core.title}
                 slug="size_storeys_core"
@@ -109,7 +109,7 @@ const SizeView: React.FunctionComponent<CategoryViewProps> = (props) => (
                 min={0}
                 />
         </DataEntryGroup>
-        <DataEntryGroup name="Grundfläche">
+        <DataEntryGroup name="Grundfläche" collapsed={false} >
             <NumericDataEntry
                 title={dataFields.size_floor_area_ground.title}
                 slug="size_floor_area_ground"
@@ -132,6 +132,7 @@ const SizeView: React.FunctionComponent<CategoryViewProps> = (props) => (
             <NumericDataEntry
                 title={dataFields.size_floor_area_total.title}
                 slug="size_floor_area_total"
+                disabled={true}
                 value={props.building.size_floor_area_total}
                 mode={props.mode}
                 copy={props.copy}

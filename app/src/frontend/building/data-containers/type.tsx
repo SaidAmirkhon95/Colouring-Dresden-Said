@@ -45,6 +45,26 @@ const TypeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 disabled={true}
             /> */}
 
+            <SelectDataEntry
+                title={dataFields.building_attachment_form.title}
+                slug="building_attachment_form"
+                value={props.building.building_attachment_form}
+                tooltip={dataFields.building_attachment_form.tooltip}
+                options={AttachmentFormOptions}
+                mode={props.mode}
+                copy={props.copy}
+                onChange={props.onChange}
+            />
+            <Verification
+                slug="building_attachment_form"
+                allow_verify={props.user !== undefined && props.building.building_attachment_form !== null && !props.edited}
+                onVerify={props.onVerify}
+                user_verified={props.user_verified.hasOwnProperty("building_attachment_form")}
+                user_verified_as={props.user_verified.building_attachment_form}
+                verified_count={props.building.verified.building_attachment_form}
+            />
+
+
 
             <SelectDataEntry
                 title={dataFields.size_roof_shape.title}
@@ -71,19 +91,19 @@ const TypeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 title={dataFields.size_roof_shape_source.title}
                 tooltip={dataFields.size_roof_shape_source.tooltip}
                 slug="size_roof_shape_source"
-                value={props.building.last_renovation_source}
+                value={props.building.size_roof_shape_source}
                 mode={props.mode}
                 /* disabled={true} */
                 copy={props.copy}
                 onChange={props.onChange}
             />
             <Verification
-                slug="last_renovation_source"
-                allow_verify={props.user !== undefined && props.building.last_renovation_source !== null && !props.edited}
+                slug="size_roof_shape_source"
+                allow_verify={props.user !== undefined && props.building.size_roof_shape_source !== null && !props.edited}
                 onVerify={props.onVerify}
-                user_verified={props.user_verified.hasOwnProperty("last_renovation_source")}
-                user_verified_as={props.user_verified.last_renovation_source}
-                verified_count={props.building.verified.last_renovation_source}
+                user_verified={props.user_verified.hasOwnProperty("size_roof_shape_source")}
+                user_verified_as={props.user_verified.size_roof_shape_source}
+                verified_count={props.building.verified.size_roof_shape_source}
             />
 
 
@@ -95,24 +115,7 @@ const TypeView: React.FunctionComponent<CategoryViewProps> = (props) => {
 
 
 
-            <SelectDataEntry
-                title={dataFields.building_attachment_form.title}
-                slug="building_attachment_form"
-                value={props.building.building_attachment_form}
-                tooltip={dataFields.building_attachment_form.tooltip}
-                options={AttachmentFormOptions}
-                mode={props.mode}
-                copy={props.copy}
-                onChange={props.onChange}
-            />
-            <Verification
-                slug="building_attachment_form"
-                allow_verify={props.user !== undefined && props.building.building_attachment_form !== null && !props.edited}
-                onVerify={props.onVerify}
-                user_verified={props.user_verified.hasOwnProperty("building_attachment_form")}
-                user_verified_as={props.user_verified.building_attachment_form}
-                verified_count={props.building.verified.building_attachment_form}
-            />
+
 
 
 

@@ -24,45 +24,128 @@ export interface CategoryMapDefinition {
 export const defaultMapCategory = Category.Age;
 
 export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = {
-    [Category.Age]: [{
-        mapStyle: 'date_year',
-        legend: {
-            title: 'Baujahr',
-            elements: [
-                { color: '#fff9b8', text: '>2020' },
-                { color: '#fae269', text: '2000-2019' },
-                { color: '#fbaf27', text: '1980-1999' },
-                { color: '#e6711d', text: '1960-1979' },
-                { color: '#cc1212', text: '1940-1959' },
-                { color: '#8f0303', text: '1920-1939' },
-                { color: '#8f5385', text: '1900-1919' },
-                { color: '#c3e1eb', text: '1880-1899' },
-                { color: '#6a9dba', text: '1860-1879' },
-                { color: '#3b74a3', text: '1840-1859' },
-                { color: '#95ded8', text: '1820-1839' },
-                { color: '#68aba5', text: '1800-1819' },
-                { color: '#acc98f', text: '1750-1799' },
-                { color: '#6d8a51', text: '1700-1749' },
-                { color: '#d0c291', text: '<1700' },
-            ]
+    [Category.Age]: [
+        {
+            mapStyle: 'date_year',
+            legend: {
+                title: 'Baujahr',
+                elements: [
+                    { color: '#fff9b8', text: '>2020' },
+                    { color: '#fae269', text: '2000-2019' },
+                    { color: '#fbaf27', text: '1980-1999' },
+                    { color: '#e6711d', text: '1960-1979' },
+                    { color: '#cc1212', text: '1940-1959' },
+                    { color: '#8f0303', text: '1920-1939' },
+                    { color: '#8f5385', text: '1900-1919' },
+                    { color: '#c3e1eb', text: '1880-1899' },
+                    { color: '#6a9dba', text: '1860-1879' },
+                    { color: '#3b74a3', text: '1840-1859' },
+                    { color: '#95ded8', text: '1820-1839' },
+                    { color: '#68aba5', text: '1800-1819' },
+                    { color: '#acc98f', text: '1750-1799' },
+                    { color: '#6d8a51', text: '1700-1749' },
+                    { color: '#d0c291', text: '<1700' },
+                ]
+            },
         },
-    }],
-    [Category.Size]: [{
-        mapStyle: 'size_height',
-        legend: {
-            title: 'Firsthöhe (in Metern)',
-            elements: [
-                { color: '#f7f4f9', text: '0-5.55'},
-                { color: '#e7e1ef', text: '5.55-7.73'},
-                { color: '#d4b9da', text: '7.73-11.38'},
-                { color: '#c994c7', text: '11.38-18.45'},
-                { color: '#df65b0', text: '18.45-35.05'},
-                { color: '#e7298a', text: '35.05-89.30'},
-                { color: '#ce1256', text: '89.30-152'},
-                { color: '#980043', text: '≥152'}
-            ]
+        {
+            mapStyle: 'facade_year',
+            legend: {
+                title: 'Baujahr der Fassade',
+                elements: [
+                    { color: '#fff9b8', text: '>2020' },
+                    { color: '#fae269', text: '2000-2019' },
+                    { color: '#fbaf27', text: '1980-1999' },
+                    { color: '#e6711d', text: '1960-1979' },
+                    { color: '#cc1212', text: '1940-1959' },
+                    { color: '#8f0303', text: '1920-1939' },
+                    { color: '#8f5385', text: '1900-1919' },
+                    { color: '#c3e1eb', text: '1880-1899' },
+                    { color: '#6a9dba', text: '1860-1879' },
+                    { color: '#3b74a3', text: '1840-1859' },
+                    { color: '#95ded8', text: '1820-1839' },
+                    { color: '#68aba5', text: '1800-1819' },
+                    { color: '#acc98f', text: '1750-1799' },
+                    { color: '#6d8a51', text: '1700-1749' },
+                    { color: '#d0c291', text: '<1700' },
+                ]
+            },
+        }
+    ],
+
+    [Category.Size]: [
+        {
+            mapStyle: 'size_storeys_core',
+            legend: {
+                title: 'Anzahl Hauptgeschosse',
+                elements: [
+                    { color: '#bd0026', text: '10+'},
+                    { color: '#e31a1c', text: '5-9'},
+                    { color: '#fc4e2a', text: '4'},
+                    { color: '#fd8d3c', text: '3'},
+                    { color: '#feb24c', text: '2'},
+                    { color: '#fed976', text: '1'},
+                    { color: '#ffe8a9', text: '0'}
+                ]
+            },
         },
-    }],
+        {
+            mapStyle: 'size_storeys_attic',
+            legend: {
+                title: 'Anzahl Dachgeschosse',
+                elements: [
+                    { color: '#bd0026', text: '4+'},
+                    { color: '#fc4e2a', text: '3'},
+                    { color: '#feb24c', text: '2'},
+                    { color: '#fed976', text: '1'},
+                    { color: '#ffe8a9', text: '0'}
+                ]
+            },
+        },
+        {
+            mapStyle: 'size_storeys_basement',
+            legend: {
+                title: 'Anzahl Kellergeschosse',
+                elements: [
+                    { color: '#bd0026', text: '4+'},
+                    { color: '#fc4e2a', text: '3'},
+                    { color: '#feb24c', text: '2'},
+                    { color: '#fed976', text: '1'},
+                    { color: '#ffe8a9', text: '0'}
+                ]
+            },
+        },
+        {
+            mapStyle: 'size_height',
+            legend: {
+                title: 'Firsthöhe (in Metern)',
+                elements: [
+                    { color: '#f7f4f9', text: '0-5.55'},
+                    { color: '#e7e1ef', text: '5.55-7.73'},
+                    { color: '#d4b9da', text: '7.73-11.38'},
+                    { color: '#c994c7', text: '11.38-18.45'},
+                    { color: '#df65b0', text: '18.45-35.05'},
+                    { color: '#e7298a', text: '35.05-89.30'},
+                    { color: '#ce1256', text: '89.30-152'},
+                    { color: '#980043', text: '≥152'}
+                ]
+            },
+        },
+        {
+            mapStyle: 'size_floor_area_ground',
+            legend: {
+                title: 'Grundfläche (in Quadratmetern)',
+                elements: [
+                    { color: '#bd0026', text: '500+'},
+                    { color: '#fc4e2a', text: '250-499'},
+                    { color: '#feb24c', text: '100-249'},
+                    { color: '#fed976', text: '50-99'},
+                    { color: '#ffe8a9', text: '0-49'}
+                ]
+            },
+        }
+
+    ],
     [Category.Team]: [{
         mapStyle: 'team',
         legend: {
