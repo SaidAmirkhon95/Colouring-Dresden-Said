@@ -919,4 +919,854 @@
             <PolygonSymbolizer fill="#ffe8a9" />
         </Rule>
     </Style>
+
+
+
+
+
+
+
+    <Style name="use_building_origin">
+        <Rule>
+            <Filter>[use_building_origin] = "Ein- und Zweifamilienhäuser"</Filter>
+            <PolygonSymbolizer fill="#252aa6" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Mehrfamilienhäuser"</Filter>
+            <PolygonSymbolizer fill="#7025a6" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Wohnheime"</Filter>
+            <PolygonSymbolizer fill="#ff8c00" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Kindergärten und -tagesstätten"</Filter>
+            <PolygonSymbolizer fill="#fa667d" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Lehrgebäude (Schulen, Hörsalgebäude, VHS etc.)"</Filter>
+            <PolygonSymbolizer fill="#ffbfbf" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Heime (Pflege-, Kranken-, Genesungs-, Erholungsheime etc.)"</Filter>
+            <PolygonSymbolizer fill="#6c6f8e" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Bereitschafts- und Kasernengebäude, JVA"</Filter>
+            <PolygonSymbolizer fill="#898944" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Kranken-, Ärztehäuser, Kliniken"</Filter>
+            <PolygonSymbolizer fill="#f5f58f" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Handelsgebäude"</Filter>
+            <PolygonSymbolizer fill="#46555b" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Hotel, Gastronomie, Pension, Gasthaus"</Filter>
+            <PolygonSymbolizer fill="#ffadfc" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Landwirtschaftliche Betriebsgebäude"</Filter>
+            <PolygonSymbolizer fill="#b3de69" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Produktionsstätten, Fabrik- und Werkstattgebäude"</Filter>
+            <PolygonSymbolizer fill="#133bfc" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Lagergebäude"</Filter>
+            <PolygonSymbolizer fill="#dbbb9b" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Verkehrsgebäude"</Filter>
+            <PolygonSymbolizer fill="#95a984" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Kultur-, Veranstaltungsbauten"</Filter>
+            <PolygonSymbolizer fill="#cd7e26" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Religiöse Versammlungsstätten"</Filter>
+            <PolygonSymbolizer fill="#45cce3" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Sporteinrichtungen"</Filter>
+            <PolygonSymbolizer fill="#dfeefc" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Büro- und Verwaltungsgebäude"</Filter>
+            <PolygonSymbolizer fill="#ae4d2a" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Ver- und Entsorgungsbauwerke"</Filter>
+            <PolygonSymbolizer fill="#5ce1e6" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_origin] = "Sonstige Nichtwohngebäude"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+    <Style name="use_building_current">
+        <Rule>
+            <Filter>[use_building_current] = "Ein- und Zweifamilienhäuser"</Filter>
+            <PolygonSymbolizer fill="#252aa6" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Mehrfamilienhäuser"</Filter>
+            <PolygonSymbolizer fill="#7025a6" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Wohnheime"</Filter>
+            <PolygonSymbolizer fill="#ff8c00" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Kindergärten und -tagesstätten"</Filter>
+            <PolygonSymbolizer fill="#fa667d" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Lehrgebäude (Schulen, Hörsalgebäude, VHS etc.)"</Filter>
+            <PolygonSymbolizer fill="#ffbfbf" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Heime (Pflege-, Kranken-, Genesungs-, Erholungsheime etc.)"</Filter>
+            <PolygonSymbolizer fill="#6c6f8e" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Bereitschafts- und Kasernengebäude, JVA"</Filter>
+            <PolygonSymbolizer fill="#898944" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Kranken-, Ärztehäuser, Kliniken"</Filter>
+            <PolygonSymbolizer fill="#f5f58f" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Handelsgebäude"</Filter>
+            <PolygonSymbolizer fill="#46555b" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Hotel, Gastronomie, Pension, Gasthaus"</Filter>
+            <PolygonSymbolizer fill="#ffadfc" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Landwirtschaftliche Betriebsgebäude"</Filter>
+            <PolygonSymbolizer fill="#b3de69" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Produktionsstätten, Fabrik- und Werkstattgebäude"</Filter>
+            <PolygonSymbolizer fill="#133bfc" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Lagergebäude"</Filter>
+            <PolygonSymbolizer fill="#dbbb9b" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Verkehrsgebäude"</Filter>
+            <PolygonSymbolizer fill="#95a984" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Kultur-, Veranstaltungsbauten"</Filter>
+            <PolygonSymbolizer fill="#cd7e26" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Religiöse Versammlungsstätten"</Filter>
+            <PolygonSymbolizer fill="#45cce3" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Sporteinrichtungen"</Filter>
+            <PolygonSymbolizer fill="#dfeefc" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Büro- und Verwaltungsgebäude"</Filter>
+            <PolygonSymbolizer fill="#ae4d2a" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Ver- und Entsorgungsbauwerke"</Filter>
+            <PolygonSymbolizer fill="#5ce1e6" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Sonstige Nichtwohngebäude"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Leerstand"</Filter>
+            <PolygonSymbolizer fill="#ffffff" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+    <Style name="basement_type">
+        <Rule>
+            <Filter>[basement_type] = "nicht unterkellert"</Filter>
+            <PolygonSymbolizer fill="#f5f58f" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_type] = "teilunterkellert"</Filter>
+            <PolygonSymbolizer fill="#fa667d" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_type] = "vollunterkellert"</Filter>
+            <PolygonSymbolizer fill="#e5050d" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_type] = "vollunterkellert + Tiefgarage"</Filter>
+            <PolygonSymbolizer fill="#7025a6" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+    <Style name="basement_percentage">
+        <Rule>
+            <Filter>[basement_percentage] &gt;= 100</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_percentage] &gt;= 75 and [basement_percentage] &lt; 100</Filter>
+            <PolygonSymbolizer fill="#e31a1c" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_percentage] &gt;= 50 and [basement_percentage] &lt; 75</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_percentage] &gt;= 25 and [basement_percentage] &lt; 50</Filter>
+            <PolygonSymbolizer fill="#fd8d3c" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_percentage] &gt;= 1 and [basement_percentage] &lt; 25</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_percentage] = 0</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+    <Style name="basement_use">
+        <Rule>
+            <Filter>[basement_use] = "übliche Kellernutzung"</Filter>
+            <PolygonSymbolizer fill="#f5f58f" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_use] = "hochwertige Kellernutzung"</Filter>
+            <PolygonSymbolizer fill="#e5050d" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_use] = "Garage"</Filter>
+            <PolygonSymbolizer fill="#7025a6" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_use] = "sonstige Nutzung"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <Filter>[basement_use] = "Leerstand"</Filter>
+            <PolygonSymbolizer fill="#ffffff" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+    <Style name="ground_storey_use">
+        <Rule>
+            <Filter>[ground_storey_use] = "Wohnen"</Filter>
+            <PolygonSymbolizer fill="#252aa6" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Büro und Verwaltung"</Filter>
+            <PolygonSymbolizer fill="#ae4d2a" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Praxis"</Filter>
+            <PolygonSymbolizer fill="#6c6f8e" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Laden, Handel"</Filter>
+            <PolygonSymbolizer fill="#46555b" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Kultur"</Filter>
+            <PolygonSymbolizer fill="#cd7e26" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Gastgewerbe (Gaststätte, Pension, Hotel, Imbiss)"</Filter>
+            <PolygonSymbolizer fill="#ffadfc" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Lager"</Filter>
+            <PolygonSymbolizer fill="#dbbb9b" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Werkstatt"</Filter>
+            <PolygonSymbolizer fill="#898944" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Produzierendes Gewerbe"</Filter>
+            <PolygonSymbolizer fill="#133bfc" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Landwirtschaftliche Nutzung"</Filter>
+            <PolygonSymbolizer fill="#b3de69" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Sporteinrichtung (Fitness etc.)"</Filter>
+            <PolygonSymbolizer fill="#dfeefc" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Religiöse Nutzung"</Filter>
+            <PolygonSymbolizer fill="#45cce3" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Garage"</Filter>
+            <PolygonSymbolizer fill="#5ce1e6" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Gesundheit (Ärztehaus, Klinik, Apotheke)"</Filter>
+            <PolygonSymbolizer fill="#f5f58f" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Verkehr"</Filter>
+            <PolygonSymbolizer fill="#95a984" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Sonstiges"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Leerstand"</Filter>
+            <PolygonSymbolizer fill="#ffffff" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+    <Style name="upper_storeys_use">
+        <Rule>
+            <Filter>[upper_storeys_use] = "Wohnen"</Filter>
+            <PolygonSymbolizer fill="#252aa6" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Büro und Verwaltung"</Filter>
+            <PolygonSymbolizer fill="#ae4d2a" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Praxis"</Filter>
+            <PolygonSymbolizer fill="#6c6f8e" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Laden, Handel"</Filter>
+            <PolygonSymbolizer fill="#46555b" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Kultur"</Filter>
+            <PolygonSymbolizer fill="#cd7e26" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Gastgewerbe (Gaststätte, Pension, Hotel, Imbiss)"</Filter>
+            <PolygonSymbolizer fill="#ffadfc" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Lager"</Filter>
+            <PolygonSymbolizer fill="#dbbb9b" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Werkstatt"</Filter>
+            <PolygonSymbolizer fill="#898944" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Produzierendes Gewerbe"</Filter>
+            <PolygonSymbolizer fill="#133bfc" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Landwirtschaftliche Nutzung"</Filter>
+            <PolygonSymbolizer fill="#b3de69" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Sporteinrichtung (Fitness etc.)"</Filter>
+            <PolygonSymbolizer fill="#dfeefc" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Religiöse Nutzung"</Filter>
+            <PolygonSymbolizer fill="#45cce3" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Garage"</Filter>
+            <PolygonSymbolizer fill="#5ce1e6" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Gesundheit (Ärztehaus, Klinik, Apotheke)"</Filter>
+            <PolygonSymbolizer fill="#f5f58f" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Verkehr"</Filter>
+            <PolygonSymbolizer fill="#95a984" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Sonstiges"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <Filter>[upper_storeys_use] = "Leerstand"</Filter>
+            <PolygonSymbolizer fill="#ffffff" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+
+
+    <Style name="use_number_residential_units">
+        <Rule>
+            <Filter>[use_number_residential_units] &gt;= 50</Filter>
+            <PolygonSymbolizer fill="#7025a6" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_residential_units] &gt;= 20 and [use_number_residential_units] &lt; 50</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_residential_units] &gt;= 10 and [use_number_residential_units] &lt; 20</Filter>
+            <PolygonSymbolizer fill="#e31a1c" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_residential_units] &gt;= 5 and [use_number_residential_units] &lt; 10</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_residential_units] &gt;= 3 and [use_number_residential_units] &lt; 5</Filter>
+            <PolygonSymbolizer fill="#fd8d3c" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_residential_units] = 2</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_residential_units] = 1</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_residential_units] = 0</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+    <Style name="use_number_businesses">
+        <Rule>
+            <Filter>[use_number_businesses] &gt;= 20</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_businesses] &gt;= 10 and [use_number_businesses] &lt; 20</Filter>
+            <PolygonSymbolizer fill="#e31a1c" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_businesses] &gt;= 5 and [use_number_businesses] &lt; 10</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_businesses] &gt;= 3 and [use_number_businesses] &lt; 5</Filter>
+            <PolygonSymbolizer fill="#fd8d3c" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_businesses] = 2</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_businesses] = 1</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[use_number_businesses] = 0</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+
+    <Style name="building_status">
+        <Rule>
+            <Filter>[building_status] = "Ruine"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <Filter>[building_status] = "Investruine"</Filter>
+            <PolygonSymbolizer fill="#ffffff" />
+        </Rule>
+        <Rule>
+            <Filter>[building_status] = "unsaniert"</Filter>
+            <PolygonSymbolizer fill="#f5f58f" />
+        </Rule>
+        <Rule>
+            <Filter>[building_status] = "teil-/ vollsaniert"</Filter>
+            <PolygonSymbolizer fill="#fa667d" />
+        </Rule>
+        <Rule>
+            <Filter>[building_status] = "Neubau (nach 1990)"</Filter>
+            <PolygonSymbolizer fill="#e5050d" />
+        </Rule>
+        <Rule>
+            <Filter>[building_status] = "aktuell in Sanierung"</Filter>
+            <PolygonSymbolizer fill="#252aa6" />
+        </Rule>
+        <Rule>
+            <Filter>[building_status] = "aktuell im Aufbau"</Filter>
+            <PolygonSymbolizer fill="#7025a6" />
+        </Rule>
+        <Rule>
+            <Filter>[building_status] = "aktuell im Abriss"</Filter>
+            <PolygonSymbolizer fill="#45cce3" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
+    <Style name="last_renovation">
+        <Rule>
+            <Filter>[last_renovation] &gt;= 2020</Filter>
+            <PolygonSymbolizer fill="#fff9b8" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 2000 and [last_renovation] &lt; 2020</Filter>
+            <PolygonSymbolizer fill="#fae269" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1980 and [last_renovation] &lt; 2000</Filter>
+            <PolygonSymbolizer fill="#fbaf27" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1960 and [last_renovation] &lt; 1980</Filter>
+            <PolygonSymbolizer fill="#e6711d" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1940 and [last_renovation] &lt; 1960</Filter>
+            <PolygonSymbolizer fill="#cc1212" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1920 and [last_renovation] &lt; 1940</Filter>
+            <PolygonSymbolizer fill="#8f0303" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1900 and [last_renovation] &lt; 1920</Filter>
+            <PolygonSymbolizer fill="#8f5385" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1880 and [last_renovation] &lt; 1900</Filter>
+            <PolygonSymbolizer fill="#c3e1eb" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1860 and [last_renovation] &lt; 1880</Filter>
+            <PolygonSymbolizer fill="#6a9dba" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1840 and [last_renovation] &lt; 1860</Filter>
+            <PolygonSymbolizer fill="#3b74a3" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1820 and [last_renovation] &lt; 1840</Filter>
+            <PolygonSymbolizer fill="#95ded8" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1800 and [last_renovation] &lt; 1820</Filter>
+            <PolygonSymbolizer fill="#68aba5" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1750 and [last_renovation] &lt; 1800</Filter>
+            <PolygonSymbolizer fill="#acc98f" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &gt;= 1700 and [last_renovation] &lt; 1750</Filter>
+            <PolygonSymbolizer fill="#6d8a51" />
+        </Rule>
+        <Rule>
+            <Filter>[last_renovation] &lt; 1700</Filter>
+            <PolygonSymbolizer fill="#d0c291" />
+        </Rule>
+
+        <Rule>
+            <MaxScaleDenominator>8530</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+    <Style name="construction_system_type">
+        <Rule>
+            <Filter>[construction_system_type] = "Gemischte Bauweise (Holzfachwerk- und Massivbauweise)"</Filter>
+            <PolygonSymbolizer fill="#898944" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "industrielle Bauweise bzw. Großtafelbauweise"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "überwiegend massive Bauweise"</Filter>
+            <PolygonSymbolizer fill="#6c6f8e" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "Holzskelettbauweise"</Filter>
+            <PolygonSymbolizer fill="#766333" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "Holzblockbauweise"</Filter>
+            <PolygonSymbolizer fill="#ffbfbf" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+    <Style name="size_roof_shape">
+        <Rule>
+            <Filter>[size_roof_shape] = "Flachdach"</Filter>
+            <PolygonSymbolizer fill="#252aa6" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Pultdach"</Filter>
+            <PolygonSymbolizer fill="#ae4d2a" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Satteldach"</Filter>
+            <PolygonSymbolizer fill="#6c6f8e" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Mansarddach"</Filter>
+            <PolygonSymbolizer fill="#46555b" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Walmdach"</Filter>
+            <PolygonSymbolizer fill="#cd7e26" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Krüppelwalmdach"</Filter>
+            <PolygonSymbolizer fill="#ffadfc" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Gewölbte Dächer (Tonnen-, Halbtonnen-, Segmentbogendächer)"</Filter>
+            <PolygonSymbolizer fill="#dbbb9b" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Zeltdach"</Filter>
+            <PolygonSymbolizer fill="#898944" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Graben- bzw. Schmetterlingsdach"</Filter>
+            <PolygonSymbolizer fill="#133bfc" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Sheddach"</Filter>
+            <PolygonSymbolizer fill="#b3de69" />
+        </Rule>
+        <Rule>
+            <Filter>[size_roof_shape] = "Schalen- und Membrandächer"</Filter>
+            <PolygonSymbolizer fill="#dfeefc" />
+        </Rule>        
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+    <Style name="building_owner">
+        <Rule>
+            <Filter>[building_owner] = "öffentl. Eigentümer - Bund"</Filter>
+            <PolygonSymbolizer fill="#252aa6" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "öffentl. Eigentümer - BIMA (Bundesanstalt für Immobilienaufgaben)"</Filter>
+            <PolygonSymbolizer fill="#ae4d2a" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "öffentl. Eigentümer - Bundesland"</Filter>
+            <PolygonSymbolizer fill="#6c6f8e" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "öffentl. Eigentümer - Kommune/ Stadt"</Filter>
+            <PolygonSymbolizer fill="#46555b" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "öffentl. Eigentümer - kommunale Wohnungsgesellschaft"</Filter>
+            <PolygonSymbolizer fill="#cd7e26" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "öffentl. Eigentümer - städtische Betrieb/ Gesellschaften"</Filter>
+            <PolygonSymbolizer fill="#ffadfc" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "Wohnungsgenossenschaften"</Filter>
+            <PolygonSymbolizer fill="#dbbb9b" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "private Wohnungsunternehmen"</Filter>
+            <PolygonSymbolizer fill="#898944" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "sonstige private Unternehmen (ohne Wohnungsunternehmen)"</Filter>
+            <PolygonSymbolizer fill="#133bfc" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "Deutsche Bahn AG"</Filter>
+            <PolygonSymbolizer fill="#b3de69" />
+        </Rule>
+        <Rule>
+            <Filter>[building_owner] = "Kirchliches Eigentum, Stiftungen, gemeinwohlorientierte Eigentümer"</Filter>
+            <PolygonSymbolizer fill="#dfeefc" />
+        </Rule>        
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+
 </Map>

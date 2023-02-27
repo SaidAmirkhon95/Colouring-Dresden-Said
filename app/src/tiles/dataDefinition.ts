@@ -250,6 +250,158 @@ const LAYER_QUERIES = {
         FROM
             buildings
         WHERE jsonb_array_length(demolished_buildings) > 0 OR dynamics_has_demolished_buildings = FALSE`,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    use_building_origin: `
+        SELECT
+            geometry_id,
+            use_building_origin
+        FROM
+            buildings
+        WHERE
+            use_building_origin IS NOT NULL`,
+
+    use_building_current: `
+        SELECT
+            geometry_id,
+            use_building_current
+        FROM
+            buildings
+        WHERE
+            use_building_current IS NOT NULL`,
+
+
+
+    basement_type: `
+        SELECT
+            geometry_id,
+            basement_type
+        FROM
+            buildings
+        WHERE
+            basement_type IS NOT NULL`,
+
+    basement_percentage: `
+        SELECT
+            geometry_id,
+            basement_percentage
+        FROM
+            buildings
+        WHERE
+            basement_percentage IS NOT NULL`,
+
+
+    basement_use: `
+        SELECT
+            geometry_id,
+            basement_use
+        FROM
+            buildings
+        WHERE
+            basement_use IS NOT NULL`,
+
+    ground_storey_use: `
+        SELECT
+            geometry_id,
+            ground_storey_use
+        FROM
+            buildings
+        WHERE
+            ground_storey_use IS NOT NULL`,
+
+
+    upper_storeys_use: `
+        SELECT
+            geometry_id,
+            upper_storeys_use
+        FROM
+            buildings
+        WHERE
+            upper_storeys_use IS NOT NULL`,
+
+    use_number_residential_units: `
+        SELECT
+            geometry_id,
+            use_number_residential_units
+        FROM
+            buildings
+        WHERE
+            use_number_residential_units IS NOT NULL`,
+
+    use_number_businesses: `
+        SELECT
+            geometry_id,
+            use_number_businesses
+        FROM
+            buildings
+        WHERE
+            use_number_businesses IS NOT NULL`,
+
+    building_status: `
+        SELECT
+            geometry_id,
+            building_status
+        FROM
+            buildings
+        WHERE
+            building_status IS NOT NULL`,
+
+
+    last_renovation: `
+        SELECT
+            geometry_id,
+            last_renovation
+        FROM
+            buildings
+        WHERE
+            last_renovation IS NOT NULL`,
+
+    construction_system_type: `
+        SELECT
+            geometry_id,
+            construction_system_type
+        FROM
+            buildings
+        WHERE
+            construction_system_type IS NOT NULL`,
+
+
+    size_roof_shape: `
+        SELECT
+            geometry_id,
+            size_roof_shape
+        FROM
+            buildings
+        WHERE
+            size_roof_shape IS NOT NULL`,
+
+    building_owner: `
+        SELECT
+            geometry_id,
+            building_owner
+        FROM
+            buildings
+        WHERE
+            building_owner IS NOT NULL`,
+
+
+
 };
 
 const GEOMETRY_FIELD = 'geometry_geom';

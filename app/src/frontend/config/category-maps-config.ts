@@ -77,22 +77,90 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             ]
         },
     }],
-    [Category.Construction]: [{
-        mapStyle: 'construction_core_material',
-        legend: {
-            title: 'Primärer Baustoff',
-            elements: [
-                { color: "#b5a859", text: "Holz" },
-                { color: "#ffffe3", text: "Stein" },
-                { color: "#f5d96b", text: "Ziegel" },
-                { color: "#beffe8", text: "Stahl" },
-                { color: "#fca89d", text: "Stahlbeton" },
-                { color: "#5c8970", text: "anderes Metall" },
-                { color: "#96613b", text: "anderes natürliches Material" },
-                { color: "#c48a85", text: "anderes künstliches Material" }
-            ]
+    [Category.Construction]: [
+        {
+            mapStyle: 'construction_core_material',
+            legend: {
+                title: 'Primärer Baustoff',
+                elements: [
+                    { color: "#b5a859", text: "Holz" },
+                    { color: "#ffffe3", text: "Stein" },
+                    { color: "#f5d96b", text: "Ziegel" },
+                    { color: "#beffe8", text: "Stahl" },
+                    { color: "#fca89d", text: "Stahlbeton" },
+                    { color: "#5c8970", text: "anderes Metall" },
+                    { color: "#96613b", text: "anderes natürliches Material" },
+                    { color: "#c48a85", text: "anderes künstliches Material" }
+                ]
+            },
         },
-    }],
+
+
+        {
+            mapStyle: 'building_status',
+            legend: {
+                title: 'Aktueller Gebäudezustand',
+                elements: [
+                    { color: '#cccccc', text: 'Ruine' },
+                    { color: '#ffffff', text: 'Investruine' },
+                    { color: '#f5f58f', text: 'unsaniert' },
+                    { color: '#fa667d', text: 'teil-/ vollsaniert' },
+                    { color: '#e5050d', text: 'Neubau (nach 1990)' },
+                    { color: '#252aa6', text: 'aktuell in Sanierung' },
+                    { color: '#7025a6', text: 'aktuell im Aufbau' },
+                    { color: '#45cce3', text: 'aktuell im Abriss' },
+
+                ]
+            }
+        }, 
+
+
+
+        {
+            mapStyle: 'last_renovation',
+            legend: {
+                title: 'Jahr der letzten Sanierung',
+                elements: [
+                    { color: '#fff9b8', text: '>2020' },
+                    { color: '#fae269', text: '2000-2019' },
+                    { color: '#fbaf27', text: '1980-1999' },
+                    { color: '#e6711d', text: '1960-1979' },
+                    { color: '#cc1212', text: '1940-1959' },
+                    { color: '#8f0303', text: '1920-1939' },
+                    { color: '#8f5385', text: '1900-1919' },
+                    { color: '#c3e1eb', text: '1880-1899' },
+                    { color: '#6a9dba', text: '1860-1879' },
+                    { color: '#3b74a3', text: '1840-1859' },
+                    { color: '#95ded8', text: '1820-1839' },
+                    { color: '#68aba5', text: '1800-1819' },
+                    { color: '#acc98f', text: '1750-1799' },
+                    { color: '#6d8a51', text: '1700-1749' },
+                    { color: '#d0c291', text: '<1700' },
+                ]
+            },
+        },
+
+        {
+            mapStyle: 'construction_system_type',
+            legend: {
+                title: 'Hauptkonstruktion',
+                elements: [
+                    { color: '#898944', text: 'Gemischte Bauweise (Holzfachwerk- und Massivbauweise)' },
+                    { color: '#cccccc', text: 'industrielle Bauweise bzw. Großtafelbauweise' },
+                    { color: '#6c6f8e', text: 'überwiegend massive Bauweise' },
+                    { color: '#766333', text: 'Holzskelettbauweise' },
+                    { color: '#ffbfbf', text: 'Holzblockbauweise' },
+
+                ]
+            }
+        }, 
+
+
+
+    ],
+
+
+
     [Category.Location]: [{
         mapStyle: 'location',
         legend: {
@@ -283,18 +351,66 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             ]
         },
     }],
-    [Category.Type]: [{
-        mapStyle: 'building_attachment_form',
-        legend: {
-            title: 'Morphologischer Bautyp/ Nachbarschaft',
-            elements: [
-                { color: "#f2a2b9", text: "freistehend" },
-                { color: "#ab8fb0", text: "Doppelhaushälfte" },
-                { color: "#3891d1", text: "Häuserreihe (Ende)" },
-                { color: "#226291", text: "Häuserreihe (innerhalb)" }
-            ]
+    [Category.Type]: [
+        {
+            mapStyle: 'building_attachment_form',
+            legend: {
+                title: 'Morphologischer Bautyp/ Nachbarschaft',
+                elements: [
+                    { color: "#f2a2b9", text: "freistehend" },
+                    { color: "#ab8fb0", text: "Doppelhaushälfte" },
+                    { color: "#3891d1", text: "Häuserreihe (Ende)" },
+                    { color: "#226291", text: "Häuserreihe (innerhalb)" }
+                ]
+            },
         },
-    }],
+
+
+        {
+            mapStyle: 'size_roof_shape',
+            legend: {
+                title: 'Dachform',
+                elements: [
+                    { color: '#252aa6', text: 'Flachdach' },
+                    { color: '#ae4d2a', text: 'Pultdach' },
+                    { color: '#6c6f8e', text: 'Satteldach' },
+                    { color: '#46555b', text: 'Mansarddach' },
+                    { color: '#cd7e26', text: 'Walmdach' },
+                    { color: '#ffadfc', text: 'Krüppelwalmdach' },
+                    { color: '#dbbb9b', text: 'Gewölbte Dächer (Tonnen-, Halbtonnen-, Segmentbogendächer)' },
+                    { color: '#898944', text: 'Zeltdach' },
+                    { color: '#133bfc', text: 'Graben- bzw. Schmetterlingsdach' },
+                    { color: '#b3de69', text: 'Sheddach' },
+                    { color: '#dfeefc', text: 'Schalen- und Membrandächer' },
+
+                ]
+            }
+        }, 
+
+        {
+            mapStyle: 'building_owner',
+            legend: {
+                title: 'Eigentumsform des Gebäudes',
+                elements: [
+                    { color: '#252aa6', text: 'öffentl. Eigentümer - Bund' },
+                    { color: '#ae4d2a', text: 'öffentl. Eigentümer - BIMA (Bundesanstalt für Immobilienaufgaben)' },
+                    { color: '#6c6f8e', text: 'öffentl. Eigentümer - Bundesland' },
+                    { color: '#46555b', text: 'öffentl. Eigentümer - Kommune/ Stadt' },
+                    { color: '#cd7e26', text: 'öffentl. Eigentümer - kommunale Wohnungsgesellschaft' },
+                    { color: '#ffadfc', text: 'öffentl. Eigentümer - städtische Betrieb/ Gesellschaften' },
+                    { color: '#dbbb9b', text: 'Wohnungsgenossenschaften' },
+                    { color: '#898944', text: 'private Wohnungsunternehmen' },
+                    { color: '#133bfc', text: 'sonstige private Unternehmen (ohne Wohnungsunternehmen)' },
+                    { color: '#b3de69', text: 'Deutsche Bahn AG' },
+                    { color: '#dfeefc', text: 'Kirchliches Eigentum, Stiftungen, gemeinwohlorientierte Eigentümer' },
+
+                ]
+            }
+        }, 
+
+
+
+],
     [Category.LandUse]: [
         {
             mapStyle: 'is_domestic',
@@ -307,6 +423,219 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                 ]
             }
         }, 
+
+
+        {
+            mapStyle: 'use_building_origin',
+            legend: {
+                title: 'Originale Gebäudehauptnutzung',
+                elements: [
+                    { color: '#252aa6', text: 'Ein- und Zweifamilienhäuser' },
+                    { color: '#7025a6', text: 'Mehrfamilienhäuser' },
+                    { color: '#ff8c00', text: 'Wohnheime' },
+                    { color: '#fa667d', text: 'Kindergärten und -tagesstätten' },
+                    { color: '#ffbfbf', text: 'Lehrgebäude (Schulen, Hörsalgebäude, VHS etc.)' },
+                    { color: '#6c6f8e', text: 'Heime (Pflege-, Kranken-, Genesungs-, Erholungsheime etc.)' },
+                    { color: '#898944', text: 'Bereitschafts- und Kasernengebäude, JVA' },
+                    { color: '#f5f58f', text: 'Kranken-, Ärztehäuser, Kliniken' },
+                    { color: '#46555b', text: 'Handelsgebäude' },
+                    { color: '#ffadfc', text: 'Hotel, Gastronomie, Pension, Gasthaus' },
+                    { color: '#b3de69', text: 'Landwirtschaftliche Betriebsgebäude' },
+                    { color: '#133bfc', text: 'Produktionsstätten, Fabrik- und Werkstattgebäude' },
+                    { color: '#dbbb9b', text: 'Lagergebäude' },
+                    { color: '#95a984', text: 'Verkehrsgebäude' },
+                    { color: '#cd7e26', text: 'Kultur-, Veranstaltungsbauten' },
+                    { color: '#45cce3', text: 'Religiöse Versammlungsstätten' },
+                    { color: '#dfeefc', text: 'Sporteinrichtungen' },
+                    { color: '#ae4d2a', text: 'Büro- und Verwaltungsgebäude' },
+                    { color: '#5ce1e6', text: 'Ver- und Entsorgungsbauwerke' },
+                    { color: '#cccccc', text: 'Sonstige Nichtwohngebäude' },
+                ]
+            }
+        }, 
+
+        {
+            mapStyle: 'use_building_current',
+            legend: {
+                title: 'Aktuelle Gebäudehauptnutzung',
+                elements: [
+                    { color: '#252aa6', text: 'Ein- und Zweifamilienhäuser' },
+                    { color: '#7025a6', text: 'Mehrfamilienhäuser' },
+                    { color: '#ff8c00', text: 'Wohnheime' },
+                    { color: '#fa667d', text: 'Kindergärten und -tagesstätten' },
+                    { color: '#ffbfbf', text: 'Lehrgebäude (Schulen, Hörsalgebäude, VHS etc.)' },
+                    { color: '#6c6f8e', text: 'Heime (Pflege-, Kranken-, Genesungs-, Erholungsheime etc.)' },
+                    { color: '#898944', text: 'Bereitschafts- und Kasernengebäude, JVA' },
+                    { color: '#f5f58f', text: 'Kranken-, Ärztehäuser, Kliniken' },
+                    { color: '#46555b', text: 'Handelsgebäude' },
+                    { color: '#ffadfc', text: 'Hotel, Gastronomie, Pension, Gasthaus' },
+                    { color: '#b3de69', text: 'Landwirtschaftliche Betriebsgebäude' },
+                    { color: '#133bfc', text: 'Produktionsstätten, Fabrik- und Werkstattgebäude' },
+                    { color: '#dbbb9b', text: 'Lagergebäude' },
+                    { color: '#95a984', text: 'Verkehrsgebäude' },
+                    { color: '#cd7e26', text: 'Kultur-, Veranstaltungsbauten' },
+                    { color: '#45cce3', text: 'Religiöse Versammlungsstätten' },
+                    { color: '#dfeefc', text: 'Sporteinrichtungen' },
+                    { color: '#ae4d2a', text: 'Büro- und Verwaltungsgebäude' },
+                    { color: '#5ce1e6', text: 'Ver- und Entsorgungsbauwerke' },
+                    { color: '#cccccc', text: 'Sonstige Nichtwohngebäude' },
+                    { color: '#ffffff', text: 'Leerstand' },
+                ]
+            }
+        }, 
+
+
+
+
+        {
+            mapStyle: 'basement_type',
+            legend: {
+                title: 'Art der Unterkellerung',
+                elements: [
+                    { color: '#f5f58f', text: 'nicht unterkellert' },
+                    { color: '#fa667d', text: 'teilunterkellert' },
+                    { color: '#e5050d', text: 'vollunterkellert' },
+                    { color: '#7025a6', text: 'vollunterkellert + Tiefgarage' },
+                ]
+            }
+        }, 
+
+
+        {
+            mapStyle: 'basement_percentage',
+            legend: {
+                title: 'Anteil Unterkellerung (in %)',
+                disclaimer: 'bezogen auf die Grundfläche des Gebäudes',
+                elements: [
+                    { color: '#bd0026', text: '100+' },
+                    { color: '#e31a1c', text: '75-99' },
+                    { color: '#fc4e2a', text: '50-74' },
+                    { color: '#fd8d3c', text: '25-49' },
+                    { color: '#feb24c', text: '1-24' },
+                    { color: '#fed976', text: '0' },
+                ]
+            }
+        }, 
+
+
+
+
+        {
+            mapStyle: 'basement_use',
+            legend: {
+                title: 'Aktuelle Nutzung des Kellers',
+                elements: [
+                    { color: '#f5f58f', text: 'übliche Kellernutzung' },
+                    { color: '#e5050d', text: 'hochwertige Kellernutzung' },
+                    { color: '#7025a6', text: 'Garage' },
+                    { color: '#cccccc', text: 'sonstige Nutzung' },
+                    { color: '#ffffff', text: 'Leerstand' },
+                ]
+            }
+        }, 
+
+
+        {
+            mapStyle: 'ground_storey_use',
+            legend: {
+                title: 'Aktuelle Nutzung des Erdgeschosses',
+                elements: [
+                    { color: '#252aa6', text: 'Wohnen' },
+                    { color: '#ae4d2a', text: 'Büro und Verwaltung' },
+                    { color: '#6c6f8e', text: 'Praxis' },
+                    { color: '#46555b', text: 'Laden, Handel' },
+                    { color: '#cd7e26', text: 'Kultur' },
+                    { color: '#ffadfc', text: 'Gastgewerbe (Gaststätte, Pension, Hotel, Imbiss)' },
+                    { color: '#dbbb9b', text: 'Lager' },
+                    { color: '#898944', text: 'Werkstatt' },
+                    { color: '#133bfc', text: 'Produzierendes Gewerbe' },
+                    { color: '#b3de69', text: 'Landwirtschaftliche Nutzung' },
+                    { color: '#dfeefc', text: 'Sporteinrichtung (Fitness etc.)' },
+                    { color: '#45cce3', text: 'Religiöse Nutzung' },
+                    { color: '#5ce1e6', text: 'Garage' },
+                    { color: '#f5f58f', text: 'Gesundheit (Ärztehaus, Klinik, Apotheke)' },
+                    { color: '#95a984', text: 'Verkehr' },
+                    { color: '#cccccc', text: 'Sonstiges' },
+                    { color: '#ffffff', text: 'Leerstand' },
+                ]
+            }
+        }, 
+
+
+
+
+        {
+            mapStyle: 'upper_storeys_use',
+            legend: {
+                title: 'Aktuelle Nutzung 1. Etage und höher',
+                elements: [
+                    { color: '#252aa6', text: 'Wohnen' },
+                    { color: '#ae4d2a', text: 'Büro und Verwaltung' },
+                    { color: '#6c6f8e', text: 'Praxis' },
+                    { color: '#46555b', text: 'Laden, Handel' },
+                    { color: '#cd7e26', text: 'Kultur' },
+                    { color: '#ffadfc', text: 'Gastgewerbe (Gaststätte, Pension, Hotel, Imbiss)' },
+                    { color: '#dbbb9b', text: 'Lager' },
+                    { color: '#898944', text: 'Werkstatt' },
+                    { color: '#133bfc', text: 'Produzierendes Gewerbe' },
+                    { color: '#b3de69', text: 'Landwirtschaftliche Nutzung' },
+                    { color: '#dfeefc', text: 'Sporteinrichtung (Fitness etc.)' },
+                    { color: '#45cce3', text: 'Religiöse Nutzung' },
+                    { color: '#5ce1e6', text: 'Garage' },
+                    { color: '#f5f58f', text: 'Gesundheit (Ärztehaus, Klinik, Apotheke)' },
+                    { color: '#95a984', text: 'Verkehr' },
+                    { color: '#cccccc', text: 'Sonstiges' },
+                    { color: '#ffffff', text: 'Leerstand' },
+                ]
+            }
+        }, 
+
+
+
+        {
+            mapStyle: 'use_number_residential_units',
+            legend: {
+                title: 'Anzahl Wohneinheiten im Gebäude',
+                elements: [
+                    { color: '#7025a6', text: '50+' },
+                    { color: '#bd0026', text: '20-49' },
+                    { color: '#e31a1c', text: '10-19' },
+                    { color: '#fc4e2a', text: '5-9' },
+                    { color: '#fd8d3c', text: '3-4' },
+                    { color: '#feb24c', text: '2' },
+                    { color: '#fed976', text: '1' },
+                    { color: '#ffe8a9', text: '0' },
+
+                ]
+            }
+        }, 
+        
+        
+        {
+            mapStyle: 'use_number_businesses',
+            legend: {
+                title: 'Anzahl Gewerbe im Gebäude',
+                elements: [
+                    { color: '#bd0026', text: '20+' },
+                    { color: '#e31a1c', text: '10-19' },
+                    { color: '#fc4e2a', text: '5-9' },
+                    { color: '#fd8d3c', text: '3-4' },
+                    { color: '#feb24c', text: '2' },
+                    { color: '#fed976', text: '1' },
+                    { color: '#ffe8a9', text: '0' },
+                ]
+            }
+        }, 
+
+
+
+
+
+
+
+
+
+/* 
         {
             mapStyle: 'landuse',
             legend: {
@@ -329,7 +658,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#6c6f8e', text: 'Unclassified, presumed non-residential' }
                 ]
             },
-        }
+        } */
     ],
     [Category.Streetscape]: [{
         mapStyle: undefined,

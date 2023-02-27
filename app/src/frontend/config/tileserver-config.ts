@@ -8,6 +8,20 @@ export type BuildingMapTileset = 'date_year' |
     'construction_core_material' |
     'location' |
     'is_domestic' |
+    'use_building_origin' |
+    'use_building_current' |
+    'basement_type' |
+    'basement_percentage' |
+    'basement_use' |
+    'ground_storey_use' |
+    'upper_storeys_use' |
+    'use_number_residential_units' |
+    'use_number_businesses' |
+    'building_status' |
+    'last_renovation' |
+    'construction_system_type' |
+    'size_roof_shape' |
+    'building_owner' |
     'likes' |
     'typology_likes' |
     'community_local_significance_total' |
