@@ -176,7 +176,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                         copy={props.copy}
                         onChange={props.onChange}
                         step={1}
-                        min={1}
+                        min={0}
                         tooltip={dataFields.basement_percentage.tooltip}
                     />
                     <Verification
@@ -329,7 +329,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     copy={props.copy}
                     onChange={props.onChange}
                     step={1}
-                    min={1}
+                    min={0}
                     tooltip={dataFields.use_number_residential_units.tooltip}
                 />
                 <Verification
@@ -350,7 +350,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     copy={props.copy}
                     onChange={props.onChange}
                     step={1}
-                    min={1}
+                    min={0}
                     tooltip={dataFields.use_number_businesses.tooltip}
                 />
                 <Verification
