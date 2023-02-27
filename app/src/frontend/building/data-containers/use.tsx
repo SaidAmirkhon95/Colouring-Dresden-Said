@@ -33,7 +33,7 @@ const UseView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     title={dataFields.is_domestic.title}
                     slug="is_domestic"
                     value={props.building.is_domestic}
-                    options={["Wohngebäude", "Nichtwohngebäude", "gemischte Nutzung"]}
+                    options={["Wohngebäude", "gemischte Nutzung", "Nichtwohngebäude"]}
                     mode={props.mode}
                     copy={props.copy}
                     onChange={props.onChange}
