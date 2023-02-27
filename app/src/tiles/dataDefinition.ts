@@ -402,6 +402,60 @@ const LAYER_QUERIES = {
 
 
 
+
+
+
+    facade_year: `
+        SELECT
+            geometry_id,
+            facade_year
+        FROM
+            buildings
+        WHERE
+            facade_year IS NOT NULL`,
+
+    size_storeys_core: `
+        SELECT
+            geometry_id,
+            size_storeys_core
+        FROM
+            buildings
+        WHERE
+            size_storeys_core IS NOT NULL`,
+
+
+    size_storeys_attic: `
+        SELECT
+            geometry_id,
+            size_storeys_attic
+        FROM
+            buildings
+        WHERE
+            size_storeys_attic IS NOT NULL`,
+
+
+
+    size_storeys_basement: `
+        SELECT
+            geometry_id,
+            size_storeys_basement
+        FROM
+            buildings
+        WHERE
+            size_storeys_basement IS NOT NULL`,
+
+
+    size_floor_area_ground: `
+        SELECT
+            geometry_id,
+            size_floor_area_ground
+        FROM
+            buildings
+        WHERE
+            size_floor_area_ground IS NOT NULL`,
+
+
+
 };
 
 const GEOMETRY_FIELD = 'geometry_geom';
