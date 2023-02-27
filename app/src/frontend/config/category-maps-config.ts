@@ -360,7 +360,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: "#f2a2b9", text: "freistehend" },
                     { color: "#ab8fb0", text: "Doppelhaushälfte" },
                     { color: "#3891d1", text: "Häuserreihe (Ende)" },
-                    { color: "#226291", text: "Häuserreihe (innerhalb)" }
+                    { color: "#043b63", text: "Häuserreihe (innerhalb)" }
                 ]
             },
         },

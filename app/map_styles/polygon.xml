@@ -585,7 +585,7 @@
         </Rule>
         <Rule>
             <Filter>[building_attachment_form] = "Häuserreihe (innerhalb)"</Filter>
-            <PolygonSymbolizer fill="#226291" />
+            <PolygonSymbolizer fill="#043b63" />
         </Rule>
 
         <Rule>
