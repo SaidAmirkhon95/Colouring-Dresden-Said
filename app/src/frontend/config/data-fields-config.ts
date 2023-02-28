@@ -918,7 +918,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     },
     basement_percentage: {
         category: Category.LandUse,
-        title: "Anteil Unterkellerung",
+        title: "Anteil Unterkellerung (in Prozent)",
         tooltip: "Der Anteil der unterkellerten Fläche der Gebäudefläche (in Prozent)",
         example: 50
 
