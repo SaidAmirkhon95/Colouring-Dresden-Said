@@ -192,11 +192,11 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#252aa6', text: 'aktuell in Sanierung' },
                     { color: '#7025a6', text: 'aktuell im Aufbau' },
                     { color: '#45cce3', text: 'aktuell im Abriss' },
+                    { color: '#898944', text: 'bereits abgerissen' },
 
                 ]
             }
         }, 
-
 
 
         {
@@ -633,7 +633,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                 title: 'Aktuelle Nutzung des Kellers',
                 elements: [
                     { color: '#f5f58f', text: 'übliche Kellernutzung' },
-                    { color: '#e5050d', text: 'hochwertige Kellernutzung' },
+                    { color: '#e5050d', text: 'Wohnen, Arbeit, Freizeit' },
                     { color: '#7025a6', text: 'Garage' },
                     { color: '#cccccc', text: 'sonstige Nutzung' },
                     { color: '#ffffff', text: 'Leerstand' },

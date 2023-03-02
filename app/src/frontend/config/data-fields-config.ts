@@ -930,7 +930,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         example: "",
         items: [
             "übliche Kellernutzung",
-            "hochwertige Kellernutzung",
+            "Wohnen, Arbeit, Freizeit",
             "Garage",
             "sonstige Nutzung",
             "Leerstand"
@@ -1042,7 +1042,8 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
             "Neubau (nach 1990)",
             "aktuell in Sanierung",
             "aktuell im Aufbau",
-            "aktuell im Abriss"
+            "aktuell im Abriss",
+            "bereits abgerissen"
         ]
     },
 
