@@ -25,10 +25,10 @@
     width: auto;
     height: 5.25rem;
 }
-.cl-logo {
+.logo-list a .cl-logo {
     height: 4em;
 }
-.wid-logo {
+.logo-list a .wid-logo {
     /* height: 3em; */
     width: 50%;
     height: auto;
