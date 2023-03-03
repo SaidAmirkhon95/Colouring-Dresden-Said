@@ -42,34 +42,34 @@ export default class DataExtracts extends React.Component<{}, DataExtractsState>
                 <section className="main-col">
                     <h1 className="h2">Open data extracts</h1>
                     <p>
-                    Choose one of the links below to download an archive containing the open data collected on the Colouring Cities platform
+                        Die bereits erzeugten Datenextrakte der auf der Plattform "Colouring Dresden" erfassten Gebäudemerkmale sind über die unten stehenden Links herunterladbar.
                     </p>
                     <p>
-                    Colouring Cities contributions are open data, licensed under the <a href="http://opendatacommons.org/licenses/odbl/">Open Data Commons Open Database License</a> (ODbL) by Colouring Cities contributors.
+                        Die erfassten Daten von Colouring Dresden sind offene Daten und stehen unter der offenen Lizenz <a href="http://opendatacommons.org/licenses/odbl/">Open Data Commons Open Database License</a> (ODbL) durch die Colouring Dresden Mitwirkenden.
                     </p>
                     <p>
-                    You are free to copy, distribute, transmit and adapt our data, as long as you credit Colouring Cities and our contributors. If you alter or build upon our data, you may distribute the result only under the same licence.
+                        Es steht Ihnen frei, die Daten zu kopieren, zu teilen und anzupassen, solange Sie Colouring Dresden und Mitwirkende nennen. Die Daten dürfen nur unter der selben Lizenz verbreitet werden.
                     </p>
                     <p>
-                    Choose one of the links below to download an archive containing the open data collected on the Colouring Cities platform.
+                        Wählen Sie einen der unten stehenden Links aus, um die Daten herunterzuladen.
                     </p>
-                    <p>
+{/*                     <p>
                     By downloading data extracts from this site, you agree to the <Link to="/data-accuracy.html">data accuracy agreement</Link> and the <Link to="/ordnance-survey-uprn.html">Ordnance Survey terms of UPRN usage</Link>.
-                    </p>
+                    </p> */}
 
                     {
                         this.state.extracts == undefined ?
                             <p>Loading extracts...</p> :
                             (
                                 this.state.extracts.length === 0 ?
-                                    <p>No extracts available</p> :
+                                    <p>Noch keine Datenextrakte verfügbar.</p> :
                                     null
                             )
                     }
                     {
                         this.state.latestExtract != undefined ?
                             <div>
-                                <h1 className="h3">Latest extract</h1>
+                                <h1 className="h3">Letztes Extrakt</h1>
                                 <ExtractDownloadLink {...this.state.latestExtract} />
                             </div> :
                             null
@@ -77,7 +77,7 @@ export default class DataExtracts extends React.Component<{}, DataExtractsState>
                     {
                         this.state.previousExtracts && this.state.previousExtracts.length > 0 ?
                             (<div>
-                                <h1 className="h3">Older extracts</h1>
+                                <h1 className="h3">Ältere Extrakte</h1>
                                 <ul>
                                 {
                                     this.state.previousExtracts.map(e =>
@@ -99,5 +99,5 @@ export default class DataExtracts extends React.Component<{}, DataExtractsState>
 
 
 const ExtractDownloadLink: FunctionComponent<ExtractViewModel> = (props) => (
-    <p><a href={props.download_path}>Extracted on {props.extracted_on.toDateString()}</a></p>
+    <p><a href={props.download_path}>Extrahiert am {props.extracted_on.toDateString()}</a></p>
 );
