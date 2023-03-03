@@ -157,6 +157,11 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
                 text: "Impressum",
                 external: true
             },
+            {
+                to: "https://ioer.de/barrierefreiheit",
+                text: "Barrierefreiheit",
+                external: true
+            },
         ],
     ];
 }

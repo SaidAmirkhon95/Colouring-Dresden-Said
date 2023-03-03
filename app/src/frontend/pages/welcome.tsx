@@ -25,7 +25,8 @@ const Welcome = () => (
         </p>
         <p>
             Sie können individuell beginnen und Gebäudemerkmale eintragen - egal ob am heimischen Computer oder draußen an der frischen Luft. Einfach registieren und loslegen.
-            Weiterhin werden unterschiedliche Veranstaltungen wie Vorträge, Spaziergänge ("Mapathons") und ein (digitaler) monatlicher Stammtisch zum Erfahrungsaustausch angeboten: informieren Sie sich dazu auf der <a href="https://colouring.dresden.ioer.info" target="_blank">Projektwebseite</a>.
+            Weiterhin werden unterschiedliche Veranstaltungen wie Vorträge, Spaziergänge ("Mapathons") und ein (digitaler) monatlicher Stammtisch zum Erfahrungsaustausch angeboten.
+            Weitere Informationen gibt es im <a href="https://seu2.cleverreach.com/f/203678-351100/" target="_blank">Newsletter</a> oder auf der <a href="https://colouring.dresden.ioer.info" target="_blank">Projektwebseite</a>.
         </p>
         <p>
             <b>Zum Projekt:</b>
@@ -55,7 +56,7 @@ const Welcome = () => (
 
         <Link to="/view/categories"
             className="btn btn-outline-dark btn-lg btn-block">
-            Let´s colour {config.cityName}!
+            <b>Let´s colour {config.cityName}!</b>
         </Link>
         <div className="image-row">
             <img className="cl-logo" src="images/logo-cc.jpg" alt="Colouring Cities Research Programme"></img>
