@@ -68,20 +68,27 @@ const Welcome = () => (
             
         </div>
         <div className="image-row">
-            <a href="https://github.com/colouring-cities" target="_blank">
-                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Colouring Cities Research Programme"></img>
+            <a href="https://www.citizenscience-wettbewerb.de/" target="_blank">
+                <img className="cl-logo" src="images/AdP Banner Wortmarke 560x300 300dpi (3) (1).png" alt="Auf die Plätze! Citizen Science in deiner Stadt."></img>
             </a>
-            <a href="https://github.com/colouring-cities" target="_blank">
-                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Colouring Cities Research Programme"></img>
+            <a href="https://www.wissenschaft-im-dialog.de/" target="_blank">
+                <img className="cl-logo" src="images/01_LOGO_WID-rgb.png" alt="Wissenschaft im Dialog"></img>
             </a>
-            <a href="https://github.com/colouring-cities" target="_blank">
-                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Colouring Cities Research Programme"></img>
+            <a href="https://www.museumfuernaturkunde.berlin/de" target="_blank">
+                <img className="cl-logo" src="images/02_mfn_logo_STANDARD_auf_weiss-kl.png" alt="Museum für Naturkunde Berlin/ Leibniz-Institut für Evolutions- und Biodiversitätsforschung"></img>
             </a>
 
         </div>
         <div className="image-row">
-            <img src="images/logo-loughborough.png" alt="Colouring Cities collaborating organisations: Loughborough University" />
-            <img src="images/logo-newcastle.png" alt="Colouring Cities collaborating organisations: Newcastle University" />
+            <a href="https://www.buergerschaffenwissen.de/" target="_blank">
+                <img className="cl-logo" src="images/BsW_Logo-m-Claim-WEB-kl.png" alt="Bürger schaffen Wissen"></img>
+            </a>
+            <a href="https://www.bmbf.de/" target="_blank">
+                <img className="cl-logo" src="images/BMBF_gefoerdert_vom_deutsch_CMYK.png" alt="Bundesministerium für Bildung und Forschung"></img>
+            </a>
+            <a href="https://www.bmbf.de/bmbf/de/ueber-uns/wissenschaftskommunikation-und-buergerbeteiligung/buergerbeteiligung/citizen-science/buergerforschung.html" target="_blank">
+                <img className="cl-logo" src="images/BForschung_Logo_web-kl.png" alt="Bürgerforschung Wissenschaft für alle"></img>
+            </a>
         </div>
     </div>
 );
