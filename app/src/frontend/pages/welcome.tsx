@@ -12,16 +12,28 @@ const Welcome = () => (
         <Categories mode="view"/>
         <h1 className="h2">Willkommen bei Colouring {config.cityName}!</h1>
         <p>
-
-            Colouring {config.cityName} ist eine offene Wissensplattform, entwickelt um viele Merkmale zu Gebäuden in der Stadt zu erfassen und als offene Daten bereitzustellen.
-            Mit dem Ziel die Stadt nachhaltiger und resilienter zu gestalten.
-
+            Wie alt sind die Gebäude Dresdens? Aus welchen Materialien wurden sie überwiegend erbaut? Und wie gut sind sie baulich vorbereitet, um mit extremen Ereignissen wir Starkregen, Hochwasser oder Hitze umgehen zu können?
+        </p>
+        <p>
+            Um solche oder weitere Fragen beantworten zu können, soll Wissen zu den Gebäuden der Stadt {config.cityName} für unterschiedliche Gebäudemerkmale in einer offenen Wissensplattform Colouring {config.cityName} erfasst, 
+            in Karten visualisiert und als offene Daten bereitgestellt werden.
+            
+            Falls Sie Interesse an den Gebäuden der Stadt {config.cityName} haben und Ihr Wissen in einer interaktiven Karte erfassen und teilen möchten, dann sind Sie auf der Plattform Colouring {config.cityName} genau richtig!
+        </p>
+        <p>
+            <b>Wie kann ich mitmachen?</b>
+        </p>
+        <p>
+            Sie können individuell beginnen und Gebäudemerkmale eintragen - egal ob am heimischen Computer oder draußen an der frischen Luft. Einfach einen neuen Account registieren und loslegen.
+            Weiterhin werden unterschiedliche Veranstaltungen wie Vorträge, Spaziergänge ("Mapathons") oder ein (digitaler) monatlicher Stammtisch zum Erfahrungsaustausch angeboten: informieren Sie sich dazu auf der <a href="https://colouring.dresden.ioer.info" target="_blank">Projektwebseite</a>.
+        </p>
+        <p>
+            Zum Projekt:
         </p>
         <p>
             Die Plattform Colouring {config.cityName} wird im Rahmen des Citizen Science Projektes "Baukultur und klimagerechte Architektur in Dresden. Gebäudewissen kartieren, erforschen und vermitteln"
             weiterentwickelt und für das gemeinsame Erfassen der Gebäudemerkmale genutzt. 
-            Weitere Informationen sind  
-            <a href="https://colouring.dresden.ioer.info" target="_blank">hier auf der Projektwebseite</a> zu finden.
+            Weitere Informationen sind  <a href="https://colouring.dresden.ioer.info" target="_blank">hier auf der Projektwebseite</a> zu finden.
         </p>
         <p>
             Colouring {config.cityName} ist Teil des internationalen Forschungsnetzwerkes Colouring Cities Research Programme (CCRP), welches
@@ -38,7 +50,7 @@ const Welcome = () => (
         </p>
         <p>
             Schön, dass Sie zu Colouring {config.cityName} gefunden haben!
-            Und nun viel Spaß beim Entdecken, Erfassen und Erforschen des Gebäudebestandes der Stadt Dresden!
+            Und nun viel Spaß beim Entdecken, Erfassen und Erforschen des Gebäudebestandes der Stadt Dresden.
         </p>
 
         <Link to="/view/categories"
