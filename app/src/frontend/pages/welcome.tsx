@@ -59,11 +59,25 @@ const Welcome = () => (
             <b>Let´s colour {config.cityName}!</b>
         </Link>
         <div className="image-row">
-            <img className="cl-logo" src="images/logo-cc.jpg" alt="Colouring Cities Research Programme"></img>
-            <img src="images/logo-turing.jpg" alt="Alan Turing Institute"></img>
+            <a href="https://ioer.de/" target="_blank">
+                <img src="images/logo-turing.jpg" alt="Leibniz-Institut für ökologische Raumentwicklung (IÖR) e.V."></img>
+            </a>
+            <a href="https://github.com/colouring-cities" target="_blank">
+                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Colouring Cities Research Programme"></img>
+            </a>
+            
         </div>
         <div className="image-row">
-            <img src="images/supporter-logos.png" alt="Colouring Cities collaborating organisations: The Bartlett UCL, Ordnance Survey, Historic England, Greater London Authority" />
+            <a href="https://github.com/colouring-cities" target="_blank">
+                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Colouring Cities Research Programme"></img>
+            </a>
+            <a href="https://github.com/colouring-cities" target="_blank">
+                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Colouring Cities Research Programme"></img>
+            </a>
+            <a href="https://github.com/colouring-cities" target="_blank">
+                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Colouring Cities Research Programme"></img>
+            </a>
+
         </div>
         <div className="image-row">
             <img src="images/logo-loughborough.png" alt="Colouring Cities collaborating organisations: Loughborough University" />
