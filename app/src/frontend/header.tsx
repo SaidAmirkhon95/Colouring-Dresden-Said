@@ -60,11 +60,7 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
                 to: "/data-extracts.html",
                 text: "Download Daten"
             },
-            {
-                to: "https://github.com/colouring-cities/manual/wiki",
-                text: "Manual / Wiki des CCRP öffnen",
-                external: true
-            },
+
             {
                 to: config.githubURL,
                 text: "Programmcode öffnen",
@@ -105,7 +101,12 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
             }, */
             {
                 to: "https://pages.colouring.london/colouring-cities",
-                text: "Colouring Cities Research Programme",
+                text: "Colouring Cities Research Programme (CCRP)",
+                external: true
+            },
+            {
+                to: "https://github.com/colouring-cities/manual/wiki",
+                text: "Manual / Wiki des CCRP öffnen",
                 external: true
             },
         ],
