@@ -55,10 +55,15 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
         ],
         [
 
-
+            {
+                to: "https://colouring.dresden.ioer.info",
+                text: "Projektwebseite ",
+                disabled: false,
+                external: true
+            },
             {
                 to: "/data-extracts.html",
-                text: "Download Daten"
+                text: "Download der Daten"
             },
 
             {
@@ -66,12 +71,7 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
                 text: "Programmcode öffnen",
                 external: true
             },
-            {
-                to: "https://colouring.dresden.ioer.info",
-                text: "Projektwebseite ",
-                disabled: false,
-                external: true
-            },
+
 /*             {
                 to: "/showcase.html",
                 text: "Case Study Showcase",

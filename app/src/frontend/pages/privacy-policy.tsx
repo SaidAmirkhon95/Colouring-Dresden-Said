@@ -10,7 +10,7 @@ const PrivacyPolicyPage: React.SFC<any> = () => (
             <h1 className='h1'>Datenschutz & Sicherheit</ h1>
             <h2 className='h2'>Datenschutzerklärung der Colouring Dresden Plattform in Bezug auf personenbezogene Daten</h2>
             <p>
-            In dieser Datenschutzerklärung wird erläutert, wie Colouring Dresden die personenbezogenen Daten verwendet, die wir bei der Nutzung unserer Website von Ihnen erheben. Colouring Dresden ist ein Forschungsprojekt. Colouring Dresden ist für Datenschutzzwecke bei der Datenschutzbehörde des Leibniz-Instituts für ökologische Raumentwicklung registriert.
+            In dieser Datenschutzerklärung wird erläutert, wie Colouring Dresden die personenbezogenen Daten verwendet, die wir bei der Nutzung unserer Website von Ihnen erheben. Colouring Dresden ist ein Forschungsprojekt. Colouring Dresden ist für Datenschutzzwecke bei der Datenschutzbehörde des Leibniz-Instituts für ökologische Raumentwicklung e.V. registriert.
             </p>
 
             <h2 className='h2'>Welche Daten sammeln wir?</h2>
@@ -18,7 +18,7 @@ const PrivacyPolicyPage: React.SFC<any> = () => (
                 Colouring Dresden sammelt die folgenden persönlichen Daten:
             </p>
             <p>
-            Einen Benutzernamen und optional zum Zwecke eines Passwort-Resets eine E-Mail Adresse. Wir empfehlen Ihnen, nicht Ihren tatsächlichen Namen für Ihren Benutzernamen zu verwenden. Wir erheben auch Ihr Passwort, das als kryptographischer Hash gespeichert wird, der nur für Colouring Dresden gilt.
+            Einen Benutzernamen und optional zum Zwecke des Zurücksetzens des Passwort eine E-Mail Adresse. Wir empfehlen Ihnen, nicht Ihren tatsächlichen Namen für Ihren Benutzernamen zu verwenden. Wir erheben auch Ihr Passwort, das als kryptographischer Hash gespeichert wird, der nur für Colouring Dresden gilt.
             </p>
 
             <h2 className='h2'>Wie sammeln wir Ihre Daten?</h2>
@@ -36,7 +36,7 @@ const PrivacyPolicyPage: React.SFC<any> = () => (
 
             <h2 className='h2'>Was ist die Rechtsgrundlage für die Verarbeitung Ihrer Daten?</h2>
             <p>
-                Die DGSVO verlangt, dass bestimmte Bedingungen erfüllt sein müssen, bevor wir Ihre Daten auf die in dieser Erklärung beschriebene Weise verwenden dürfen, einschließlich einer "Rechtsgrundlage" für die Verarbeitung. Colouring Dresden, als Forschungsprojekt, verarbeitet Ihre personenbezogenen Daten in Verfolgung seiner berechtigten Interessen. Die Rechtsgrundlage hierfür ist <a href="https://dsgvo-gesetz.de/art-6-dsgvo/">Art. 6 Abs. 1 DSGVO</a>.
+                Die DSGVO verlangt, dass bestimmte Bedingungen erfüllt sein müssen, bevor wir Ihre Daten auf die in dieser Erklärung beschriebene Weise verwenden dürfen, einschließlich einer "Rechtsgrundlage" für die Verarbeitung. Colouring Dresden, als Forschungsprojekt, verarbeitet Ihre personenbezogenen Daten in Verfolgung seiner berechtigten Interessen. Die Rechtsgrundlage hierfür ist <a href="https://dsgvo-gesetz.de/art-6-dsgvo/">Art. 6 Abs. 1 DSGVO</a>.
             </p>
 
             <h2 className='h2'>Wie speichern wir Ihre Daten?</h2>
