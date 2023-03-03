@@ -62,7 +62,7 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
             },
             {
                 to: "https://github.com/colouring-cities/manual/wiki",
-                text: "Manual / Wiki CCRP öffnen",
+                text: "Manual / Wiki des CCRP öffnen",
                 external: true
             },
             {
@@ -98,11 +98,11 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
                 text: "Who's Involved?",
                 external: true
             }, */
-            {
+/*             {
                 to: "https://pages.colouring.london/data-ethics",
                 text: "Datenethik",
                 external: true
-            },
+            }, */
             {
                 to: "https://pages.colouring.london/colouring-cities",
                 text: "Colouring Cities Research Programme",
@@ -128,24 +128,24 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
         [
             {
                 to: "/privacy-policy.html",
-                text: "Privacy Policy"
+                text: "Datenschutz & Sicherheit"
             },
             {
                 to: "/contributor-agreement.html",
-                text: "Contributor Agreement"
+                text: "Vereinbarung zur Mitwirkung"
             },
             {
                 to: "/code-of-conduct.html",
-                text: "Code of Conduct"
+                text: "Verhaltenskodex für Mitwirkende"
             },
-            {
+/*             {
                 to: "/data-accuracy.html",
                 text: "Data Accuracy Agreement"
-            },
-            {
+            }, */
+/*             {
                 to: "/ordnance-survey-uprn.html",
                 text: "Ordnance Survey terms of UPRN usage"
-            },
+            }, */
         ],
         [
             {
