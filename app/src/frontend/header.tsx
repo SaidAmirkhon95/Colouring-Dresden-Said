@@ -152,6 +152,11 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
                 to: "/contact.html",
                 text: "Kontakt"
             },
+            {
+                to: "https://ioer.de/impressum",
+                text: "Impressum",
+                external: true
+            },
         ],
     ];
 }
