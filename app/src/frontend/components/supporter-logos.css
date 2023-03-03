@@ -29,5 +29,7 @@
     height: 4em;
 }
 .wid-logo {
-    height: 3em;
+    /* height: 3em; */
+    width: 50%;
+    height: auto;
 }
