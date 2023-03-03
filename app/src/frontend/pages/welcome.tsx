@@ -60,10 +60,10 @@ const Welcome = () => (
         </Link>
         <div className="image-row">
             <a href="https://ioer.de/" target="_blank">
-                <img src="images/logo-turing.jpg" alt="Leibniz-Institut für ökologische Raumentwicklung (IÖR) e.V."></img>
+                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Leibniz-Institut für ökologische Raumentwicklung (IÖR) e.V."></img>
             </a>
             <a href="https://github.com/colouring-cities" target="_blank">
-                <img className="cl-logo" src="images/logo-ioer-de.svg" alt="Colouring Cities Research Programme"></img>
+                <img className="cl-logo" src="images/logo-cc.jpg" alt="Colouring Cities Research Programme"></img>
             </a>
             
         </div>
