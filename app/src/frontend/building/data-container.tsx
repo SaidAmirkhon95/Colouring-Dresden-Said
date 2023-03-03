@@ -315,7 +315,7 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                     cat={this.props.cat}
                     title={this.props.title}
                 >
-                {
+{/*                 {
                     this.props.help && !copy.copying?
                         <a
                             className="icon-button help"
@@ -324,7 +324,7 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                             Info
                         </a>
                     : null
-                }
+                } */}
                 {
                     this.props.building != undefined && !this.props.inactive ?
                         <>
