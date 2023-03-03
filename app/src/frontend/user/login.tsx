@@ -31,7 +31,7 @@ export const Login: React.FC = () => {
     return (
         <article>
             <section className="main-col">
-                <h1 className="h2">Log in</h1>
+                <h1 className="h2">Anmelden</h1>
                 <InfoBox msg={msgText}>
                     <br/>Feedback, Hinweise oder Fragen bitte per E-Mail an colouringdresden@ioer.de . Oder direkt <a
                         href="https://github.com/colouring-cities/colouring-dresden/issues">
@@ -66,7 +66,7 @@ export const Login: React.FC = () => {
                     <Link to="/forgotten-password.html">Passwort vergessen?</Link>
 
                     <div className="buttons-container with-space">
-                        <input type="submit" disabled={isLoading} value="Log In" className="btn btn-primary" />
+                        <input type="submit" disabled={isLoading} value="Anmelden" className="btn btn-primary" />
                         {isLoading && <span><SpinnerIcon />Logging in...</span>}
                     </div>
 

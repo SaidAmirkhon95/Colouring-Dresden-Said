@@ -33,7 +33,7 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
                     [
                         {
                             to: "/login.html",
-                            text: "Log in"
+                            text: "Anmelden"
                         },
                         {
                             to: "/sign-up.html",

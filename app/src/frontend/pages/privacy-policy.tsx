@@ -7,125 +7,131 @@ let config: CCConfig = require('../../cc-config.json')
 const PrivacyPolicyPage: React.SFC<any> = () => (
     <article>
         <section className='main-col'>
-            <h1 className='h1'>Privacy Policy & Platform Security</ h1>
-            <h2 className='h2'>Colouring {config.cityName} Privacy Policy with respect to personal data</h2>
+            <h1 className='h1'>Datenschutz & Sicherheit</ h1>
+            <h2 className='h2'>Datenschutzerklärung der Colouring Dresden Plattform in Bezug auf personenbezogene Daten</h2>
             <p>
-                This privacy policy explains how Colouring {config.cityName} uses the personal data we collect from you when you use our website. Colouring {config.cityName} is a research project initially developed by the Bartlett Centre for Advanced Spatial Analysis (CASA) at UCL, and now run at The Alan Turing Institute. Colouring {config.cityName} is registered for data protection purposes with The Alan Turing Institute data protection office.
+            In dieser Datenschutzerklärung wird erläutert, wie Colouring Dresden die personenbezogenen Daten verwendet, die wir bei der Nutzung unserer Website von Ihnen erheben. Colouring Dresden ist ein Forschungsprojekt. Colouring Dresden ist für Datenschutzzwecke bei der Datenschutzbehörde des Leibniz-Instituts für ökologische Raumentwicklung registriert.
             </p>
 
-            <h2 className='h2'>What data do we collect?</h2>
+            <h2 className='h2'>Welche Daten sammeln wir?</h2>
             <p>
-                Colouring {config.cityName} collects the following personal data:
+                Colouring Dresden sammelt die folgenden persönlichen Daten:
             </p>
             <p>
-                A username and email address. We recommend you do not use your actual name for your username. We also collect your password, which is stored as a cryptographic hash unique to Colouring {config.cityName}.
-            </p>
-
-            <h2 className='h2'>How do we collect your data?</h2>
-            <p>
-                You provide Colouring {config.cityName} with a minimal amount of personal data when you register with the website and accepts the terms and conditions including this privacy policy.
+            Einen Benutzernamen und optional zum Zwecke eines Passwort-Resets eine E-Mail Adresse. Wir empfehlen Ihnen, nicht Ihren tatsächlichen Namen für Ihren Benutzernamen zu verwenden. Wir erheben auch Ihr Passwort, das als kryptographischer Hash gespeichert wird, der nur für Colouring Dresden gilt.
             </p>
 
-            <h2 className='h2'>What purposes do we use your data?</h2>
+            <h2 className='h2'>Wie sammeln wir Ihre Daten?</h2>
             <p>
-                Colouring {config.cityName} uses your personal data to enable you to login to access and contribute to the Colouring {config.cityName} project and to provide a personalised user experience when you are logged in. We will not share your personal data (such as your email address) with any other parties or use your personal data for any purposes other than the Colouring {config.cityName} project.
-            </p>
-            <p>
-                If you request a password reset, an automated email will be sent using <a href="https://www.mailgun.com/">Mailgun</a>, who process the email in order to deliver it to your email address. Mailgun retain personal data they process on behalf of Colouring {config.cityName} for as long as is needed to provide email services. Mailgun will retain the personal information as necessary to comply with their legal obligations, resolve disputes, and enforce their agreements.
+                Wenn Sie sich auf der Website registrieren und die Nutzungsbedingungen einschließlich dieser Datenschutzrichtlinie akzeptieren, stellen Sie Colouring Dresden die oben genannten persönlichen Daten zur Verfügung.
             </p>
 
-            <h2 className='h2'>What is the legal basis for processing your data?</h2>
+            <h2 className='h2'>Für welche Zwecke verwenden wir Ihre Daten?</h2>
             <p>
-                Data protection laws require us to meet certain conditions before we are allowed to use your data in the manner described in this notice, including having a ‘legal basis’ for the processing. Colouring {config.cityName}, as a research project, is processing your personal data in pursuance of its legitimate interests.
+                Colouring Dresden verwendet Ihre persönlichen Daten, um Ihnen den Zugang zum Colouring Dresden Projekt zu ermöglichen und um Ihnen eine personalisierte Benutzererfahrung zu bieten, wenn Sie eingeloggt sind. Wir werden Ihre persönlichen Daten (wie z.B. Ihre E-Mail-Adresse) nicht an Dritte weitergeben oder für andere Zwecke als das Colouring Dresden Projekt verwenden.
+            </p>
+            <p>
+                Wenn Sie eine Passwort-Rücksetzung beantragen, wird eine automatisierte E-Mail mit Hilfe von  <a href="https://www.cleverreach.com/de-de/">CleverReach</a>verschickt, die die E-Mail verarbeitet, um sie an Ihre E-Mail-Adresse zu senden. CleverReach speichert personenbezogene Daten, die sie im Auftrag von Colouring Dresden verarbeiten, so lange, wie es für die Bereitstellung der E-Mail-Dienste erforderlich ist. CleverReach bewahrt die personenbezogenen Daten so lange auf, wie es für die Erfüllung ihrer rechtlichen Verpflichtungen, die Beilegung von Streitigkeiten und die Durchsetzung ihrer Vereinbarungen erforderlich ist.
             </p>
 
-            <h2 className='h2'>How do we store your data?</h2>
+            <h2 className='h2'>Was ist die Rechtsgrundlage für die Verarbeitung Ihrer Daten?</h2>
             <p>
-                {config.privacyStatement}
+                Die DGSVO verlangt, dass bestimmte Bedingungen erfüllt sein müssen, bevor wir Ihre Daten auf die in dieser Erklärung beschriebene Weise verwenden dürfen, einschließlich einer "Rechtsgrundlage" für die Verarbeitung. Colouring Dresden, als Forschungsprojekt, verarbeitet Ihre personenbezogenen Daten in Verfolgung seiner berechtigten Interessen. Die Rechtsgrundlage hierfür ist <a href="https://dsgvo-gesetz.de/art-6-dsgvo/">Art. 6 Abs. 1 DSGVO</a>.
             </p>
 
-            <h2 className='h2'>How do we use cookies?</h2>
+            <h2 className='h2'>Wie speichern wir Ihre Daten?</h2>
             <p>
-                Colouring {config.cityName} only uses cookies to improve the user experience of users of the website, for example we use cookies to keep you signed in. We do not use cookies for marketing or advertising purposes.
+                Colouring Dresden speichert alle Daten auf einem Server in Deutschland.
             </p>
 
-            <h2 className='h2'>What are your data protection rights?</h2>
+            <h2 className='h2'>Wie verwenden wir Cookies?</h2>
             <p>
-                Under the General Data Protection Regulation, you have certain individual rights in relation to the personal information we hold about you. For the purposes of research where such individual rights would seriously impair research outcomes, such rights are limited. However, subject to certain conditions, you have the following rights in relation to your personal data:
+                Colouring Dresden verwendet Cookies nur, um die Benutzerfreundlichkeit der Website zu verbessern, z.B. verwenden wir Cookies, um Sie angemeldet zu halten. Wir verwenden keine Cookies für Marketing- oder Werbezwecke.
+            </p>
+
+            <h2 className='h2'>Welche Rechte haben Sie in Bezug auf den Datenschutz?</h2>
+            <p>
+                Gemäß der gesetzlichen Vorgaben zum Datenschutz haben Sie bestimmte individuelle Rechte in Bezug auf die von uns gespeicherten personenbezogenen Daten. Für Forschungszwecke, bei denen solche individuellen Rechte die Forschungsergebnisse ernsthaft beeinträchtigen würden, sind diese Rechte eingeschränkt. Unter bestimmten Bedingungen haben Sie jedoch die folgenden Rechte in Bezug auf Ihre personenbezogenen Daten:
             </p>
 
             <ul>
                 <li>
-                    A right to access personal data held by us about you.
+                    Ein Recht auf Zugang zu den von uns über Sie gespeicherten personenbezogenen Daten.
                 </ li>
 
                 <li>
-                    A right to require us to rectify any inaccurate personal data held by us about you.
+                    Das Recht, von uns die Berichtigung unrichtiger personenbezogener Daten zu verlangen, die wir über Sie gespeichert haben
                 </ li>
 
                 <li>
-                    A right to require us to erase personal data held by us about you. This right will only apply where, for example, we no longer need to use the personal data to achieve the purpose we collected it for.
+                    Das Recht, von uns zu verlangen, dass wir die über Sie gespeicherten personenbezogenen Daten löschen. Dieses Recht gilt nur, wenn wir die personenbezogenen Daten nicht mehr benötigen, um den Zweck zu erfüllen, für den wir sie erhoben haben.
                 </ li>
 
                 <li>
-                    A right to restrict our processing of personal data held by us about you. This right will only apply where, for example, you dispute the accuracy of the personal data held by us; or where you would have the right to require us to erase the personal data but would prefer that our processing is restricted instead; or where we no longer need to use the personal data to achieve the purpose we collected it for, but we require the data for the purposes of dealing with legal claims.
+                    Ein Recht auf Einschränkung der Verarbeitung der von uns über Sie gespeicherten personenbezogenen Daten. Dieses Recht gilt nur, wenn Sie z. B. die Richtigkeit der von uns gespeicherten personenbezogenen Daten bestreiten oder wenn Sie das Recht hätten, von uns die Löschung der personenbezogenen Daten zu verlangen, stattdessen aber eine Einschränkung der Verarbeitung wünschen, oder wenn wir die personenbezogenen Daten nicht mehr zur Erfüllung des Zwecks, für den wir sie erhoben haben, verwenden müssen, die Daten aber für die Bearbeitung von Rechtsansprüchen benötigen.
                 </ li>
 
                 <li>
-                    A right to receive personal data, which you have provided to us, in a structured, commonly used and machine-readable format. You also have the right to require us to transfer this personal data to another organisation.
+                    Sie haben das Recht, personenbezogene Daten, die Sie uns zur Verfügung gestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten. Sie haben auch das Recht, von uns zu verlangen, dass diese personenbezogenen Daten an eine andere Organisation übermittelt werden.
                 </ li>
 
                 <li>
-                    A right to object to our processing of personal data held by us about you.
+                    Sie haben das Recht, gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten durch uns Widerspruch einzulegen.
                 </ li>
 
                 <li>
-                    A right to withdraw your consent, where we are relying on it to use your personal data.
+                    Sie haben das Recht, Ihre Zustimmung zu widerrufen, wenn wir uns auf diese Zustimmung zur Verwendung Ihrer personenbezogenen Daten stützen.
                 </ li>
 
                 <li>
-                    A right to ask us not to use information about you in a way that allows computers to make decisions about you and ask us to stop.
+                    Das Recht, von uns zu verlangen, dass wir Informationen über Sie nicht in einer Weise verwenden, die es Computern ermöglicht, Entscheidungen über Sie zu treffen, und uns zu bitten, damit aufzuhören.
                 </ li>
 
             </ul>
 
             <p>
-                It is important to understand that the extent to which these rights apply to research will vary and that in some circumstances your rights may be restricted. If you notify us (using the contact details set out below) that you wish to exercise any of the above rights and it is considered necessary to refuse to comply with any of your individual rights, you will be informed of the decision within one month and you also have the right to complain about our decision to the Information Commissioner’s Office.
+                Es ist wichtig zu verstehen, dass das Ausmaß, in dem diese Rechte für die Forschung gelten, unterschiedlich ist und dass Ihre Rechte unter bestimmten Umständen eingeschränkt sein können. Wenn Sie uns (über die unten angegebenen Kontaktdaten) mitteilen, dass Sie eines der oben genannten Rechte ausüben möchten, und es für notwendig erachtet wird, die Einhaltung eines Ihrer individuellen Rechte zu verweigern, werden Sie innerhalb eines Monats über die Entscheidung informiert und haben außerdem das Recht, sich bei der zuständigen Datenschutz-Aufsichtsbehörde über unsere Entscheidung zu beschweren.
             </p>
 
             <p>
-                Please also note that we can only comply with a request to exercise your rights during the period for which we hold personal information about you. If that information has been irreversibly anonymised and has become part of the research data set, it will no longer be possible for us to access your personal information.
+                Bitte beachten Sie auch, dass wir einem Antrag auf Ausübung Ihrer Rechte nur während des Zeitraums nachkommen können, in dem wir personenbezogene Daten über Sie gespeichert haben. Wenn diese Informationen unwiderruflich anonymisiert wurden und Teil des Forschungsdatensatzes geworden sind, ist es uns nicht mehr möglich, auf Ihre persönlichen Daten zuzugreifen.
             </p>
 
-            <h2 className='h2'>Changes to this privacy policy</h2>
+            <h2 className='h2'>Wo finde ich Änderungen zu dieser Datenschutzerklärung?</h2>
             <p>
-                Changes to this privacy policy will be notified via the Colouring {config.cityName} website. This privacy policy was last updated on 4th November 2021. Previous update 2nd October 2019 following change ownership from UCL to The Alan Turing Institute.
+                Änderungen an dieser Datenschutzerklärung werden auf der Website von Colouring Dresden (https://colouring.dresden.ioer.info) bekannt gegeben. Diese Datenschutzrichtlinie wurde zuletzt am 02. März 2023 aktualisiert. 
             </p>
 
-            <h2 className='h2'>Who do I contact with questions?</h2>
+            <h2 className='h2'>An wen kann ich mich mit Fragen wenden?</h2>
             <p>
-                If you wish to complain about our use of your personal data or exercise any of your rights, please contact the Turing's Data Protection Officer: <a href="dataprotection@turing.ac.uk">dataprotection@turing.ac.uk</a> or Data Protection Officer, The Alan Turing Institute, 96 Euston Road, London NW1 2DB.
-            </p>
-
-            <p>
-                If we are unable to adequately address any concerns you may have about the way in which we use your data, you have the right to lodge a formal complaint with the UK Information Commissioner's Office. Full details may be accessed on the complaints section of the Information Commissioner's Office website.
-            </p>
-
-            <h2 className='h2'>Further information on privacy and security</h2>
-            <p>
-                Please note when you make a contribution to Colouring {config.cityName}, you are creating a permanent, public record of all data added, removed, or changed by you. The database records the username and ID of the user making the edit, along with the time and date of the change. All of this information is also made publicly available through the website and through bulk downloads of the edit history. User names of contributors providing the highest number of edits are also included in our Leaderboards.
+                Mit Fragen und Anregungen zu Inhalt und technischer Umsetzung der Plattform Colouring Dresden wenden Sie sich bitte an das Projektteam unter colouringdresden@ioer.de oder direkt an Hr. Robert Hecht, 0351/4679248, E-Mail: R.Hecht@ioer.de
             </p>
 
             <p>
-                Please also note that when you contribute to Colouring {config.cityName}, you make your contributions available as open data for anyone to copy, distribute, transmit and adapt in line with the licence, and to use as they see fit. Though we rigorously assess each data type, to help protect building occupiers' privacy and security we welcome any ideas for improvements.
+                Verantwortliche Stelle im Sinne der europäischen Datenschutz-Grundverordnung für unsere Datenverarbeitung ist das Leibniz-Institut für ökologische Raumentwicklung e.V. (IÖR), Weberplatz 1, 01217 Dresden, Tel. 0351/46790, Fax 0351/4679212, E-Mail: info@ioer.de, Website: www.ioer.de; Direktor: Univ.-Prof. Dr. Marc Wolfram.
+            </p>
+            <p>
+                Mit Fragen zum Datenschutz und der Wahrnehmung sämtlicher Rechte diesbezüglich, wenden Sie sich bitte an die Datenschutzbeauftragten des IÖR: DID Dresdner Institut für Datenschutz, Herr Prof. Dr. Ralph Wagner, Hospitalstr. 4, 01097 Dresden, 0351/6557220, r.wagner@dids.de oder  an den Datenschutzkoordinator des IÖR, Jörg Hennersdorf, datenschutz@ioer.de.
+            </p>
+            <p>
+                Sollten wir nicht in der Lage sein, Ihre Bedenken bezüglich der Art und Weise, wie wir Ihre Daten verwenden, angemessen zu berücksichtigen, haben Sie gemäß Art. 77 DSGVO das Recht, eine formelle Beschwerde bei der zuständigen Datenschutz-Aufsichtsbehörde einzureichen. Ausführliche Informationen finden Sie auf der Website https://www.saechsdsb.de/.
+            </p>
+
+            <h2 className='h2'>Weitere Informationen zum Datenschutz und zur Sicherheit</h2>
+            <p>
+                Bitte beachten Sie, dass Sie, wenn Sie einen Beitrag zu Colouring Dresden leisten, eine permanente, öffentliche Aufzeichnung aller von Ihnen hinzugefügten, entfernten oder geänderten Daten erstellen. Die Datenbank speichert den Benutzernamen und die ID des Benutzers, der die Änderung vornimmt, sowie die Uhrzeit und das Datum der Änderung. Alle diese Informationen werden auch über die Website und durch Massen-Downloads der Bearbeitungshistorie öffentlich zugänglich gemacht. Die Benutzernamen derjenigen, die die meisten Änderungen vorgenommen haben, werden auch in unsere Ranglisten aufgenommen.
             </p>
 
             <p>
-                Progress on Colouring {config.cityName} features specifically designed to address ethical issues, including these relating to security and privacy, can be tracked and commented on using our GitHub site, at <a href="https://github.com/colouring-cities/colouring-london/issues/687">#687</a>. If you have any immediate concerns regarding security or privacy please contact Turing's data protection team at <a href="dataprotection@turing.ac.uk">dataprotection@turing.ac.uk</a>.
+                Bitte beachten Sie auch, dass Sie, wenn Sie zu Colouring Dresden beitragen, Ihre Beiträge als offene Daten zur Verfügung stellen, die von jedermann kopiert, verbreitet, übertragen und entsprechend der Lizenz angepasst und nach eigenem Ermessen genutzt werden können. Obwohl wir jeden Datentyp sorgfältig prüfen, sind wir für Verbesserungsvorschläge dankbar, um die Privatsphäre und Sicherheit der Gebäudenutzer zu schützen.
+            </p>
+
+            <p>
+                Die Fortschritte bei den Colouring Dresden-Funktionen, die speziell auf ethische Fragen, einschließlich der Sicherheit und des Datenschutzes, abzielen, können auf unserer GitHub-Seite <a href="https://github.com/colouring-cities/colouring-core/issues/687">#687</a> verfolgt und kommentiert werden. 
             </p>
 
             <div className="buttons-container">
-                <Link to="sign-up.html" className="btn btn-outline-dark">Back to sign up</Link>
+                <Link to="sign-up.html" className="btn btn-outline-dark">Zurück zur Registrierung</Link>
             </div>
         </section>
     </article>
