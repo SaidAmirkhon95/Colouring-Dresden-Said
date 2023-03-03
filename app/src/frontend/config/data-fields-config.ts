@@ -1107,7 +1107,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
             "öffentl. Eigentümer - Bundesland",
             "öffentl. Eigentümer - Kommune/ Stadt",
             "öffentl. Eigentümer - kommunale Wohnungsgesellschaft",
-            "öffentl. Eigentümer - städtische Betrieb/ Gesellschaften",
+            "öffentl. Eigentümer - städtische(r) Betrieb/ Gesellschaften",
             "Wohnungsgenossenschaften",
             "private Haushalte (natürliche Personen, Personengemeinschaften)",
             "private Wohnungsunternehmen",

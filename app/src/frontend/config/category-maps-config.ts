@@ -504,7 +504,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#6c6f8e', text: 'öffentl. Eigentümer - Bundesland' },
                     { color: '#46555b', text: 'öffentl. Eigentümer - Kommune/ Stadt' },
                     { color: '#cd7e26', text: 'öffentl. Eigentümer - kommunale Wohnungsgesellschaft' },
-                    { color: '#ffadfc', text: 'öffentl. Eigentümer - städtische Betrieb/ Gesellschaften' },
+                    { color: '#ffadfc', text: 'öffentl. Eigentümer - städtische(r) Betrieb/ Gesellschaften' },
                     { color: '#dbbb9b', text: 'Wohnungsgenossenschaften' },
                     { color: '#898944', text: 'private Wohnungsunternehmen' },
                     { color: '#133bfc', text: 'sonstige private Unternehmen (ohne Wohnungsunternehmen)' },

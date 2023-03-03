@@ -1737,7 +1737,7 @@
             <PolygonSymbolizer fill="#cd7e26" />
         </Rule>
         <Rule>
-            <Filter>[building_owner] = "öffentl. Eigentümer - städtische Betrieb/ Gesellschaften"</Filter>
+            <Filter>[building_owner] = "öffentl. Eigentümer - städtische(r) Betrieb/ Gesellschaften"</Filter>
             <PolygonSymbolizer fill="#ffadfc" />
         </Rule>
         <Rule>
