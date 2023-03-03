@@ -23,7 +23,7 @@ const SupporterLogos = () => (
             </li>
             <li>
                 <a href="https://www.wissenschaft-im-dialog.de/" target="_blank">
-                    <img className="cl-logo" src="images/01_LOGO_WID-rgb.png" alt="Wissenschaft im Dialog"></img>
+                    <img className="wid-logo" src="images/01_LOGO_WID-rgb.png" alt="Wissenschaft im Dialog"></img>
                 </a>
             </li>
             <li>
