@@ -88,7 +88,7 @@ const CodeOfConductPage = () => (
         </p>
 
         <p>
-            <b>Folge:</b>Eine private, schriftliche Verwarnung der Gemeinschaftsleitung, die Klarheit über die Art des Verstoßes und eine Erklärung dafür bietet, warum das Verhalten unangemessen war. Eine öffentliche Entschuldigung kann verlangt werden.
+            <b>Folge:</b> Eine private, schriftliche Verwarnung der Gemeinschaftsleitung, die Klarheit über die Art des Verstoßes und eine Erklärung dafür bietet, warum das Verhalten unangemessen war. Eine öffentliche Entschuldigung kann verlangt werden.
         </p>
 
 

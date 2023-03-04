@@ -106,7 +106,7 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
             },
             {
                 to: "https://github.com/colouring-cities/manual/wiki",
-                text: "Manual / Wiki des CCRP öffnen",
+                text: "Manual / Wiki des CCRP",
                 external: true
             },
         ],
@@ -139,10 +139,10 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
                 to: "/code-of-conduct.html",
                 text: "Verhaltenskodex für Mitwirkende"
             },
-/*             {
+            {
                 to: "/data-accuracy.html",
-                text: "Data Accuracy Agreement"
-            }, */
+                text: "Haftungsausschluss"
+            },
 /*             {
                 to: "/ordnance-survey-uprn.html",
                 text: "Ordnance Survey terms of UPRN usage"

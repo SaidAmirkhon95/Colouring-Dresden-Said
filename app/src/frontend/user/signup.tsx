@@ -100,7 +100,8 @@ export const SignUp: React.FC = () => {
                         <label className="form-check-label" htmlFor="confirm_conditions">
                             Hiermit bestätige ich, dass ich die  <Link
                                 to="/privacy-policy.html">Datenschutzerklärung</Link>, die <Link
-                                to="/contributor-agreement.html">Vereinbarung zur Mitwirkung</Link> und den  <Link
+                                to="/contributor-agreement.html">Vereinbarung zur Mitwirkung</Link>, den <Link
+                                to="/data-accuracy.tsx">Haftungsausschluss</Link> und den  <Link
                                 to="/code-of-conduct.html">Verhaltenskodex zur Mitwirkung</Link> gelesen und verstanden habe und stimme diesen zu.
                         </label>
                     </div>
