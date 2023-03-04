@@ -56,10 +56,11 @@ export const MyAccountPage: React.FC = () => {
                         <a href={issuesURL}>direkt hier</a>.
                     </p>
                     <p>
-                        For reference, here are the{' '}
-                        <Link to="/privacy-policy.html">privacy policy</Link>,{' '}
-                        <Link to="/contributor-agreement.html">contributor agreement</Link> and{' '}
-                        <Link to="/data-accuracy.html">data accuracy agreement</Link>.
+                        Zum Nachlesen finden Sie hier die {' '}
+                        <Link to="/privacy-policy.html">Datenschutzerklärung</Link>, die {' '}
+                        <Link to="/contributor-agreement.html">Vereinbarung zur Mitwirkung</Link> und den {' '}
+                        <Link to="/code-of-conduct.html">Verhaltenskodex für Mitwirkende</Link>.
+                        {/* later add data accuracy agreement here... in German  */}
                     </p>
                     <ErrorBox msg={error} />
                     <form onSubmit={handleLogout}>

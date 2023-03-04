@@ -98,10 +98,10 @@ export const SignUp: React.FC = () => {
                             onChange={e => setConfirmConditions(e.target.checked)}
                             required />
                         <label className="form-check-label" htmlFor="confirm_conditions">
-                            I confirm that I have read and agree to the <Link
-                                to="/privacy-policy.html">privacy policy</Link>, <Link
-                                to="/contributor-agreement.html">contributor agreement</Link> and <Link
-                                to="/data-accuracy.html">data accuracy agreement</Link>.
+                            Hiermit bestätige ich, dass ich die  <Link
+                                to="/privacy-policy.html">Datenschutzerklärung</Link>, die <Link
+                                to="/contributor-agreement.html">Vereinbarung zur Mitwirkung</Link> und den  <Link
+                                to="/code-of-conduct.html">Verhaltenskodex zur Mitwirkung</Link> gelesen und verstanden habe und stimme diesen zu.
                         </label>
                     </div>
 
