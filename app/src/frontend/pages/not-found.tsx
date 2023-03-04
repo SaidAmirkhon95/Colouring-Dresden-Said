@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 export const NotFound: React.FC = () => (
     <article>
         <section className="main-col">
-            <h1 className="h1">Page not found</h1>
+            <h1 className="h1">Seite nicht gefunden</h1>
             <p className="lead">
 
-            We can&rsquo;t find that one anywhere.
+            Die Seite konnte nicht gefunden werden.
 
             </p>
-            <Link className="btn btn-outline-dark" to="/">Back home</Link>
+            <Link className="btn btn-outline-dark" to="/">Zurück zur Startseite</Link>
         </section>
     </article>
 );
