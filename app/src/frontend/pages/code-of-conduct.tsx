@@ -8,7 +8,7 @@ const CodeOfConductPage = () => (
         <h1 className="h2">Verhaltenskodex für Mitwirkende</h1>
 
         <p>
-        Dieser Verhaltenskodex entspricht dem Verhaltenskodex für Mitwirkende, Version 2.0, verfügbar unter <a href="https://www.contributor-covenant.org/de/version/2/0/code_of_conduct/">
+        Dieser Verhaltenskodex entspricht dem Verhaltenskodex für Mitwirkende, Version 2.0, verfügbar unter <a href="https://www.contributor-covenant.org/de/version/2/0/code_of_conduct/" target="_blank">
         https://www.contributor-covenant.org/de/version/2/0/code_of_conduct/</a>
         </p>
 
@@ -134,18 +134,18 @@ const CodeOfConductPage = () => (
 
         <p>
         Dieser Verhaltenskodex basiert auf dem Contributor Covenant, Version 2.0, verfügbar unter <a
-        href="https://www.contributor-covenant.org/de/version/2/0/code_of_conduct">https://www.contributor-covenant.org/de/version/2/0/code_of_conduct</a>
+        href="https://www.contributor-covenant.org/de/version/2/0/code_of_conduct" target="_blank">https://www.contributor-covenant.org/de/version/2/0/code_of_conduct</a>
         </p>
 
         <p>
         Community Impact Guidelines wurden von <a
-        href="https://github.com/mozilla/inclusion">Mozillas Code of Conduct Enforcement Ladder</a> inspiriert.
+        href="https://github.com/mozilla/inclusion" target="_blank">Mozillas Code of Conduct Enforcement Ladder</a> inspiriert.
         </p>
 
         <p>
         Antworten auf häufig gestellte Fragen zu diesem Verhaltenskodex finden Sie in den häufig gestellten Fragen unter <a
-        href="https://www.contributor-covenant.org/faq">https://www.contributor-covenant.org/faq</a> (in Englisch). Andere Übersetzungen sind verfügbar unter <a
-        href="https://www.contributor-covenant.org/translations">https://www.contributor-covenant.org/translations</a>.
+        href="https://www.contributor-covenant.org/faq" target="_blank">https://www.contributor-covenant.org/faq</a> (in Englisch). Andere Übersetzungen sind verfügbar unter <a
+        href="https://www.contributor-covenant.org/translations" target="_blank">https://www.contributor-covenant.org/translations</a>.
         </p>
 
     </section>

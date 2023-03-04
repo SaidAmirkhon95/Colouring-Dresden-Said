@@ -11,19 +11,19 @@ const ContactPage = () => (
                 Kontakt
             </h1>
             <p>
-                <b>Projektwebseite "Colouring Dresden": </b> <a href="https://colouring.dresden.ioer.info">https://colouring.dresden.ioer.info</a>
+                <b>Projektwebseite "Colouring Dresden": </b> <a href="https://colouring.dresden.ioer.info" target="_blank">https://colouring.dresden.ioer.info</a>
             </p>
             <p>
                 <b>E-Mail: </b> colouringdresden@ioer.de
             </p>
             <p>
-                <b>Newsletter: </b> <a href="https://seu2.cleverreach.com/f/203678-351100/">hier zur Anmeldung zum Newsletter</a>
+                <b>Newsletter: </b> <a href="https://seu2.cleverreach.com/f/203678-351100/" target="_blank">hier zur Anmeldung zum Newsletter</a>
             </p>
             <p>
-                <b>Twitter: </b> <a href="https://twitter.com/colouringdd">https://twitter.com/colouringdd</a>
+                <b>Twitter: </b> <a href="https://twitter.com/colouringdd" target="_blank">https://twitter.com/colouringdd</a>
             </p>
             <p>
-                <b>Instagram: </b> <a href="https://www.instagram.com/colouringdd/">https://www.instagram.com/colouringdd/</a>
+                <b>Instagram: </b> <a href="https://www.instagram.com/colouringdd/" target="_blank">https://www.instagram.com/colouringdd/</a>
             </p>
 
         </section>

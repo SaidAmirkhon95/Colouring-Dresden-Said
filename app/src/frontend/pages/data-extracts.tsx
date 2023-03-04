@@ -45,7 +45,7 @@ export default class DataExtracts extends React.Component<{}, DataExtractsState>
                         Die bereits erzeugten Datenextrakte der auf der Plattform "Colouring Dresden" erfassten Gebäudemerkmale sind über die unten stehenden Links herunterladbar.
                     </p>
                     <p>
-                        Die erfassten Daten von Colouring Dresden sind offene Daten und stehen unter der offenen Lizenz <a href="http://opendatacommons.org/licenses/odbl/">Open Data Commons Open Database License</a> (ODbL) durch die Colouring Dresden Mitwirkenden.
+                        Die erfassten Daten von Colouring Dresden sind offene Daten und stehen unter der offenen Lizenz <a href="http://opendatacommons.org/licenses/odbl/" target="_blank">Open Data Commons Open Database License</a> (ODbL) durch die Colouring Dresden Mitwirkenden.
                     </p>
                     <p>
                         Es steht Ihnen frei, die Daten zu kopieren, zu teilen und anzupassen, solange Sie Colouring Dresden und Mitwirkende nennen. Die Daten dürfen nur unter der selben Lizenz verbreitet werden.

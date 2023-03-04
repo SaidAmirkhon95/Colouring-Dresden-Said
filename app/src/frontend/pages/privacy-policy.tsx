@@ -31,12 +31,12 @@ const PrivacyPolicyPage: React.SFC<any> = () => (
                 Colouring Dresden verwendet Ihre persönlichen Daten, um Ihnen den Zugang zum Colouring Dresden Projekt zu ermöglichen und um Ihnen eine personalisierte Benutzererfahrung zu bieten, wenn Sie eingeloggt sind. Wir werden Ihre persönlichen Daten (wie z.B. Ihre E-Mail-Adresse) nicht an Dritte weitergeben oder für andere Zwecke als das Colouring Dresden Projekt verwenden.
             </p>
             <p>
-                Wenn Sie eine Passwort-Rücksetzung beantragen, wird eine automatisierte E-Mail mit Hilfe von  <a href="https://www.cleverreach.com/de-de/">CleverReach</a> verschickt, die die E-Mail verarbeitet, um sie an Ihre E-Mail-Adresse zu senden. CleverReach speichert personenbezogene Daten, die sie im Auftrag von Colouring Dresden verarbeiten, so lange, wie es für die Bereitstellung der E-Mail-Dienste erforderlich ist. CleverReach bewahrt die personenbezogenen Daten so lange auf, wie es für die Erfüllung ihrer rechtlichen Verpflichtungen, die Beilegung von Streitigkeiten und die Durchsetzung ihrer Vereinbarungen erforderlich ist.
+                Wenn Sie eine Passwort-Rücksetzung beantragen, wird eine automatisierte E-Mail mit Hilfe von  <a href="https://www.cleverreach.com/de-de/" target="_blank">CleverReach</a> verschickt, die die E-Mail verarbeitet, um sie an Ihre E-Mail-Adresse zu senden. CleverReach speichert personenbezogene Daten, die sie im Auftrag von Colouring Dresden verarbeiten, so lange, wie es für die Bereitstellung der E-Mail-Dienste erforderlich ist. CleverReach bewahrt die personenbezogenen Daten so lange auf, wie es für die Erfüllung ihrer rechtlichen Verpflichtungen, die Beilegung von Streitigkeiten und die Durchsetzung ihrer Vereinbarungen erforderlich ist.
             </p>
 
             <h2 className='h2'>Was ist die Rechtsgrundlage für die Verarbeitung Ihrer Daten?</h2>
             <p>
-                Die DSGVO verlangt, dass bestimmte Bedingungen erfüllt sein müssen, bevor wir Ihre Daten auf die in dieser Erklärung beschriebene Weise verwenden dürfen, einschließlich einer "Rechtsgrundlage" für die Verarbeitung. Colouring Dresden, als Forschungsprojekt, verarbeitet Ihre personenbezogenen Daten in Verfolgung seiner berechtigten Interessen. Die Rechtsgrundlage hierfür ist <a href="https://dsgvo-gesetz.de/art-6-dsgvo/">Art. 6 Abs. 1 DSGVO</a>.
+                Die DSGVO verlangt, dass bestimmte Bedingungen erfüllt sein müssen, bevor wir Ihre Daten auf die in dieser Erklärung beschriebene Weise verwenden dürfen, einschließlich einer "Rechtsgrundlage" für die Verarbeitung. Colouring Dresden, als Forschungsprojekt, verarbeitet Ihre personenbezogenen Daten in Verfolgung seiner berechtigten Interessen. Die Rechtsgrundlage hierfür ist <a href="https://dsgvo-gesetz.de/art-6-dsgvo/" target="_blank">Art. 6 Abs. 1 DSGVO</a>.
             </p>
 
             <h2 className='h2'>Wie speichern wir Ihre Daten?</h2>
