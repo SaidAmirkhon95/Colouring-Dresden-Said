@@ -40,7 +40,7 @@ export default class DataExtracts extends React.Component<{}, DataExtractsState>
         return (
             <article>
                 <section className="main-col">
-                    <h1 className="h2">Open data extracts</h1>
+                    <h1 className="h2">Wöchentliche Datenextrakte (als offene Daten)</h1>
                     <p>
                         Die bereits erzeugten Datenextrakte der auf der Plattform "Colouring Dresden" erfassten Gebäudemerkmale sind über die unten stehenden Links herunterladbar.
                     </p>
