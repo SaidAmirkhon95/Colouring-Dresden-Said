@@ -72,7 +72,7 @@ export const MultiDataEntry: React.FC<MultiDataEntryProps> = ({
             {
                 values.length === 0 && !isEditing &&
                 <div className="input-group">
-                    <input className="form-control no-entries" type="text" value="No entries" disabled={true} />
+                    <input className="form-control no-entries" type="text" value="noch keine Angaben" disabled={true} />
                 </div>
             }
             <ul className="data-entry-list">
