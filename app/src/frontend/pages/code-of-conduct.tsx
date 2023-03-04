@@ -5,96 +5,147 @@ import InfoBox from '../components/info-box';
 const CodeOfConductPage = () => (
     <article>
     <section className="main-col">
-        <h1 className="h2">Contributor Code of Conduct</h1>
+        <h1 className="h2">Verhaltenskodex für Mitwirkende</h1>
 
         <p>
-        This Code of Conduct is adapted from the Contributor Covenant, version 1.4,
-        available at <a href="https://www.contributor-covenant.org/version/1/4/code-of-conduct.html">
-        https://www.contributor-covenant.org/version/1/4/code-of-conduct.html</a>
+        Dieser Verhaltenskodex entspricht dem Verhaltenskodex für Mitwirkende, Version 2.0, verfügbar unter <a href="https://www.contributor-covenant.org/de/version/2/0/code_of_conduct/">
+        https://www.contributor-covenant.org/de/version/2/0/code_of_conduct/</a>
         </p>
 
-        <h2 className="h3">Our Pledge</h2>
+        <h2 className="h3">Unsere Verpflichtung</h2>
 
         <p>
-        In the interest of fostering an open and welcoming environment, we as
-        contributors and maintainers pledge to make participation in our project and
-        our community a harassment-free experience for everyone, regardless of age, body
-        size, disability, ethnicity, sex characteristics, gender identity and expression,
-        level of experience, education, socio-economic status, nationality, personal
-        appearance, race, religion, or sexual identity and orientation.
+            Wir als Mitglieder, Teilnehmende und Verantwortliche unserer Gemeinschaft verpflichten uns, 
+            allen Teilnehmenden an dem Projekt und unserer Gemeinschaft eine diskriminierungsfreie Beteiligung 
+            zu ermöglichen, unabhängig von Alter, Körpergröße, Behinderung, ethnischer Zuordnung, 
+            Geschlechtermerkmalen, -identität und -ausdruck, Grad der Erfahrung, Bildung, sozialem Status, 
+            Nationalität, persönlicher Erscheinung, Abstammung, Religion oder sexueller Identität und Orientierung.
         </p>
-        <h2 className="h3">Our Standards</h2>
         <p>
-        Examples of behaviour that contributes to creating a positive environment
-        include:
+            Wir verpflichten uns, in einer Weise zu handeln und zu interagieren, die zu einer offenen, 
+            einladenden, vielfältigen, inklusiven und gesunden Gemeinschaft beiträgt.
+        </p>
+        <h2 className="h3">Unsere Standards</h2>
+        <p>
+        Beispiele für Verhaltensweisen, die zu einem positiven Umfeld für unsere Gemeinschaft beitragen, sind:
         </p>
         <ul>
-            <li>Using welcoming and inclusive language</li>
-            <li>Being respectful of differing viewpoints and experiences</li>
-            <li>Gracefully accepting constructive criticism</li>
-            <li>Focusing on what is best for the community</li>
-            <li>Showing empathy towards other community members</li>
+            <li>Einfühlungsvermögen und Freundlichkeit gegenüber anderen Menschen zeigen</li>
+            <li>Unterschiedliche Meinungen, Standpunkte und Erfahrungen respektieren</li>
+            <li>Konstruktives Feedback geben und würdevoll annehmen</li>
+            <li>Verantwortung übernehmen und uns bei denjenigen entschuldigen, die von unseren Fehlern betroffen sind, und aus den Erfahrungen lernen</li>
+            <li>Konzentration auf das, was nicht nur für uns als Individuen, sondern für die gesamte Gemeinschaft das Beste ist</li>
         </ul>
 
         <p>
-        Examples of unacceptable behaviour by participants include:
+        Beispiele für inakzeptables Verhalten sind:
         </p>
 
         <ul>
-            <li>The use of sexualized language or imagery and unwelcome sexual attention or</li>
-            advances
-            <li>Trolling, insulting/derogatory comments, and personal or political attacks</li>
-            <li>Public or private harassment</li>
-            <li>Publishing others' private information, such as a physical or electronic address, without explicit permission</li>
-            <li>Other conduct which could reasonably be considered inappropriate in a professional setting</li>
+            <li>Die Verwendung sexualisierter Sprache, Bilder oder Symbolik sowie unerwünschte Versuche sexueller Annäherung</li>
+            <li>Beleidigende oder abwertende Kommentare, persönliche oder politische Angriffe und Trollen</li>
+            <li>Öffentliche oder private Belästigungen</li>
+            <li>Das Veröffentlichen von privaten Informationen Anderer, wie zum Beispiel physische oder elektronische Adressen, ohne deren ausdrückliche Erlaubnis</li>
+            <li>Anderes Verhalten, welches in einem professionellen Umfeld begründet als unangemessen betrachtet werden kann</li>
         </ul>
 
-        <h2 className="h3">Our Responsibilities</h2>
+        <h2 className="h3">Verantwortlichkeiten bei der Durchsetzung</h2>
         <p>
-        Project maintainers are responsible for clarifying the standards of acceptable
-        behaviour and are expected to take appropriate and fair corrective action in
-        response to any instances of unacceptable behaviour.
+        Die Gemeinschaftsleitung ist verantwortlich dafür, unsere Standards für ein akzeptables Verhalten klarzustellen und wird angemessen und fair korrigierende Maßnahmen ergreifen um auf jegliches Verhalten, das sie für unangemessen, bedrohlich oder beleidigend hält, zu reagieren.
         </p>
 
         <p>
-        Project maintainers have the right and responsibility to remove, edit, or
-        reject comments, commits, code, wiki edits, issues, and other contributions
-        that are not aligned to this Code of Conduct, or to ban temporarily or
-        permanently any contributor for other behaviours that they deem inappropriate,
-        threatening, offensive, or harmful.
+        Die Gemeinschaftsleitung hat das Recht und die Verantwortung, Kommentare, Commits, Code, Wiki-Bearbeitungen, Support-Tickets und andere Beiträge, die nicht mit diesem Verhaltenskodex vereinbar sind, zu entfernen, zu bearbeiten oder abzulehnen, und wird die Gründe für eine Mäßigung mitteilen, wenn es angebracht ist.
         </p>
 
-        <h2 className="h3">Scope</h2>
+        <h2 className="h3">Geltungsbereich</h2>
         <p>
-        This Code of Conduct applies within all project spaces, and it also applies when
-        an individual is representing the project or its community in public spaces.
-        Examples of representing a project or community include using an official
-        project e-mail address, posting via an official social media account, or acting
-        as an appointed representative at an online or offline event. Representation of
-        a project may be further defined and clarified by project maintainers.
+        Dieser Verhaltenskodex gilt für alle Bereiche der Gemeinschaft und gilt auch, wenn eine Einzelperson die Gemeinschaft offiziell in öffentlichen Bereichen vertritt. Beispiele für die Repräsentation unserer Gemeinschaft sind die Verwendung einer offiziellen E-Mail-Adresse, das Posten über ein offizielles Social-Media-Konto oder das Auftreten als ernannte Vertretung bei einer Online- oder Offline-Veranstaltung.
         </p>
 
-        <h2 className="h3">Enforcement</h2>
+        <h2 className="h3">Durchsetzung</h2>
         <p>
-        Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by
-        contacting the project team at <a
-        href="mailto:team@colouring.london">team@colouring.london</a> or <a
-        href="dataprotection@turing.ac.uk">dataprotection@turing.ac.uk</a>. All complaints will
-        be reviewed and investigated and will result in a response that is deemed necessary and
-        appropriate to the circumstances. The project team is obligated to maintain
-        confidentiality with regard to the reporter of an incident. Further details of
-        specific enforcement policies may be posted separately.
+        Fälle von missbräuchlichem, belästigendem oder anderweitig inakzeptablem Verhalten können unter colouringdresden@ioer.de der für die Durchsetzung zuständigen Projektduchführenden gemeldet werden. Alle Beschwerden werden zeitnah und fair geprüft und ermittelt.
         </p>
 
         <p>
-        Project maintainers who do not follow or enforce the Code of Conduct in good
-        faith may face temporary or permanent repercussions as determined by other
-        members of the project's leadership.
+        Die gesamte Gemeinschaftsleitung ist verpflichtet, die Privatsphäre und die Sicherheit derjenigen, die einen Vorfall gemeldet haben, zu respektieren.
+        </p>
+
+
+
+        <h2 className="h3">Durchsetzungsrichtlinien</h2>
+        <p>
+        Die Gemeinschaftsleitung wird sich bei der Bestimmung der Konsequenzen für jede Handlung, die ihrer Ansicht nach gegen diesen Verhaltenskodex verstößt, an diese Richtlinien über die Auswirkungen in der Gemeinschaft halten:
         </p>
 
         <p>
-        For answers to common questions about this code of conduct, see <a
-        href="https://www.contributor-covenant.org/faq">https://www.contributor-covenant.org/faq</a>
+            <b>1. Berichtung</b>
+        </p>
+
+        <p>
+            <b>Auswirkungen in der Gemeinschaft:</b> Verwendung unangemessener Sprache oder anderes Verhalten, das in der Gemeinschaft als unprofessionell oder unwillkommen gilt.
+        </p>
+
+        <p>
+            <b>Folge:</b>Eine private, schriftliche Verwarnung der Gemeinschaftsleitung, die Klarheit über die Art des Verstoßes und eine Erklärung dafür bietet, warum das Verhalten unangemessen war. Eine öffentliche Entschuldigung kann verlangt werden.
+        </p>
+
+
+        <p>
+            <b>2. Verwarnung</b>
+        </p>
+
+        <p>
+            <b>Auswirkungen in der Gemeinschaft:</b> Eine Verletzung durch einen einzelnen Vorfall oder eine Reihe von Handlungen.
+        </p>
+
+        <p>
+            <b>Folge:</b> Eine Warnung mit Konsequenzen bei wiederholtem Fehlverhalten. Keine Interaktion mit den beteiligten Personen, einschließlich unaufgeforderter Interaktion mit denjenigen, die den Verhaltenskodex durchsetzen, für einen bestimmten Zeitraum. Dazu gehört die Vermeidung von Interaktionen in Gemeinschaftsräumen sowie in externen Kanälen wie sozialen Medien. Ein Verstoß gegen diese Bedingungen kann zu einem vorübergehenden oder dauerhaften Verbot führen.
+        </p>
+
+
+        <p>
+            <b>3. Vorübergehender Ausschluss</b>
+        </p>
+
+        <p>
+            <b>Auswirkungen in der Gemeinschaft:</b> Eine schwerwiegende Verletzung von Gemeinschaftsstandards, einschließlich anhaltend unangemessenen Verhaltens.
+        </p>
+
+        <p>
+            <b>Folge:</b> Ein zeitlich begrenztes Verbot jeglicher Art von Interaktion oder öffentlicher Kommunikation mit der Gemeinschaft. Während dieses Zeitraums ist keine öffentliche oder private Interaktion mit den beteiligten Personen erlaubt. Auch keine unaufgeforderte Interaktion mit denjenigen, die den Verhaltenskodex durchsetzen. Ein Verstoß gegen diese Bedingungen kann zu einem dauerhaften Verbot führen.
+        </p>
+
+
+        <p>
+            <b>4. Dauerhafter Ausschluss</b>
+        </p>
+
+        <p>
+            <b>Auswirkungen in der Gemeinschaft:</b> Aufzeigen eines Musters von Verletzungen der Gemeinschaftsstandards, einschließlich anhaltend unangemessenen Verhaltens, Belästigung einer Person oder Aggression gegen oder Herabsetzung von Gruppen von Personen.
+        </p>
+
+        <p>
+            <b>Folge:</b> Ein dauerhaftes Verbot jeglicher Art von öffentlicher Interaktion innerhalb der Gemeinschaft.
+        </p>
+
+        <h2 className="h3">Bezug</h2>
+
+        <p>
+        Dieser Verhaltenskodex basiert auf dem Contributor Covenant, Version 2.0, verfügbar unter <a
+        href="https://www.contributor-covenant.org/de/version/2/0/code_of_conduct">https://www.contributor-covenant.org/de/version/2/0/code_of_conduct</a>
+        </p>
+
+        <p>
+        Community Impact Guidelines wurden von <a
+        href="https://github.com/mozilla/inclusion">Mozillas Code of Conduct Enforcement Ladder</a> inspiriert.
+        </p>
+
+        <p>
+        Antworten auf häufig gestellte Fragen zu diesem Verhaltenskodex finden Sie in den häufig gestellten Fragen unter <a
+        href="https://www.contributor-covenant.org/faq">https://www.contributor-covenant.org/faq</a> (in Englisch). Andere Übersetzungen sind verfügbar unter <a
+        href="https://www.contributor-covenant.org/translations">https://www.contributor-covenant.org/translations</a>.
         </p>
 
     </section>
