@@ -59,7 +59,7 @@ export const MyAccountPage: React.FC = () => {
                         Zum Nachlesen finden Sie hier die {' '}
                         <Link to="/privacy-policy.html">Datenschutzerklärung</Link>, die {' '}
                         <Link to="/contributor-agreement.html">Vereinbarung zur Mitwirkung</Link>, den {' '}
-                        <Link to="/data-accuracy.tsx">Haftungsausschluss</Link> und den {' '}
+                        <Link to="/data-accuracy.html">Haftungsausschluss</Link> und den {' '}
                         <Link to="/code-of-conduct.html">Verhaltenskodex für Mitwirkende</Link>.
                         {/* later add data accuracy agreement here... in German  */}
                     </p>
