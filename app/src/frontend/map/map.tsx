@@ -25,6 +25,8 @@ import { BuildingDataLayer } from './layers/building-data-layer';
 import { BuildingNumbersLayer } from './layers/building-numbers-layer';
 import { BuildingHighlightLayer } from './layers/building-highlight-layer';
 
+import { Historic_1880_DataLayer } from './layers/historic-1880-data-layer';
+
 import { Legend } from './legend';
 import SearchBox from './search-box';
 import ThemeSwitcher from './theme-switcher';
@@ -40,6 +42,8 @@ import { HousingSwitcher } from './housing-switcher';
 import { BuildingMapTileset } from '../config/tileserver-config';
 import { useDisplayPreferences } from '../displayPreferences-context';
 import { CategoryMapDefinition } from '../config/category-maps-config';
+
+import { Historic_1880_DataSwitcher } from './historic-1880-data-switcher';
 
 interface ColouringMapProps {
     selectedBuildingId: number;
@@ -129,6 +133,7 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                 >
                     <CityBoundaryLayer/>
                     <HistoricDataLayer/>
+                    <Historic_1880_DataLayer/>
                     <BoroughBoundaryLayer/>
                     <ParcelBoundaryLayer/>
                     <FloodBoundaryLayer/>
@@ -164,13 +169,15 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                         (showLayerSelection == "enabled") ?
                         <>
                             <BoroughSwitcher/>
-                            <ParcelSwitcher/>
-                            <FloodSwitcher/>
-                            <ConservationAreaSwitcher/>
+                            {/* <ParcelSwitcher/> */}
+                            {/* <FloodSwitcher/> */}
+                            {/* <ConservationAreaSwitcher/> */}
                             <HistoricDataSwitcher/>
-                            <VistaSwitcher />
-                            <HousingSwitcher />
-                            <CreativeSwitcher />
+                            {/* <VistaSwitcher /> */}
+                            {/* <HousingSwitcher /> */}
+                            {/* <CreativeSwitcher /> */}
+                            <Historic_1880_DataSwitcher/>
+
                         </>
                         : <></>
                     }

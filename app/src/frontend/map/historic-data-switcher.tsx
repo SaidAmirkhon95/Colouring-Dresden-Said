@@ -9,7 +9,7 @@ export const HistoricDataSwitcher: React.FC<{}> = (props) => {
         <form className={`historic-data-switcher map-button ${historicData}-state ${darkLightTheme}`} onSubmit={historicDataSwitch}>
             <button className="btn btn-outline btn-outline-dark"
                 type="submit">
-                {(historicData === 'enabled')? 'The OS 1890s Historical Map on' : 'The OS 1890s Historical Map off'}
+                {(historicData === 'enabled')? 'Meilenblätter (1780-1806) an' : 'Meilenblätter (1780-1806) aus'}
             </button>
         </form>
     );

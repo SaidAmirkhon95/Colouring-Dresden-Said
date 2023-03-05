@@ -111,8 +111,19 @@
 }
 
 .historic-data-switcher {
-    top: 397px;
+    /* top: 397px; */
+    top: 237px;
 }
+
+
+.historic-1880-data-switcher {
+    top: 277px;
+}
+
+
+
+
+
 
 .parcel-switcher {
     top: 437px;
