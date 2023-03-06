@@ -28,3 +28,16 @@
 .turing-logo {
     height: 4em;
 }
+
+.image-row a .wid-logo {
+    /* height: 3em; */
+    width: 60%;
+    height: auto;
+    /* center the logo */
+/*     display: block;
+    margin-left: auto;
+    margin-right: auto; */
+
+
+
+}

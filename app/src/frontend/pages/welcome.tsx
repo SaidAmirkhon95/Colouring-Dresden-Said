@@ -72,7 +72,7 @@ const Welcome = () => (
                 <img className="cl-logo" src="images/AdP Banner Wortmarke 560x300 300dpi (3) (1).png" alt="Auf die Plätze! Citizen Science in deiner Stadt."></img>
             </a>
             <a href="https://www.wissenschaft-im-dialog.de/" target="_blank">
-                <img className="cl-logo" src="images/01_LOGO_WID-rgb.png" alt="Wissenschaft im Dialog"></img>
+                <img className="wid-logo" src="images/01_LOGO_WID-rgb.png" alt="Wissenschaft im Dialog"></img>
             </a>
             <a href="https://www.museumfuernaturkunde.berlin/de" target="_blank">
                 <img className="cl-logo" src="images/02_mfn_logo_STANDARD_auf_weiss-kl.png" alt="Museum für Naturkunde Berlin/ Leibniz-Institut für Evolutions- und Biodiversitätsforschung"></img>
