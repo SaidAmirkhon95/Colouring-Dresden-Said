@@ -23,7 +23,8 @@ const ResilienceView: React.FunctionComponent<CategoryViewProps> = (props) => {
 
     return (<>
         <InfoBox>
-            Dieser Abschnitt ist noch in der Entwicklung.
+            Die Kategorie "Resilienz" ist derzeit noch in der Entwicklung. Der Fokus wird sein, wie gut Gebäude auf extreme Ereignisse wie Starkregen, Hochwasser und Hitze angepasst und vorbereitet sind.
+            Schauen Sie gerne bald wieder vorbei. Merkmale zum Keller können bereits jetzt in der Kategorie "Nutzung" erfasst werden.
         </InfoBox>
 {/*         <DataEntry
             title="Building age"
