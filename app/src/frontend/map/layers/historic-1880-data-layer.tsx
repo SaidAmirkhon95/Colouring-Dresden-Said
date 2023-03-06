@@ -21,7 +21,7 @@ export function Historic_1880_DataLayer({}) {
             url="https://geodienste.sachsen.de/wms_geosn_dop-rgb/guest?"
 
             /* attribution='&copy; Kartendienst Meilenblätter Sachsen, Berliner Exemplar (HTW Dresden) <a href="https://geoinformatik.htw-dresden.de/geoportal/karten-und-downloaddienste/">Berliner Meilenblätter Sachsen (WMS)</a>' */
-            attribution=""
+            attribution='&copy; WMS SN DOP-RGB (GeoSN) <a href="https://geoportal.sachsen.de/cps/metadaten_seite.html?id=26df8686-08cd-4dc2-b459-4d51b9badfe8">SN DOP 020 (WMS)</a>'
             
             /* format='image/jpeg' */
             /* crs={'EPSG:3857'} */
