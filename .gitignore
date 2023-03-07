@@ -39,6 +39,9 @@ app/tilecache/**/*.mbtiles
 app/undefined/**/*.png
 app/undefined/**/*.mbtiles
 
+
+app/Readme.txt
+
 # Notes
 TODO
 
