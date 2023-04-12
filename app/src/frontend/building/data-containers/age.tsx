@@ -40,10 +40,10 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
 
     const { historicData, historicDataSwitchOnClick, darkLightTheme } = useDisplayPreferences();
 
-    if (props.building.date_source == "Expert knowledge of building" ||
+/*     if (props.building.date_source == "Expert knowledge of building" ||
         props.building.date_source == "Expert estimate from image" ||
         props.building.date_source == null
-       ){
+       ){ */
       return (
           <Fragment>
             <DataEntryGroup name="Gebäudealter" collapsed={false} >
@@ -253,8 +253,8 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
 {/*             </DataEntryGroup> */}
           </Fragment>
         );
-      };
-    return (
+/*       }; */
+/*     return (
         <Fragment>
             <DataEntryGroup name="Gebäudealter" collapsed={true} >
                 <YearDataEntry
@@ -463,13 +463,13 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                                 {
                                     building.dynamics_has_demolished_buildings &&
                                     <>
-                                        <DynamicsDataEntry
+                                        <DynamicsDataEntry */
                                             
                                             /* 
                                                 Will clear the edits and new record data upon navigating to another building.
                                                 Should get a better way to do this, plus a way to actually keep unsaved edits.
                                             */
-                                            key={building.building_id} 
+/*                                             key={building.building_id} 
                                             
                                             value={building.demolished_buildings}
                                             editableEntries={true}
@@ -521,7 +521,7 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 />
             </DataEntryGroup>
         </Fragment>
-    );
+    ); */
 };
 const AgeContainer = withCopyEdit(AgeView);
 
