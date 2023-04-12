@@ -1079,11 +1079,16 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         tooltip: "Bauweise des Gebäudes",
         example: "",
         items: [
-            "Gemischte Bauweise (Holzfachwerk- und Massivbauweise)",
-            "industrielle Bauweise bzw. Großtafelbauweise",
-            "überwiegend massive Bauweise",
-            "Holzskelettbauweise",
-            "Holzblockbauweise"
+            "Massivbauweise: Mauerwerk",
+            "Massivbauweise: Ortbeton/monolithische Bauweise",
+            "Massivbauweise: Plattenbau",
+            "Skelettbauweise: Stahlkonstruktion",
+            "Skelettbauweise: Stahlbetonkonstruktion",
+            "Holzkonstruktion: Fachwerk",
+            "Holzkonstruktion: Holzrahmen",
+            "Holzkonstruktion: Blockbau",
+            "Holzkonstruktion: Holzfertigteilbau",
+            "Gemischte Bauweisen"
         ]
     },
 

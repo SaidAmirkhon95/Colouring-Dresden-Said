@@ -40,6 +40,55 @@ const currentYear = new Date().getFullYear();
 const ConstructionView: React.FunctionComponent<CategoryViewProps> = (props) => {
     return (
          <Fragment>
+
+
+
+
+            <SelectDataEntry
+                title={dataFields.construction_system_type.title}
+                slug="construction_system_type"
+                value={props.building.construction_system_type}
+                mode={props.mode}
+                copy={props.copy}
+                onChange={props.onChange}
+                tooltip={dataFields.construction_system_type.tooltip}
+                placeholder={dataFields.construction_system_type.example}
+                options={dataFields.construction_system_type.items}
+            />
+            <Verification
+                slug="construction_system_type"
+                allow_verify={props.user !== undefined && props.building.construction_system_type !== null && !props.edited}
+                onVerify={props.onVerify}
+                user_verified={props.user_verified.hasOwnProperty("construction_system_type")}
+                user_verified_as={props.user_verified.construction_system_type}
+                verified_count={props.building.verified.construction_system_type}
+            />
+
+            <DataEntry
+                title={dataFields.construction_system_type_source.title}
+                tooltip={dataFields.construction_system_type_source.tooltip}
+                slug="construction_system_type_source"
+                value={props.building.construction_system_type_source}
+                mode={props.mode}
+                /* disabled={true} */
+                copy={props.copy}
+                onChange={props.onChange}
+            />
+            <Verification
+                slug="construction_system_type_source"
+                allow_verify={props.user !== undefined && props.building.construction_system_type_source !== null && !props.edited}
+                onVerify={props.onVerify}
+                user_verified={props.user_verified.hasOwnProperty("construction_system_type_source")}
+                user_verified_as={props.user_verified.construction_system_type_source}
+                verified_count={props.building.verified.construction_system_type_source}
+            />
+
+
+
+
+
+
+
             <SelectDataEntry
                 title={dataFields.construction_core_material.title}
                 slug="construction_core_material"
@@ -183,48 +232,6 @@ const ConstructionView: React.FunctionComponent<CategoryViewProps> = (props) => 
                 verified_count={props.building.verified.last_renovation_source}
             />
 
-
-
-
-
-            <SelectDataEntry
-                title={dataFields.construction_system_type.title}
-                slug="construction_system_type"
-                value={props.building.construction_system_type}
-                mode={props.mode}
-                copy={props.copy}
-                onChange={props.onChange}
-                tooltip={dataFields.construction_system_type.tooltip}
-                placeholder={dataFields.construction_system_type.example}
-                options={dataFields.construction_system_type.items}
-            />
-            <Verification
-                slug="construction_system_type"
-                allow_verify={props.user !== undefined && props.building.construction_system_type !== null && !props.edited}
-                onVerify={props.onVerify}
-                user_verified={props.user_verified.hasOwnProperty("construction_system_type")}
-                user_verified_as={props.user_verified.construction_system_type}
-                verified_count={props.building.verified.construction_system_type}
-            />
-
-            <DataEntry
-                title={dataFields.construction_system_type_source.title}
-                tooltip={dataFields.construction_system_type_source.tooltip}
-                slug="construction_system_type_source"
-                value={props.building.construction_system_type_source}
-                mode={props.mode}
-                /* disabled={true} */
-                copy={props.copy}
-                onChange={props.onChange}
-            />
-            <Verification
-                slug="construction_system_type_source"
-                allow_verify={props.user !== undefined && props.building.construction_system_type_source !== null && !props.edited}
-                onVerify={props.onVerify}
-                user_verified={props.user_verified.hasOwnProperty("construction_system_type_source")}
-                user_verified_as={props.user_verified.construction_system_type_source}
-                verified_count={props.building.verified.construction_system_type_source}
-            />
 
 
 

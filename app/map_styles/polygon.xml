@@ -1623,24 +1623,44 @@
 
     <Style name="construction_system_type">
         <Rule>
-            <Filter>[construction_system_type] = "Gemischte Bauweise (Holzfachwerk- und Massivbauweise)"</Filter>
-            <PolygonSymbolizer fill="#898944" />
+            <Filter>[construction_system_type] = "Massivbauweise: Mauerwerk"</Filter>
+            <PolygonSymbolizer fill="#d6c9bd" />
         </Rule>
         <Rule>
-            <Filter>[construction_system_type] = "industrielle Bauweise bzw. Großtafelbauweise"</Filter>
-            <PolygonSymbolizer fill="#cccccc" />
+            <Filter>[construction_system_type] = "Massivbauweise: Ortbeton/monolithische Bauweise"</Filter>
+            <PolygonSymbolizer fill="#e8af94" />
         </Rule>
         <Rule>
-            <Filter>[construction_system_type] = "überwiegend massive Bauweise"</Filter>
-            <PolygonSymbolizer fill="#6c6f8e" />
+            <Filter>[construction_system_type] = "Massivbauweise: Plattenbau"</Filter>
+            <PolygonSymbolizer fill="#dccca5" />
         </Rule>
         <Rule>
-            <Filter>[construction_system_type] = "Holzskelettbauweise"</Filter>
-            <PolygonSymbolizer fill="#766333" />
+            <Filter>[construction_system_type] = "Skelettbauweise: Stahlkonstruktion"</Filter>
+            <PolygonSymbolizer fill="#f1e2d2" />
         </Rule>
         <Rule>
-            <Filter>[construction_system_type] = "Holzblockbauweise"</Filter>
-            <PolygonSymbolizer fill="#ffbfbf" />
+            <Filter>[construction_system_type] = "Skelettbauweise: Stahlbetonkonstruktion"</Filter>
+            <PolygonSymbolizer fill="#d5b2b2" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "Holzkonstruktion: Fachwerk"</Filter>
+            <PolygonSymbolizer fill="#bca2aa" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "Holzkonstruktion: Holzrahmen"</Filter>
+            <PolygonSymbolizer fill="#cae5c3" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "Holzkonstruktion: Blockbau"</Filter>
+            <PolygonSymbolizer fill="#fffef5" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "Holzkonstruktion: Holzfertigteilbau"</Filter>
+            <PolygonSymbolizer fill="#f0cff5" />
+        </Rule>
+        <Rule>
+            <Filter>[construction_system_type] = "Gemischte Bauweisen"</Filter>
+            <PolygonSymbolizer fill="#c6858d" />
         </Rule>
         <Rule>
             <MaxScaleDenominator>17061</MaxScaleDenominator>

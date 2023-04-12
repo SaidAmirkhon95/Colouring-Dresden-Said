@@ -161,6 +161,30 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
         },
     }],
     [Category.Construction]: [
+
+        {
+            mapStyle: 'construction_system_type',
+            legend: {
+                title: 'Hauptkonstruktion',
+                elements: [
+                    { color: '#d6c9bd', text: 'Massivbauweise: Mauerwerk' },
+                    { color: '#e8af94', text: 'Massivbauweise: Ortbeton/monolithische Bauweise' },
+                    { color: '#dccca5', text: 'Massivbauweise: Plattenbau' },
+                    { color: '#f1e2d2', text: 'Skelettbauweise: Stahlkonstruktion' },
+                    { color: '#d5b2b2', text: 'Skelettbauweise: Stahlbetonkonstruktion' },
+                    { color: '#bca2aa', text: 'Holzkonstruktion: Fachwerk' },
+                    { color: '#cae5c3', text: 'Holzkonstruktion: Holzrahmen' },
+                    { color: '#fffef5', text: 'Holzkonstruktion: Blockbau' },
+                    { color: '#f0cff5', text: 'Holzkonstruktion: Holzfertigteilbau' },
+                    { color: '#c6858d', text: 'Gemischte Bauweisen' },
+
+                ]
+            }
+        }, 
+
+
+
+
         {
             mapStyle: 'construction_core_material',
             legend: {
@@ -223,20 +247,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             },
         },
 
-        {
-            mapStyle: 'construction_system_type',
-            legend: {
-                title: 'Hauptkonstruktion',
-                elements: [
-                    { color: '#898944', text: 'Gemischte Bauweise (Holzfachwerk- und Massivbauweise)' },
-                    { color: '#cccccc', text: 'industrielle Bauweise bzw. Großtafelbauweise' },
-                    { color: '#6c6f8e', text: 'überwiegend massive Bauweise' },
-                    { color: '#766333', text: 'Holzskelettbauweise' },
-                    { color: '#ffbfbf', text: 'Holzblockbauweise' },
 
-                ]
-            }
-        }, 
 
 
 
