@@ -10,14 +10,14 @@ import Verification from '../data-components/verification';
 import { CategoryViewProps } from './category-view-props';
 
 const ConstructionMaterialsOptions = [
-    'Holz',
-    'Stein',
     'Ziegel',
-    'Stahl',
+    'andere Mauersteine: Kalksandstein',
+    'andere Mauersteine: Porenbeton',
+    'andere Mauersteine: Bruchstein',
     'Stahlbeton',
-    'anderes Metall',
-    'anderes natürliches Material',
-    'anderes künstliches Material'
+    'Stahl',
+    'Holz',
+    'anderes Baumaterial'
 ];
 
 const RoofCoveringOptions = [

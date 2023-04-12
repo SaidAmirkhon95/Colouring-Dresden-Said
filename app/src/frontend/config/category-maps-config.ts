@@ -190,14 +190,15 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             legend: {
                 title: 'Primärer Baustoff',
                 elements: [
-                    { color: "#b5a859", text: "Holz" },
-                    { color: "#ffffe3", text: "Stein" },
                     { color: "#f5d96b", text: "Ziegel" },
-                    { color: "#beffe8", text: "Stahl" },
+                    { color: "#96613b", text: "andere Mauersteine: Kalksandstein" },
+                    { color: "#cae5c3", text: "andere Mauersteine: Porenbeton" },
+                    { color: "#f0cff5", text: "andere Mauersteine: Bruchstein" },
                     { color: "#fca89d", text: "Stahlbeton" },
-                    { color: "#5c8970", text: "anderes Metall" },
-                    { color: "#96613b", text: "anderes natürliches Material" },
-                    { color: "#c48a85", text: "anderes künstliches Material" }
+                    { color: "#beffe8", text: "Stahl" },
+                    { color: "#b5a859", text: "Holz" },
+                    { color: "#5c8970", text: "anderes Baumaterial" }
+
                 ]
             },
         },
