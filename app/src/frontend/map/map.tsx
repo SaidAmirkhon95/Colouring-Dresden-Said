@@ -26,6 +26,8 @@ import { BuildingNumbersLayer } from './layers/building-numbers-layer';
 import { BuildingHighlightLayer } from './layers/building-highlight-layer';
 
 import { Historic_1880_DataLayer } from './layers/historic-1880-data-layer';
+import { Historic_1911_DataLayer } from './layers/historic-1911-data-layer';
+import { Historic_1945_DataLayer } from './layers/historic-1945-data-layer';
 
 import { Legend } from './legend';
 import SearchBox from './search-box';
@@ -44,6 +46,8 @@ import { useDisplayPreferences } from '../displayPreferences-context';
 import { CategoryMapDefinition } from '../config/category-maps-config';
 
 import { Historic_1880_DataSwitcher } from './historic-1880-data-switcher';
+import { Historic_1911_DataSwitcher } from './historic-1911-data-switcher';
+import { Historic_1945_DataSwitcher } from './historic-1945-data-switcher';
 
 interface ColouringMapProps {
     selectedBuildingId: number;
@@ -134,6 +138,8 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                     <CityBoundaryLayer/>
                     <HistoricDataLayer/>
                     <Historic_1880_DataLayer/>
+                    <Historic_1911_DataLayer/>
+                    <Historic_1945_DataLayer/>
                     <BoroughBoundaryLayer/>
                     <ParcelBoundaryLayer/>
                     <FloodBoundaryLayer/>
@@ -176,7 +182,10 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                             {/* <VistaSwitcher /> */}
                             {/* <HousingSwitcher /> */}
                             {/* <CreativeSwitcher /> */}
+                            <Historic_1911_DataSwitcher/>
+                            <Historic_1945_DataSwitcher/>                            
                             <Historic_1880_DataSwitcher/>
+
 
                         </>
                         : <></>

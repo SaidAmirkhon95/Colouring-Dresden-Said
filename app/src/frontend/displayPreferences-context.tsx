@@ -42,6 +42,14 @@ interface DisplayPreferencesContextState {
     historic_1880_DataSwitch: (e: React.FormEvent<HTMLFormElement>) => void;
     historic_1880_DataSwitchOnClick: React.MouseEventHandler<HTMLButtonElement>;
 
+    historic_1911_Data: LayerEnablementState;
+    historic_1911_DataSwitch: (e: React.FormEvent<HTMLFormElement>) => void;
+    historic_1911_DataSwitchOnClick: React.MouseEventHandler<HTMLButtonElement>;
+
+    historic_1945_Data: LayerEnablementState;
+    historic_1945_DataSwitch: (e: React.FormEvent<HTMLFormElement>) => void;
+    historic_1945_DataSwitchOnClick: React.MouseEventHandler<HTMLButtonElement>;
+
     darkLightTheme: MapTheme;
     darkLightThemeSwitch: (e: React.FormEvent<HTMLFormElement>) => void;
     darkLightThemeSwitchOnClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -95,6 +103,14 @@ export const DisplayPreferencesContext = createContext<DisplayPreferencesContext
     historic_1880_DataSwitch: stub,
     historic_1880_DataSwitchOnClick: undefined,
 
+    historic_1911_Data: undefined,
+    historic_1911_DataSwitch: stub,
+    historic_1911_DataSwitchOnClick: undefined,
+
+    historic_1945_Data: undefined,
+    historic_1945_DataSwitch: stub,
+    historic_1945_DataSwitchOnClick: undefined,
+
     darkLightTheme: undefined,
     darkLightThemeSwitch: stub,
     darkLightThemeSwitchOnClick: undefined,
@@ -116,6 +132,8 @@ export const DisplayPreferencesProvider: React.FC<{}> = ({children}) => {
     const defaultConservation = 'disabled'
     const defaultHistoricData = 'disabled'
     const defaultHistoric_1880_Data = 'disabled'
+    const defaultHistoric_1911_Data = 'disabled'
+    const defaultHistoric_1945_Data = 'disabled'
     const defaultShowLayerSelection = 'disabled'
     const [vista, setVista] = useState<LayerEnablementState>(defaultVista);
     const [flood, setFlood] = useState<LayerEnablementState>(defaultFlood);
@@ -126,6 +144,8 @@ export const DisplayPreferencesProvider: React.FC<{}> = ({children}) => {
     const [conservation, setConservation] = useState<LayerEnablementState>(defaultConservation);
     const [historicData, setHistoricData] = useState<LayerEnablementState>(defaultHistoricData);
     const [historic_1880_Data, setHistoric_1880_Data] = useState<LayerEnablementState>(defaultHistoric_1880_Data);
+    const [historic_1911_Data, setHistoric_1911_Data] = useState<LayerEnablementState>(defaultHistoric_1911_Data);
+    const [historic_1945_Data, setHistoric_1945_Data] = useState<LayerEnablementState>(defaultHistoric_1945_Data);
     const [darkLightTheme, setDarkLightTheme] = useState<MapTheme>('night');
     const [showLayerSelection, setShowLayerSelection] = useState<LayerEnablementState>(defaultShowLayerSelection);
 
@@ -147,6 +167,8 @@ export const DisplayPreferencesProvider: React.FC<{}> = ({children}) => {
             setConservation(defaultConservation);
             setHistoricData(defaultHistoricData);
             setHistoric_1880_Data(defaultHistoric_1880_Data);
+            setHistoric_1911_Data(defaultHistoric_1911_Data);
+            setHistoric_1945_Data(defaultHistoric_1945_Data);
             setShowLayerSelection(defaultShowLayerSelection); // reset layers + hiding this panel is integrated into one action
             //setDarkLightTheme('night'); // reset only layers
     },
@@ -179,6 +201,12 @@ export const DisplayPreferencesProvider: React.FC<{}> = ({children}) => {
             return true;
         }
         if(historic_1880_Data != defaultHistoric_1880_Data) {
+            return true;
+        }
+        if(historic_1911_Data != defaultHistoric_1911_Data) {
+            return true;
+        }
+        if(historic_1945_Data != defaultHistoric_1945_Data) {
             return true;
         }
         //darkLightTheme not handled here
@@ -320,6 +348,37 @@ export const DisplayPreferencesProvider: React.FC<{}> = ({children}) => {
         setHistoric_1880_Data(newHistoric_1880);
     }
 
+    const historic_1911_DataSwitch = useCallback(
+        (e) => {
+            flipHistoric_1911_Data(e)
+        },
+        [historic_1911_Data],
+    )
+    const historic_1911_DataSwitchOnClick = (e) => {
+        flipHistoric_1911_Data(e)
+    }
+    function flipHistoric_1911_Data(e) {
+        e.preventDefault();
+        const newHistoric_1911 = (historic_1911_Data === 'enabled')? 'disabled' : 'enabled';
+        setHistoric_1911_Data(newHistoric_1911);
+    }
+
+    const historic_1945_DataSwitch = useCallback(
+        (e) => {
+            flipHistoric_1945_Data(e)
+        },
+        [historic_1945_Data],
+    )
+    const historic_1945_DataSwitchOnClick = (e) => {
+        flipHistoric_1945_Data(e)
+    }
+    function flipHistoric_1945_Data(e) {
+        e.preventDefault();
+        const newHistoric_1945 = (historic_1945_Data === 'enabled')? 'disabled' : 'enabled';
+        setHistoric_1945_Data(newHistoric_1945);
+    }
+
+
     const darkLightThemeSwitch = useCallback(
         (e) => {
             flipDarkLightTheme(e)
@@ -386,6 +445,14 @@ export const DisplayPreferencesProvider: React.FC<{}> = ({children}) => {
             historic_1880_Data,
             historic_1880_DataSwitch,
             historic_1880_DataSwitchOnClick,
+
+            historic_1911_Data,
+            historic_1911_DataSwitch,
+            historic_1911_DataSwitchOnClick,
+
+            historic_1945_Data,
+            historic_1945_DataSwitch,
+            historic_1945_DataSwitchOnClick,
 
             darkLightTheme,
             darkLightThemeSwitch,
