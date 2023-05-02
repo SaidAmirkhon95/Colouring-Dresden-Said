@@ -411,7 +411,6 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
 
 
 
-
     use_building_origin: {
         edit: true,
         verify: true
@@ -509,8 +508,15 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
     building_owner_source: {
         edit: true,
         verify: true
+    },
+    architectural_style: {
+        edit: true,
+        verify: true
+    },
+    architectural_style_source: {
+        edit: true,
+        verify: true
     }
-
 });
 
 

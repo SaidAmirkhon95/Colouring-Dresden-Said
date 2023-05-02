@@ -2025,6 +2025,77 @@
         </Rule>
     </Style>
 
-
+    <Style name="architectural_style">
+        <Rule>
+            <Filter>[architectural_style] = "Nachkriegsmoderne: vorgefertigter Plattenbau"</Filter>
+            <PolygonSymbolizer fill="#fff9b8" />
+        </Rule>
+        <Rule>
+            <Filter>[architectural_style] = "Nachkriegsmoderne: handwerklich-konventionell gefertigt"</Filter>
+            <PolygonSymbolizer fill="#fae269" />
+        </Rule>
+        <Rule>
+            <Filter>[architectural_style] = "Nationale Tradition"</Filter>
+            <PolygonSymbolizer fill="#fbaf27" />
+        </Rule>
+        <Rule>
+            <Filter>[architectural_style] = "Weiße Moderne"</Filter>
+            <PolygonSymbolizer fill="#e6711d" />
+        </Rule>
+        <Rule>
+            <Filter>[architectural_style] = "Neue Sachlichkeit"</Filter>
+            <PolygonSymbolizer fill="#cc1212" />
+        </Rule>        
+        <Rule>
+            <Filter>[architectural_style] = "Expressionismus"</Filter>
+            <PolygonSymbolizer fill="#8f0303" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Jugendstil"</Filter>
+            <PolygonSymbolizer fill="#8f5385" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Reformarchitektur"</Filter>
+            <PolygonSymbolizer fill="#c3e1eb" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Historismus"</Filter>
+            <PolygonSymbolizer fill="#6a9dba" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Klassizismus"</Filter>
+            <PolygonSymbolizer fill="#3b74a3" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Barock"</Filter>
+            <PolygonSymbolizer fill="#95ded8" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Renaissance"</Filter>
+            <PolygonSymbolizer fill="#68aba5" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Gotik"</Filter>
+            <PolygonSymbolizer fill="#acc98f" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Romanik"</Filter>
+            <PolygonSymbolizer fill="#6d8a51" />
+        </Rule> 
+        <Rule>
+            <Filter>[architectural_style] = "Antike"</Filter>
+            <PolygonSymbolizer fill="#d0c291" />
+        </Rule> 
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
 
 </Map>

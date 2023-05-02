@@ -48,6 +48,31 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                 ]
             },
         },
+
+        {
+            mapStyle: 'architectural_style',
+            legend: {
+                title: 'Baustil & äuß. Erscheinungsbild',
+                elements: [
+                    { color: '#fff9b8', text: 'Nachkriegsmoderne: vorgefertigter Plattenbau' },
+                    { color: '#fae269', text: 'Nachkriegsmoderne: handwerklich-konventionell gefertigt' },
+                    { color: '#fbaf27', text: 'Nationale Tradition' },
+                    { color: '#e6711d', text: 'Weiße Moderne' },
+                    { color: '#cc1212', text: 'Neue Sachlichkeit' },
+                    { color: '#8f0303', text: 'Expressionismus' },
+                    { color: '#8f5385', text: 'Jugendstil' },
+                    { color: '#c3e1eb', text: 'Reformarchitektur' },
+                    { color: '#6a9dba', text: 'Historismus' },
+                    { color: '#3b74a3', text: 'Klassizismus' },
+                    { color: '#95ded8', text: 'Barock' },
+                    { color: '#68aba5', text: 'Renaissance' },
+                    { color: '#acc98f', text: 'Gotik' },
+                    { color: '#6d8a51', text: 'Romanik' },
+                    { color: '#d0c291', text: 'Antike' },
+                ]
+            },
+        },
+
         {
             mapStyle: 'facade_year',
             legend: {

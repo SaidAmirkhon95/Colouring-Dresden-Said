@@ -30,6 +30,9 @@ ALTER TABLE buildings ADD COLUMN IF NOT EXISTS construction_system_type_source v
 ALTER TABLE buildings ADD COLUMN IF NOT EXISTS size_roof_shape_source varchar;
 ALTER TABLE buildings ADD COLUMN IF NOT EXISTS building_owner_source varchar;
 
+
+ALTER TABLE buildings ADD COLUMN IF NOT EXISTS architectural_style varchar;
+ALTER TABLE buildings ADD COLUMN IF NOT EXISTS architectural_style_source varchar;
 -- verification
 
 -- no additial columns are required for verification

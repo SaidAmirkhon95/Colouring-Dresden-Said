@@ -409,7 +409,14 @@ const LAYER_QUERIES = {
             building_owner IS NOT NULL`,
 
 
-
+    architectural_style: `
+        SELECT
+            geometry_id,
+            architectural_style
+        FROM
+            buildings
+        WHERE
+        architectural_style IS NOT NULL`,
 
 
 

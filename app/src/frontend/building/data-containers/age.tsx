@@ -46,6 +46,56 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
        ){ */
       return (
           <Fragment>
+
+            <SelectDataEntry
+                title={dataFields.architectural_style.title}
+                slug="architectural_style"
+                value={props.building.architectural_style}
+                mode={props.mode}
+                copy={props.copy}
+                onChange={props.onChange}
+                tooltip={dataFields.architectural_style.tooltip}
+                placeholder={dataFields.architectural_style.example}
+                options={dataFields.architectural_style.items}
+            />
+            <Verification
+                slug="architectural_style"
+                allow_verify={props.user !== undefined && props.building.architectural_style !== null && !props.edited}
+                onVerify={props.onVerify}
+                user_verified={props.user_verified.hasOwnProperty("architectural_style")}
+                user_verified_as={props.user_verified.architectural_style}
+                verified_count={props.building.verified.architectural_style}
+            />
+
+
+            <SelectDataEntry
+                title={dataFields.architectural_style_source.title}
+                slug="architectural_style_source"
+                value={props.building.architectural_style_source}
+                mode={props.mode}
+                copy={props.copy}
+                onChange={props.onChange}
+                tooltip={dataFields.architectural_style_source.tooltip}
+                placeholder={dataFields.architectural_style_source.example}
+                options={dataFields.architectural_style_source.items}
+            />
+
+
+
+            <Verification
+                slug="architectural_style_source"
+                allow_verify={props.user !== undefined && props.building.architectural_style_source !== null && !props.edited}
+                onVerify={props.onVerify}
+                user_verified={props.user_verified.hasOwnProperty("architectural_style_source")}
+                user_verified_as={props.user_verified.architectural_style_source}
+                verified_count={props.building.verified.architectural_style_source}
+            />
+
+
+
+
+
+
             <DataEntryGroup name="Gebäudealter" collapsed={false} >
                 <YearDataEntry
                     year={props.building.date_year}

@@ -343,7 +343,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
             "lokale historische Veröffentlichung",
             "Andere Veröffentlichung",
             "Datenbank zum Denkmalschutz",
-            "Andere Datenbank oder Vezeichnis",
+            "Andere Datenbank oder Verzeichnis",
             "Historische Karte",
             "Anderes Archivdokument",
             "Film/Video",
@@ -1129,6 +1129,46 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         example: "",
     },
 
+    architectural_style: {
+        category: Category.Age,
+        title: "Baustil und äußeres Erscheinungsbild",
+        tooltip: "Welcher Baustil beschreibt das vorherrschende äußere Erscheinungsbild des Gebäudes am besten?",
+        example: "",
+        items: [
+            "Antike",
+            "Romanik",
+            "Gotik",
+            "Renaissance",
+            "Barock",
+            "Klassizismus",
+            "Historismus",
+            "Reformarchitektur",
+            "Jugendstil",
+            "Expressionismus",
+            "Neue Sachlichkeit",
+            "Weiße Moderne",
+            "Nationale Tradition",
+            "Nachkriegsmoderne: handwerklich-konventionell gefertigt",
+            "Nachkriegsmoderne: vorgefertigter Plattenbau"
+        ]
+    },
+
+    architectural_style_source: {
+        category: Category.Age,
+        title: "Datenquelle Baustil und äußeres Erscheinungsbild",
+        tooltip: "Art der Datenquelle",
+        example: "",
+        items: [
+            "Vor-Ort-Einschätzung",
+            "Expert*innenwissen zum Gebäude",
+            "Kartendienst und historische Karten",
+            "Film/ Video/ Foto",
+            "Publizierte Literatur",
+            "Archivdokument",
+            "Webseite",
+            "Sonstige Datenquelle"
+        ],
+    },
 
 };
 

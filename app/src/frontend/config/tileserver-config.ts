@@ -3,7 +3,7 @@
  * Adjust the values here if modifying the list of styles in the tileserver.
  */
 
-export type BuildingMapTileset = 'date_year' | 
+export type BuildingMapTileset = 'date_year' |
     'facade_year' |
     'size_height' |
     'size_storeys_core' |
@@ -40,7 +40,8 @@ export type BuildingMapTileset = 'date_year' |
     'building_attachment_form' |
     'landuse' |
     'dynamics_demolished_count' |
-    'team';
+    'team' |
+    'architectural_style';
 
 export type SpecialMapTileset = 'base_light' | 'base_night' | 'base_night_outlines' | 'highlight' | 'number_labels' | 'base_boroughs';
 
