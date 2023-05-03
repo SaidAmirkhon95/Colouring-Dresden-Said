@@ -593,6 +593,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#dfeefc', text: 'Sporteinrichtungen' },
                     { color: '#ae4d2a', text: 'Büro- und Verwaltungsgebäude' },
                     { color: '#5ce1e6', text: 'Ver- und Entsorgungsbauwerke' },
+                    { color: '#008000', text: 'Kleingartenanlage' },
                     { color: '#cccccc', text: 'Sonstige Nichtwohngebäude' },
                 ]
             }
@@ -623,6 +624,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ae4d2a', text: 'Büro- und Verwaltungsgebäude' },
                     { color: '#5ce1e6', text: 'Ver- und Entsorgungsbauwerke' },
                     { color: '#cccccc', text: 'Sonstige Nichtwohngebäude' },
+                    { color: '#008000', text: 'Kleingartenanlage' },
                     { color: '#ffffff', text: 'Leerstand' },
                 ]
             }
@@ -699,6 +701,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#5ce1e6', text: 'Garage' },
                     { color: '#f5f58f', text: 'Gesundheit (Ärztehaus, Klinik, Apotheke)' },
                     { color: '#95a984', text: 'Verkehr' },
+                    { color: '#008000', text: 'Kleingartenanlage' },
                     { color: '#cccccc', text: 'Sonstiges' },
                     { color: '#ffffff', text: 'Leerstand' },
                 ]

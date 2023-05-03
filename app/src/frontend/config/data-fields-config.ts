@@ -854,6 +854,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
             "Sporteinrichtungen",
             "Büro- und Verwaltungsgebäude",
             "Ver- und Entsorgungsbauwerke",
+            "Kleingartenanlage",
             "Sonstige Nichtwohngebäude"
         ]
     },
@@ -892,6 +893,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
             "Büro- und Verwaltungsgebäude",
             "Ver- und Entsorgungsbauwerke",
             "Sonstige Nichtwohngebäude",
+            "Kleingartenanlage",
             "Leerstand"
         ]
     },
@@ -965,6 +967,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
             "Garage",
             "Gesundheit (Ärztehaus, Klinik, Apotheke)",
             "Verkehr",
+            "Kleingartenanlage",
             "Sonstiges",
             "Leerstand"
         ]

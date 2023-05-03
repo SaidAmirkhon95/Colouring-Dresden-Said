@@ -1003,6 +1003,10 @@
             <PolygonSymbolizer fill="#5ce1e6" />
         </Rule>
         <Rule>
+            <Filter>[use_building_origin] = "Kleingartenanlage"</Filter>
+            <PolygonSymbolizer fill="#008000" />
+        </Rule>
+        <Rule>
             <Filter>[use_building_origin] = "Sonstige Nichtwohngebäude"</Filter>
             <PolygonSymbolizer fill="#cccccc" />
         </Rule>
@@ -1096,6 +1100,10 @@
         <Rule>
             <Filter>[use_building_current] = "Ver- und Entsorgungsbauwerke"</Filter>
             <PolygonSymbolizer fill="#5ce1e6" />
+        </Rule>
+        <Rule>
+            <Filter>[use_building_current] = "Kleingartenanlage"</Filter>
+            <PolygonSymbolizer fill="#008000" />
         </Rule>
         <Rule>
             <Filter>[use_building_current] = "Sonstige Nichtwohngebäude"</Filter>
@@ -1286,6 +1294,10 @@
         <Rule>
             <Filter>[ground_storey_use] = "Verkehr"</Filter>
             <PolygonSymbolizer fill="#95a984" />
+        </Rule>
+        <Rule>
+            <Filter>[ground_storey_use] = "Kleingartenanlage"</Filter>
+            <PolygonSymbolizer fill="#008000" />
         </Rule>
         <Rule>
             <Filter>[ground_storey_use] = "Sonstiges"</Filter>
