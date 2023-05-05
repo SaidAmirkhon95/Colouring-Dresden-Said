@@ -23,7 +23,8 @@ def get_connection():
 
 
 def get_extract_zip_file_path(current_time):
-    base_dir = Path(os.environ['EXTRACTS_DIRECTORY'])
+    #base_dir = Path(os.environ['EXTRACTS_DIRECTORY'])
+    base_dir = Path("/var/www/colouring-dresden/app/public/downloads")
     file_name = f"data-extract-{current_time:%Y-%m-%d-%H_%M_%S}.zip"
     return base_dir / file_name
 
@@ -56,8 +57,8 @@ def make_data_extract(current_time, connection, zip_file_path):
     with connection.cursor() as cur:
         cur.execute(read_sql('./export_attributes.sql'))
 
-    with connection.cursor() as cur:
-        cur.execute(read_sql('./export_uprns.sql'))
+    #with connection.cursor() as cur:
+    #    cur.execute(read_sql('./export_uprns.sql'))
 
     with connection.cursor() as cur:
         cur.execute(read_sql('./export_edit_history.sql'))
@@ -70,7 +71,7 @@ def make_data_extract(current_time, connection, zip_file_path):
         with zipfile.ZipFile(zip_file_path, mode='w') as newzip:
             newzip.write(source_dir_path / 'README.md', arcname='README.md')
             newzip.write('/tmp/building_attributes.csv', arcname='building_attributes.csv')
-            newzip.write('/tmp/building_uprns.csv', arcname='building_uprns.csv')
+            #newzip.write('/tmp/building_uprns.csv', arcname='building_uprns.csv')
             newzip.write('/tmp/edit_history.csv', arcname='edit_history.csv')
 
         add_extract_record_to_database(connection, zip_file_path, current_time)

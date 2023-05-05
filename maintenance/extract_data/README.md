@@ -1,137 +1,103 @@
-# Colouring London Data Extract
+# Colouring Dresden Datenextrakt
 
-This extract contains a snapshot of contributions to Colouring London
-(https://colouring.london).
+Dieses Datenextrakt beinhaltet den Datenstand des CitizenScience Forschungsprojektes "Colouring Dresden"
+(https://colouring.dresden.ioer.info/).
 
-Colouring London is a citizen science platform collecting information on every building in
-London, to help make the city more sustainable.
+Colouring Dresden ist eine CitizenScience Plattform um Merkmale des Dresdner Gebäudebestands erfassen zu können.
 
-The data included are open data, licensed under the Open Data Commons Open Database License
-(ODbL, http://opendatacommons.org/licenses/odbl/) by Colouring London contributors.
+Die hier bereitgestellten Daten sind offene Daten und stehen unter der Open Data Commons Open Database Lizenz
+(ODbL, http://opendatacommons.org/licenses/odbl/) by Colouring Dresden Mitwirkenden.
 
-You are free to copy, distribute, transmit and adapt the data, as long as you credit Colouring
-London and our contributors. If you alter or build upon our data, you may distribute the
-result only under the same licence.
+Es steht Ihnen frei, die Daten zu kopieren, zu teilen und anzupassen, 
+solange Sie Colouring Dresden und Mitwirkende nennen. 
+Die Daten dürfen nur unter der selben Lizenz verbreitet werden.
 
 
-## Contents
+## Inhalt
 
-This extract contains four files:
+Dieses Extrakt besteht aus drei Dateien:
 
 - README.txt
 - building_attributes.csv
-- building_uprns.csv
 - edit_history.csv
 
 
-## Building Attributes
+## Gebäudemerkmale / Building Attributes 
 
-This is the main table, containing almost all data collected by Colouring London. Apart from
-`building_id`, `revision_id` and `ref_toid`, all of these fields are optional.
+Dies ist die wichtigste Datentabelle und enthält fast alle im Projekt Colouring Dresden erfassten Gebäudemerkmale. Abgesehen von
+`building_id`, `revision_id` und `ref_toid` sind alle weiteren Felder optional.
 
-- `building_id`: unique building ID for Colouring London buildings
-- `revision_id`: unique revision ID for Colouring London, cross-references to our edit history
-- `ref_toid`: cross-reference to Ordnance Survey MasterMap TOID
-- `ref_osm_id`: cross-reference to OpenStreetMap feature osm_id
-- `location_name`: building name
-- `location_number`: building number
-- `location_street`: street name
-- `location_line_two`: additional address line
-- `location_town`: town
-- `location_postcode`: postcode
-- `location_latitude`: latitude
-- `location_longitude`: longitude
-- `current_landuse_group`: current land use group
-- `current_landuse_order`: current land use order
-- `building_attachment_form`: building attachment form
-- `date_change_building_use`: year of last building use change
-- `date_year`: year built
-- `date_lower`: lower bound on year built
-- `date_upper`: upper bound on year built
-- `date_source`: type of source for building dates
-- `date_source_detail`: details of source for building dates
-- `date_link`: list of links to further information relating to building dates
-- `facade_year`: facade date
-- `facade_upper`: upper bound on facade date
-- `facade_lower`: lower bound on facade date
-- `facade_source`: type of source for facade dates
-- `facade_source_detail`: details of source for facade dates
-- `size_storeys_attic`: number of attic storeys
-- `size_storeys_core`: number of core storeys
-- `size_storeys_basement`: number of basement storeys
-- `size_height_apex`: height in metres to the building apex
-- `size_floor_area_ground`: ground floor floor area in square metres
-- `size_floor_area_total`: total floor area in square metres
-- `size_width_frontage`: width of frontage in metres
-- `construction_core_material`: main structural material
-- `construction_secondary_materials`: other structural materials
-- `construction_roof_covering`: main roof covering
-- `sust_breeam_rating`: BREEAM rating
-- `sust_dec`: DEC rating
-- `sust_retrofit_date`: year of last significant retrofit
-- `planning_portal_link`: link to an entry on https://www.planningportal.co.uk/
-- `planning_crowdsourced_site_completion_status`: status of completion of costruction at given location
-- `planning_crowdsourced_site_completion_year`: year of completion of costruction at given location
-- `planning_crowdsourced_planning_id`: id of planning application for a given location
-- `planning_list_id`: National Heritage List for England ID
-- `planning_in_conservation_area_id`: conservation area ID
-- `planning_in_conservation_area_url`: conservation area appraisal link
-- `planning_in_conservation_area_source_url`: conservation area data source link
-- `planning_list_grade`: National Heritage List for England listing grade
-- `planning_heritage_at_risk_url`: Heritage at Risk link
-- `planning_world_list_id`: UNESCO World Heritage list id
-- `planning_glher_url`: Greater London Historic Environment Record link
-- `planning_in_apa_url`: an Archeological Priority Area (APA) link
-- `planning_local_list_url`: local list reference link
-- `planning_historic_area_assessment_url`: historic area assessment reference link
-- `likes_total`: number of times the building has been liked by Colouring London users
+- `building_id`: Eindeutiger Gebäude-Identifikator (ID) von Colouring Dresden
+- `revision_id`: Eindeutiger Revisions-Identifikator (ID) für Colouring Dresden, referenziert auf die Bearbeitungshistorie.
+- `ref_toid`: Referenz auf Identifikator des Datensatzes der Gebäudegeometrien TOID
+- `ref_osm_id`: Referenz auf OpenStreetMap Identifikator (osm_id)
+- `location_name`: Name des Gebäudes (Link zu weiteren Informationen)
+- `location_number`: Hausnummer
+- `location_street`: Straße
+- `location_line_two`: weitere Adresszeile
+- `location_town`: Stadt
+- `location_postcode`: Postleitzahl
+- `location_latitude`: geogr. Breitengrad (im WGS84) des Gebäudeschwerpunktes (Centroid)
+- `location_longitude`: geogr. Längengrad (im WGS84) des Gebäudeschwerpunktes (Centroid)
+- `is_domestic`: Wohngebäude?
+- `use_building_origin`: Originale Gebäudehauptnutzung
+- `use_building_origin_text`: Ergänzung zur originalen Gebäudehauptnutzung
+- `use_building_current`: Aktuelle Gebäudehauptnutzung
+- `use_building_current_text`: Ergänzung zur aktuellen Gebäudehauptnutzung
+- `basement_type`: Art der Unterkellerung
+- `basement_percentage`: Anteil Unterkellerung (in Prozent)
+- `basement_use`: Aktuelle Nutzung des Kellers
+- `basement_use_source`: Datenquelle aktuelle Nutzung Keller
+- `ground_storey_use`: Aktuelle Nutzung des Erdgeschosses
+- `ground_storey_use_source`: Datenquelle aktuelle Nutzung Erdgeschoss
+- `upper_storeys_use`: Aktuelle Nutzung 1. Etage und höher
+- `upper_storeys_use_source`: Datenquelle aktuelle Nutzung 1. Etage und höher
+- `use_number_residential_units`: Anzahl Wohneinheiten im Gebäude
+- `use_number_businesses`: Anzahl Gewerbe im Gebäude
+- `building_attachment_form`: Morphologischer Bautyp/ Nachbarschaft
+- `size_roof_shape`: Dachform
+- `size_roof_shape_source`: Datenquelle Dachform
+- `building_owner`: Eigentumsform des Gebäudes
+- `building_owner_source`: Datenquelle Eigentumsform des Gebäudes
+- `size_storeys_core`: Anzahl Hauptgeschosse
+- `size_storeys_attic`: Anzahl Dachgeschosse
+- `size_storeys_basement`: Anzahl Kellergeschosse
+- `size_height_apex`: Firsthöhe (in Metern)
+- `size_floor_area_ground`: Grundfläche (in Quadratmetern)
+- `size_floor_area_total`: Summe Geschossfläche (in Quadratmetern)
+- `size_width_frontage`: Breite der Fassade/ der Gebäudefront (in Metern)
+- `construction_system_type`: Hauptkonstruktion
+- `construction_system_type_source`: Datenquelle Hauptkonstruktion
+- `construction_core_material`: Primärer Baustoff
+- `construction_secondary_materials`: Sekundärer Baustoff
+- `construction_roof_covering`: Vorherrschende Dachbedeckung
+- `building_status`: Aktueller Gebäudezustand
+- `building_status_source`: Datenquelle aktueller Gebäudezustand
+- `last_renovation`: Jahr der letzten Sanierung
+- `last_renovation_source`: Datenquelle Jahr der letzten Sanierung
+- `architectural_style`: Baustil und äußeres Erscheinungsbild
+- `architectural_style_source`: Datenquelle Baustil und äußeres Erscheinungsbild
+- `date_year`: Baujahr (ggf. beste Schätzung)
+- `date_lower`: Baujahr (frühest mögliches Jahr)
+- `date_upper`: Baujahr (spätest mögliches Jahr)
+- `date_source`: Datenquelle der Information
+- `facade_year`: Baujahr der Fassade
+- `community_type_worth_keeping_total`: Glauben Sie, dass dieser Gebäudetyp einen Beitrag zur Stadt leistet?
+- `likes_total`: Likes total
 
+## Bearbeitungshistorie / Edit History
 
-## Building UPRNs
+Jede Veränderung im Datenbestand von Colouring Dresden wird transparent gespeichert. So ist es möglich zu erforschen,
+wie sich der Datensatz über die Zeit entwickelt hat.
 
-Buildings are matched to UPRNs (Unique Property Reference Numbers), which should help link
-Colouring London data against other datasets.
-
-Read more about UPRNs: https://www.ordnancesurvey.co.uk/business-government/tools-support/uprn
-
-`building_uprns.csv` looks something like this:
-
-    building_id,uprn,parent_uprn
-    2810432,10091093495,100023038313
-    2810432,10091093496,100023038313
-    2810432,10091093497,
-
-- `building_id`: Colouring London unique building ID, references the building_id in
-  building_attributes.csv
-- `uprn`: Unique Property Reference Number associated with the building. In some cases
-  multiple UPRNs are associated with a single Colouring London building, for example in
-  blocks of flats or mixed-use buildings.
-- `parent_uprn`: optional. Some UPRNs are grouped by a parent-child relationship, so while
-  each UPRN is unique, multiple UPRNs may share the same parent.
+Die Bearbeitungshistorie wird automatisch bei neuen Eingaben angelegt und umfasst die folgenden Felder:
 
 
-## Edit History
-
-Each change to the Colouring London database is recorded, so it is possible to explore how the
-dataset evolves over time.
-
-The edit history logs changes made by users, with the following fields:
-
-- `revision_id`: unique change id, referenced by building_attributes
-- `revision_timestamp`: date and time of the change
-- `building_id`: Colouring London building ID, references building_attributes
-- `forward_patch`: the changes made, encoded as a JSON string where keys are attribute/column
-  names, and values are the values set by this change.
-- `reverse_patch`: the reverse of the change, encoded as a JSON string. This shows what the
-  values were before this change was made.
-- `user`: username of the user who made the change
+- `revision_id`: eindeutiger Identifikator für die Bearbeitung, refernziert durch Gebäudeattribute
+- `revision_timestamp`: Datum und Uhrzeit der Bearbeitung
+- `building_id`: eindeutige Gebäude-Identifikator von Colouring Dresden
+- `forward_patch`: enthält die gemachten Änderungen, formatiert als JSON Zeichenkette: keys sind die Gebäudemerkmale/ Spalten, values beinhalten die erfassten Werte für das Gebäudemerkmal.
+- `reverse_patch`: speichert den Zustand der nun veränderten Gebäudemerkmale in ihrem Zustand vor der Bearbeitung.
+- `user`: Benutzername
 
 
-For example a forward patch might show a building date being provided, along with some source
-details:
-
-    {"date_year": 1911, "date_source_details": "Survey of London Marylebone draft text"}
-
-Where the reverse patch shows that there was no previous data stored:
-
-    {"date_year": None, "date_source_details": None}

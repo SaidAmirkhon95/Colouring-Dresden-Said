@@ -34,6 +34,11 @@ postgresdata
 app/tilecache/**/*.png
 app/tilecache/**/*.mbtiles
 
+# Data of data extracts
+data_extracts/
+data_extracts/*.csv
+downloads/
+downloads/*.csv
 # Cache
 # to avoid undefined cached tiles will be pushed to remote repository after tile rendering problems
 app/undefined/**/*.png
