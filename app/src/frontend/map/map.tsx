@@ -49,6 +49,8 @@ import { Historic_1880_DataSwitcher } from './historic-1880-data-switcher';
 import { Historic_1911_DataSwitcher } from './historic-1911-data-switcher';
 import { Historic_1945_DataSwitcher } from './historic-1945-data-switcher';
 
+/* import Geolocation_Button from './geolocation'; */
+
 interface ColouringMapProps {
     selectedBuildingId: number;
     mode: 'basic' | 'view' | 'edit' | 'multi-edit';
@@ -164,6 +166,8 @@ export const ColouringMap : FC<ColouringMapProps> = ({
 
                 <ZoomControl position="topright" />
                 <AttributionControl prefix=""/>
+                {/* <Geolocation_Button title="X"/> */}
+                <GeolocationButton/>
             </MapContainer>
             {
                 mode !== 'basic' &&
@@ -227,4 +231,23 @@ function MapViewport({
     }, [position, zoom]);
 
     return null;
+}
+
+/* move map to current position after onClick button */
+
+function GeolocationButton() {
+    const map = useMap();
+    const handleClick = () => {
+        
+        map.locate().on("locationfound", function (e) {
+            
+
+            console.log(e.latlng);
+            map.flyTo(e.latlng, map.getZoom());
+        });
+    }
+
+    return (
+        <button className="btn-geolocation" onClick={handleClick}><b>O</b></button>
+    );
 }
