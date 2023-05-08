@@ -21,7 +21,12 @@ const TeamView: React.FunctionComponent<CategoryViewProps> = (props) => {
     const currentBuildingConstructionYear = building.date_year || undefined;
       return (
        <form>
-          <InfoBox msg="Wer war am Bau des Gebäudes beteiligt?"></InfoBox>
+          <InfoBox>
+            Dieser Abschnitt ist noch in der Entwicklung.
+          </InfoBox>
+          
+          
+{/*           <InfoBox msg="Wer war am Bau des Gebäudes beteiligt?"></InfoBox>
           <MultiDataEntry
               title={dataFields.landowner.title}
               slug="landowner"
@@ -341,7 +346,7 @@ const TeamView: React.FunctionComponent<CategoryViewProps> = (props) => {
            user_verified={props.user_verified.hasOwnProperty("other_team_source_link")}
            user_verified_as={props.user_verified.other_team_source_link}
            verified_count={props.building.verified.other_team_source_link}
-           />
+           /> */}
      </form>
     );
 };

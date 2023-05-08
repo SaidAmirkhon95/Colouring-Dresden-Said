@@ -171,7 +171,19 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
         }
 
     ],
-    [Category.Team]: [{
+    [Category.Team]: [
+        {
+            mapStyle: undefined,
+            legend: {
+                title: 'Team',
+                elements: []
+            },
+        }   
+        
+        
+        
+        
+/*         {
         mapStyle: 'team',
         legend: {
             title: 'Team',
@@ -184,7 +196,8 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                 { color: '#ffe6cc', text: '<20%' }
             ]
         },
-    }],
+    } */
+    ],
     [Category.Construction]: [
 
         {
@@ -314,6 +327,13 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
         },
         */
         {
+            mapStyle: undefined,
+            legend: {
+                title: 'Community',
+                elements: []
+            },
+        }   
+/*         {
             mapStyle: 'typology_likes',
             legend: {
                 title: 'Likes für Gebäudetyp',
@@ -370,7 +390,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     {color: '#ffaaa0', text: 'No'}
                 ]
             }
-        }
+        } */
     ],
     [Category.Planning]: [
 

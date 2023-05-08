@@ -40,11 +40,15 @@ const CommunityView: React.FunctionComponent<CategoryViewProps> = (props) => {
     const { darkLightTheme } = useDisplayPreferences();
     const worthKeepingReasonsNonEmpty = Object.values(props.building.community_type_worth_keeping_reasons ?? {}).some(x => x);
     return <>
-        <DataEntryGroup name="Sichtweise der Community auf Gebäudetypen" collapsed={false} >
+
+        <InfoBox>
+            Dieser Abschnitt ist noch in der Entwicklung.
+        </InfoBox>
+{/*         <DataEntryGroup name="Sichtweise der Community auf Gebäudetypen" collapsed={false} >
         <div className='community-opinion-pane'>
             <InfoBox>
                 Hier wird Ihre Einschätzung erfasst, wie gut Sie bestimmte Gebäudetypen (und nicht einzelne Gebäude) finden, um sicherzustellen, dass wir als Gesellschaft alle nützlichen Gebäude retten und wiederverwenden können, und um die Qualität der Stadtgestaltung in Zukunft zu verbessern.
-           </InfoBox>
+           </InfoBox> */}
             {
             /*
             {(props.building.is_domestic === "no" || props.building.is_domestic === "mixed domestic/non-domestic") ?
@@ -66,7 +70,7 @@ const CommunityView: React.FunctionComponent<CategoryViewProps> = (props) => {
             : <></>}
             */
             }
-            <LogicalDataEntryYesOnlyWithExplanation
+{/*             <LogicalDataEntryYesOnlyWithExplanation
                 slug='community_type_worth_keeping'
                 title={buildingUserFields.community_type_worth_keeping.title}
 
@@ -96,7 +100,7 @@ const CommunityView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     
                     mode={props.mode}
                 />
-            }
+            } */}
             {
             /*
             <button className={`map-switcher-inline ${props.mapColourScale == "typology_likes" ? "enabled-state" : "disabled-state"} btn btn-outline btn-outline-dark ${darkLightTheme}`} onClick={switchToTypologyMapStyle}>
@@ -104,7 +108,7 @@ const CommunityView: React.FunctionComponent<CategoryViewProps> = (props) => {
             </button>
             */
             }
-            <hr />
+            {/* <hr />
             
 
             <UserOpinionEntry
@@ -181,7 +185,7 @@ const CommunityView: React.FunctionComponent<CategoryViewProps> = (props) => {
             copy={props.copy}
             onChange={props.onChange}
             mode={props.mode}
-        />
+        /> */}
         {/* TODO: dates */}
         {
             // props.building.community_activities === true &&
@@ -193,7 +197,7 @@ const CommunityView: React.FunctionComponent<CategoryViewProps> = (props) => {
             // </FieldRow>
         }
         
-        <SelectDataEntry
+        {/* <SelectDataEntry
             slug='community_public_ownership'
             title={dataFields.community_public_ownership.title}
             value={props.building.community_public_ownership}
@@ -235,7 +239,7 @@ const CommunityView: React.FunctionComponent<CategoryViewProps> = (props) => {
                 user_verified={props.user_verified.hasOwnProperty("community_public_ownership_sources")}
                 user_verified_as={props.user_verified.community_public_ownership_sources}
                 verified_count={props.building.verified.community_public_ownership_sources}
-                />
+                /> */}
 
 
 {/*         {(props.mapColourScale == "community_in_public_ownership") ? 
@@ -249,8 +253,8 @@ const CommunityView: React.FunctionComponent<CategoryViewProps> = (props) => {
         } */}
 
 
-        </DataEntryGroup>
-    </>
+{/*         </DataEntryGroup>*/}
+    </> 
 };
 const CommunityContainer = withCopyEdit(CommunityView);
 
