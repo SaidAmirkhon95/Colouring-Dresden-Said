@@ -43,9 +43,13 @@
     right: 60px;
     z-index: 1000;
 
-    min-width: 2rem;
-    max-width: 2rem;
-    max-height: 60%;
+    min-width: 3.7rem;
+    max-width: 3.7rem;
+
+    min-height: 3.7rem;
+    max-height: 3.7rem;
+
+    /* max-height: 60%; */
 
     display: flex;
     flex-direction: column;
@@ -55,4 +59,11 @@
     padding: 0.5rem 0rem 0.25rem;
     border: 1px solid #fff;
     box-shadow: 0px 0px 1px 1px #222222;
+}
+
+.btn-geolocation-icon {
+
+    width: 100%;
+    height: 100%;
+
 }

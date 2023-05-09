@@ -248,6 +248,11 @@ function GeolocationButton() {
     }
 
     return (
-        <button className="btn-geolocation" onClick={handleClick}><b>O</b></button>
+        <button className="btn-geolocation" onClick={handleClick}>
+            <img className="btn-geolocation-icon" src="../images/map-marker-alt-solid.svg" alt="Markersymbol, gehe zu aktueller Position"></img>
+        </button>
     );
 }
+
+
+
