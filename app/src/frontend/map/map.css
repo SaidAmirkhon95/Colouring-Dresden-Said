@@ -65,5 +65,8 @@
 
     width: 100%;
     height: 100%;
+    /* max height for chrome/ edge browser */
+    max-height: 2.8rem;
+    object-fit: contain;
 
 }
