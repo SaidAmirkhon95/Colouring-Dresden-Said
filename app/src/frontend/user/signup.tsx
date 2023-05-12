@@ -44,6 +44,18 @@ export const SignUp: React.FC = () => {
                     Einen neuen Account anlegen. Let´s colour {config.cityName}!
                 </p>
                 <ErrorBox msg={error} />
+                <InfoBox>
+                    <b>Hinweise zum Benutzername:</b>
+                    <ul>
+                        <li>da der Benutzername öffentlich steht, bitte möglichst keine eigenen Klarnamen verwenden</li>
+                        <li>für den Benutzernamen sind nur die folgenden Zeichen zulässig:</li>
+                            <ul><b>
+                                <li>Buchstaben</li>
+                                <li>Zahlen</li>
+                                <li>Unterstrich</li>
+                                </b></ul>
+                    </ul>  
+                </InfoBox>
                 <form onSubmit={onSubmit}>
                     <label htmlFor="username">Benutzername*</label>
                     <input name="username" id="username"
