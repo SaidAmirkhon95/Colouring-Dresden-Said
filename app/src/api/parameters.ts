@@ -51,3 +51,13 @@ export function checkRegexParam(param: string, regex: RegExp): string {
     
     return param;
 }
+/* checking input paramter by given allowlist (of fieldnames e.g.) */
+export function checkParamByAllowList(param: string, allowlist:string[]): string {
+    if(param == undefined) return undefined;
+    
+    if(allowlist.indexOf(param) == -1) {
+        throw new ApiParamInvalidFormatError(`Invalid format: does not match given values in allowlist ${allowlist}`);
+    }
+    
+    return param;
+}
