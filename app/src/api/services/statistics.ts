@@ -158,7 +158,7 @@ async function service_ByDayNumberNewAccounts(): Promise<ByDay[]> {
                 (SELECT COUNT(*) AS "count", DATE_TRUNC ('day', registered)::date AS "date" 
                 FROM public.users 
                 WHERE registered > '2023-03-06 00:00:00'::timestamp 
-                AND registered <= CURRENT_DATE::timestamp 
+                AND registered <= NOW()::timestamp 
                 GROUP BY DATE_TRUNC ('day', registered)) AS requested_data
             ON t.day::date=requested_data.date`
         );
@@ -182,7 +182,7 @@ async function service_ByDayNumberActiveAccounts(): Promise<ByDay[]> {
             LEFT JOIN
                 (SELECT DATE_TRUNC ('day', log_timestamp) AS "date", COUNT (DISTINCT user_id) AS "count" FROM public.logs 
                 WHERE log_timestamp > '2023-03-06 00:00:00'::timestamp 
-                AND log_timestamp <= CURRENT_DATE::timestamp
+                AND log_timestamp <= NOW()::timestamp
                 GROUP BY DATE_TRUNC ('day', log_timestamp)) AS requested_data
             ON t.day::date=requested_data.date`
         );
@@ -207,7 +207,7 @@ async function service_ByDayNumberEdits(): Promise<ByDay[]> {
                 (SELECT COUNT(*) AS "count", DATE_TRUNC ('day', log_timestamp) AS "date" 
                 FROM public.logs 
                 WHERE log_timestamp > '2023-03-06 00:00:00'::timestamp 
-                AND log_timestamp <= CURRENT_DATE::timestamp 
+                AND log_timestamp <= NOW()::timestamp 
                 GROUP BY DATE_TRUNC ('day', log_timestamp)) AS requested_data
             ON t.day::date=requested_data.date`
         );
@@ -235,7 +235,7 @@ async function service_ByDayNumberMappedAttributes(): Promise<ByDay[]> {
                         (SELECT COUNT(*) FROM jsonb_object_keys(forward_patch)) AS anzahl_merkmale
                         FROM public.logs 
                         WHERE log_timestamp > '2023-03-06 00:00:00'::timestamp 
-                        AND log_timestamp <= CURRENT_DATE::timestamp 
+                        AND log_timestamp <= NOW()::timestamp 
                         ORDER BY log_timestamp DESC
                     ) AS src
                 GROUP BY DATE_TRUNC ('day', src.log_timestamp)) AS requested_data
