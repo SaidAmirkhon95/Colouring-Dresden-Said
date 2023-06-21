@@ -839,39 +839,218 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
 
     ],
-    [Category.Resilience]: [{
-        mapStyle: 'dynamics_demolished_count',
-        legend: {
-            title: 'Resilienz',
-/*             description: 'Demolished buildings on the same site', */
-            elements: [
-/*                 {
-                    text: '7+',
-                    color: '#bd0026',
-                }, {
-                    text: '6',
-                    color: '#e31a1c',
-                }, {
-                    text: '5',
-                    color: '#fc4e2a',
-                }, {
-                    text: '4',
-                    color: '#fd8d3c',
-                }, {
-                    text: '3',
-                    color: '#feb24c',
-                }, {
-                    text: '2',
-                    color: '#fed976',
-                }, {
-                    text: '1',
-                    color: '#ffe8a9',
-                }, {
-                    text: 'None',
-                    color: '#0C7BDC'
-                } */
-            ],
+    [Category.Resilience]: [
+
+
+        {
+            mapStyle: 'facade_window_percentage',
+            legend: {
+                title: 'Anteil Fenster an Fasade',
+                /* description: 'Demolished buildings on the same site', */
+                elements: [
+                    { color: '#e31a1c', text: '80-100%' },
+                    { color: '#fc4e2a', text: '60-80%' },
+                    { color: '#fd8d3c', text: '40-60%' },
+                    { color: '#feb24c', text: '20-40%' },
+                    { color: '#fed976', text: '0-20%' },
+                ],
+            },
         },
-    }]
+        {
+            mapStyle: 'roof_colour',
+            legend: {
+                title: 'Dachfarbe',
+                /* description: 'Demolished buildings on the same site', */
+                elements: [
+                    { color: '#000000', text: 'schwarz' },
+                    { color: '#808080', text: 'dunkelgrau' },
+                    { color: '#cccccc', text: 'hellgrau' },
+                    { color: '#805500', text: 'dunkelbraun' },
+                    { color: '#e69900', text: 'hellbraun' },
+                    { color: '#009933', text: 'grün' },
+                    { color: '#00cc99', text: 'türkis' },
+                    { color: '#0000ff', text: 'blau' },
+                    { color: '#ff0000', text: 'rot' },
+                    { color: '#ffff00', text: 'gelb' },
+                    { color: '#ffe6cc', text: 'beige' },
+                    { color: '#ffffff', text: 'weiß' },
+                    { color: '#ff00ff', text: 'andere Farbe' },
+                    { color: '#00ffff', text: 'Solaranlage' },
+                    { color: '#99ddff', text: 'Vollverglasung' },
+                    { color: '#b3ffcc', text: 'Dachbegrünung: extensiv' },
+                    { color: '#4dff88', text: 'Dachbegrünung: intensiv' },
+                ],
+            },
+        },
+
+        {
+            mapStyle: 'facade_colour',
+            legend: {
+                title: 'Fassadenfarbe',
+                /* description: 'Demolished buildings on the same site', */
+                elements: [
+                    { color: '#000000', text: 'schwarz' },
+                    { color: '#808080', text: 'dunkelgrau' },
+                    { color: '#cccccc', text: 'hellgrau' },
+                    { color: '#805500', text: 'dunkelbraun' },
+                    { color: '#e69900', text: 'hellbraun' },
+                    { color: '#009933', text: 'grün' },
+                    { color: '#00cc99', text: 'türkis' },
+                    { color: '#0000ff', text: 'blau' },
+                    { color: '#9933ff', text: 'lila' },
+                    { color: '#ff0000', text: 'rot' },
+                    { color: '#ff9933', text: 'orange' },
+                    { color: '#ffff00', text: 'gelb' },
+                    { color: '#ffe6cc', text: 'beige' },
+                    { color: '#ffffff', text: 'weiß' },
+                    { color: '#ff00ff', text: 'andere Farbe' },
+                    { color: '#00ffff', text: 'Solaranlage' },
+                    { color: '#99ddff', text: 'Vollverglasung' },
+                    { color: '#b3ffcc', text: 'Fassadenbegrünung' },
+                ],
+            },
+        },
+
+
+        {
+            mapStyle: 'facade_window_percentage',
+            legend: {
+                title: 'Anteil Fenster an Fasade',
+                /* description: 'Demolished buildings on the same site', */
+                elements: [
+                    { color: '#e31a1c', text: '80-100%' },
+                    { color: '#fc4e2a', text: '60-80%' },
+                    { color: '#fd8d3c', text: '40-60%' },
+                    { color: '#feb24c', text: '20-40%' },
+                    { color: '#fed976', text: '0-20%' },
+                ],
+            },
+        },
+
+
+        {
+            mapStyle: 'thermal_stress_objective_count',
+            legend: {
+                title: 'Obj. Temperatur (Anzahl)',
+                description: 'Anzahl erfasster Messungen', 
+                elements: [
+                    {
+                        text: '7+',
+                        color: '#bd0026',
+                    }, {
+                        text: '6',
+                        color: '#e31a1c',
+                    }, {
+                        text: '5',
+                        color: '#fc4e2a',
+                    }, {
+                        text: '4',
+                        color: '#fd8d3c',
+                    }, {
+                        text: '3',
+                        color: '#feb24c',
+                    }, {
+                        text: '2',
+                        color: '#fed976',
+                    }, {
+                        text: '1',
+                        color: '#ffe8a9',
+                    }, {
+                        text: '0',
+                        color: '#0C7BDC'
+                    }
+                ],
+            },
+        },
+        {
+            mapStyle: 'thermal_stress_subjective_count',
+            legend: {
+                title: 'Subj. Temperatur (Anzahl)',
+                description: 'Anzahl erfasster Messungen', 
+                elements: [
+                    {
+                        text: '7+',
+                        color: '#bd0026',
+                    }, {
+                        text: '6',
+                        color: '#e31a1c',
+                    }, {
+                        text: '5',
+                        color: '#fc4e2a',
+                    }, {
+                        text: '4',
+                        color: '#fd8d3c',
+                    }, {
+                        text: '3',
+                        color: '#feb24c',
+                    }, {
+                        text: '2',
+                        color: '#fed976',
+                    }, {
+                        text: '1',
+                        color: '#ffe8a9',
+                    }, {
+                        text: '0',
+                        color: '#0C7BDC'
+                    }
+                ],
+            },
+        },
+
+
+        {
+            mapStyle: 'terrain_connection_yesno',
+            legend: {
+                title: 'Geländeanbindung',
+                description: 'Ist der Boden des Erdgeschosses höher als das umliegende Gelände?',
+                elements: [
+                    { color: '#f5f58f', text: 'höher' },
+                    { color: '#e5050d', text: 'gleich' },
+                    { color: '#7025a6', text: 'niedriger' },
+                ],
+            },
+        },
+
+
+
+
+        {
+            mapStyle: 'rain_flood_historic_incidents_count',
+            legend: {
+                title: 'Historische Ereignisse (Anzahl)',
+                /* description: 'Demolished buildings on the same site', */
+                elements: [
+                    {
+                        text: '7+',
+                        color: '#bd0026',
+                    }, {
+                        text: '6',
+                        color: '#e31a1c',
+                    }, {
+                        text: '5',
+                        color: '#fc4e2a',
+                    }, {
+                        text: '4',
+                        color: '#fd8d3c',
+                    }, {
+                        text: '3',
+                        color: '#feb24c',
+                    }, {
+                        text: '2',
+                        color: '#fed976',
+                    }, {
+                        text: '1',
+                        color: '#ffe8a9',
+                    }, {
+                        text: '0',
+                        color: '#0C7BDC'
+                    }
+                ],
+            },
+        },
+
+
+
+    ]
     
 };

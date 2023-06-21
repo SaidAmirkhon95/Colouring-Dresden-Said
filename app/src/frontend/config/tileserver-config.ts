@@ -41,7 +41,14 @@ export type BuildingMapTileset = 'date_year' |
     'landuse' |
     'dynamics_demolished_count' |
     'team' |
-    'architectural_style';
+    'architectural_style' |
+    'thermal_stress_objective_count' |
+    'thermal_stress_subjective_count' |
+    'rain_flood_historic_incidents_count' |
+    'facade_window_percentage' |
+    'roof_colour' |
+    'facade_colour' |
+    'terrain_connection_yesno';
 
 export type SpecialMapTileset = 'base_light' | 'base_night' | 'base_night_outlines' | 'highlight' | 'number_labels' | 'base_boroughs';
 

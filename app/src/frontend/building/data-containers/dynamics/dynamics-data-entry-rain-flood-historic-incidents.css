@@ -1,0 +1,86 @@
+.dynamics-building-pane {
+    position: relative;
+    background-color: #f1f1f1;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.dynamics-building-pane.new-record {
+    background-color: #f6f6f6;
+    border: 1px dashed #cccccc;
+}
+
+.h6 {
+    margin-top: 40px;
+}
+
+.delete-record-button {
+    position: absolute;
+    top:10px;
+    right: 10px;
+}
+
+.add-record-button {
+    margin-top: 20px;
+}
+
+.field-row * {
+    margin-right: 1px;
+}
+
+.lifespan-entry {
+    flex: 0 1 27%;
+}
+
+.dynamics-building-pane .data-title-text label {
+    font-weight: bold;
+    color: black;
+}
+
+.dynamics-building-pane .tooltip-hint {
+    color: gray;
+    font-size: .6333rem;
+}
+
+/* make ul list of existing items scrollable */
+.data-entry-list {
+    height:400px; 
+    overflow:hidden; 
+    overflow-y:scroll;
+}
+
+
+
+/* try to place all forms at bottom of field row, that all input forms are in one horizontal line */
+/* .dynamics-building-pane .field-row {
+    position: relative;
+}
+
+.dynamics-building-pane .field-row .form-control {
+    position: absolute;
+    bottom: 0;
+}
+ */
+
+/* overwrite flex settings for equal widths by specific widths */
+.div-incident {
+    /* width: 20% !important; */
+    flex: 1 1 65% !important;
+}
+ .div-year {
+    /* width: 40% !important; */
+    flex: 1 1 35% !important;
+}
+
+
+.div-height_from_terrain {
+    /* width: 20% !important; */
+    flex: 1 1 35% !important;
+}
+ .div-floors_affected {
+    /* width: 40% !important; */
+    flex: 1 2 65% !important;
+}

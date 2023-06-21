@@ -471,6 +471,69 @@ const LAYER_QUERIES = {
 
 
 
+
+    thermal_stress_objective_count: `
+        SELECT
+            geometry_id,
+            jsonb_array_length(thermal_stress_objective) as thermal_stress_objective_count
+        FROM
+            buildings`,
+
+    thermal_stress_subjective_count: `
+        SELECT
+            geometry_id,
+            jsonb_array_length(thermal_stress_subjective) as thermal_stress_subjective_count
+        FROM
+            buildings`,
+
+    rain_flood_historic_incidents_count: `
+        SELECT
+            geometry_id,
+            jsonb_array_length(rain_flood_historic_incidents) as rain_flood_historic_incidents_count
+        FROM
+            buildings`,
+
+
+    facade_window_percentage: `
+        SELECT
+            geometry_id,
+            facade_window_percentage
+        FROM
+            buildings
+        WHERE
+        facade_window_percentage IS NOT NULL`,
+
+
+    roof_colour: `
+        SELECT
+            geometry_id,
+            roof_colour
+        FROM
+            buildings
+        WHERE
+        roof_colour IS NOT NULL`,
+
+    facade_colour: `
+        SELECT
+            geometry_id,
+            facade_colour
+        FROM
+            buildings
+        WHERE
+        facade_colour IS NOT NULL`,
+
+
+        
+
+    terrain_connection_yesno: `
+        SELECT
+            geometry_id,
+            terrain_connection_yesno
+        FROM
+            buildings
+        WHERE
+        terrain_connection_yesno IS NOT NULL`,
+
 };
 
 const GEOMETRY_FIELD = 'geometry_geom';

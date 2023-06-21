@@ -1,0 +1,59 @@
+/* set CSS rules for checkbox layout concerning width/ columns */
+.div-direction_of_windows label {
+    width: 150px
+}
+.div-direction_of_windows .data-title .data-title-text label {
+    width: 100%
+}
+
+
+
+
+.div-heat_adaption_measure label {
+    width: 100%
+}
+.div-heat_adaption_measure .data-title .data-title-text label {
+    width: 100%
+}
+
+
+
+.div-rain_flood_preventive_measures1 label {
+    width: 100%
+}
+.div-rain_flood_preventive_measures1 .data-title .data-title-text label {
+    width: 100%
+}
+
+.div-rain_flood_preventive_measures2 label {
+    width: 100%
+}
+.div-rain_flood_preventive_measures2 .data-title .data-title-text label {
+    width: 100%
+}
+
+.div-rain_flood_preventive_measures3 label {
+    width: 100%
+}
+.div-rain_flood_preventive_measures3 .data-title .data-title-text label {
+    width: 100%
+}
+
+
+
+
+.div-rain_flood_preventive_measures1 .data-title-text label {
+    font-weight: bold;
+}
+.div-rain_flood_preventive_measures2 .data-title-text label {
+    font-weight: bold;
+}
+.div-rain_flood_preventive_measures3 .data-title-text label {
+    font-weight: bold;
+}
+
+
+
+.div-data-title-bold .data-title-text label {
+    font-weight: bold;
+}

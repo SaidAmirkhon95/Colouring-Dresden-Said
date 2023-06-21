@@ -1,3 +1,4 @@
+import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
 import { Category } from './categories-config';
 
 
@@ -1159,6 +1160,509 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     architectural_style_source: {
         category: Category.Age,
         title: "Datenquelle Baustil und äußeres Erscheinungsbild",
+        tooltip: "Art der Datenquelle",
+        example: "",
+        items: [
+            "Vor-Ort-Einschätzung",
+            "Expert*innenwissen zum Gebäude",
+            "Kartendienst und historische Karten",
+            "Film/ Video/ Foto",
+            "Publizierte Literatur",
+            "Archivdokument",
+            "Webseite",
+            "Sonstige Datenquelle"
+        ],
+    },
+
+
+
+    /* building features for resilience category */
+
+
+
+    thermal_stress_objective: {
+        category: Category.Resilience,
+        title: 'Objektive Einschätzung der Hitzebelastung',
+        items: {
+            acquisition_type: {
+                title: 'Erfassungsart',
+                example: "Thermometer (Infrarot) Firma XXX Modell YYY",
+                tooltip: "Wie wurde gemessen? Falls mit einem Thermometer gemessen wurde: mit welcher Art von Thermometer? Welches Modell?",
+            },
+            orientation: {
+                title: 'Standort',
+                example: "",
+                tooltip: "Wo auf der angegebenen Etage wurde im Gebäude gemessen?",
+                items: [
+                    "nicht bekannt",
+                    "mittig",
+                    "Nord",
+                    "Nordost",
+                    "Ost",
+                    "Südost",
+                    "Süd",
+                    "Südwest",
+                    "West",
+                    "Nordwest"
+                ],
+            },
+            measured_temperature: {
+                title: '°C',
+                example: 26.6,
+                tooltip: "gemessene Temperatur in Grad Celsius (maximal 1 Nachkommastelle)",
+            },
+            floor: {
+                title: 'Etage',
+                tooltip: "0 für Erdgeschoss",
+                example: 2
+            },
+            date: {
+                title: 'Datum',
+                tooltip: "Datum des Eintrags",
+                example: ""
+                
+            },
+            time: {
+                title: 'Zeit',
+                tooltip: "Uhrzeit des Eintrags",
+                example: ""
+            },
+
+        },
+        example: [
+            {
+                acquisition_type: "Thermometer (Infrarot) Firma XXX Modell YYY",
+                orientation: "",
+                measured_temperature: 26.6,
+                floor: 2,
+                date: "",
+                time: ""
+            }
+        ]
+    },
+
+
+
+
+
+    thermal_stress_subjective: {
+        category: Category.Resilience,
+        title: 'Subjektive Einschätzung der Hitzebelastung',
+        items: {
+            orientation: {
+                title: 'Standort',
+                example: "",
+                tooltip: "Wo auf der angegebenen Etage wurde im Gebäude gemessen?",                
+                items: [
+                    "nicht bekannt",
+                    "mittig",
+                    "Nord",
+                    "Nordost",
+                    "Ost",
+                    "Südost",
+                    "Süd",
+                    "Südwest",
+                    "West",
+                    "Nordwest"
+                ],
+            },
+            perceived_temperature: {
+                title: 'gefühlte Temp.',
+                example: "",
+                tooltip: "wahrgenommene/ subjektive Temperatur",   
+                items: [
+                    "sehr kalt",
+                    "kalt",
+                    "etwas kalt",
+                    "neutral",
+                    "etwas warm",
+                    "warm",
+                    "sehr warm"
+                ],
+            },
+            floor: {
+                title: 'Etage',
+                tooltip: "0 für Erdgeschoss",
+                example: 2
+            },
+            date: {
+                title: 'Datum',
+                tooltip: "Datum des Eintrags",
+                example: ""
+            },
+            time: {
+                title: 'Zeit',
+                tooltip: "Uhrzeit des Eintrags",
+                example: ""
+            },
+
+        },
+        example: [
+            {
+                orientation: "",
+                perceived_temperature: "",
+                floor: 2,
+                date: "",
+                time: ""
+            }
+        ]
+    },
+
+
+    facade_window_percentage: {
+        category: Category.Resilience,
+        title: "Anteil Fenster an Fassade",
+        tooltip: "Wie viel Fassadenfläche ist durch Fenster bedeckt (ungefähr)?",
+        example: "",
+        items: [
+            "0-20%",
+            "20-40%",
+            "40-60%",
+            "60-80%",
+            "80-100%"
+        ]
+    },
+
+
+    direction_of_windows: {
+        /* perUser: true, */
+        category: Category.Resilience,
+        title: 'Zu welchen Himmelsrichtungen befinden sich Fenster? (Mehrfachauswahl möglich)',
+        fields: {
+            north: {
+                title: 'Nord'
+            },
+            northeast: {
+                title: 'Nordost'
+            },
+            east: {
+                title: 'Ost'
+            },
+            southeast: {
+                title: 'Südost'
+            },
+            south: {
+                title: 'Süd'
+            },
+            southwest: {
+                title: 'Südwest'
+            },
+            west: {
+                title: 'West'
+            },
+            northwest: {
+                title: 'Nordwest'
+            },
+        },
+        example: {
+            north: false,
+            northeast: false,
+            east: false,
+            southeast: false,
+            south: false,
+            southwest: false,
+            west: false,
+            northwest: false
+        }
+    },
+    
+    heat_adaption_measure: {
+        /* perUser: true, */
+        category: Category.Resilience,
+        title: 'Welche Anpassungsmaßnahmen wurden am Gebäude bereits umgesetzt? (Mehrfachauswahl möglich)',
+        fields: {
+            sun_protection_outside: {
+                title: 'Außenliegender Sonnenschutz'
+            },
+            sun_protection_inside: {
+                title: 'Innenliegender Sonnenschutz'
+            },
+            improvement_insulation: {
+                title: 'Verbesserung der Dämmung (Dach bzw. oberste Geschossdecke)'
+            },
+            increase_heat_storage_capacity: {
+                title: 'Erhöhung der Wärmespeicherfähigkeit'
+            },
+            installation_exhaust_air_system: {
+                title: 'Einbau einer Abluftanlage'
+            },
+            extensive_roof_greening: {
+                title: 'Extensive Dachbegrünung'
+            },
+            rooftop_pv_system: {
+                title: 'Aufdach-Photovoltaikanlage'
+            },
+            facade_greening: {
+                title: 'Fassadenbegrünung'
+            },
+            without_measure: {
+                title: 'ohne Massnahme'
+            },
+        },
+        example: {
+            sun_protection_outside: false,
+            sun_protection_inside: false,
+            improvement_insulation: false,
+            increase_heat_storage_capacity: false,
+            installation_exhaust_air_system: false,
+            extensive_roof_greening: false,
+            rooftop_pv_system: false,
+            facade_greening: false,
+            without_measure: false
+        }
+    },
+
+    roof_colour: {
+        category: Category.Resilience,
+        title: "Dachfarbe",
+        tooltip: "Welche Farbe hat das Dach überwiegend?",
+        example: "",
+        items: [
+            "schwarz",
+            "dunkelgrau",
+            "hellgrau",
+            "dunkelbraun",
+            "hellbraun",
+            "grün",
+            "türkis",
+            "blau",
+            "rot",
+            "gelb",
+            "beige",
+            "weiß",
+            "andere Farbe",
+            "Solaranlage",
+            "Vollverglasung",
+            "Dachbegrünung: extensiv",
+            "Dachbegrünung: intensiv"
+        ]
+    },
+
+
+    roof_colour_type: {
+        category: Category.Resilience,
+        title: "Dachfarbe Oberfläche",
+        tooltip: "Welche Beschaffenheit hat die Oberfläche des Daches?",
+        example: "",
+        items: [
+            "matt",
+            "glänzend",
+            "unbekannt"
+        ]
+    },
+
+    facade_colour: {
+        category: Category.Resilience,
+        title: "Fassadenfarbe",
+        tooltip: "Welche Farbe hat die Fassade überwiegend?",
+        example: "",
+        items: [
+            "schwarz",
+            "dunkelgrau",
+            "hellgrau",
+            "dunkelbraun",
+            "hellbraun",
+            "grün",
+            "türkis",
+            "blau",
+            "lila",
+            "rot",
+            "orange",
+            "gelb",
+            "beige",
+            "weiß",
+            "andere Farbe",
+            "Solaranlage",
+            "Vollverglasung",
+            "Fassadenbegrünung"
+        ]
+    },
+
+    terrain_connection_yesno: {
+        category: Category.Resilience,
+        title: "Ist der Boden des Erdgeschosses höher als das umliegende Gelände?",
+        tooltip: "Beginnt das Erdgeschoss über dem umliegenden Gelände?",
+        example: "",
+        items: [
+            "höher",
+            "gleich",
+            "niedriger"
+        ]
+    },
+
+    terrain_connection_difference: {
+        category: Category.Resilience,
+        title: "Differenz zwischen Gelände und Erdgeschossboden (in Zentimetern)",
+        tooltip: "Wie groß ist die Differenz zwischen der Höhe des umliegenden Geländes und dem Erdgeschossboden? (immer positive Distanz eintragen)",
+        example: 1
+
+    },
+
+    rain_flood_preventive_measures1: {
+        /* perUser: true, */
+        category: Category.Resilience,
+        /* title: 'Wurden bereits Vorsorgemaßnahmen getroffen? (Mehrfachauswahl möglich)', */
+        title: 'Vorsorgemaßnahmen Strategie Ausweichen',
+        fields: {
+            option_01: {
+                title: 'Verzicht auf Kellergeschoss (Neubau)'
+            },
+            option_02: {
+                title: 'Anordnung der Hauptnutzungen über Hochwassermarke (Neubau)'
+            },
+            option_03: {
+                title: 'Haushebung (Bestand)'
+            },
+        },
+        example: {
+            option_01: false,
+            option_02: false,
+            option_03: false
+        }
+    },
+
+
+    rain_flood_preventive_measures2: {
+        /* perUser: true, */
+        category: Category.Resilience,
+        /* title: 'Wurden bereits Vorsorgemaßnahmen getroffen? (Mehrfachauswahl möglich)', */
+        title: 'Vorsorgemaßnahmen Strategie Widerstehen',
+        fields: {
+            option_01: {
+                title: 'Wannenkonstruktion ggf. mit Barrieren vor Öffnungen'
+            },
+            option_02: {
+                title: 'Barrieren vor Tür- und Fensteröffnungen'
+            },
+            option_03: {
+                title: 'Hochwasserschutz vor Gebäudehülle'
+            },
+            option_04: {
+                title: 'Verstärkung Tragkonstruktion'
+            },
+        },
+        example: {
+            option_01: false,
+            option_02: false,
+            option_03: false,
+            option_04: false
+        }
+    },
+
+
+
+    rain_flood_preventive_measures3: {
+        /* perUser: true, */
+        category: Category.Resilience,
+        /* title: 'Wurden bereits Vorsorgemaßnahmen getroffen? (Mehrfachauswahl möglich)', */
+        title: 'Vorsorgemaßnahmen Strategie Nachgeben',
+        fields: {
+            option_01: {
+                title: 'Anpassung der Fußboden-, Wand- und Deckenkonstruktionen im Keller'
+            },
+            option_02: {
+                title: 'Anpassung der Fußboden-, Wand- und Deckenkonstruktionen im Erdgeschoss'
+            },
+            option_03: {
+                title: 'Anpassung des Heizungs- und Warmwassersystems'
+            },
+            option_04: {
+                title: 'Anpassung der Hausanschlusselemente (Informationstechnik, Energieversorgung)'
+            },
+        },
+        example: {
+            option_01: false,
+            option_02: false,
+            option_03: false,
+            option_04: false
+        }
+    },
+
+
+
+
+    rain_flood_historic_incidents: {
+        category: Category.Resilience,
+        title: 'War das Gebäude bereits von folgenden Risiken betroffen?',
+        items: {
+            incident: {
+                title: 'Ereignis',
+                tooltip: 'Art des Ereignisses',
+                example: "",
+                items: [
+                    "Starkregen",
+                    "Hochwasser",
+                    "hoher Grundwasserstand"
+                ],
+            },
+            year: {
+                title: 'Jahr',
+                tooltip: 'Jahr des Ereignisses',
+                example: 2002
+            },
+            height_from_terrain: {
+                title: 'Höhe ab Gelände (in Zentimetern)',
+                tooltip: 'Wie hoch stand das Wasser bezogen auf die Geländehöhe vor dem Gebäude?',
+                example: 120
+            },
+            floors_affected: {
+                title: 'betroffene Etagen',
+                tooltip: 'Welche Etagen waren betroffen?',
+                example: "",
+                items: [
+                    "nur Keller",
+                    "bis Erdgeschoss",
+                    "bis 1. Etage",
+                    "darüber"
+                ],
+            },
+        },
+        example: [
+            {
+                incident: "",
+                year: 2002,
+                height_from_terrain: 120, 
+                floors_affected: ""
+            }
+        ]
+    },
+
+
+
+
+    heat_adaption_measure_source: {
+        category: Category.Resilience,
+        title: "Datenquelle Anpassungsmassnahmen Hitze",
+        tooltip: "Art der Datenquelle",
+        example: "",
+        items: [
+            "Vor-Ort-Einschätzung",
+            "Expert*innenwissen zum Gebäude",
+            "Kartendienst und historische Karten",
+            "Film/ Video/ Foto",
+            "Publizierte Literatur",
+            "Archivdokument",
+            "Webseite",
+            "Sonstige Datenquelle"
+        ],
+    },
+
+
+
+    terrain_connection_difference_source: {
+        category: Category.Resilience,
+        title: "Art der Erhebung Differenz Erdgeschossboden zu Geländehöhe",
+        tooltip: "Art der Erhebung",
+        example: "",
+        items: [
+            "geschätzt",
+            "gemessen"
+        ],
+    },
+
+    rain_flood_preventive_measures_source: {
+        category: Category.Resilience,
+        title: "Datenquelle Vorsorgemaßnahmen Starkregen/Hochwasser",
         tooltip: "Art der Datenquelle",
         example: "",
         items: [

@@ -2110,4 +2110,341 @@
         </Rule>
     </Style>
 
+
+
+
+
+    <Style name="roof_colour">
+        <Rule>
+            <Filter>[roof_colour] = "schwarz"</Filter>
+            <PolygonSymbolizer fill="#000000" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "dunkelgrau"</Filter>
+            <PolygonSymbolizer fill="#808080" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "hellgrau"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "dunkelbraun"</Filter>
+            <PolygonSymbolizer fill="#805500" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "hellbraun"</Filter>
+            <PolygonSymbolizer fill="#e69900" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "grün"</Filter>
+            <PolygonSymbolizer fill="#009933" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "türkis"</Filter>
+            <PolygonSymbolizer fill="#00cc99" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "blau"</Filter>
+            <PolygonSymbolizer fill="#0000ff" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "rot"</Filter>
+            <PolygonSymbolizer fill="#ff0000" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "gelb"</Filter>
+            <PolygonSymbolizer fill="#ffff00" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "beige"</Filter>
+            <PolygonSymbolizer fill="#ffe6cc" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "weiß"</Filter>
+            <PolygonSymbolizer fill="#ffffff" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "andere Farbe"</Filter>
+            <PolygonSymbolizer fill="#ff00ff" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "Solaranlage"</Filter>
+            <PolygonSymbolizer fill="#00ffff" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "Vollverglasung"</Filter>
+            <PolygonSymbolizer fill="#99ddff" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "Dachbegrünung: extensiv"</Filter>
+            <PolygonSymbolizer fill="#b3ffcc" />
+        </Rule>
+        <Rule>
+            <Filter>[roof_colour] = "Dachbegrünung: intensiv"</Filter>
+            <PolygonSymbolizer fill="#4dff88" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+    <Style name="facade_colour">
+        <Rule>
+            <Filter>[facade_colour] = "schwarz"</Filter>
+            <PolygonSymbolizer fill="#000000" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "dunkelgrau"</Filter>
+            <PolygonSymbolizer fill="#808080" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "hellgrau"</Filter>
+            <PolygonSymbolizer fill="#cccccc" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "dunkelbraun"</Filter>
+            <PolygonSymbolizer fill="#805500" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "hellbraun"</Filter>
+            <PolygonSymbolizer fill="#e69900" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "grün"</Filter>
+            <PolygonSymbolizer fill="#009933" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "türkis"</Filter>
+            <PolygonSymbolizer fill="#00cc99" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "blau"</Filter>
+            <PolygonSymbolizer fill="#0000ff" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "lila"</Filter>
+            <PolygonSymbolizer fill="#9933ff" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "rot"</Filter>
+            <PolygonSymbolizer fill="#ff0000" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "orange"</Filter>
+            <PolygonSymbolizer fill="#ff9933" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "gelb"</Filter>
+            <PolygonSymbolizer fill="#ffff00" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "beige"</Filter>
+            <PolygonSymbolizer fill="#ffe6cc" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "weiß"</Filter>
+            <PolygonSymbolizer fill="#ffffff" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "andere Farbe"</Filter>
+            <PolygonSymbolizer fill="#ff00ff" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "Solaranlage"</Filter>
+            <PolygonSymbolizer fill="#00ffff" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "Vollverglasung"</Filter>
+            <PolygonSymbolizer fill="#99ddff" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_colour] = "Fassadenbegrünung"</Filter>
+            <PolygonSymbolizer fill="#b3ffcc" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+    <Style name="facade_window_percentage">
+        <Rule>
+            <Filter>[facade_window_percentage] = "80-100%"</Filter>
+            <PolygonSymbolizer fill="#e31a1c" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_window_percentage] = "60-80%"</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_window_percentage] = "40-60%"</Filter>
+            <PolygonSymbolizer fill="#fd8d3c" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_window_percentage] = "20-40%"</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[facade_window_percentage] = "0-20%"</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
+
+    <Style name="thermal_stress_objective_count">
+        <Rule>
+            <Filter>[thermal_stress_objective_count] &gt;= 7</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_objective_count] = 6</Filter>
+            <PolygonSymbolizer fill="#e31a1c" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_objective_count] = 5</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_objective_count] = 4</Filter>
+            <PolygonSymbolizer fill="#fd8d3c" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_objective_count] = 3</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_objective_count] = 2</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_objective_count] = 1</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_objective_count] = 0</Filter>
+            <PolygonSymbolizer fill="#0C7BDC" />
+        </Rule>
+    </Style>
+
+    <Style name="thermal_stress_subjective_count">
+        <Rule>
+            <Filter>[thermal_stress_subjective_count] &gt;= 7</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_subjective_count] = 6</Filter>
+            <PolygonSymbolizer fill="#e31a1c" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_subjective_count] = 5</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_subjective_count] = 4</Filter>
+            <PolygonSymbolizer fill="#fd8d3c" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_subjective_count] = 3</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_subjective_count] = 2</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_subjective_count] = 1</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+        <Rule>
+            <Filter>[thermal_stress_subjective_count] = 0</Filter>
+            <PolygonSymbolizer fill="#0C7BDC" />
+        </Rule>
+    </Style>
+
+
+    <Style name="terrain_connection_yesno">
+        <Rule>
+            <Filter>[terrain_connection_yesno] = "höher"</Filter>
+            <PolygonSymbolizer fill="#f5f58f" />
+        </Rule>
+        <Rule>
+            <Filter>[terrain_connection_yesno] = "gleich"</Filter>
+            <PolygonSymbolizer fill="#e5050d" />
+        </Rule>
+        <Rule>
+            <Filter>[terrain_connection_yesno] = "niedriger"</Filter>
+            <PolygonSymbolizer fill="#7025a6" />
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+    <Style name="rain_flood_historic_incidents_count">
+        <Rule>
+            <Filter>[rain_flood_historic_incidents_count] &gt;= 7</Filter>
+            <PolygonSymbolizer fill="#bd0026" />
+        </Rule>
+        <Rule>
+            <Filter>[rain_flood_historic_incidents_count] = 6</Filter>
+            <PolygonSymbolizer fill="#e31a1c" />
+        </Rule>
+        <Rule>
+            <Filter>[rain_flood_historic_incidents_count] = 5</Filter>
+            <PolygonSymbolizer fill="#fc4e2a" />
+        </Rule>
+        <Rule>
+            <Filter>[rain_flood_historic_incidents_count] = 4</Filter>
+            <PolygonSymbolizer fill="#fd8d3c" />
+        </Rule>
+        <Rule>
+            <Filter>[rain_flood_historic_incidents_count] = 3</Filter>
+            <PolygonSymbolizer fill="#feb24c" />
+        </Rule>
+        <Rule>
+            <Filter>[rain_flood_historic_incidents_count] = 2</Filter>
+            <PolygonSymbolizer fill="#fed976" />
+        </Rule>
+        <Rule>
+            <Filter>[rain_flood_historic_incidents_count] = 1</Filter>
+            <PolygonSymbolizer fill="#ffe8a9" />
+        </Rule>
+        <Rule>
+            <Filter>[rain_flood_historic_incidents_count] = 0</Filter>
+            <PolygonSymbolizer fill="#0C7BDC" />
+        </Rule>
+    </Style>
+
+
 </Map>

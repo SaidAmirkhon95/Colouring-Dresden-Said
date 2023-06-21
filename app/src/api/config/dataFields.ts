@@ -516,7 +516,91 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
     architectural_style_source: {
         edit: true,
         verify: true
-    }
+    },
+    thermal_stress_objective: {
+        edit: true,
+        verify: false,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },
+    thermal_stress_subjective: {
+        edit: true,
+        verify: false,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },
+    facade_window_percentage: {
+        edit: true,
+        verify: true
+    },
+    direction_of_windows: {
+        edit: true,
+        verify: true,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },
+    heat_adaption_measure: {
+        edit: true,
+        verify: true,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },
+    roof_colour: {
+        edit: true,
+        verify: true
+    },
+    roof_colour_type: {
+        edit: true,
+        verify: true
+    },
+    facade_colour: {
+        edit: true,
+        verify: true
+    },
+    terrain_connection_yesno: {
+        edit: true,
+        verify: true
+    },
+    terrain_connection_difference: {
+        edit: true,
+        verify: true
+    },
+    rain_flood_preventive_measures1: {
+        edit: true,
+        verify: true,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },
+    rain_flood_preventive_measures2: {
+        edit: true,
+        verify: true,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },
+    rain_flood_preventive_measures3: {
+        edit: true,
+        verify: true,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },
+    rain_flood_historic_incidents: {
+        edit: true,
+        verify: false,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },
+    heat_adaption_measure_source: {
+        edit: true,
+        verify: true
+    },
+    terrain_connection_difference_source: {
+        edit: true,
+        verify: true
+    },
+    rain_flood_preventive_measures_source: {
+        edit: true,
+        verify: true
+    },
 });
 
 
