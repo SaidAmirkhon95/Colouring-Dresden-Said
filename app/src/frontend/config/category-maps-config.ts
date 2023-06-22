@@ -853,8 +853,8 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#fd8d3c', text: '40-60%' },
                     { color: '#feb24c', text: '20-40%' },
                     { color: '#fed976', text: '0-20%' },
-                ],
-            },
+                ]
+            }
         },
         {
             mapStyle: 'roof_colour',
@@ -875,12 +875,12 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ffe6cc', text: 'beige' },
                     { color: '#ffffff', text: 'weiß' },
                     { color: '#ff00ff', text: 'andere Farbe' },
-                    { color: '#00ffff', text: 'Solaranlage' },
+                    { color: '#33cccc', text: 'Solaranlage' },
                     { color: '#99ddff', text: 'Vollverglasung' },
                     { color: '#b3ffcc', text: 'Dachbegrünung: extensiv' },
                     { color: '#4dff88', text: 'Dachbegrünung: intensiv' },
-                ],
-            },
+                ]
+            }
         },
 
         {
@@ -904,28 +904,14 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ffe6cc', text: 'beige' },
                     { color: '#ffffff', text: 'weiß' },
                     { color: '#ff00ff', text: 'andere Farbe' },
-                    { color: '#00ffff', text: 'Solaranlage' },
+                    { color: '#33cccc', text: 'Solaranlage' },
                     { color: '#99ddff', text: 'Vollverglasung' },
                     { color: '#b3ffcc', text: 'Fassadenbegrünung' },
-                ],
-            },
+                ]
+            }
         },
 
 
-        {
-            mapStyle: 'facade_window_percentage',
-            legend: {
-                title: 'Anteil Fenster an Fasade',
-                /* description: 'Demolished buildings on the same site', */
-                elements: [
-                    { color: '#e31a1c', text: '80-100%' },
-                    { color: '#fc4e2a', text: '60-80%' },
-                    { color: '#fd8d3c', text: '40-60%' },
-                    { color: '#feb24c', text: '20-40%' },
-                    { color: '#fed976', text: '0-20%' },
-                ],
-            },
-        },
 
 
         {
@@ -959,8 +945,8 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                         text: '0',
                         color: '#0C7BDC'
                     }
-                ],
-            },
+                ]
+            }
         },
         {
             mapStyle: 'thermal_stress_subjective_count',
@@ -993,8 +979,8 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                         text: '0',
                         color: '#0C7BDC'
                     }
-                ],
-            },
+                ]
+            }
         },
 
 
@@ -1007,8 +993,8 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#f5f58f', text: 'höher' },
                     { color: '#e5050d', text: 'gleich' },
                     { color: '#7025a6', text: 'niedriger' },
-                ],
-            },
+                ]
+            }
         },
 
 
@@ -1045,8 +1031,8 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                         text: '0',
                         color: '#0C7BDC'
                     }
-                ],
-            },
+                ]
+            }
         },
 
 

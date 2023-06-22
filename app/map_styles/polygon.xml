@@ -2169,7 +2169,7 @@
         </Rule>
         <Rule>
             <Filter>[roof_colour] = "Solaranlage"</Filter>
-            <PolygonSymbolizer fill="#00ffff" />
+            <PolygonSymbolizer fill="#33cccc" />
         </Rule>
         <Rule>
             <Filter>[roof_colour] = "Vollverglasung"</Filter>
@@ -2258,7 +2258,7 @@
         </Rule>
         <Rule>
             <Filter>[facade_colour] = "Solaranlage"</Filter>
-            <PolygonSymbolizer fill="#00ffff" />
+            <PolygonSymbolizer fill="#33cccc" />
         </Rule>
         <Rule>
             <Filter>[facade_colour] = "Vollverglasung"</Filter>

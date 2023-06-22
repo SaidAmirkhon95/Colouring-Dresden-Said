@@ -450,31 +450,13 @@ const ResilienceView: React.FunctionComponent<CategoryViewProps> = (props) => {
 
             </DataEntryGroup>
 
-            <DataEntryGroup name="Anpassungsmaßnahmen" collapsed={false} >
+            <DataEntryGroup name="Vorsorgemaßnahmen" collapsed={false} >
 
 
 
 
                 {/* checkbox entry for multiple data entry, here: rain_flood_preventive_measures */}
-                <div className='div-rain_flood_preventive_measures1'>
-                <MultiSelectDataEntry
-                    slug='rain_flood_preventive_measures1'
-                    title={dataFields.rain_flood_preventive_measures1.title}
-                    value={props.building.rain_flood_preventive_measures1}
-                    disabled={false}
-                    /* disabled={!props.building.community_type_worth_keeping} */
-                    onChange={props.onSaveChange}
-                    options={
-                        Object.entries(dataFields.rain_flood_preventive_measures1.fields)
-                        .map(([key, definition]) => ({
-                            key,
-                            label: definition.title
-                        }))
-                    }
-                    
-                    mode={props.mode}
-                />
-                </div>
+
                 <div className='div-rain_flood_preventive_measures2'>
                 <MultiSelectDataEntry
                     slug='rain_flood_preventive_measures2'
@@ -513,6 +495,27 @@ const ResilienceView: React.FunctionComponent<CategoryViewProps> = (props) => {
                     mode={props.mode}
                 />
                 </div>
+
+                <div className='div-rain_flood_preventive_measures1'>
+                <MultiSelectDataEntry
+                    slug='rain_flood_preventive_measures1'
+                    title={dataFields.rain_flood_preventive_measures1.title}
+                    value={props.building.rain_flood_preventive_measures1}
+                    disabled={false}
+                    /* disabled={!props.building.community_type_worth_keeping} */
+                    onChange={props.onSaveChange}
+                    options={
+                        Object.entries(dataFields.rain_flood_preventive_measures1.fields)
+                        .map(([key, definition]) => ({
+                            key,
+                            label: definition.title
+                        }))
+                    }
+                    
+                    mode={props.mode}
+                />
+                </div>
+
                 <SelectDataEntry
                     title={dataFields.rain_flood_preventive_measures_source.title}
                     slug="rain_flood_preventive_measures_source"
