@@ -16,14 +16,14 @@ const ViewEditControl: React.FC<ViewEditControlProps> = props => (
                             className="icon-button view"
                             title="View data"
                             to={`/view/${props.cat}/${props.building.building_id}`}>
-                            Ansicht
+                            {/* Ansicht */}
                             <ViewIcon />
                         </NavLink>
                         : <NavLink
                             className="icon-button edit"
                             title="Edit data"
                             to={`/edit/${props.cat}/${props.building.building_id}`}>
-                            Bearbeiten
+                            {/* Bearbeiten */}
                             <EditIcon />
                         </NavLink>
 );

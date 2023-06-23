@@ -35,6 +35,8 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             verified_count={props.building.verified.location_name}
             />
 
+
+        
         <PatternDataEntry
             title={dataFields.location_number.title}
             slug="location_number"
@@ -44,6 +46,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             copy={props.copy}
             onChange={props.onChange}
             tooltip={dataFields.location_number.tooltip}
+            disabled={true}
             />
         <Verification
             slug="location_number"
@@ -62,6 +65,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             copy={props.copy}
             onChange={props.onChange}
             maxLength={30}
+            disabled={true}
             />
         <Verification
             slug="location_street"
@@ -80,6 +84,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             copy={props.copy}
             onChange={props.onChange}
             maxLength={30}
+            disabled={true}
             />
         <Verification
             slug="location_line_two"
@@ -96,6 +101,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             mode={props.mode}
             copy={props.copy}
             onChange={props.onChange}
+            disabled={true}
             
             />
         <Verification
@@ -115,6 +121,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             onChange={props.onChange}
             maxLength={8}
             valueTransform={x=>x.toUpperCase()}
+            disabled={true}
             
             />
         <Verification
@@ -133,6 +140,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             copy={props.copy}
             tooltip={dataFields.ref_toid.tooltip}
             onChange={props.onChange}
+            disabled={true}
             
             />
         <UPRNsDataEntry
@@ -150,6 +158,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             tooltip={dataFields.ref_osm_id.tooltip}
             maxLength={20}
             onChange={props.onChange}
+            disabled={true}
             />
         <Verification
             slug="ref_osm_id"
@@ -170,6 +179,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             max={90}
             placeholder="geogr. Breitengrad, z.B. 51.049259"
             onChange={props.onChange}
+            disabled={true}
             />
         <Verification
             slug="location_latitude"
@@ -190,6 +200,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             max={180}
             placeholder="geogr. Längengrad, z.B. 13.73836"
             onChange={props.onChange}
+            disabled={true}
             />
         <Verification
             slug="location_longitude"
