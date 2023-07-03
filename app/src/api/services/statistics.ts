@@ -105,6 +105,7 @@ async function service_TodayNumberEdits(): Promise<ByDay[]> {
                 (SELECT COUNT(*) AS "count", DATE_TRUNC ('day', log_timestamp) AS "date" 
                 FROM public.logs 
                 WHERE log_timestamp::date = CURRENT_DATE::timestamp 
+                AND user_id NOT IN (SELECT user_id FROM public.users WHERE username LIKE '%_robots')
                 GROUP BY DATE_TRUNC ('day', log_timestamp)) AS requested_data
             ON t.day::date=requested_data.date`
         );
@@ -132,6 +133,7 @@ async function service_TodayNumberMappedAttributes(): Promise<ByDay[]> {
                     (SELECT COUNT(*) FROM jsonb_object_keys(forward_patch)) AS anzahl_merkmale
                     FROM public.logs 
                     WHERE log_timestamp::date = CURRENT_DATE::timestamp 
+                    AND user_id NOT IN (SELECT user_id FROM public.users WHERE username LIKE '%_robots')
                     ORDER BY log_timestamp DESC
                 ) AS src
             GROUP BY DATE_TRUNC ('day', src.log_timestamp)) AS requested_data
@@ -208,6 +210,7 @@ async function service_ByDayNumberEdits(): Promise<ByDay[]> {
                 FROM public.logs 
                 WHERE log_timestamp > '2023-03-06 00:00:00'::timestamp 
                 AND log_timestamp <= NOW()::timestamp 
+                AND user_id NOT IN (SELECT user_id FROM public.users WHERE username LIKE '%_robots')
                 GROUP BY DATE_TRUNC ('day', log_timestamp)) AS requested_data
             ON t.day::date=requested_data.date`
         );
@@ -236,6 +239,7 @@ async function service_ByDayNumberMappedAttributes(): Promise<ByDay[]> {
                         FROM public.logs 
                         WHERE log_timestamp > '2023-03-06 00:00:00'::timestamp 
                         AND log_timestamp <= NOW()::timestamp 
+                        AND user_id NOT IN (SELECT user_id FROM public.users WHERE username LIKE '%_robots')
                         ORDER BY log_timestamp DESC
                     ) AS src
                 GROUP BY DATE_TRUNC ('day', src.log_timestamp)) AS requested_data
