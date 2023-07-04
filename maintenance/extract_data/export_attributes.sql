@@ -82,7 +82,24 @@ COPY (SELECT
     --planning_local_list_url,
     --planning_historic_area_assessment_url,
     community_type_worth_keeping_total,
-    likes_total
+    likes_total,
+    thermal_stress_objective,
+    thermal_stress_subjective,
+    facade_window_percentage,
+    direction_of_windows,
+    heat_adaption_measure,
+    roof_colour,
+    roof_colour_type,
+    facade_colour,
+    terrain_connection_yesno,
+    terrain_connection_difference,
+    rain_flood_preventive_measures1,
+    rain_flood_preventive_measures2,
+    rain_flood_preventive_measures3,
+    rain_flood_historic_incidents,
+    heat_adaption_measure_source,
+    terrain_connection_difference_source,
+    rain_flood_preventive_measures_source
 FROM buildings)
 TO '/tmp/building_attributes.csv'
 WITH CSV HEADER
