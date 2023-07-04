@@ -13,7 +13,12 @@ import { CategoryViewProps } from './category-view-props';
 
 const locationNumberPattern = "[1-9]\\d*[a-z]?(-([1-9]\\d*))?"; ///[1-9]\d*[a-z]?(-([1-9]\d*))?/;
 
+function generate_osm_link(osm_id) {
+    return "https://www.openstreetmap.org/way/" + osm_id.padStart(9, "0");
+  }
+
 const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
+    
     <Fragment>
         <DataEntry
             title={dataFields.location_name.title}
@@ -168,6 +173,28 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             user_verified_as={props.user_verified.ref_osm_id}
             verified_count={props.building.verified.ref_osm_id}
             />
+
+
+
+
+        {/* hide or show this link zu OSM . org  by condition */}
+
+        {(props.building.ref_osm_id !== null) ?
+
+
+        <>
+
+            <p>
+                <b>gehe zu OSM: </b> <a href={generate_osm_link(props.building.ref_osm_id)} target="_blank">{generate_osm_link(props.building.ref_osm_id)}</a>
+            </p>
+
+
+
+            </>
+            : 
+                <></>
+            }
+
         <NumericDataEntry
             title={dataFields.location_latitude.title}
             slug="location_latitude"
