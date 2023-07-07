@@ -104,7 +104,6 @@ COPY (SELECT
     ref_osm_type,
     ref_wikidata,
     ref_wikipedia
->>>>>>> colouring-germany
 FROM buildings)
 TO '/tmp/building_attributes.csv'
 WITH CSV HEADER
