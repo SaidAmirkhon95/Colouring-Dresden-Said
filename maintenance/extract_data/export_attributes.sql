@@ -83,7 +83,6 @@ COPY (SELECT
     --planning_historic_area_assessment_url,
     community_type_worth_keeping_total,
     likes_total,
-<<<<<<< HEAD
     thermal_stress_objective,
     thermal_stress_subjective,
     facade_window_percentage,
@@ -100,8 +99,7 @@ COPY (SELECT
     rain_flood_historic_incidents,
     heat_adaption_measure_source,
     terrain_connection_difference_source,
-    rain_flood_preventive_measures_source
-=======
+    rain_flood_preventive_measures_source,
     ref_land_parcel,
     ref_osm_type,
     ref_wikidata,
