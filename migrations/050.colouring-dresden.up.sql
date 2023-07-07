@@ -64,3 +64,8 @@ ALTER TABLE buildings ADD COLUMN IF NOT EXISTS heat_adaption_measure_source varc
 
 ALTER TABLE buildings ADD COLUMN IF NOT EXISTS terrain_connection_difference_source varchar;
 ALTER TABLE buildings ADD COLUMN IF NOT EXISTS rain_flood_preventive_measures_source varchar;
+
+ALTER TABLE buildings ADD COLUMN IF NOT EXISTS ref_land_parcel varchar;
+ALTER TABLE buildings ADD COLUMN IF NOT EXISTS ref_osm_type varchar;
+ALTER TABLE buildings ADD COLUMN IF NOT EXISTS ref_wikidata varchar;
+ALTER TABLE buildings ADD COLUMN IF NOT EXISTS ref_wikipedia varchar;

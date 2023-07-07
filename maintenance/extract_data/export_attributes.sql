@@ -82,7 +82,11 @@ COPY (SELECT
     --planning_local_list_url,
     --planning_historic_area_assessment_url,
     community_type_worth_keeping_total,
-    likes_total
+    likes_total,
+    ref_land_parcel,
+    ref_osm_type,
+    ref_wikidata,
+    ref_wikipedia
 FROM buildings)
 TO '/tmp/building_attributes.csv'
 WITH CSV HEADER
