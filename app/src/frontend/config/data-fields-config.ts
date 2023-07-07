@@ -178,7 +178,8 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         category: Category.Location,
         title: "Flurstückskennzeichen",
         tooltip: "Flurstückskennzeichen (wird automatisiert abgeleitet)",
-        example: [{uprn: "", parent_uprn: "" }, {uprn: "", parent_uprn: "" }],
+        /* example: [{uprn: "", parent_uprn: "" }, {uprn: "", parent_uprn: "" }], */
+        
     },
 
     planning_data: {
@@ -1675,6 +1676,37 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
             "Webseite",
             "Sonstige Datenquelle"
         ],
+    },
+
+
+    ref_land_parcel: {
+        category: Category.Location,
+        title: "Flurstückskennzeichen",
+        tooltip: "Flurstückskennzeichen",
+        example: "",
+    },
+
+    ref_osm_type: {
+        category: Category.Location,
+        title: "OpenStreetMap Geometrietyp",
+        tooltip: "OpenStreetMap Geometrietyp",
+        example: "",
+    },
+
+
+    ref_wikidata: {
+        category: Category.Location,
+        title: "Wikidata ID",
+        tooltip: "Wikidata ID (Beispiel: Q12345)",
+        example: "",
+    },
+
+
+    ref_wikipedia: {
+        category: Category.Location,
+        title: "Link Wikipedia",
+        tooltip: "Link Wikipedia",
+        example: "",
     },
 
 };

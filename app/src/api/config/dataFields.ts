@@ -601,6 +601,22 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
         edit: true,
         verify: true
     },
+    ref_land_parcel: {
+        edit: true,
+        verify: true
+    },
+    ref_osm_type: {
+        edit: true,
+        verify: true
+    },
+    ref_wikidata: {
+        edit: true,
+        verify: true
+    },
+    ref_wikipedia: {
+        edit: true,
+        verify: true
+    },
 });
 
 
