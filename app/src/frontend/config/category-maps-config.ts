@@ -301,8 +301,18 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                 title: 'Stand der Erfassung',
                 description: 'Anzahl erfasster Gebäudemerkmale',
                 elements: [
-                    { color: '#003300', text: '≥41 Merkmale' },
-                    { color: '#FFFFFF', text: '0 Merkmale' }
+                    { color: '#FF0000', text: '>= 30' },
+                    { color: '#FF1717', text: '23-29' },
+                    { color: '#FF2E2E', text: '20-22' },
+                    { color: '#FF4545', text: '17-19' },
+                    { color: '#FF5C5C', text: '14-16' },
+                    { color: '#FF7373', text: '11-13' },
+                    { color: '#FF8B8B', text: '8-10' },
+                    { color: '#FFA2A2', text: '5-7' },
+                    { color: '#FFB9B9', text: '3-4' },
+                    { color: '#FFD0D0', text: '2' },
+                    { color: '#FFE7E7', text: '1' },
+                    { color: '#FFFFFF', text: '0' }
                         ]
                     },
             },        
