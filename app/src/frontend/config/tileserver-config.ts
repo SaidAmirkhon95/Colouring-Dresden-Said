@@ -48,7 +48,8 @@ export type BuildingMapTileset = 'date_year' |
     'facade_window_percentage' |
     'roof_colour' |
     'facade_colour' |
-    'terrain_connection_yesno';
+    'terrain_connection_yesno' | 
+    'number_mapped_building_features';
 
 export type SpecialMapTileset = 'base_light' | 'base_night' | 'base_night_outlines' | 'highlight' | 'number_labels' | 'base_boroughs';
 

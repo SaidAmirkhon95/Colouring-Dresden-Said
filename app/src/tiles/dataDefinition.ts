@@ -534,6 +534,61 @@ const LAYER_QUERIES = {
         WHERE
         terrain_connection_yesno IS NOT NULL`,
 
+
+
+    number_mapped_building_features: `
+    SELECT blds_with_data.* 
+    FROM (
+        SELECT
+                geometry_id,
+                (
+                    case when location_name IS NULL then 0 else 1 end +
+                    case when ref_wikidata IS NULL then 0 else 1 end +
+                    case when ref_wikipedia IS NULL then 0 else 1 end +
+                    case when is_domestic IS NULL then 0 else 1 end +
+                    case when use_building_origin IS NULL then 0 else 1 end +
+                    case when use_building_current IS NULL then 0 else 1 end +
+                    case when basement_type IS NULL then 0 else 1 end +
+                    case when basement_percentage IS NULL then 0 else 1 end +
+                    case when basement_use IS NULL then 0 else 1 end +
+                    case when ground_storey_use IS NULL then 0 else 1 end +
+                    case when upper_storeys_use IS NULL then 0 else 1 end +
+                    case when use_number_residential_units IS NULL then 0 else 1 end +
+                    case when use_number_businesses IS NULL then 0 else 1 end +
+                    case when building_attachment_form IS NULL then 0 else 1 end +
+                    case when size_roof_shape IS NULL then 0 else 1 end +
+                    case when building_owner IS NULL then 0 else 1 end +
+                    case when size_storeys_core IS NULL then 0 else 1 end +
+                    case when size_storeys_attic IS NULL then 0 else 1 end +
+                    case when size_storeys_basement IS NULL then 0 else 1 end +
+                    case when construction_system_type IS NULL then 0 else 1 end +
+                    case when construction_core_material IS NULL then 0 else 1 end +
+                    case when construction_roof_covering IS NULL then 0 else 1 end +
+                    case when building_status IS NULL then 0 else 1 end +
+                    case when last_renovation IS NULL then 0 else 1 end +
+                    case when architectural_style IS NULL then 0 else 1 end +
+                    case when date_year IS NULL then 0 else 1 end +
+                    case when facade_year IS NULL then 0 else 1 end +
+                    case when roof_colour IS NULL then 0 else 1 end +
+                    case when roof_colour_type IS NULL then 0 else 1 end +
+                    case when facade_colour IS NULL then 0 else 1 end +
+                    case when facade_window_percentage IS NULL then 0 else 1 end +
+                    case when direction_of_windows IS NULL then 0 else 1 end +
+                    case when thermal_stress_objective IS NULL then 0 else 1 end +
+                    case when thermal_stress_subjective IS NULL then 0 else 1 end +
+                    case when heat_adaption_measure IS NULL then 0 else 1 end +
+                    case when terrain_connection_yesno IS NULL then 0 else 1 end +
+                    case when terrain_connection_difference IS NULL then 0 else 1 end +
+                    case when rain_flood_historic_incidents IS NULL then 0 else 1 end +
+                    case when rain_flood_preventive_measures2 IS NULL then 0 else 1 end +
+                    case when rain_flood_preventive_measures3 IS NULL then 0 else 1 end +
+                    case when rain_flood_preventive_measures1 IS NULL then 0 else 1 end
+                ) AS mapped_features_count
+            FROM
+                buildings
+        ) AS blds_with_data
+    WHERE blds_with_data.mapped_features_count >= 0`,
+
 };
 
 const GEOMETRY_FIELD = 'geometry_geom';

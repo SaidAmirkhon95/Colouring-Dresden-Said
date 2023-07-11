@@ -2447,4 +2447,205 @@
     </Style>
 
 
+
+
+    <Style name="number_mapped_building_features">
+
+
+
+        <Rule>
+            <Filter>[mapped_features_count] &gt;= 41</Filter>
+            <PolygonSymbolizer fill="#003300" />
+        </Rule>
+
+        <Rule>
+            <Filter>[mapped_features_count] = 40</Filter>
+            <PolygonSymbolizer fill="#063706" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 39</Filter>
+            <PolygonSymbolizer fill="#0C3C0C" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 38</Filter>
+            <PolygonSymbolizer fill="#124112" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 37</Filter>
+            <PolygonSymbolizer fill="#184618" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 36</Filter>
+            <PolygonSymbolizer fill="#1F4B1F" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 35</Filter>
+            <PolygonSymbolizer fill="#255025" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 34</Filter>
+            <PolygonSymbolizer fill="#2B552B" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 33</Filter>
+            <PolygonSymbolizer fill="#315A31" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 32</Filter>
+            <PolygonSymbolizer fill="#375F37" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 31</Filter>
+            <PolygonSymbolizer fill="#3E643E" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 30</Filter>
+            <PolygonSymbolizer fill="#446944" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 29</Filter>
+            <PolygonSymbolizer fill="#4A6E4A" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 28</Filter>
+            <PolygonSymbolizer fill="#507350" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 27</Filter>
+            <PolygonSymbolizer fill="#577857" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 26</Filter>
+            <PolygonSymbolizer fill="#5D7D5D" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 25</Filter>
+            <PolygonSymbolizer fill="#638263" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 24</Filter>
+            <PolygonSymbolizer fill="#698769" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 23</Filter>
+            <PolygonSymbolizer fill="#6F8C6F" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 22</Filter>
+            <PolygonSymbolizer fill="#769176" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 21</Filter>
+            <PolygonSymbolizer fill="#7C967C" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 20</Filter>
+            <PolygonSymbolizer fill="#829B82" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 19</Filter>
+            <PolygonSymbolizer fill="#88A088" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 18</Filter>
+            <PolygonSymbolizer fill="#8FA58F" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 17</Filter>
+            <PolygonSymbolizer fill="#95AA95" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 16</Filter>
+            <PolygonSymbolizer fill="#9BAF9B" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 15</Filter>
+            <PolygonSymbolizer fill="#A1B4A1" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 14</Filter>
+            <PolygonSymbolizer fill="#A7B9A7" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 13</Filter>
+            <PolygonSymbolizer fill="#AEBEAE" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 12</Filter>
+            <PolygonSymbolizer fill="#B4C3B4" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 11</Filter>
+            <PolygonSymbolizer fill="#BAC8BA" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 10</Filter>
+            <PolygonSymbolizer fill="#C0CDC0" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 9</Filter>
+            <PolygonSymbolizer fill="#C7D2C7" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 8</Filter>
+            <PolygonSymbolizer fill="#CDD7CD" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 7</Filter>
+            <PolygonSymbolizer fill="#D3DCD3" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 6</Filter>
+            <PolygonSymbolizer fill="#D9E1D9" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 5</Filter>
+            <PolygonSymbolizer fill="#DFE6DF" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 4</Filter>
+            <PolygonSymbolizer fill="#E6EBE6" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 3</Filter>
+            <PolygonSymbolizer fill="#ECF0EC" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 2</Filter>
+            <PolygonSymbolizer fill="#F2F5F2" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 1</Filter>
+            <PolygonSymbolizer fill="#F8FAF8" />
+        </Rule>
+        <Rule>
+            <Filter>[mapped_features_count] = 0</Filter>
+            <PolygonSymbolizer fill="#FFFFFF" />
+        </Rule>
+        <Rule>
+            <TextSymbolizer
+                face-name="DejaVu Sans Condensed Bold"
+                fill="#eee"
+                size="21"
+                halo-radius="1"
+                halo-fill="#333"
+            >
+                [mapped_features_count]
+            </TextSymbolizer>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>17061</MaxScaleDenominator>
+            <MinScaleDenominator>4264</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="1.0"/>
+        </Rule>
+        <Rule>
+            <MaxScaleDenominator>4264</MaxScaleDenominator>
+            <MinScaleDenominator>0</MinScaleDenominator>
+            <LineSymbolizer stroke="#888" stroke-width="3.0"/>
+        </Rule>
+    </Style>
+
+
 </Map>

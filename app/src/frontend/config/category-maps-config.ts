@@ -294,7 +294,19 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
 
 
-    [Category.Location]: [{
+    [Category.Location]: [
+        {
+            mapStyle: 'number_mapped_building_features',
+            legend: {
+                title: 'Stand der Erfassung',
+                description: 'Anzahl erfasster Gebäudemerkmale',
+                elements: [
+                    { color: '#003300', text: '≥41 Merkmale' },
+                    { color: '#FFFFFF', text: '0 Merkmale' }
+                        ]
+                    },
+            },        
+        {
         mapStyle: 'location',
         legend: {
             title: 'Standort',
@@ -305,9 +317,10 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                 { color: '#43a2ca', text: '40–60%' },
                 { color: '#7bccc4', text: '20–40%' },
                 { color: '#bae4bc', text: '<20%' }
-            ]
-        },
-    }],
+                    ]
+                },
+        }
+    ],
     [Category.Community]: [
         /*
         {
