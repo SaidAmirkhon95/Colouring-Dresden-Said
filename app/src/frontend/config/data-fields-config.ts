@@ -670,7 +670,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         example: true,
     },
 
-    demolished_buildings: {
+/*     demolished_buildings: {
         category: Category.Resilience,
         title: 'Frühere (abgerissene) Gebäude an diesem Standort',
         items: {
@@ -702,7 +702,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
                 year_demolished: { min: 1993, max: 1994 },
                 lifespan: "2-5", overlap_present: "50%", links: ["", ""]}
         ]
-    },
+    }, */
     has_extension: {
         category: Category.Team,
         title: "Gibt es einen Anbau/ Erweiterung?",

@@ -18,14 +18,15 @@ const MultiEdit: React.FC<MultiEditProps> = (props) => {
     return (
         <section className='data-section'>
             <header className={`section-header view ${props.category} background-${props.category}`}>
-                <h2 className="h2">Paste {props.category} data</h2>
+                <h2 className="h2">Kopiere Daten</h2>
+                {/* <h2 className="h2">Kopiere Daten aus Kategorie: {props.category}</h2> */}
             </header>
             <div className="section-body">
                 <form>
                     {
                         error ?
                             <ErrorBox msg={error} /> :
-                            <InfoBox msg='Click buildings one at a time to colour using the data below' />
+                            <InfoBox msg='Färben Sie Gebäude mit einem Klick ein. Die unten aufgeführten Werte werden dabei für das angeklickte Gebäude gespeichert.' />
                     }
                     {
                         data &&
@@ -41,8 +42,8 @@ const MultiEdit: React.FC<MultiEditProps> = (props) => {
                     }
                 </form>
                 <form className='buttons-container'>
-                    <Link to={`/view/${props.category}`} className='btn btn-secondary'>Back to view</Link>
-                    <Link to={`/edit/${props.category}`} className='btn btn-secondary'>Back to edit</Link>
+                    <Link to={`/view/${props.category}`} className='btn btn-secondary'>Zurück zum Ansichtsmodus</Link>
+                    <Link to={`/edit/${props.category}`} className='btn btn-secondary'>Zurück zum Bearbeitungsmodus</Link>
                 </form>
             </div>
         </section>

@@ -99,7 +99,26 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                                      'likes_total',
                                      'community_type_worth_keeping_total',
                                      'community_local_significance_total',
-                                     'community_expected_planning_application_total'
+                                     'community_expected_planning_application_total',
+                                     'thermal_stress_objective',
+                                     'thermal_stress_subjective',
+                                     'direction_of_windows',
+                                     'heat_adaption_measure',
+                                     'rain_flood_preventive_measures1',
+                                     'rain_flood_preventive_measures2',
+                                     'rain_flood_preventive_measures3',
+                                     'rain_flood_historic_incidents',
+                                     'size_height_apex',
+                                     'location_number',
+                                     'location_street',
+                                     'location_town',
+                                     'location_postcode',
+                                     'ref_toid',
+                                     'ref_osm_id',
+                                     'ref_osm_type',
+                                     'ref_land_parcel',
+                                     'location_latitude',
+                                     'location_longitude'
                                     ]
             for (let key in dataFields) {  
                 let fieldName = props.building == undefined ? undefined : props.building[key];    
