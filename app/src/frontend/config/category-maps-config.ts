@@ -299,7 +299,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             mapStyle: 'number_mapped_building_features',
             legend: {
                 title: 'Stand der Erfassung',
-                description: 'Anzahl erfasster Gebäudemerkmale',
+                description: 'Anzahl erfasster Gebäudemerkmale pro Gebäude',
                 elements: [
                     { color: '#FF0000', text: '>= 30' },
                     { color: '#FF1717', text: '23-29' },
