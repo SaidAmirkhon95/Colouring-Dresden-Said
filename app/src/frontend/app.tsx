@@ -30,6 +30,9 @@ import { SignUp } from './user/signup';
 import { NotFound } from './pages/not-found';
 
 import SurveyPage from './pages/survey';
+import DeclarationOfAccessibilityPage from './pages/declaration-on-accessibility';
+
+
 
 
 interface AppProps {
@@ -83,6 +86,7 @@ export const App: React.FC<AppProps> = props => {
                     <Route exact path="/code-of-conduct.html" component={CodeOfConductPage} />
                     <Route exact path="/leaderboard.html" component={LeaderboardPage} />
                     <Route exact path="/survey.html" component={SurveyPage} />
+                    <Route exact path="/declaration-on-accessibility.html" component={DeclarationOfAccessibilityPage} />
                     <Route exact path="/history.html" component={ChangesPage} />
                     <Route exact path={mapAppPaths} >
                         <MapApp

@@ -159,7 +159,7 @@ function getCurrentMenuLinks(username: string): MenuLink[][] {
                 external: true
             },
             {
-                to: "https://ioer.de/barrierefreiheit",
+                to: "/declaration-on-accessibility.html",
                 text: "Barrierefreiheit",
                 external: true
             },

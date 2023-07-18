@@ -29,8 +29,9 @@ figure a:active img {
 
 p a,
 small a {
-    color: #52a5f8;
-    border-bottom: 1px solid #52a5f8;
+    color: #0970B9;    
+    /* border-bottom: 1px solid #0970B9; */
+    text-decoration: none;
 }
 p a:hover,
 small a:hover,
@@ -38,9 +39,9 @@ p a:focus,
 small a:focus,
 p a:active,
 small a:active {
-    color: #006fdf;
-    border-bottom-color: #006fdf;
-    text-decoration: none;
+    color: #0970B9;
+    border-bottom-color: #0970B9;
+    text-decoration: underline;
 }
 p a.btn:hover,
 p a.btn:focus,
