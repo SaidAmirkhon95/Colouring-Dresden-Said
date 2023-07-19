@@ -44,9 +44,9 @@ async function createUser(user) {
 
         if (error.detail.includes('already exists')) {
             if (error.detail.includes('username')) {
-                return { error: 'Username already registered' };
+                return { error: 'Benutzername existiert bereits' };
             } else if (error.detail.includes('email')) {
-                return { error: 'Email already registered' };
+                return { error: 'E-Mail Adresse wird bereits genutzt' };
             }
         }
         return { error: 'Database error' };
@@ -73,7 +73,7 @@ async function authUser(username: string, password: string) {
     );
 
     if (user == undefined) {
-        return { error: 'The username does not exist in the system' };
+        return { error: 'Der Benutzername existiert nicht im System' };
     } else if (user.auth_ok) {
         if (user.is_blocked) {
             return { error: `Account temporarily blocked.${user.blocked_reason == undefined ? '' : ' Reason: '+user.blocked_reason}` };
@@ -81,7 +81,7 @@ async function authUser(username: string, password: string) {
         return { user_id: user.user_id };
     } else {
         console.error(`Authentication failed for user ${username}`);
-        return { error: 'Username / password pair not recognised' };
+        return { error: 'Benutzername / Passwort nicht korrekt' };
     }
 }
 

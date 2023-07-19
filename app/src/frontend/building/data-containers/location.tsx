@@ -268,7 +268,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             mode={props.mode}
             copy={props.copy}
             tooltip={dataFields.ref_wikipedia.tooltip}
-            maxLength={20}
+            maxLength={256}
             onChange={props.onChange}
 
             />

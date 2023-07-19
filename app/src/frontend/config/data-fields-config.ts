@@ -256,7 +256,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     building_attachment_form: {
         category: Category.Type,
         title: "Morphologischer Bautyp/ Nachbarschaft",
-        tooltip: "Dieses Merkmal wurde automatisiert abgeleitet. Mögliche Werte: freistehend, Doppelhaushälfte, Gebäudereihe (Ende oder innerhalb)",
+        tooltip: "Dieses Merkmal beschreibt die Lagebeziehung zu benachbarten Gebäuden. Mögliche Werte: freistehend, Doppelhaushälfte, Gebäudereihe (am Ende oder innerhalb)",
         example: "",
     },
     date_change_building_use: {
