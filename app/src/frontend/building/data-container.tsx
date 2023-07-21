@@ -118,7 +118,8 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                                      'ref_osm_type',
                                      'ref_land_parcel',
                                      'location_latitude',
-                                     'location_longitude'
+                                     'location_longitude',
+                                     'planning_data'
                                     ]
             for (let key in dataFields) {  
                 let fieldName = props.building == undefined ? undefined : props.building[key];    
