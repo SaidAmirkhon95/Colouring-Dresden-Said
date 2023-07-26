@@ -22,6 +22,8 @@ import { dataFields } from '../config/data-fields-config'
 
 import { EditHistoryLatest } from './edit-history/edit-history-latest';
 
+import { InfoIconSimple } from '../components/icons';
+
 interface DataContainerProps {
     title: string;
     cat: string;
@@ -335,16 +337,17 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                     cat={this.props.cat}
                     title={this.props.title}
                 >
-{/*                 {
+                {
                     this.props.help && !copy.copying?
                         <a
                             className="icon-button help"
                             title="Mehr erfahren"
-                            href={this.props.help}>
-                            Info
+                            href={this.props.help}
+                            target="_blank">
+                            <InfoIconSimple />
                         </a>
                     : null
-                } */}
+                }
                 {
                     this.props.building != undefined && !this.props.inactive ?
                         <>
