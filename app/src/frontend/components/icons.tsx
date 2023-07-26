@@ -12,6 +12,7 @@ import {
     faCheckCircle,
     faCheckDouble,
     faEye,
+    faInfo,
     faInfoCircle,
     faPaintBrush,
     faQuestionCircle,
@@ -24,6 +25,7 @@ import React from 'react';
 
 library.add(
     faQuestionCircle,
+    faInfo,
     faInfoCircle,
     faPaintBrush,
     faTimes,
@@ -46,6 +48,10 @@ const HelpIcon = () => (
 
 const InfoIcon = () => (
     <FontAwesomeIcon icon="info-circle" />
+);
+
+const InfoIconSimple = () => (
+    <FontAwesomeIcon icon="info" />
 );
 
 const EditIcon = () => (
@@ -103,6 +109,7 @@ const SpinnerIcon: React.FC<{spin?: boolean}> = ({spin=true}) => (
 export {
     HelpIcon,
     InfoIcon,
+    InfoIconSimple,
     EditIcon,
     ViewIcon,
     CloseIcon,
