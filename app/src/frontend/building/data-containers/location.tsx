@@ -15,7 +15,11 @@ const locationNumberPattern = "[1-9]\\d*[a-z]?(-([1-9]\\d*))?"; ///[1-9]\d*[a-z]
 
 function generate_osm_link(osm_id, osm_type) {
     return "https://www.openstreetmap.org/"+ osm_type + "/" + osm_id.padStart(9, "0");
-  }
+    }
+
+function generate_wikidata_link(wikidata_id) {
+    return "https://www.wikidata.org/wiki/"+ wikidata_id;
+    }
 
 const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
     
@@ -203,7 +207,7 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
         <>
 
             <p>
-                <b>gehe zu OSM: </b> 
+                <b>gehe zu OpenStreetMap: </b> 
             </p>
             <p>
                 <a href={generate_osm_link(props.building.ref_osm_id, props.building.ref_osm_type)} target="_blank">{generate_osm_link(props.building.ref_osm_id, props.building.ref_osm_type)}</a>
@@ -261,6 +265,25 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             />
 
 
+        {(props.building.ref_wikidata !== null) ?
+
+
+        <>
+
+            <p>
+                <b>gehe zu Wikidata: </b> 
+            </p>
+            <p>
+                <a href={generate_wikidata_link(props.building.ref_wikidata)} target="_blank">{generate_wikidata_link(props.building.ref_wikidata)}</a>
+            </p>
+
+
+
+            </>
+            : 
+                <></>
+            }
+
         <DataEntry
             title={dataFields.ref_wikipedia.title}
             slug="ref_wikipedia"
@@ -280,6 +303,26 @@ const LocationView: React.FunctionComponent<CategoryViewProps> = (props) => (
             user_verified_as={props.user_verified.ref_wikipedia}
             verified_count={props.building.verified.ref_wikipedia}
             />
+
+
+        {(props.building.ref_wikipedia !== null) ?
+
+
+        <>
+
+            <p>
+                <b>gehe zu Wikipedia: </b> 
+            </p>
+            <p>
+                <a href={props.building.ref_wikipedia} target="_blank">{props.building.ref_wikipedia}</a>
+            </p>
+
+
+
+            </>
+            : 
+                <></>
+            }
 
 
 
