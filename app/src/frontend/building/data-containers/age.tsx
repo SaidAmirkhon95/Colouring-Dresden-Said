@@ -26,6 +26,9 @@ const HistoricalStatusOptions = [
     'The building no longer exists',
 ];
 
+function generate_virtual_map_forum_link(lat, lon) {
+    return "https://kartenforum.slub-dresden.de/?b=slub-osm&c=" + lon + "," + lat + "&r=0&re=1.0252&v=0&z=17.2203";
+    }
 /**
 * Age view/edit section
 */
@@ -47,6 +50,26 @@ const AgeView: React.FunctionComponent<CategoryViewProps> = (props) => {
       return (
           <Fragment>
 
+        {(props.building.location_latitude !== null) ?
+
+
+        <>
+
+            <p>
+                <b>gehe zum virtuellen Kartenforum der SLUB Dresden: </b> 
+            </p>
+            <p>
+                <a href={generate_virtual_map_forum_link(props.building.location_latitude, props.building.location_longitude)} target="_blank">zur Kartensuche</a>
+            </p>
+
+
+
+            </>
+            : 
+                <></>
+            }
+
+    
             <SelectDataEntry
                 title={dataFields.architectural_style.title}
                 slug="architectural_style"
