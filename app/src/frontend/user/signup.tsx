@@ -29,12 +29,12 @@ export const SignUp: React.FC = () => {
         [username, email, confirmEmail, password, confirmConditions, signup]
     );
 
-    const msgName = `Willkommen bei Colouring ${config.cityName}. Sie gehören zu den ersten Besucher*innen auf der Plattform!`
+    const msgName = `Willkommen bei Colouring ${config.cityName}.`
 
     return (
         <article>
             <section className="main-col">
-                <h1 className="h2">Registrieren</h1>
+                <h1 className="h2">Kostenlos Registrieren</h1>
                 <InfoBox msg={msgName}>
                     <br/>Feedback, Hinweise oder Fragen bitte per E-Mail an colouringdresden@ioer.de . Oder direkt <a
                             href="https://github.com/colouring-cities/colouring-dresden/issues">
@@ -119,7 +119,7 @@ export const SignUp: React.FC = () => {
                     </div>
 
                     <div className="buttons-container with-space">
-                        <input type="submit" disabled={isLoading} value="Registrieren" className="btn btn-primary" />
+                        <input type="submit" disabled={isLoading} value="Kostenlos Registrieren" className="btn btn-primary" />
                         {isLoading && <span><SpinnerIcon/>Sende Daten für die Registrierung...</span>}
                     </div>
                     <InfoBox msg="">
