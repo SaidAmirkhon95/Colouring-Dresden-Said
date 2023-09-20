@@ -1,0 +1,105 @@
+.modal.modal-show {
+    display: block;
+}
+
+.modal.modal-hide {
+    display: none;
+}
+
+.modal-main {
+    width: 80%;
+    height: 80%;
+    
+    }
+
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+.modal-main {
+    position:fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/* media queries for width is required! to handel responsive design for mobile devices */
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 500px;
+        margin: 1.75rem auto;
+    }
+}
+
+@media (min-width: 876px) {
+    .modal-dialog {
+        max-width: 80%;
+        margin: 1.75rem auto;
+    }
+}
+
+/* media queries for height is required! to handel responsive design for mobile devices */
+@media (min-height: 100px) {
+    .modal-dialog {
+        max-height: 100%;
+        margin: 1.75rem auto;
+    }
+}
+
+@media (min-height: 800px) {
+.modal-dialog {
+    max-height: 80%;
+    margin: 1.75rem auto;
+}
+}
+
+@media (min-height: 1200px) {
+.modal-dialog {
+    max-height: 1200px;
+    margin: 1.75rem auto;
+}
+}
+
+    /* responsive iframe / resizable */
+
+.iframe-container {
+    position: relative;
+/* overflow: hidden; */
+    width: 100%;
+/* Firefox */
+    height: -moz-calc(100vh - 300px);
+/* WebKit */
+    height: -webkit-calc(100vh - 300px);
+/* Opera */
+    height: -o-calc(100vh - 300px);
+/* Standard */
+    height: calc(100vh - 300px);
+/* padding-top: 56.25%; */ /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+}
+    
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-body {
+    height: 100%;
+}
