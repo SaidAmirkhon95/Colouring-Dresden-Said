@@ -52,3 +52,7 @@ TODO
 
 # VM
 .vagrant
+
+
+maintenance/extract_data/.env
+*.env

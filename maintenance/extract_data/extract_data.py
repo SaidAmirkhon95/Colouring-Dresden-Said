@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 import csv
 import datetime
@@ -9,16 +9,19 @@ import zipfile
 
 import psycopg2
 
+from dotenv import load_dotenv
+
 
 class ZipFileExistsError(Exception):
     pass
 
 def get_connection():
+    load_dotenv()
     return psycopg2.connect(
-        host=os.environ['PGHOST'],
-        dbname=os.environ['PGDATABASE'],
-        user=os.environ['PGUSER'],
-        password=os.environ['PGPASSWORD']
+        host=os.getenv('PGHOST'),
+        dbname=os.getenv('PGDATABASE'),
+        user=os.getenv('PGUSER'),
+        password=os.getenv('PGPASSWORD')
     )
 
 
