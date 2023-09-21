@@ -82,9 +82,14 @@ def make_data_extract(current_time, connection, zip_file_path):
 
 def main():
     current_time = datetime.datetime.utcnow()
+    print('-------------------------------------')
+    print('script started: extract_data.py  - ' + str(current_time))
+    
     conn = get_connection()
     zip_file_path = get_extract_zip_file_path(current_time)
     make_data_extract(current_time, conn, zip_file_path)
+
+    print('script stopped successfully')
 
 
 if __name__ == '__main__':
