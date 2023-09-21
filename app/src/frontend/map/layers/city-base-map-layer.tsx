@@ -24,7 +24,7 @@ export function CityBaseMapLayer({ theme }: { theme: MapTheme }) {
     const theme_class = theme === 'light' ? "light-theme" : "night-theme";
 
     const baseUrl = `https://a.tile.openstreetmap.org/{z}/{x}/{y}.png`;
-    const attribution = `Gebäudemerkmale von © <a href=https://colouring.dresden.ioer.info>Colouring Dresden</a> Mitwirkenden. Basiskarte: © <a href=https://www.openstreetmap.org/copyright>OpenStreetMap</a> Mitwirkende`;
+    const attribution = `Gebäudemerkmale von © <a href=https://colouring.dresden.ioer.info>Colouring Dresden</a> Mitwirkenden. Datenquelle: Landeshauptstadt Dresden, dl-de/by-2-0, opendata.dresden.de. Basiskarte: © <a href=https://www.openstreetmap.org/copyright>OpenStreetMap</a> Mitwirkende`;
 
     return <TileLayer
         url={baseUrl}
