@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 import Confetti from 'canvas-confetti';
 import _ from 'lodash';
 
-import { apiPost } from '../apiHelpers';
+import { apiPost, apiGet } from '../apiHelpers';
 import { sendBuildingUpdate } from '../api-data/building-update';
 import ErrorBox from '../components/error-box';
 import InfoBox from '../components/info-box';
@@ -23,6 +23,13 @@ import { dataFields } from '../config/data-fields-config'
 import { EditHistoryLatest } from './edit-history/edit-history-latest';
 
 import { InfoIconSimple } from '../components/icons';
+
+import SurveyModal from '../components/survey-modal';
+
+import { CCConfig } from '../../cc-config';
+let config: CCConfig = require('../../cc-config.json')
+
+
 
 interface DataContainerProps {
     title: string;
@@ -51,6 +58,7 @@ interface DataContainerState {
     buildingEdits: BuildingEdits;
     mapColourScale: BuildingMapTileset;
     onMapColourScale: (x: BuildingMapTileset) => void;
+    setShowSurveyModal: boolean;
 }
 
 export type DataContainerType = React.ComponentType<DataContainerProps>;
@@ -76,7 +84,8 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                 currentBuildingId: undefined,
                 currentBuildingRevisionId: undefined,
                 mapColourScale: undefined,
-                onMapColourScale: undefined
+                onMapColourScale: undefined,
+                setShowSurveyModal: false
             };
 
             this.handleChange = this.handleChange.bind(this);
@@ -140,7 +149,8 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                     currentBuildingId: newBuildingId,
                     currentBuildingRevisionId: newBuildingRevisionId,
                     mapColourScale: props.mapColourScale,
-                    onMapColourScale: props.onMapColourScale
+                    onMapColourScale: props.onMapColourScale, 
+                    setShowSurveyModal: false
                 };
             }
 
@@ -217,6 +227,52 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
             this.clearEdits();
         }
 
+
+
+
+
+        async getSurveyPopUpStatus(): Promise<void> {
+            /* depending on value in config file, API including SQL function will be triggered or not */
+            if (config.enable_survey_popup == true){
+                try {
+                    const user = await apiGet('/api/users/get_survey_popup_status');
+                    if (user.error) {
+
+                        this.setState({
+                            setShowSurveyModal: false
+                        });
+            
+                    } else {
+                        /* setUser(user); */
+                        console.log(user[0].value);
+                        /* convert API JSON response into boolean */
+                        var bool_value = false
+                        if ((user[0].value == "first") || (user[0].value == "second")){
+                            bool_value = true;
+                        }
+                        /* var bool_value = user[0].value == "true" ? true : false; */
+                        
+                        /* console.log(bool_value); */
+                        /* console.log(typeof(bool_value)); */
+            
+                        this.setState({
+                            setShowSurveyModal: bool_value
+                        });
+            
+                    }
+                } catch(err) {
+                    /* setUserError('Error loading user info.'); */
+                    this.setState({
+                        setShowSurveyModal: false
+                    });
+            
+                }
+            }
+        };
+
+
+
+
         async doSubmit(edits: Partial<Building & BuildingUserAttributes>) {
             this.setState({error: undefined});
             
@@ -224,6 +280,11 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                 const buildingUpdate = await sendBuildingUpdate(this.props.building.building_id, edits);
                 const updatedBuilding = Object.assign({}, this.props.building, buildingUpdate);
                 this.props.onBuildingUpdate(this.props.building.building_id, updatedBuilding);
+
+                /* trigger modal/popup show after saving changes */
+                this.getSurveyPopUpStatus();
+
+
             } catch(error) {
                 this.setState({ error });
             }
@@ -332,6 +393,20 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                 <section
                     id={this.props.cat}
                     className="data-section">
+
+
+
+                <SurveyModal
+                    show={this.state.setShowSurveyModal}
+                    title="Umfrage"
+                    description="Wir brauchen deine Rückmeldung! Nur mit dir können wir die Webseite verbessern und Gebäude in Dresden erforschen. Jede Stimme zählt."
+                    confirmButtonText="Schließen"
+                    confirmButtonClass="btn-secondary"
+                    onConfirm={() => this.setState({setShowSurveyModal:false})}
+                    onCancel={() => this.setState({setShowSurveyModal:false})}
+                />
+
+
                 <ContainerHeader
                     cat={this.props.cat}
                     title={this.props.title}
@@ -455,6 +530,13 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                             <InfoBox msg="Wählen Sie ein Gebäude aus um die Daten zu sehen."></InfoBox>
                 }
                 </div>
+
+
+
+
+
+
+
                 </section>
             );
         }
