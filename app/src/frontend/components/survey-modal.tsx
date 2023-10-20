@@ -39,7 +39,7 @@ const SurveyModal: React.FunctionComponent<SurveyModalProps> = ({
                         <div className="modal-body">
                             <p>{props.description}</p>
                             <div className="iframe-container">
-                                <iframe className="responsive-iframe" src="https://www.soscisurvey.de/colouring_dd/?act=ngL3nRsOpa3LQ4SJCTppVMPd"></iframe>
+                                <iframe className="responsive-iframe" src="https://www.soscisurvey.de/colouring_dd/?act=5Gg26X3SRRWyDsuKB95W2KeN"></iframe>
                                 {/* <iframe className="responsive-iframe" src="https://www.soscisurvey.de/colouring_dd/?act=ngL3nRsOpa3LQ4SJCTppVMPd" height={400} width={600} frameBorder={0} allowFullScreen></iframe> */}
                             </div>
                         </div>

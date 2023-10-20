@@ -97,6 +97,22 @@ const resetPassword = asyncController(async function(req: express.Request, res: 
     }
 });
 
+const getSurveyPopupStatus = asyncController(async (req: express.Request, res: express.Response) => {
+    if (!req.session.user_id) {
+        return res.send({ error: 'Must be logged in' });
+    }
+
+    try {
+        const user = await userService.getSurveyPopupStatus(req.session.user_id);
+        res.send(user);
+    } catch(error) {
+        res.send(error);
+    }
+});
+
+
+
+
 function getWebAppOrigin() : string {
     const origin = process.env.WEBAPP_ORIGIN;
     if (origin == undefined) {
@@ -109,5 +125,6 @@ export default {
     createUser,
     getCurrentUser,
     deleteCurrentUser,
-    resetPassword
+    resetPassword,
+    getSurveyPopupStatus
 };

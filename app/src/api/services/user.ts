@@ -8,6 +8,13 @@ import { promisify } from 'util';
 import db from '../../db';
 import { validatePassword, validateUsername, ValidationError } from '../validation';
 
+interface SurveyPopupFeedback_Row {
+    value: string;
+}
+interface SurveyPopupFeedback {
+    value: string;
+}
+
 
 async function createUser(user) {
     try {
@@ -189,6 +196,34 @@ function logout(session: Express.Session): Promise<void> {
     return promisify(session.destroy.bind(session))();
 }
 
+async function getSurveyPopupStatus(id: string): Promise<SurveyPopupFeedback[]> {
+    try {
+        const extractRecord = await db.manyOrNone<SurveyPopupFeedback_Row> (
+            `SELECT CAST(handleSurveyPopupStatus($1) AS VARCHAR(20)) AS "value"
+            `, [id]
+        );
+       console.error(extractRecord.map(getSurveyPopupFeedback));
+       return extractRecord.map(getSurveyPopupFeedback);
+    } catch(error) {
+        console.error('Error:', error);
+        return {error: 'Database error'};
+    }
+}
+
+function getSurveyPopupFeedback(er: SurveyPopupFeedback_Row): SurveyPopupFeedback {
+    return {
+        value: er.value
+    };
+}
+
+
+
+
+
+
+
+
+
 export {
     getUserById,
     getUserByEmail,
@@ -197,5 +232,9 @@ export {
     getNewUserAPIKey,
     authAPIUser,
     deleteUser,
-    logout
+    logout,
+    getSurveyPopupStatus
 };
+
+
+

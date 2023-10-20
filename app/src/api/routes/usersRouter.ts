@@ -12,4 +12,6 @@ router.route('/me')
 
 router.put('/password', userController.resetPassword);
 
+router.get('/get_survey_popup_status', userController.getSurveyPopupStatus);
+
 export default router;

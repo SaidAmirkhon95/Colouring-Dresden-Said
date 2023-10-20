@@ -5,5 +5,6 @@
     "privacyStatement": "Colouring Dresden speichert alle Daten auf einem Server in Deutschland.",
 
     "initialMapPosition": [ 51.049259, 13.73836 ],
-    "initialZoomLevel": 16
+    "initialZoomLevel": 16,
+    "enable_survey_popup": true
 }
