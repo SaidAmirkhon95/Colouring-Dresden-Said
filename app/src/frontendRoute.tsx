@@ -97,14 +97,14 @@ function renderHTML(context, data, req, res) {
         <meta charset="utf-8" />
 
         <meta name="twitter:card"              content="summary" />
-        <meta name="twitter:site"              content="@colouringlondon" />
+        <meta name="twitter:site"              content="@colouringdd" />
 
-        <meta property="og:url"                content="https://colouring.london" />
+        <meta property="og:url"                content="https://colouring.dresden.ioer.de/" />
         <meta property="og:type"               content="website" />
         <meta property="og:title"              content="Colouring ${config.cityName}" />
-        <meta property="og:description"        content="Colouring ${config.cityName} is a knowledge exchange platform collecting information on every building in London, to help make the city more sustainable. We’re building it at The Bartlett Centre for Advanced Spatial Analysis, University College London." />
-        <meta property="og:locale"             content="en_GB" />
-        <meta property="og:image"              content="https://colouring.london/images/logo-cl-square.png" />
+        <meta property="og:description"        content="Colouring ${config.cityName} - Mit einer oﬀenen Citizen-Science-Plattform Gebäudewissen kartieren, erforschen und vermitteln und dabei Baukultur und klimagerechte Architektur in Dresden unterstützen." />
+        <meta property="og:locale"             content="de_DE" />
+        <meta property="og:image"              content="https://colouring.dresden.ioer.de/images/logo-cl-square.png" />
 
         <link rel="manifest" href="site.webmanifest">
 
