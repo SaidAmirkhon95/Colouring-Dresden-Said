@@ -20,7 +20,10 @@ const ContactPage = () => (
                 <b>Newsletter: </b> <a href="https://seu2.cleverreach.com/f/203678-351100/" target="_blank">hier zur Anmeldung zum Newsletter</a>
             </p>
             <p>
-                <b>Twitter: </b> <a href="https://twitter.com/colouringdd" target="_blank">https://twitter.com/colouringdd</a>
+                <b>Mastodon: </b> <a href="https://wisskomm.social/@ioer/" target="_blank">@ioer@willkomm.social</a>
+            </p>
+            <p>
+                <b>Bluesky: </b> <a href="https://t.co/v0GRbpZYh1" target="_blank">http://ioer.bsky.social</a>
             </p>
             <p>
                 <b>Instagram: </b> <a href="https://www.instagram.com/colouringdd/" target="_blank">https://www.instagram.com/colouringdd/</a>
