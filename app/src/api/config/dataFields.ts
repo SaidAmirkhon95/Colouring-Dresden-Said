@@ -617,6 +617,26 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
         edit: true,
         verify: true
     },
+    number_persons: {
+        edit: true,
+        verify: true
+    },	
+    reference_period: {
+        edit: true,
+        verify: true
+    }, 
+    electricity_usage: {
+        edit: true,
+        verify: true
+    },
+    gas_usage: {
+        edit: true,
+        verify: true
+    },		
+    living_area: {
+        edit: true,
+        verify: true
+    },		
 });
 
 
