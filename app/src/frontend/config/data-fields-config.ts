@@ -1708,6 +1708,38 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
         tooltip: "Link Wikipedia",
         example: "",
     },
+    number_persons: {
+        category: Category.Sustainability,
+        title: "Anzahl der im Haushalt lebenden Personen",
+        example: "3",
+    },
+    
+    reference_period: {
+        category: Category.Sustainability,
+        title: "Bezugsjahr",
+        tooltip: "Immer das Jahr eintragen in dem der Großteil des Abrechnungszeitraums liegt. Also, wenn der Abrechnungszeitraums vor dem 30.06 beginnt, dann das erste Jahr, wenn er nach dem 01.07 beginnt, dann das folge Jahr.",
+        example: "2023",
+    },
+    
+    electricity_usage: {
+        category: Category.Sustainability,
+        title: "Stromverbrauch eines Jahres [in kWh]",
+        tooltip: "Den Stromverbrauch finden Sie auf ihrer Energie-Abrechnung",
+        example: "3600",
+    },
+    
+    gas_usage: {
+        category: Category.Sustainability,
+        title: "Gasverbrauch eines Jahres [in kWh]",
+        tooltip: "Den Gasverbrauch finden Sie auf ihrer Energie-Abrechnung",
+        example: "15300",
+    },
+    
+    living_area: {
+        category: Category.Sustainability,
+        title: "Wohnfläche in [m^2]",
+        example: 80.5,
+    },
 
 };
 
