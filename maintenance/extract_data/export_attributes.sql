@@ -103,7 +103,8 @@ COPY (SELECT
     ref_land_parcel,
     ref_osm_type,
     ref_wikidata,
-    ref_wikipedia
+    ref_wikipedia,			
+
 FROM buildings)
 TO '/tmp/building_attributes.csv'
 WITH CSV HEADER

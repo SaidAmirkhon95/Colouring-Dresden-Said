@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react'; //useState for the checkbox
 
 import { dataFields } from '../../config/data-fields-config';
 import NumericDataEntry from '../data-components/numeric-data-entry';
 import withCopyEdit from '../data-container';
-
-
 import { CategoryViewProps } from './category-view-props';
 
 const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) => {
+    const [acceptedConditions, setAcceptedConditions] = useState(false);  //for the checkbox
+    const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setAcceptedConditions(event.target.checked);}
     return (
         <Fragment>
 
@@ -78,7 +79,15 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 copy={props.copy}
                 onChange={props.onChange}
             />
-
+<div style={{ marginTop: '20px' }}>
+                <input
+                    type="checkbox"
+                    id="accept-conditions"
+                    checked={acceptedConditions}
+                    onChange={handleCheckboxChange}
+                />
+                <label htmlFor="accept-conditions">Ich stimme zu, dass meine Daten zwecks der Verschluesselung, an BuildingTrust gesendet werden.</label>
+            </div>
         </Fragment>
     );
     };

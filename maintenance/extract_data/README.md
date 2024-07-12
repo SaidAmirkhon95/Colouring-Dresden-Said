@@ -84,6 +84,11 @@ Dies ist die wichtigste Datentabelle und enthält fast alle im Projekt Colouring
 - `facade_year`: Baujahr der Fassade
 - `community_type_worth_keeping_total`: Glauben Sie, dass dieser Gebäudetyp einen Beitrag zur Stadt leistet?
 - `likes_total`: Likes total
+- `number_persons`: Haushaltsgröße
+- `reference_period`: Bezugsjahr der Stromrechnung
+- `electricity_usage`: Stromverbrauch
+- `gas_usage`: Gaßverbrauch
+- `living_area`: Wohnfläche
 
 ## Bearbeitungshistorie / Edit History
 

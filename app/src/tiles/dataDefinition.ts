@@ -582,13 +582,13 @@ const LAYER_QUERIES = {
                     case when rain_flood_historic_incidents IS NULL then 0 else 1 end +
                     case when rain_flood_preventive_measures2 IS NULL then 0 else 1 end +
                     case when rain_flood_preventive_measures3 IS NULL then 0 else 1 end +
-                    case when rain_flood_preventive_measures1 IS NULL then 0 else 1 end
+                    case when rain_flood_preventive_measures1 IS NULL then 0 else 1 end 
                 ) AS mapped_features_count
             FROM
                 buildings
         ) AS blds_with_data
     WHERE blds_with_data.mapped_features_count >= 0`,
-
+    
 };
 
 const GEOMETRY_FIELD = 'geometry_geom';
