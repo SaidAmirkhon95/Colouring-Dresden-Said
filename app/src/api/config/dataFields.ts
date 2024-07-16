@@ -619,23 +619,33 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
     },
     number_persons: {
         edit: true,
-        verify: true
+        verify: true/*,
+        asJson: true,
+        sqlCast: 'jsonb'*/
     },	
     reference_period: {
         edit: true,
-        verify: true
+        verify: true /*,
+        asJson: true,
+        sqlCast: 'jsonb'*/
     }, 
     electricity_usage: {
         edit: true,
-        verify: true
+        verify: true/*,
+        asJson: true,
+        sqlCast: 'jsonb'*/
     },
     gas_usage: {
         edit: true,
-        verify: true
+        verify: true/*,
+        asJson: true,
+        sqlCast: 'jsonb'*/
     },		
     living_area: {
         edit: true,
-        verify: true
+        verify: true/*,
+        asJson: true,
+        sqlCast: 'jsonb'*/
     },		
 });
 

@@ -515,12 +515,17 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
         {
             mapStyle: undefined,
             legend: {
-                title: 'Energie',
-                elements: []
+                title: 'Durchschnittlicher Energieverbrauch (Gas und Strom) pro Person',
+                elements: [ //Skala nochmal sinnvoller anpassen, schauen in welchem Bereich es sich normalerweise bewegt und dort mehrere Abstufungen machen, Farbskala nochmal ueberdenken
+                    { color: '#82fa32', text: 'Weniger als 2.000 kWh'},
+                    { color: '#d5fa32', text: '2.000-4.000 kWh'},
+                    { color: '#fadf32', text: '4.000-8.000 kWh'},
+                    { color: '#fab732', text: '8.000-16.000 kWh'},
+                    { color: '#fa7132', text: '16.000 - 32.000 kWh'},
+                    { color: '#fa3232', text: 'Mehr als 32.000 kWh'},
+                ]
             },
-        }        
-        
-        
+        }            
 /*         {
             mapStyle: 'sust_dec',
             legend: {

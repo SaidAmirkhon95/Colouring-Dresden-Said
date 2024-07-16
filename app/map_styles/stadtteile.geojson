@@ -1,0 +1,79 @@
+{
+    "id": "L137",
+    "title": "Stadtteile",
+    "links": [
+        {
+            "href": "https://kommisdd.dresden.de/net4/public/ogcapi/collections/L137/items?limit=10",
+            "rel": "items",
+            "type": "application/geo+json",
+            "title": "Datenabruf der Ebene"
+        },
+        {
+            "href": "https://kommisdd.dresden.de/net4/public/ogcapi/collections/L137",
+            "rel": "item",
+            "type": "application/json",
+            "title": "Beschreibung der Ebene"
+        },
+        {
+            "href": "https://www.cardogis.com/WFS3Server#collection",
+            "rel": "serviceDocumentation",
+            "type": "text/html",
+            "title": "Beschreibung der Dienste-Implementierung"
+        }
+    ],
+    "extent": {
+        "spatial": {
+            "bbox": [
+                400423.493,
+                5647701.825,
+                427535.099,
+                5670331.584
+            ],
+            "crs": "http://www.opengis.net/def/crs/EPSG/0/25833"
+        }
+    },
+    "crs": [
+        "http://www.opengis.net/def/crs/EPSG/0/4326",
+        "http://www.opengis.net/def/crs/EPSG/0/25833"
+    ],
+    "itemType": "feature",
+    "properties": [
+        {
+            "name": "blocknr",
+            "type": "Text",
+            "flags": "RowId, UniqueValues"
+        },
+        {
+            "name": "bez",
+            "type": "Text"
+        },
+        {
+            "name": "bez_lang",
+            "type": "Text"
+        },
+        {
+            "name": "flaeche_km2",
+            "type": "Double"
+        },
+        {
+            "name": "sst",
+            "type": "Text"
+        },
+        {
+            "name": "sst_klar",
+            "type": "Text"
+        },
+        {
+            "name": "historie",
+            "type": "Text"
+        },
+        {
+            "name": "shape",
+            "type": "Geom"
+        },
+        {
+            "name": "aend",
+            "type": "DateTime"
+        }
+    ]
+}
