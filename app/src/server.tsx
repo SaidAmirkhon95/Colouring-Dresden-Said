@@ -4,6 +4,7 @@
  * - entry-point to shared React App
  *
  */
+
 import pgConnect from 'connect-pg-simple';
 import express from 'express';
 import session from 'express-session';
@@ -35,6 +36,7 @@ const sess: any = { // TODO: remove any
     resave: false,
     cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
 };
+
 if (server.get('env') === 'production') {
     // trust first proxy
     server.set('trust proxy', 1);
@@ -42,6 +44,8 @@ if (server.get('env') === 'production') {
     sess.cookie.secure = true;
 }
 server.use(session(sess));
+console.log('Is the error here? Session Secret:', process.env.APP_COOKIE_SECRET), 
+    
 
 server.use('/tiles', tileserver);
 server.use('/api', apiServer);
