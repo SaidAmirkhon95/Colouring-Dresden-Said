@@ -232,6 +232,18 @@ const LAYER_QUERIES = {
             buildings
         WHERE
             sust_dec IS NOT NULL`,
+    sust_average_consumption: `
+            SELECT
+                geometry_id,
+                (
+                    electricity_usage + gas_usage) / number_persons
+                ) AS sust_average_consumption
+            FROM
+                buildings
+            WHERE
+                electricity_usage IS NOT NULL 
+                AND gas_usage IS NOT NULL 
+                AND number_persons IS NOT NULL;`,           
     building_attachment_form: `
         SELECT
             geometry_id,
