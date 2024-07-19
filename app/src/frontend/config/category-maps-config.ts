@@ -513,7 +513,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
     [Category.Sustainability]: [
         
         {
-            mapStyle: undefined,
+            mapStyle: undefined, //'sust_average_consumption',
             legend: {
                 title: 'Durchschnittlicher Energieverbrauch (Gas und Strom) pro Person',
                 elements: [ //Skala nochmal sinnvoller anpassen, schauen in welchem Bereich es sich normalerweise bewegt und dort mehrere Abstufungen machen, Farbskala nochmal ueberdenken

@@ -575,23 +575,23 @@
             <PolygonSymbolizer fill="#f2a2b9" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 2000 and [sust_average_consumption] &lt; 3999</Filter>
+             <Filter>[sust_average_consumption] &gt;= 2000 and [sust_average_consumption] &lt; 4000</Filter>
             <PolygonSymbolizer fill="#d5fa32" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 4000 and [sust_average_consumption] &lt; 7999</Filter>
+             <Filter>[sust_average_consumption] &gt;= 4000 and [sust_average_consumption] &lt; 8000</Filter>
             <PolygonSymbolizer fill="#fadf32" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 8000 and [sust_average_consumption] &lt; 15999</Filter>
+             <Filter>[sust_average_consumption] &gt;= 8000 and [sust_average_consumption] &lt; 16000</Filter>
             <PolygonSymbolizer fill="#fab732" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 16000 and [sust_average_consumption] &lt; 31999</Filter>
+             <Filter>[sust_average_consumption] &gt;= 16000 and [sust_average_consumption] &lt; 32000</Filter>
             <PolygonSymbolizer fill="#fa7132" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 3200 and [sust_average_consumption] &lt; 100000</Filter>
+             <Filter>[sust_average_consumption] &gt;= 32000 and [sust_average_consumption] &lt; 100000</Filter>
             <PolygonSymbolizer fill="#fa3232" />
         </Rule>
     </Style>

@@ -235,8 +235,7 @@ const LAYER_QUERIES = {
     sust_average_consumption: `
             SELECT
                 geometry_id,
-                (
-                    electricity_usage + gas_usage) / number_persons
+                ((electricity_usage + gas_usage) / number_persons
                 ) AS sust_average_consumption
             FROM
                 buildings

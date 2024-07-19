@@ -49,12 +49,13 @@ export type BuildingMapTileset = 'date_year' |
     'roof_colour' |
     'facade_colour' |
     'terrain_connection_yesno' | 
-    'number_mapped_building_features'
-    |'number_persons 	'	
-|'reference_period 	'
-|'electricity_usage	'
-|'gas_usage			'
-|'living_area		'	;
+    'number_mapped_building_features'|
+    'number_persons'|
+    'reference_period'|
+    'electricity_usage'|
+    'gas_usage'|
+    'living_area'|
+    'sust_average_consumption';
 
 export type SpecialMapTileset = 'base_light' | 'base_night' | 'base_night_outlines' | 'highlight' | 'number_labels' | 'base_boroughs';
 
