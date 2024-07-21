@@ -1724,7 +1724,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     electricity_usage: {
         category: Category.Sustainability,
         title: "Stromverbrauch eines Jahres [in kWh]",
-        tooltip: "Den Stromverbrauch finden Sie auf ihrer Energie-Abrechnung",
+        tooltip: "Den Stromverbrauch finden Sie auf ihrer Energie-Abrechnung.",
         example: 3600,
     },
     

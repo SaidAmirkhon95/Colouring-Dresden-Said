@@ -19,6 +19,7 @@ import { FloodBoundaryLayer } from './layers/flood-boundary-layer';
 import { ConservationAreaBoundaryLayer } from './layers/conservation-boundary-layer';
 import { VistaBoundaryLayer } from './layers/vista-boundary-layer';
 import { HousingBoundaryLayer } from './layers/housing-boundary-layer';
+import { DistrictLayer } from './layers/district-layer';
 import { CreativeBoundaryLayer } from './layers/creative-boundary-layer';
 import { BuildingBaseLayer } from './layers/building-base-layer';
 import { BuildingDataLayer } from './layers/building-data-layer';
@@ -41,6 +42,7 @@ import { HistoricDataSwitcher } from './historic-data-switcher';
 import { VistaSwitcher } from './vista-switcher';
 import { CreativeSwitcher } from './creative-switcher';
 import { HousingSwitcher } from './housing-switcher';
+import { DistrictSwitcher } from './district-switcher';
 import { BuildingMapTileset } from '../config/tileserver-config';
 import { useDisplayPreferences } from '../displayPreferences-context';
 import { CategoryMapDefinition } from '../config/category-maps-config';
@@ -147,6 +149,7 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                     <FloodBoundaryLayer/>
                     <VistaBoundaryLayer/>
                     <HousingBoundaryLayer/>
+                    <DistrictLayer/>
                     <CreativeBoundaryLayer/>
                     <BuildingNumbersLayer revisionId={revisionId} />
                     {
@@ -183,6 +186,7 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                             {/* <FloodSwitcher/> */}
                             {/* <ConservationAreaSwitcher/> */}
                             <HistoricDataSwitcher/>
+                            <DistrictSwitcher/>
                             {/* <VistaSwitcher /> */}
                             {/* <HousingSwitcher /> */}
                             {/* <CreativeSwitcher /> */}
