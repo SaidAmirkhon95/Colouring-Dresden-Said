@@ -242,7 +242,7 @@ const LAYER_QUERIES = {
             WHERE
                 electricity_usage IS NOT NULL 
                 AND gas_usage IS NOT NULL 
-                AND number_persons IS NOT NULL;`,           
+                AND number_persons IS NOT NULL`,           
     building_attachment_form: `
         SELECT
             geometry_id,

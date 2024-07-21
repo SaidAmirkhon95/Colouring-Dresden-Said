@@ -557,7 +557,6 @@
             <Filter>[sust_dec] = G</Filter>
             <PolygonSymbolizer fill="#e31d23" />
         </Rule>
-
         <Rule>
             <MaxScaleDenominator>17061</MaxScaleDenominator>
             <MinScaleDenominator>4264</MinScaleDenominator>
@@ -572,7 +571,7 @@
     <Style name="sust_average_consumption">
         <Rule>
              <Filter>[sust_average_consumption] &gt;= 0 and [sust_average_consumption] &lt; 1999</Filter>
-            <PolygonSymbolizer fill="#f2a2b9" />
+            <PolygonSymbolizer fill="#82fa32" />
         </Rule>
                 <Rule>
              <Filter>[sust_average_consumption] &gt;= 2000 and [sust_average_consumption] &lt; 4000</Filter>

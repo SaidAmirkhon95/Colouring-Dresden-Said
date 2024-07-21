@@ -185,8 +185,8 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                             {/* <ParcelSwitcher/> */}
                             {/* <FloodSwitcher/> */}
                             {/* <ConservationAreaSwitcher/> */}
-                            <HistoricDataSwitcher/>
                             <DistrictSwitcher/>
+                            <HistoricDataSwitcher/>
                             {/* <VistaSwitcher /> */}
                             {/* <HousingSwitcher /> */}
                             {/* <CreativeSwitcher /> */}
