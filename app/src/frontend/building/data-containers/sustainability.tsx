@@ -8,10 +8,16 @@ import { CategoryViewProps } from './category-view-props';
 const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) => {
     const [acceptedConditions, setAcceptedConditions] = useState(false);  //for the checkbox
     const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAcceptedConditions(event.target.checked);}
-    return (
-        <Fragment>
+        setAcceptedConditions(event.target.checked);
+    }
+    const showReport = () => {
+        props.onShowReportButtonClicked(true)
+    }
 
+    return (
+
+        <Fragment>
+            <button onClick={showReport}>Vergleich anzeigen</button>
     {/*<InfoBox>
             Dieser Abschnitt ist noch in der Entwicklung.
         </InfoBox> */}
@@ -88,7 +94,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 />
                 <label htmlFor="accept-conditions">Ich stimme zu, dass meine Daten zwecks der Verschluesselung, an BuildingTrust gesendet werden.</label>
             </div>
-        </Fragment>
+        </Fragment >
     );
     };
 const SustainabilityContainer = withCopyEdit(SustainabilityView);

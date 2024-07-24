@@ -619,7 +619,7 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
     },
     number_persons: {
         edit: true,
-        verify: true/*,
+        verify: true/*S,
         asJson: true,
         sqlCast: 'jsonb'*/
     },	

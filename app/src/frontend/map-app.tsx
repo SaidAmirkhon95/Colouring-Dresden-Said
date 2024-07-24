@@ -37,7 +37,7 @@ import { sendBuildingUpdate } from './api-data/building-update';
  */
 const ColouringMap = loadable(
     async () => (await import('./map/map')).ColouringMap,
-    { ssr: false }  
+    { ssr: false }
 );
 
 interface MapAppProps {
@@ -53,7 +53,7 @@ function unless<V extends string, U extends V>(value: V, unlessValue: U): Exclud
 
 /** Returns the new value, unless it is equal to the current value - then returns undefined */
 function setOrToggle<T>(currentValue: T, newValue: T): T {
-    if(newValue == undefined || newValue === currentValue){
+    if (newValue == undefined || newValue === currentValue) {
         return undefined;
     } else {
         return newValue;
@@ -75,22 +75,24 @@ export const MapApp: React.FC<MapAppProps> = props => {
 
     const [currentCategory, setCategory] = useState<Category>();
     useEffect(() => setCategory(unless(categoryUrlParam, 'categories')), [categoryUrlParam]);
-    
+
+    const [sustIsShown, setSustIsShown] = useState<boolean>(false);
+
     const displayCategory = useLastNotEmpty(currentCategory) ?? defaultMapCategory;
-    
+
     const [selectedBuildingId, setSelectedBuildingId] = useUrlBuildingParam('view', displayCategory);
-    
+
     const [building, updateBuilding, reloadBuilding] = useBuildingData(selectedBuildingId, props.building, user != undefined);
     const [userVerified, updateUserVerified, reloadUserVerified] = useUserVerifiedData(selectedBuildingId, props.user_verified);
-    
+
     const [revisionId, updateRevisionId] = useRevisionId(props.revisionId);
     useEffect(() => {
         updateRevisionId(building?.revision_id)
     }, [building]);
-    
+
     const [mode] = useUrlModeParam();
     const viewEditMode = unless(mode, 'multi-edit');
-    
+
     const [multiEditData, multiEditError] = useMultiEditData();
 
     const selectBuilding = useCallback((selectedBuilding: Building) => {
@@ -102,11 +104,11 @@ export const MapApp: React.FC<MapAppProps> = props => {
     const colourBuilding = useCallback(async (building: Building) => {
         const buildingId = building?.building_id;
 
-        if(buildingId != undefined && multiEditError == undefined) {
+        if (buildingId != undefined && multiEditError == undefined) {
             try {
                 const updatedBuilding = await sendBuildingUpdate(buildingId, multiEditData);
                 updateRevisionId(updatedBuilding.revision_id);
-            } catch(error) {
+            } catch (error) {
                 console.error({ error });
             }
         }
@@ -114,7 +116,7 @@ export const MapApp: React.FC<MapAppProps> = props => {
 
     const handleBuildingUpdate = useCallback((buildingId: number, updatedData: Building) => {
         // only update current building data if the IDs match
-        if(buildingId === selectedBuildingId) {
+        if (buildingId === selectedBuildingId) {
             updateBuilding(Object.assign({}, building, updatedData));
         } else {
             // otherwise, still update the latest revision ID
@@ -124,7 +126,7 @@ export const MapApp: React.FC<MapAppProps> = props => {
 
     const handleUserVerifiedUpdate = useCallback((buildingId: number, updatedData: UserVerified) => {
         // only update current building data if the IDs match
-        if(buildingId === selectedBuildingId) {
+        if (buildingId === selectedBuildingId) {
             updateUserVerified(Object.assign({}, userVerified, updatedData)); // quickly show added verifications
             reloadBuilding();
             reloadUserVerified(); // but still reload from server to reflect removed verifications
@@ -163,6 +165,7 @@ export const MapApp: React.FC<MapAppProps> = props => {
                                     onUserVerifiedUpdate={handleUserVerifiedUpdate}
                                     mapColourScale={mapColourScale}
                                     onMapColourScale={setMapColourScale}
+                                    onShowReportButtonClicked={setSustIsShown}
                                 />
                             </Route>
                         </Switch>
@@ -172,15 +175,20 @@ export const MapApp: React.FC<MapAppProps> = props => {
                     />
                 </Switch>
             </Sidebar>
-            <ColouringMap
-                selectedBuildingId={selectedBuildingId}
-                mode={mode || 'basic'}
-                revisionId={revisionId}
-                onBuildingAction={mode === 'multi-edit' ? colourBuilding : selectBuilding}
-                mapColourScale={mapColourScale}
-                onMapColourScale={setMapColourScale}
-                categoryMapDefinitions={categoryMapDefinitions}
-            />
+            {
+                sustIsShown ?
+                    <div /> :
+                    <ColouringMap
+                        selectedBuildingId={selectedBuildingId}
+                        mode={mode || 'basic'}
+                        revisionId={revisionId}
+                        onBuildingAction={mode === 'multi-edit' ? colourBuilding : selectBuilding}
+                        mapColourScale={mapColourScale}
+                        onMapColourScale={setMapColourScale}
+                        categoryMapDefinitions={categoryMapDefinitions}
+                    />
+            }
+
         </>
     );
 };

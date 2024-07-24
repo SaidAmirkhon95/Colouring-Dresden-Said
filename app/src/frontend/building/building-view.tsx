@@ -17,6 +17,7 @@ interface BuildingViewProps {
     onUserVerifiedUpdate: (buildingId: number, updatedData: UserVerified) => void;
     mapColourScale: BuildingMapTileset;
     onMapColourScale: (x: BuildingMapTileset) => void;
+    onShowReportButtonClicked: (shown: boolean) => void;
 }
 
 /**
@@ -50,6 +51,7 @@ const BuildingView: React.FunctionComponent<BuildingViewProps> = (props) => {
         user={user}
         mapColourScale={props.mapColourScale}
         onMapColourScale={props.onMapColourScale}
+        onShowReportButtonClicked={props.onShowReportButtonClicked}
     />; 
 };
 

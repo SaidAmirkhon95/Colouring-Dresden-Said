@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 import Confetti from 'canvas-confetti';
-import _ from 'lodash';
+import _, { uniqueId } from 'lodash';
 
 import { apiPost, apiGet } from '../apiHelpers';
 import { sendBuildingUpdate } from '../api-data/building-update';
@@ -49,6 +49,8 @@ interface DataContainerProps {
 
     mapColourScale: BuildingMapTileset;
     onMapColourScale: (x: BuildingMapTileset) => void;
+    
+    onShowReportButtonClicked: (shown: boolean) => void;
 }
 
 interface DataContainerState {
@@ -61,6 +63,7 @@ interface DataContainerState {
     mapColourScale: BuildingMapTileset;
     onMapColourScale: (x: BuildingMapTileset) => void;
     setShowSurveyModal: boolean;
+    onShowReportButtonClicked: (shown: boolean) => void;
 }
 
 export type DataContainerType = React.ComponentType<DataContainerProps>;
@@ -87,7 +90,8 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                 currentBuildingRevisionId: undefined,
                 mapColourScale: undefined,
                 onMapColourScale: undefined,
-                setShowSurveyModal: false
+                setShowSurveyModal: false,
+                onShowReportButtonClicked: undefined
             };
 
             this.handleChange = this.handleChange.bind(this);
@@ -153,7 +157,8 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                     currentBuildingRevisionId: newBuildingRevisionId,
                     mapColourScale: props.mapColourScale,
                     onMapColourScale: props.onMapColourScale, 
-                    setShowSurveyModal: false
+                    setShowSurveyModal: false,
+                    onShowReportButtonClicked: props.onShowReportButtonClicked,
                 };
             }
 
@@ -483,6 +488,8 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                                 user_verified={[]}
                                 mapColourScale={undefined}
                                 onMapColourScale={undefined}
+                                onShowReportButtonClicked={undefined}
+
                             />
                         </Fragment> :
                         this.props.building != undefined ?
@@ -537,6 +544,7 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                                     user={this.props.user}
                                     mapColourScale={this.props.mapColourScale}
                                     onMapColourScale={this.props.onMapColourScale}
+                                    onShowReportButtonClicked={this.props.onShowReportButtonClicked}
                                 />
                             </form> :
                             <InfoBox msg="Wählen Sie ein Gebäude aus um die Daten zu sehen."></InfoBox>

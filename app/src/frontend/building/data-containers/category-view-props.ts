@@ -42,6 +42,7 @@ interface CategoryViewProps {
 
     mapColourScale: BuildingMapTileset;
     onMapColourScale: (x: BuildingMapTileset) => void;
+    onShowReportButtonClicked: (shown: boolean) => void;
 }
 
 export {

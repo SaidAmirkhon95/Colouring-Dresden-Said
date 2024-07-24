@@ -570,7 +570,7 @@
     </Style>
     <Style name="sust_average_consumption">
         <Rule>
-             <Filter>[sust_average_consumption] &gt;= 0 and [sust_average_consumption] &lt; 1999</Filter>
+             <Filter>[sust_average_consumption] &gt;= 0 and [sust_average_consumption] &lt; 2000</Filter>
             <PolygonSymbolizer fill="#82fa32" />
         </Rule>
                 <Rule>
