@@ -1717,7 +1717,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     reference_period: {
         category: Category.Sustainability,
         title: "Bezugsjahr",
-        tooltip: "Immer das Jahr eintragen in dem der Großteil des Abrechnungszeitraums liegt. Also, wenn der Abrechnungszeitraums vor dem 30.06 beginnt, dann das erste Jahr, wenn er nach dem 01.07 beginnt, dann das folge Jahr.",
+        tooltip: "Tragen Sie immer das Jahr ein, in dem der Großteil des Abrechnungszeitraums liegt. Beginnt der Abrechnungszeitraum vor dem 30.06.23, tragen Sie 2023 ein. Beginnt er nach dem 01.07., tragen Sie 2024 ein.",
         example: 2023,
     },
     
@@ -1737,8 +1737,18 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     
     living_area: {
         category: Category.Sustainability,
-        title: "Wohnfläche in [m^2]",
+        title: "Wohnfläche in Quadratmetern",
         example: 80.5,
+    },
+    agreement_dsgv_sust: {
+        category: Category.Sustainability,
+        title: "Ich stimme zu, dass meine Daten zwecks der Verschlüsselung, an BuildingTrust gesendet werden.",
+        example: false,
+    },
+    agreement_science_sust: {
+        category: Category.Sustainability,
+        title: "(Optional) Ich stimme zu, dass meine Daten zu wissenschaftlichen Zwecken weitergenutzt werden können.",
+        example: false,
     },
 
 };

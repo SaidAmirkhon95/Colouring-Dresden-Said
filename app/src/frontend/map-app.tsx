@@ -39,6 +39,11 @@ const ColouringMap = loadable(
     async () => (await import('./map/map')).ColouringMap,
     { ssr: false }
 );
+/*const SustReport = loadable(
+    async () => (await import('./building/data-containers/sustainability_report')).SustReport,
+    { ssr: false }
+);*/
+
 
 interface MapAppProps {
     building?: Building;
@@ -177,7 +182,8 @@ export const MapApp: React.FC<MapAppProps> = props => {
             </Sidebar>
             {
                 sustIsShown ?
-                    <div /> :
+                    /*<div/>*/
+                    <div/> :
                     <ColouringMap
                         selectedBuildingId={selectedBuildingId}
                         mode={mode || 'basic'}

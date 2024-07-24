@@ -89,6 +89,8 @@ Dies ist die wichtigste Datentabelle und enthält fast alle im Projekt Colouring
 - `electricity_usage`: Stromverbrauch
 - `gas_usage`: Gaßverbrauch
 - `living_area`: Wohnfläche
+- `agreement_dsgv_sust`: Datenschutzbestimmungen akzeptiert
+- `agreement_sience_sust`: Weitere Nutzung der Daten akzeptiert
 
 ## Bearbeitungshistorie / Edit History
 

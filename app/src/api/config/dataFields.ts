@@ -617,36 +617,76 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
         edit: true,
         verify: true
     },
-    number_persons: {
+    /*number_persons: {
         edit: true,
-        verify: true/*S,
+        verify: true,
         asJson: true,
-        sqlCast: 'jsonb'*/
+        sqlCast: 'jsonb'
     },	
     reference_period: {
         edit: true,
-        verify: true /*,
+        verify: true,
         asJson: true,
-        sqlCast: 'jsonb'*/
+        sqlCast: 'jsonb'
     }, 
     electricity_usage: {
         edit: true,
-        verify: true/*,
+        verify: true,
         asJson: true,
-        sqlCast: 'jsonb'*/
+        sqlCast: 'jsonb'
     },
     gas_usage: {
         edit: true,
-        verify: true/*,
+        verify: true,
         asJson: true,
-        sqlCast: 'jsonb'*/
+        sqlCast: 'jsonb'
     },		
     living_area: {
         edit: true,
-        verify: true/*,
+        verify: true,
         asJson: true,
-        sqlCast: 'jsonb'*/
+        sqlCast: 'jsonb'
+    },	
+    agreement_dsgv_sust: {
+        edit: true,
+        verify: true,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },	
+    agreement_science_sust: {
+        edit: true,
+        verify: true,
+        asJson: true,
+        sqlCast: 'jsonb'
+    },*/	
+    number_persons: {
+        edit: true,
+        verify: true
+    },	
+    reference_period: {
+        edit: true,
+        verify: true, 
+    },
+    electricity_usage: {
+        edit: true,
+        verify: true
+    },
+    gas_usage: {
+        edit: true,
+        verify: true
     },		
+    living_area: {
+        edit: true,
+        verify: true
+    },	
+    agreement_dsgv_sust: {
+        edit: true,
+        verify: true
+    },	
+    agreement_science_sust: {
+        edit: true,
+        verify: true
+    },	
 });
 
 

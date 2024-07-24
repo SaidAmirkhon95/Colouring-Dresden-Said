@@ -1,28 +1,36 @@
 import React, { Fragment, useState } from 'react'; //useState for the checkbox
-
 import { dataFields } from '../../config/data-fields-config';
 import NumericDataEntry from '../data-components/numeric-data-entry';
 import withCopyEdit from '../data-container';
 import { CategoryViewProps } from './category-view-props';
+import CheckboxDataEntry from '../data-components/checkbox-data-entry';
 
 const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) => {
-    const [acceptedConditions, setAcceptedConditions] = useState(false);  //for the checkbox
-    const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setAcceptedConditions(event.target.checked);
-    }
+    const [showNewButton, setShowNewButton] = useState(false);  
     const showReport = () => {
         props.onShowReportButtonClicked(true)
+        setShowNewButton(true);
+    }
+
+    const hideReport = () => {
+        props.onShowReportButtonClicked(false);
+        setShowNewButton(false);
     }
 
     return (
 
         <Fragment>
-            <button onClick={showReport}>Vergleich anzeigen</button>
-    {/*<InfoBox>
+            
+            <button id="showReportButton" className="btn btn-primary" onClick={showReport}>Vergleich anzeigen</button>
+            {showNewButton && (
+                <button id="hideReportButton" className="btn btn-secondary" onClick={hideReport}>Zurück zur Karte</button>
+            )}
+
+            {/*<InfoBox>
             Dieser Abschnitt ist noch in der Entwicklung.
         </InfoBox> */}
 
-<NumericDataEntry
+            <NumericDataEntry
                 title={dataFields.number_persons.title}
                 value={props.building.number_persons}
                 slug="number_persons"
@@ -34,7 +42,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 onChange={props.onChange}
             />
 
-<NumericDataEntry
+            <NumericDataEntry
                 title={dataFields.reference_period.title}
                 slug="reference_period"
                 value={props.building.reference_period}
@@ -47,7 +55,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 onChange={props.onChange}
             />
 
-<NumericDataEntry
+            <NumericDataEntry
                 title={dataFields.electricity_usage.title}
                 slug="electricity_usage"
                 value={props.building.electricity_usage}
@@ -60,7 +68,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 onChange={props.onChange}
             />
 
-<NumericDataEntry
+            <NumericDataEntry
                 title={dataFields.gas_usage.title}
                 slug="gas_usage"
                 value={props.building.gas_usage}
@@ -73,7 +81,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 onChange={props.onChange}
             />
 
-<NumericDataEntry
+            <NumericDataEntry
                 title={dataFields.living_area.title}
                 slug="living_area"
                 value={props.building.living_area}
@@ -85,18 +93,22 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 copy={props.copy}
                 onChange={props.onChange}
             />
-<div style={{ marginTop: '20px' }}>
-                <input
-                    type="checkbox"
-                    id="accept-conditions"
-                    checked={acceptedConditions}
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor="accept-conditions">Ich stimme zu, dass meine Daten zwecks der Verschluesselung, an BuildingTrust gesendet werden.</label>
-            </div>
+            <CheckboxDataEntry
+                title={dataFields.agreement_dsgv_sust.title}
+                slug="agreement_dsgv_sust"
+                value={props.building.agreement_dsgv_sust}
+                onChange={props.onChange}
+            />
+            <CheckboxDataEntry
+                title={dataFields.agreement_science_sust.title}
+                slug="agreement_science_sust"
+                value={props.building.agreement_science_sust}
+                onChange={props.onChange}
+            />
+            
         </Fragment >
     );
-    };
+};
 const SustainabilityContainer = withCopyEdit(SustainabilityView);
 
 export default SustainabilityContainer;
