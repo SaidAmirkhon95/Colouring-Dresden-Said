@@ -90,7 +90,7 @@ Dies ist die wichtigste Datentabelle und enthält fast alle im Projekt Colouring
 - `gas_usage`: Gaßverbrauch
 - `living_area`: Wohnfläche
 - `agreement_dsgv_sust`: Datenschutzbestimmungen akzeptiert
-- `agreement_sience_sust`: Weitere Nutzung der Daten akzeptiert
+- `agreement_science_sust`: Weitere Nutzung der Daten akzeptiert
 
 ## Bearbeitungshistorie / Edit History
 

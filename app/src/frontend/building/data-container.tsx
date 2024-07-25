@@ -413,16 +413,6 @@ const withCopyEdit: (wc: React.ComponentType<CategoryViewProps>) => DataContaine
                     onConfirm={() => this.setState({setShowSurveyModal:false})}
                     onCancel={() => this.setState({setShowSurveyModal:false})}
                 />
-                {/*Uncomment, when needed for the Sustanability/Output*/}
-                {/* <SusPopup
-                    show={this.state.setShowSusPopupContent}
-                    title="Titel im Data-Container"
-                    description="Beschreibung im Data-Conatiner"
-                    confirmButtonText="Schließen"
-                    confirmButtonClass="btn-secondary"
-                    onConfirm={() => this.setState({setShowSusPopupContent:false})}
-                    onCancel={() => this.setState({setShowSusPopupContent:false})}
-                />*/}
 
                 <ContainerHeader
                     cat={this.props.cat}

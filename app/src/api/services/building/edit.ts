@@ -68,7 +68,7 @@ export async function editBuilding(
         }
 
         if (resultAttributes == null && resultUserAttributes == null) {
-            throw new UserError('No change provided');
+            throw new UserError('Keine Änderungen durchgeführt');
         }
 
         return {

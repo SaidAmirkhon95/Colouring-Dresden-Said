@@ -571,27 +571,27 @@
     <Style name="sust_average_consumption">
         <Rule>
              <Filter>[sust_average_consumption] &gt;= 0 and [sust_average_consumption] &lt; 2000</Filter>
-            <PolygonSymbolizer fill="#82fa32" />
+            <PolygonSymbolizer fill="#70a805" />
         </Rule>
                 <Rule>
              <Filter>[sust_average_consumption] &gt;= 2000 and [sust_average_consumption] &lt; 4000</Filter>
-            <PolygonSymbolizer fill="#d5fa32" />
+            <PolygonSymbolizer fill="#9ed30d" />
         </Rule>
                 <Rule>
              <Filter>[sust_average_consumption] &gt;= 4000 and [sust_average_consumption] &lt; 8000</Filter>
-            <PolygonSymbolizer fill="#fadf32" />
+            <PolygonSymbolizer fill="#f7ba00" />
         </Rule>
                 <Rule>
              <Filter>[sust_average_consumption] &gt;= 8000 and [sust_average_consumption] &lt; 16000</Filter>
-            <PolygonSymbolizer fill="#fab732" />
+            <PolygonSymbolizer fill="#fa6f05" />
         </Rule>
                 <Rule>
              <Filter>[sust_average_consumption] &gt;= 16000 and [sust_average_consumption] &lt; 32000</Filter>
-            <PolygonSymbolizer fill="#fa7132" />
+            <PolygonSymbolizer fill="#c94106" />
         </Rule>
                 <Rule>
              <Filter>[sust_average_consumption] &gt;= 32000 and [sust_average_consumption] &lt; 100000</Filter>
-            <PolygonSymbolizer fill="#fa3232" />
+            <PolygonSymbolizer fill="#9a2313" />
         </Rule>
     </Style>
     <Style name="building_attachment_form">

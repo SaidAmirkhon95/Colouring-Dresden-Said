@@ -4,4 +4,4 @@
 --ALTER TABLE buildings ALTER COLUMN gas_usage jsonb; 
 --ALTER TABLE buildings ALTER COLUMN living_area jsonb; 
 ALTER TABLE buildings ADD COLUMN IF NOT EXISTS agreement_dsgv_sust boolean;
-ALTER TABLE buildings ADD COLUMN IF NOT EXISTS agreement_sience_sust boolean;
+ALTER TABLE buildings ADD COLUMN IF NOT EXISTS agreement_science_sust boolean;
