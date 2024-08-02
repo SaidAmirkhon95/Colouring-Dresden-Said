@@ -17,6 +17,7 @@
     ],
     "include": [
         "./src/**/*.test.*",
-        "./src/**/*.spec.*"
+        "./src/**/*.spec.*",
+        //"./src/types/index.d.ts"
     ]
 }

@@ -1,6 +1,9 @@
 import { strictParseInt } from "../parse";
 
 import { DataConfig } from "./types";
+//import { useAuth } from '../frontend/auth-context'; <-- this is a tsx-syntax an can not be used here
+//const { isLoading, user, userError, logout, generateApiKey, deleteAccount } = useAuth();
+
 
 const LAYER_QUERIES = {
     base_light: `
@@ -24,7 +27,7 @@ const LAYER_QUERIES = {
             name
         FROM
             external_data_borough_boundary`,
-    number_labels:`
+    number_labels: `
         SELECT
             geometry_id,
             location_number
@@ -242,7 +245,24 @@ const LAYER_QUERIES = {
             WHERE
                 electricity_usage IS NOT NULL 
                 AND gas_usage IS NOT NULL 
-                AND number_persons IS NOT NULL`,           
+                AND number_persons IS NOT NULL`,
+    sust_geom_id_personal: //Calculation, but show only the buildings the user has edited, :user_id is a placeholder
+    `   SELECT 
+            geometry_id,
+            ((electricity_usage + gas_usage) / number_persons) AS sust_average_consumption 
+        FROM
+            buildings
+        WHERE
+            electricity_usage IS NOT NULL 
+            AND gas_usage IS NOT NULL 
+            AND number_persons IS NOT NULL
+            AND building_id IN (
+                SELECT 
+                    building_id
+                FROM 
+                    logs
+                WHERE
+                    user_id = :user_id);`,
     building_attachment_form: `
         SELECT
             geometry_id,
@@ -534,7 +554,7 @@ const LAYER_QUERIES = {
         facade_colour IS NOT NULL`,
 
 
-        
+
 
     terrain_connection_yesno: `
         SELECT
@@ -599,7 +619,7 @@ const LAYER_QUERIES = {
                 buildings
         ) AS blds_with_data
     WHERE blds_with_data.mapped_features_count >= 0`,
-    
+
 };
 
 const GEOMETRY_FIELD = 'geometry_geom';
@@ -615,11 +635,11 @@ function getAllLayerNames() {
 function getDataConfig(tileset: string): DataConfig {
     const table = LAYER_QUERIES[tileset];
 
-    if(table == undefined) {
+    if (table == undefined) {
         throw new Error('Invalid tileset requested');
     }
-    
-    if(tileset == 'base_boroughs') {
+
+    if (tileset == 'base_boroughs') {
         const query = `(
             SELECT
             d.*,
@@ -635,11 +655,11 @@ function getDataConfig(tileset: string): DataConfig {
         ON d.geometry_id = b.geometry_id
     ) AS data
         `;
-    
+
         return {
             geometry_field: GEOMETRY_FIELD,
             table: query
-        };    
+        };
     }
 
     const query = `(
@@ -667,13 +687,13 @@ function getDataConfig(tileset: string): DataConfig {
 }
 
 function getLayerVariables(tileset: string, dataParams: any): object {
-    if(tileset == 'highlight') {
+    if (tileset == 'highlight') {
         let { highlight, base } = dataParams;
 
         highlight = strictParseInt(highlight);
         base = base || 'default';
 
-        if(isNaN(highlight) || base.match(/^\w+$/) == undefined) {
+        if (isNaN(highlight) || base.match(/^\w+$/) == undefined) {
             throw new Error('Bad parameters for highlight layer');
         }
 

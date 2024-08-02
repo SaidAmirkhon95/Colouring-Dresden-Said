@@ -192,6 +192,10 @@ export const MapApp: React.FC<MapAppProps> = props => {
                     count_district={7}
                     name_district='Johannstadt'
                     place_district_ranking={3}
+                    co2effect_min={3682}
+                    co2effect_max={4614}
+                    destination_near='Paris, Frankreich'
+                    destination_far='Stockholm, Schweden '
                     /> :
                     <ColouringMap
                         selectedBuildingId={selectedBuildingId}

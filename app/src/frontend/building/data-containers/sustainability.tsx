@@ -4,9 +4,11 @@ import NumericDataEntry from '../data-components/numeric-data-entry';
 import withCopyEdit from '../data-container';
 import { CategoryViewProps } from './category-view-props';
 import CheckboxDataEntry from '../data-components/checkbox-data-entry';
+import { useAuth } from '../../auth-context';
+import InfoBox from '../../components/info-box';
 
 const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) => {
-    const [showNewButton, setShowNewButton] = useState(false);  
+    const [showNewButton, setShowNewButton] = useState(false);
     const showReport = () => {
         props.onShowReportButtonClicked(true)
         setShowNewButton(true);
@@ -16,19 +18,26 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
         props.onShowReportButtonClicked(false);
         setShowNewButton(false);
     }
+    const { isLoading, user, userError, logout, generateApiKey, deleteAccount } = useAuth();
 
     return (
 
         <Fragment>
-            
-            <button id="showReportButton" className="btn btn-primary" onClick={showReport}>Vergleich anzeigen</button>
-            {showNewButton && (
-                <button id="hideReportButton" className="btn btn-secondary" onClick={hideReport}>Zurück zur Karte</button>
+            {user && user.username !== undefined ? (
+                <div>
+                    <button id="showReportButton" className="btn btn-primary" onClick={showReport}>Vergleich anzeigen</button>
+                    {showNewButton && (
+                        <button id="hideReportButton" className="btn btn-secondary" onClick={hideReport}>Zurück zur Karte</button>
+                    )}
+                </div>
+            ) : (
+                <p></p>
             )}
 
-            {/*<InfoBox>
-            Dieser Abschnitt ist noch in der Entwicklung.
-        </InfoBox> */}
+
+            <InfoBox>
+            Die Daten werden von <a href="#">Building Trust</a> verarbeitet und annonymisiert an Colouring Dresden weitergegeben.
+        </InfoBox> 
 
             <NumericDataEntry
                 title={dataFields.number_persons.title}
@@ -105,7 +114,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 value={props.building.agreement_science_sust}
                 onChange={props.onChange}
             />
-            
+
         </Fragment >
     );
 };
