@@ -143,7 +143,7 @@ export const SustReport: FC<SustReportProps> = ({
                 </p>
 
                 <p>
-                    <a className="rightSided" href="#"> Quellen und weitere Informationen </a>
+                    <a className="rightSided" href="#"> Quellen und weitere Informationen  </a>
                 </p>
 
             </section>
