@@ -676,13 +676,13 @@ function getDataConfig(tileset: string): DataConfig {
              SELECT
                 d.blocknr,
                 d.mean_energy_consumption_total,
-                ST_SetSRID(d.shape, 3857) AS geometry_district
+                d.geometry_3857
             FROM
                 city_districts AS d
 				WHERE 
 				d.mean_energy_consumption_total IS NOT NULL
         ) AS data`;
-        const GEOMETRY_FIELD = 'geometry_district';
+        const GEOMETRY_FIELD = 'geometry_3857';
         console.log('district_layer: \n',query)
         return {
             geometry_field: GEOMETRY_FIELD,

@@ -89,3 +89,11 @@ AFTER INSERT OR UPDATE ON buildings
 FOR EACH ROW
 EXECUTE FUNCTION update_district_energy();
 
+-----------New Column with geometry in the right coordinate system
+-- Neue Spalte hinzufügen
+ALTER TABLE city_districts 
+ADD COLUMN geometry_3857 geometry;
+
+-- Neue Spalte mit den transformierten Geometrien aktualisieren
+UPDATE city_districts 
+SET geometry_3857 = ST_SetSRID(shape, 3857);
