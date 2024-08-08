@@ -617,7 +617,7 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
         edit: true,
         verify: true
     },
-    /*number_persons: {
+    number_persons: {
         edit: true,
         verify: true,
         asJson: true,
@@ -658,8 +658,8 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
         verify: true,
         asJson: true,
         sqlCast: 'jsonb'
-    },*/	
-    number_persons: {
+    },	
+    /*number_persons: {
         edit: true,
         verify: true
     },	
@@ -686,7 +686,7 @@ export const buildingAttributesConfig = valueType<DataFieldConfig>()({ /* eslint
     agreement_science_sust: {
         edit: true,
         verify: true
-    },	
+    },	*/
 });
 
 

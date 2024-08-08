@@ -235,21 +235,28 @@ const LAYER_QUERIES = {
             buildings
         WHERE
             sust_dec IS NOT NULL`,
-    sust_average_consumption: `
-            SELECT
-                geometry_id,
-                ((electricity_usage + gas_usage) / number_persons
-                ) AS sust_average_consumption
-            FROM
-                buildings
-            WHERE
-                electricity_usage IS NOT NULL 
-                AND gas_usage IS NOT NULL 
-                AND number_persons IS NOT NULL`,
-    sust_geom_id_personal: //Calculation, but show only the buildings the user has edited, :user_id is a placeholder
+    sust_average_consumption_m2: `
+        SELECT
+            geometry_id,
+            (electricity_usage::numeric + gas_usage::numeric) / (living_area::numeric) AS sust_average_consumption_m2
+        FROM
+            buildings
+        WHERE
+            electricity_usage IS NOT NULL
+            AND gas_usage IS NOT NULL
+            AND living_area IS NOT NULL`,
+    district_layer: `
+        SELECT 
+            blocknr,
+            mean_energy_consumption_total AS mean_energy_consumption_total
+        FROM
+        city_districts
+        WHERE
+        mean_energy_consumption_total IS NOT NULL`,
+    /*sust_geom_id_personal: //Calculation, but show only the buildings the user has edited, :user_id is a placeholder -- Not finished
     `   SELECT 
             geometry_id,
-            ((electricity_usage + gas_usage) / number_persons) AS sust_average_consumption 
+            ((electricity_usage + gas_usage) / number_persons) AS sust_average_consumption_m2 
         FROM
             buildings
         WHERE
@@ -262,7 +269,7 @@ const LAYER_QUERIES = {
                 FROM 
                     logs
                 WHERE
-                    user_id = :user_id);`,
+                    user_id = :user_id);`,*/
     building_attachment_form: `
         SELECT
             geometry_id,
@@ -624,6 +631,7 @@ const LAYER_QUERIES = {
 
 const GEOMETRY_FIELD = 'geometry_geom';
 
+
 function getBuildingLayerNames() {
     return Object.keys(LAYER_QUERIES);
 }
@@ -634,7 +642,7 @@ function getAllLayerNames() {
 
 function getDataConfig(tileset: string): DataConfig {
     const table = LAYER_QUERIES[tileset];
-
+    
     if (table == undefined) {
         throw new Error('Invalid tileset requested');
     }
@@ -655,7 +663,27 @@ function getDataConfig(tileset: string): DataConfig {
         ON d.geometry_id = b.geometry_id
     ) AS data
         `;
+        console.log('base_boroughs: \n',query)
+        return {
+            geometry_field: GEOMETRY_FIELD,
+            table: query
+        };
+    }
 
+    if (tileset == 'district_layer') { // For the district layer, get the geometry from city_districts
+        
+        const query = `(
+             SELECT
+                d.blocknr,
+                d.mean_energy_consumption_total,
+                ST_SetSRID(d.shape, 3857) AS geometry_district
+            FROM
+                city_districts AS d
+				WHERE 
+				d.mean_energy_consumption_total IS NOT NULL
+        ) AS data`;
+        const GEOMETRY_FIELD = 'geometry_district';
+        console.log('district_layer: \n',query)
         return {
             geometry_field: GEOMETRY_FIELD,
             table: query
@@ -677,9 +705,8 @@ function getDataConfig(tileset: string): DataConfig {
         ON d.geometry_id = b.geometry_id
         WHERE
             b.latest_demolish_date IS NULL
-    ) AS data
-    `;
-
+    ) AS data`;
+    console.log('normale Query: \n',query)
     return {
         geometry_field: GEOMETRY_FIELD,
         table: query

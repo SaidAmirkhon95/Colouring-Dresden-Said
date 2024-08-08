@@ -36,8 +36,8 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
 
 
             <InfoBox>
-            Die Daten werden von <a href="#">Building Trust</a> verarbeitet und annonymisiert an Colouring Dresden weitergegeben.
-        </InfoBox> 
+                Die Daten werden von <a href="#">Building Trust</a> verarbeitet und annonymisiert an Colouring Dresden weitergegeben.
+            </InfoBox>
 
             <NumericDataEntry
                 title={dataFields.number_persons.title}

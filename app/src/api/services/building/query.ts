@@ -26,6 +26,9 @@ export async function queryBuildingsAtPoint(lng: number, lat: number) {
     }
 }
 
+// queryBuildingsByIdWithCircle
+
+
 export async function queryBuildingsByReference(key: string, ref: string) {
     try {
         if (key === 'toid') {

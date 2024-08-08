@@ -568,29 +568,55 @@
             <LineSymbolizer stroke="#888" stroke-width="3.0"/>
         </Rule>
     </Style>
-    <Style name="sust_average_consumption">
+    <Style name="sust_average_consumption_m2">
         <Rule>
-             <Filter>[sust_average_consumption] &gt;= 0 and [sust_average_consumption] &lt; 2000</Filter>
+             <Filter>[sust_average_consumption_m2] &gt;= 0 and [sust_average_consumption_m2] &lt; 2000</Filter>
             <PolygonSymbolizer fill="#70a805" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 2000 and [sust_average_consumption] &lt; 4000</Filter>
+             <Filter>[sust_average_consumption_m2] &gt;= 2000 and [sust_average_consumption_m2] &lt; 4000</Filter>
             <PolygonSymbolizer fill="#9ed30d" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 4000 and [sust_average_consumption] &lt; 8000</Filter>
+             <Filter>[sust_average_consumption_m2] &gt;= 4000 and [sust_average_consumption_m2] &lt; 8000</Filter>
             <PolygonSymbolizer fill="#f7ba00" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 8000 and [sust_average_consumption] &lt; 16000</Filter>
+             <Filter>[sust_average_consumption_m2] &gt;= 8000 and [sust_average_consumption_m2] &lt; 16000</Filter>
             <PolygonSymbolizer fill="#fa6f05" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 16000 and [sust_average_consumption] &lt; 32000</Filter>
+             <Filter>[sust_average_consumption_m2] &gt;= 16000 and [sust_average_consumption_m2] &lt; 32000</Filter>
             <PolygonSymbolizer fill="#c94106" />
         </Rule>
                 <Rule>
-             <Filter>[sust_average_consumption] &gt;= 32000 and [sust_average_consumption] &lt; 100000</Filter>
+             <Filter>[sust_average_consumption_m2] &gt;= 32000 and [sust_average_consumption_m2] &lt; 100000</Filter>
+            <PolygonSymbolizer fill="#9a2313" />
+        </Rule>
+    </Style>
+    <Style name="district_layer">
+        <Rule>
+             <Filter>[district_layer] &gt;= 0 and [district_layer] &lt; 2000</Filter>
+            <PolygonSymbolizer fill="#70a805" />
+        </Rule>
+                <Rule>
+             <Filter>[district_layer] &gt;= 2000 and [district_layer] &lt; 4000</Filter>
+            <PolygonSymbolizer fill="#9ed30d" />
+        </Rule>
+                <Rule>
+             <Filter>[district_layer] &gt;= 4000 and [district_layer] &lt; 8000</Filter>
+            <PolygonSymbolizer fill="#f7ba00" />
+        </Rule>
+                <Rule>
+             <Filter>[district_layer] &gt;= 8000 and [district_layer] &lt; 16000</Filter>
+            <PolygonSymbolizer fill="#fa6f05" />
+        </Rule>
+                <Rule>
+             <Filter>[district_layer] &gt;= 16000 and [district_layer] &lt; 32000</Filter>
+            <PolygonSymbolizer fill="#c94106" />
+        </Rule>
+                <Rule>
+             <Filter>[district_layer] &gt;= 32000 and [district_layer] &lt; 100000</Filter>
             <PolygonSymbolizer fill="#9a2313" />
         </Rule>
     </Style>

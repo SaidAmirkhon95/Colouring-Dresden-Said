@@ -57,7 +57,10 @@ export type BuildingMapTileset = 'date_year' |
     'living_area'|
     'agreement_dsgv_sust'|
     'agreement_science_sust'|
-    'sust_average_consumption';
+    'sust_average_consumption_m2'|
+    'district_layer'|
+    'geometry_district'|
+    'mean_energy_consumption_total';
 
 export type SpecialMapTileset = 'base_light' | 'base_night' | 'base_night_outlines' | 'highlight' | 'number_labels' | 'base_boroughs';
 

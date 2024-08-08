@@ -10,10 +10,10 @@ print(mydb)
 
 user_id = 'some_user_id'  # Replace with actual user ID
 
-sust_average_consumption = """
+sust_average_consumption_m2 = """
     SELECT
         geometry_id,
-        ((electricity_usage + gas_usage) / number_persons) AS sust_average_consumption
+        ((electricity_usage + gas_usage) / number_persons) AS sust_average_consumption_m2
     FROM
         buildings
     WHERE
@@ -31,10 +31,10 @@ sust_buil_id_personal = """
         user_id = :user_id;
 """
 #To only show the buildings you have edited
-sust_average_consumption_personal = """ 
+sust_average_consumption_m2_personal = """ 
     SELECT 
         geometry_id,
-        ((electricity_usage + gas_usage) / number_persons) AS sust_average_consumption
+        ((electricity_usage + gas_usage) / number_persons) AS sust_average_consumption_m2
     FROM
         buildings
     WHERE

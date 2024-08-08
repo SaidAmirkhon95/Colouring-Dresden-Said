@@ -513,9 +513,9 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
     [Category.Sustainability]: [
         
         {
-            mapStyle: 'sust_average_consumption',
+            mapStyle: 'sust_average_consumption_m2',
             legend: {
-                title: 'Durchschnittlicher Energieverbrauch (Gas und Strom) pro Person',
+                title: 'Durchschnittlicher Energieverbrauch (Gas und Strom) pro m2',
                 elements: [ //Skala nochmal sinnvoller anpassen, schauen in welchem Bereich es sich normalerweise bewegt und dort mehrere Abstufungen machen, Farbskala nochmal ueberdenken
                     { color: '#70a805', text: 'Weniger als 2.000 kWh'},
                     { color: '#9ed30d', text: '2.000-4.000 kWh'},
@@ -525,7 +525,21 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#9a2313', text: 'Mehr als 32.000 kWh'},
                 ]
             },
-        }            
+        },
+        {
+            mapStyle: 'district_layer',
+            legend: {
+                title: 'Fläche Durchschnittlicher Energieverbrauch (Gas und Strom) pro m2',
+                elements: [ //Skala nochmal sinnvoller anpassen, schauen in welchem Bereich es sich normalerweise bewegt und dort mehrere Abstufungen machen, Farbskala nochmal ueberdenken
+                    { color: '#70a805', text: 'Weniger als 2.000 kWh'},
+                    { color: '#9ed30d', text: '2.000-4.000 kWh'},
+                    { color: '#f7ba00', text: '4.000-8.000 kWh'},
+                    { color: '#fa6f05', text: '8.000-16.000 kWh'},
+                    { color: '#c94106', text: '16.000 - 32.000 kWh'},
+                    { color: '#9a2313', text: 'Mehr als 32.000 kWh'},
+                ]
+            },
+        }             
 /*         {
             mapStyle: 'sust_dec',
             legend: {
