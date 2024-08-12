@@ -515,31 +515,75 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
         {
             mapStyle: 'sust_average_consumption_m2',
             legend: {
-                title: 'Durchschnittlicher Energieverbrauch (Gas und Strom) pro m2',
-                elements: [ //Skala nochmal sinnvoller anpassen, schauen in welchem Bereich es sich normalerweise bewegt und dort mehrere Abstufungen machen, Farbskala nochmal ueberdenken
-                    { color: '#70a805', text: 'Weniger als 2.000 kWh'},
-                    { color: '#9ed30d', text: '2.000-4.000 kWh'},
-                    { color: '#f7ba00', text: '4.000-8.000 kWh'},
-                    { color: '#fa6f05', text: '8.000-16.000 kWh'},
-                    { color: '#c94106', text: '16.000 - 32.000 kWh'},
-                    { color: '#9a2313', text: 'Mehr als 32.000 kWh'},
+                title: 'Haus: Durchschnittlicher Energieverbrauch (Gas und Strom) pro m2',
+                elements: [ 
+                    { color: '#70a805', text: 'Bis 50 kWh'},
+                    { color: '#9ed30d', text: 'Bis 75 kWh'},
+                    { color: '#f7ba00', text: 'Bis 100 kWh'},
+                    { color: '#fa6f05', text: 'Bis 125 kWh'},
+                    { color: '#c94106', text: 'Bis 150 kWh'},
+                    { color: '#9a2313', text: 'Bis 175 kWh'},
+                    { color: '#5c0f05', text: 'Mehr als 175 kWh'},
                 ]
             },
         },
         {
-            mapStyle: 'district_layer',
+            mapStyle: 'energy_qm',
             legend: {
-                title: 'Fläche Durchschnittlicher Energieverbrauch (Gas und Strom) pro m2',
-                elements: [ //Skala nochmal sinnvoller anpassen, schauen in welchem Bereich es sich normalerweise bewegt und dort mehrere Abstufungen machen, Farbskala nochmal ueberdenken
-                    { color: '#70a805', text: 'Weniger als 2.000 kWh'},
-                    { color: '#9ed30d', text: '2.000-4.000 kWh'},
-                    { color: '#f7ba00', text: '4.000-8.000 kWh'},
-                    { color: '#fa6f05', text: '8.000-16.000 kWh'},
-                    { color: '#c94106', text: '16.000 - 32.000 kWh'},
-                    { color: '#9a2313', text: 'Mehr als 32.000 kWh'},
+                title: 'Durchschnittlicher Energieverbrauch pro m2 pro Jahr',
+                elements: [ 
+                    { color: '#70a805', text: 'Bis 50 kWh'},
+                    { color: '#9ed30d', text: 'Bis 75 kWh'},
+                    { color: '#f7ba00', text: 'Bis 100 kWh'},
+                    { color: '#fa6f05', text: 'Bis 125 kWh'},
+                    { color: '#c94106', text: 'Bis 150 kWh'},
+                    { color: '#9a2313', text: 'Bis 175 kWh'},
+                    { color: '#5c0f05', text: 'Mehr als 175 kWh'},
                 ]
-            },
-        }             
+            }
+        },  
+        {
+            mapStyle: 'gas_qm',
+            legend: {
+                title: 'Durchschnittlicher Gasverbrauch pro m2 pro Jahr',
+                elements: [ 
+                    { color: '#70a805', text: 'Bis 50 kWh'},
+                    { color: '#9ed30d', text: 'Bis 75 kWh'},
+                    { color: '#f7ba00', text: 'Bis 100 kWh'},
+                    { color: '#fa6f05', text: 'Bis 125 kWh'},
+                    { color: '#c94106', text: 'Bis 150 kWh'},
+                    { color: '#9a2313', text: 'Mehr als 150 kWh'}
+                ]
+            }
+        },  
+        {
+            mapStyle: 'elect_qm',
+            legend: {
+                title: 'Durchschnittlicher Stromverbrauch pro m2 pro Jahr',
+                elements: [ 
+                    { color: '#70a805', text: 'Bis 5 kWh'},
+                    { color: '#9ed30d', text: 'Bis 10 kWh'},
+                    { color: '#f7ba00', text: 'Bis 15 kWh'},
+                    { color: '#fa6f05', text: 'Bis 20 kWh'},
+                    { color: '#c94106', text: 'Bis 25 kWh'},
+                    { color: '#9a2313', text: 'Mehr als 25 kWh'}
+                ]
+            }
+        },
+        {
+            mapStyle: 'count_contributors',
+            legend: {
+                title: 'Anzahl der teilnehmenden Haushalte',
+                elements: [ 
+                    { color: '#FFFFFF', text: 'Keine'},
+                    { color: '#FFD0D0', text: 'Bis 5'},
+                    { color: '#FFA2A2', text: 'Bis 10'},
+                    { color: '#FF7373', text: 'Bis 15'},
+                    { color: '#FF5C5C', text: 'Bis 20'},
+                    { color: '#FF4545', text: 'Mehr als 20'}
+                ]
+            }
+        }                  
 /*         {
             mapStyle: 'sust_dec',
             legend: {

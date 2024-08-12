@@ -43,8 +43,7 @@ if (server.get('env') === 'production') {
     // serve secure cookies
     sess.cookie.secure = true;
 }
-server.use(session(sess));
-console.log('Is the error here? Session Secret:', process.env.APP_COOKIE_SECRET), 
+server.use(session(sess)); 
     
 
 server.use('/tiles', tileserver);

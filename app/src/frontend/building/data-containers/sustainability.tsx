@@ -25,7 +25,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
         <Fragment>
             {user && user.username !== undefined ? (
                 <div>
-                    <button id="showReportButton" className="btn btn-primary" onClick={showReport}>Vergleich anzeigen</button>
+                    <button id="showReportButton" className="btn btn-warning" onClick={showReport}>Vergleich anzeigen</button>
                     {showNewButton && (
                         <button id="hideReportButton" className="btn btn-secondary" onClick={hideReport}>Zurück zur Karte</button>
                     )}
