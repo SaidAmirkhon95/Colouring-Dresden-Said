@@ -1,25 +1,62 @@
-*{
+* {
   box-sizing: border-box;
-  /*float: left;*/
-}
-.rightSided{
-  position: absolute;
-  right: 150px;
-  width: 200px;
-  border: solid 2px rgb(131, 135, 207);
-  margin: 4px;
-  padding: 4px;
 }
 
-.chart_container {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space between charts */
+.smiley {
+  height: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .chart {
-  flex: 1; /* Allow the charts to grow and fill the container */
-  margin: 10px; /* Add some margin between charts */
-  padding: 20px;
-  border: solid 2px rgb(131, 135, 207); /* Optional: add border for visual separation */
-  width: 50%;
+
+  display: flex;
+  /* Use flexbox for layout */
+  justify-content: space-between;
+  /* Space between charts */
+}
+
+.withTitle {
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.chartSideBySide {
+
+  padding: 10px;
+  width: 90%;
+
+}
+
+.rightSided {
+  text-align: right;
+  margin-top: 20px;
+  display: block;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+
+}
+
+.legend {
+  height: 26px;
+ 
+  margin: auto;
+  display: block;
+}
+.anmerkung {
+  font-style: italic;
+  margin-top: 20px;
+}
+.share_img {
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.big_icon {
+  height: 60px;
+  vertical-align: middle;
+  margin-right: 0px;
 }
