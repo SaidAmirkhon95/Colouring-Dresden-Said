@@ -534,27 +534,27 @@
     <Style name="sust_average_consumption_m2">
         <Rule>
              <Filter>[sust_average_consumption_m2] &gt;= 0 and [sust_average_consumption_m2] &lt; 50</Filter>
-            <PolygonSymbolizer fill="#70a805" />
+            <PolygonSymbolizer fill="#c6f51b" />
         </Rule>
         <Rule>
              <Filter>[sust_average_consumption_m2] &gt;= 50 and [sust_average_consumption_m2] &lt; 75</Filter>
-            <PolygonSymbolizer fill="#9ed30d" />
+            <PolygonSymbolizer fill="#daeb26" />
         </Rule>
         <Rule>
              <Filter>[sust_average_consumption_m2] &gt;= 75 and [sust_average_consumption_m2] &lt; 100</Filter>
-            <PolygonSymbolizer fill="#f7ba00" />
+            <PolygonSymbolizer fill="#d9bb29" />
         </Rule>
         <Rule>
              <Filter>[sust_average_consumption_m2] &gt;= 100 and [sust_average_consumption_m2] &lt; 125</Filter>
-            <PolygonSymbolizer fill="#fa6f05" />
+            <PolygonSymbolizer fill="#bf7815" />
         </Rule>
         <Rule>
              <Filter>[sust_average_consumption_m2] &gt;= 125 and [sust_average_consumption_m2] &lt; 150</Filter>
-            <PolygonSymbolizer fill="#c94106" />
+            <PolygonSymbolizer  fill="#a63505" />
         </Rule>
         <Rule>
              <Filter>[sust_average_consumption_m2] &gt;= 150 and [sust_average_consumption_m2] &lt; 175</Filter>
-            <PolygonSymbolizer fill="#9a2313" />
+            <PolygonSymbolizer fill="#801c0f" />
         </Rule>
         <Rule>
              <Filter>[sust_average_consumption_m2] &gt;= 175 and [sust_average_consumption_m2] &lt; 1000</Filter>
@@ -563,110 +563,110 @@
     </Style>
     <Style name="energy_qm">
         <Rule>
-             <Filter>[energy_qm] &gt;= 0 and [energy_qm] &lt; 50</Filter>
-            <PolygonSymbolizer fill="#70a805" />
+             <Filter>[energy_qm] &gt;= 1 and [energy_qm] &lt; 50</Filter>
+            <PolygonSymbolizer fill="#c8f44e" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[energy_qm] &gt;= 50 and [energy_qm] &lt; 75</Filter>
-            <PolygonSymbolizer fill="#9ed30d" />
+            <PolygonSymbolizer fill="#daeb26" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[energy_qm] &gt;= 75 and [energy_qm] &lt; 100</Filter>
-            <PolygonSymbolizer fill="#f7ba00" />
+            <PolygonSymbolizer fill="#d9bb29" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[energy_qm] &gt;= 100 and [energy_qm] &lt; 125</Filter>
-            <PolygonSymbolizer fill="#fa6f05" />
+            <PolygonSymbolizer fill="#bf7815" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[energy_qm] &gt;= 125 and [energy_qm] &lt; 150</Filter>
-            <PolygonSymbolizer fill="#c94106" />
+            <PolygonSymbolizer fill="#a63505" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[energy_qm] &gt;= 150 and [energy_qm] &lt; 175</Filter>
-            <PolygonSymbolizer fill="#9a2313" />
+            <PolygonSymbolizer fill="#801c0f" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[energy_qm] &gt;= 175 and [energy_qm] &lt; 1000</Filter>
-            <PolygonSymbolizer fill="#5c0f05" />
+            <PolygonSymbolizer fill="#5c0f05" fill-opacity="0.5"/>
         </Rule>
     </Style>
         <Style name="gas_qm">
         <Rule>
-             <Filter>[gas_qm] &gt;= 0 and [gas_qm] &lt; 50</Filter>
-            <PolygonSymbolizer fill="#70a805" />
+             <Filter>[gas_qm] &gt;= 1 and [gas_qm] &lt; 50</Filter>
+            <PolygonSymbolizer fill="#c6f51b" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[gas_qm] &gt;= 50 and [gas_qm] &lt; 75</Filter>
-            <PolygonSymbolizer fill="#9ed30d" />
+            <PolygonSymbolizer fill="#daeb26" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[gas_qm] &gt;= 75 and [gas_qm] &lt; 100</Filter>
-            <PolygonSymbolizer fill="#f7ba00" />
+            <PolygonSymbolizer fill="#d9bb29" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[gas_qm] &gt;= 100 and [gas_qm] &lt; 125</Filter>
-            <PolygonSymbolizer fill="#fa6f05" />
+            <PolygonSymbolizer fill="#bf7815" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[gas_qm] &gt;= 125 and [gas_qm] &lt; 150</Filter>
-            <PolygonSymbolizer fill="#c94106" />
+            <PolygonSymbolizer fill="#a63505" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[gas_qm] &gt;= 150 and [gas_qm] &lt; 1000</Filter>
-            <PolygonSymbolizer fill="#9a2313" />
+            <PolygonSymbolizer fill="#801c0f" fill-opacity="0.5"/>
         </Rule>
     </Style>
         <Style name="elect_qm">
         <Rule>
-             <Filter>[elect_qm] &gt;= 0 and [elect_qm] &lt; 5</Filter>
-            <PolygonSymbolizer fill="#70a805" />
+             <Filter>[elect_qm] &gt;= 1 and [elect_qm] &lt; 5</Filter>
+            <PolygonSymbolizer fill="#c6f51b" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[elect_qm] &gt;= 5 and [elect_qm] &lt; 10</Filter>
-            <PolygonSymbolizer fill="#9ed30d" />
+            <PolygonSymbolizer fill="#daeb26" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[elect_qm] &gt;= 10 and [elect_qm] &lt; 15</Filter>
-            <PolygonSymbolizer fill="#f7ba00" />
+            <PolygonSymbolizer fill="#d9bb29" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[elect_qm] &gt;= 15 and [elect_qm] &lt; 20</Filter>
-            <PolygonSymbolizer fill="#fa6f05" />
+            <PolygonSymbolizer fill="#bf7815" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[elect_qm] &gt;= 20 and [elect_qm] &lt; 25</Filter>
-            <PolygonSymbolizer fill="#c94106" />
+            <PolygonSymbolizer fill="#a63505" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[elect_qm] &gt;= 25 and [elect_qm] &lt; 300</Filter>
-            <PolygonSymbolizer fill="#9a2313" />
+            <PolygonSymbolizer fill="#801c0f" fill-opacity="0.5"/>
         </Rule>
     </Style>
         <Style name="count_contributors">
-        <Rule>
-             <Filter>[count_contributors] &gt;= 0 </Filter>
-            <PolygonSymbolizer fill="#FFFFFF" />
-        </Rule>
+        <!--<Rule>
+             <Filter>[count_contributors] &gt;= 1 </Filter>
+            <PolygonSymbolizer fill="#FFFFFF" fill-opacity="0.5"/>
+        </Rule>-->
         <Rule>
              <Filter>[count_contributors] &gt;= 1 and [count_contributors] &lt; 5</Filter>
-            <PolygonSymbolizer fill="#FFD0D0" />
+            <PolygonSymbolizer fill="#FFD0D0" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[count_contributors] &gt;= 5 and [count_contributors] &lt; 10</Filter>
-            <PolygonSymbolizer fill="#FFA2A2" />
+            <PolygonSymbolizer fill="#FFA2A2" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[count_contributors] &gt;= 10 and [count_contributors] &lt; 15</Filter>
-            <PolygonSymbolizer fill="#FF7373" />
+            <PolygonSymbolizer fill="#FF7373" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[count_contributors] &gt;= 15 and [count_contributors] &lt; 20</Filter>
-            <PolygonSymbolizer fill="#FF5C5C" />
+            <PolygonSymbolizer fill="#fa3c3c" fill-opacity="0.5"/>
         </Rule>
         <Rule>
              <Filter>[count_contributors] &gt;= 20 and [count_contributors] &lt; 2000</Filter>
-            <PolygonSymbolizer fill="#FF4545" />
+            <PolygonSymbolizer fill="#ed0505" fill-opacity="0.5"/>
         </Rule>
     </Style>
  <!-- Energy-Feature End -->

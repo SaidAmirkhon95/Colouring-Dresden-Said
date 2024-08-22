@@ -21,7 +21,7 @@ ALTER TABLE city_districts ADD COLUMN IF NOT EXISTS count_contributors int DEFAU
 
 -----------New Column with geometry in the right coordinate system
 ALTER TABLE city_districts ADD COLUMN geometry_3857 geometry;
-UPDATE city_districts SET geometry_3857 = ST_SetSRID(shape, 3857);
+UPDATE city_districts SET geometry_3857 =  ST_Transform(shape, 3857);
 
 -------------Alter Buildings Table
 ALTER TABLE buildings ADD COLUMN IF NOT EXISTS  district_id INT;  --ALTER TABLE buildings ADD COLUMN IF NOT EXISTS point_location geometry;

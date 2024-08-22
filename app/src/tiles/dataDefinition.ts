@@ -653,7 +653,7 @@ function getDataConfig(tileset: string): DataConfig {
         const query = `(
              SELECT
                 d.*,
-                g.geometry_3857 
+                g.geometry_3857 AS "geometry_geom"
             FROM(
                 ${table}
             ) AS d
@@ -661,30 +661,7 @@ function getDataConfig(tileset: string): DataConfig {
                 city_districts AS g
             ON d.blocknr = g.blocknr		
         ) AS data`;
-        let GEOMETRY_FIELD = 'geometry_3857';
-        console.log('Das Tileset Problem mit der Stadtteileinfärbung.\n Die verwendete Geometrie: ', GEOMETRY_FIELD, '\n Die Query: ', query)
-        /* Der Output hier: 
-        "Das Tileset Problem mit der Stadtteileinfärbung.
-        Die verwendete Geometrie:  geometry_3857 
-        Die Query:  (
-                    SELECT
-                        d.*,
-                        g.geometry_3857 
-                    FROM(
-                        
-                SELECT 
-                    blocknr,
-                    elect_qm
-                FROM
-                    city_districts
-                WHERE
-                    elect_qm IS NOT NULL
-                    ) AS d
-                    JOIN
-                        city_districts AS g
-                    ON d.blocknr = g.blocknr		
-                ) AS data
-        ", die Schleife in der "() AS DATA" Klammer funktioniert auch in pgadmin */
+        
         return {
             geometry_field: GEOMETRY_FIELD,
             table: query

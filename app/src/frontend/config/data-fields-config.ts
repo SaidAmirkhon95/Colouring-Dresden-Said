@@ -1742,7 +1742,7 @@ export const dataFields = { /* eslint-disable @typescript-eslint/camelcase */
     },
     agreement_dsgv_sust: {
         category: Category.Sustainability,
-        title: "Ich stimme zu, dass meine Daten zwecks der Verschlüsselung, an BuildingTrust gesendet werden.",
+        title: "Ich stimme zu, dass meine Daten an BuildingTrust gesendet werden.",
         example: false,
         tooltip: "Nur mit Ihrer Zustimmung können Ihre Daten verarbeitet und eine personalisierte Auswertung erstellt werden."
     },

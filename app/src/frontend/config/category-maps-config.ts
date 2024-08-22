@@ -23,7 +23,7 @@ export interface CategoryMapDefinition {
 
 export const defaultMapCategory = Category.Age;
 
-export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = {
+export const categoryMapsConfig: { [key in Category]: CategoryMapDefinition[] } = {
     [Category.Age]: [
         {
             mapStyle: 'date_year',
@@ -104,13 +104,13 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             legend: {
                 title: 'Anzahl Hauptgeschosse',
                 elements: [
-                    { color: '#bd0026', text: '10+'},
-                    { color: '#e31a1c', text: '5-9'},
-                    { color: '#fc4e2a', text: '4'},
-                    { color: '#fd8d3c', text: '3'},
-                    { color: '#feb24c', text: '2'},
-                    { color: '#fed976', text: '1'},
-                    { color: '#ffe8a9', text: '0'}
+                    { color: '#bd0026', text: '10+' },
+                    { color: '#e31a1c', text: '5-9' },
+                    { color: '#fc4e2a', text: '4' },
+                    { color: '#fd8d3c', text: '3' },
+                    { color: '#feb24c', text: '2' },
+                    { color: '#fed976', text: '1' },
+                    { color: '#ffe8a9', text: '0' }
                 ]
             },
         },
@@ -119,11 +119,11 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             legend: {
                 title: 'Anzahl Dachgeschosse',
                 elements: [
-                    { color: '#bd0026', text: '4+'},
-                    { color: '#fc4e2a', text: '3'},
-                    { color: '#feb24c', text: '2'},
-                    { color: '#fed976', text: '1'},
-                    { color: '#ffe8a9', text: '0'}
+                    { color: '#bd0026', text: '4+' },
+                    { color: '#fc4e2a', text: '3' },
+                    { color: '#feb24c', text: '2' },
+                    { color: '#fed976', text: '1' },
+                    { color: '#ffe8a9', text: '0' }
                 ]
             },
         },
@@ -132,11 +132,11 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             legend: {
                 title: 'Anzahl Kellergeschosse',
                 elements: [
-                    { color: '#bd0026', text: '4+'},
-                    { color: '#fc4e2a', text: '3'},
-                    { color: '#feb24c', text: '2'},
-                    { color: '#fed976', text: '1'},
-                    { color: '#ffe8a9', text: '0'}
+                    { color: '#bd0026', text: '4+' },
+                    { color: '#fc4e2a', text: '3' },
+                    { color: '#feb24c', text: '2' },
+                    { color: '#fed976', text: '1' },
+                    { color: '#ffe8a9', text: '0' }
                 ]
             },
         },
@@ -145,14 +145,14 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             legend: {
                 title: 'Firsthöhe (in Metern)',
                 elements: [
-                    { color: '#f7f4f9', text: '0-5.55'},
-                    { color: '#e7e1ef', text: '5.55-7.73'},
-                    { color: '#d4b9da', text: '7.73-11.38'},
-                    { color: '#c994c7', text: '11.38-18.45'},
-                    { color: '#df65b0', text: '18.45-35.05'},
-                    { color: '#e7298a', text: '35.05-89.30'},
-                    { color: '#ce1256', text: '89.30-152'},
-                    { color: '#980043', text: '≥152'}
+                    { color: '#f7f4f9', text: '0-5.55' },
+                    { color: '#e7e1ef', text: '5.55-7.73' },
+                    { color: '#d4b9da', text: '7.73-11.38' },
+                    { color: '#c994c7', text: '11.38-18.45' },
+                    { color: '#df65b0', text: '18.45-35.05' },
+                    { color: '#e7298a', text: '35.05-89.30' },
+                    { color: '#ce1256', text: '89.30-152' },
+                    { color: '#980043', text: '≥152' }
                 ]
             },
         },
@@ -161,11 +161,11 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             legend: {
                 title: 'Grundfläche (in Quadratmetern)',
                 elements: [
-                    { color: '#bd0026', text: '500+'},
-                    { color: '#fc4e2a', text: '250-499'},
-                    { color: '#feb24c', text: '100-249'},
-                    { color: '#fed976', text: '50-99'},
-                    { color: '#ffe8a9', text: '0-49'}
+                    { color: '#bd0026', text: '500+' },
+                    { color: '#fc4e2a', text: '250-499' },
+                    { color: '#feb24c', text: '100-249' },
+                    { color: '#fed976', text: '50-99' },
+                    { color: '#ffe8a9', text: '0-49' }
                 ]
             },
         }
@@ -178,25 +178,25 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                 title: 'Team',
                 elements: []
             },
-        }   
-        
-        
-        
-        
-/*         {
-        mapStyle: 'team',
-        legend: {
-            title: 'Team',
-            description: '% der Daten erfasst',
-            elements: [
-                { color: '#994d00', text: '≥80%' },
-                { color: '#e67300', text: '60–80%' },
-                { color: '#ff9933', text: '40–60%' },
-                { color: '#ffbf80', text: '20–40%' },
-                { color: '#ffe6cc', text: '<20%' }
-            ]
-        },
-    } */
+        }
+
+
+
+
+        /*         {
+                mapStyle: 'team',
+                legend: {
+                    title: 'Team',
+                    description: '% der Daten erfasst',
+                    elements: [
+                        { color: '#994d00', text: '≥80%' },
+                        { color: '#e67300', text: '60–80%' },
+                        { color: '#ff9933', text: '40–60%' },
+                        { color: '#ffbf80', text: '20–40%' },
+                        { color: '#ffe6cc', text: '<20%' }
+                    ]
+                },
+            } */
     ],
     [Category.Construction]: [
 
@@ -218,7 +218,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
                 ]
             }
-        }, 
+        },
 
 
 
@@ -259,7 +259,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
                 ]
             }
-        }, 
+        },
 
 
         {
@@ -313,22 +313,22 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#FFD0D0', text: '2' },
                     { color: '#FFE7E7', text: '1' },
                     { color: '#FFFFFF', text: '0' }
-                        ]
-                    },
-            },        
+                ]
+            },
+        },
         {
-        mapStyle: 'location',
-        legend: {
-            title: 'Standort',
-            description: '% der Daten erfasst',
-            elements: [
-                { color: '#084081', text: '≥80%' },
-                { color: '#0868ac', text: '60–80%' },
-                { color: '#43a2ca', text: '40–60%' },
-                { color: '#7bccc4', text: '20–40%' },
-                { color: '#bae4bc', text: '<20%' }
-                    ]
-                },
+            mapStyle: 'location',
+            legend: {
+                title: 'Standort',
+                description: '% der Daten erfasst',
+                elements: [
+                    { color: '#084081', text: '≥80%' },
+                    { color: '#0868ac', text: '60–80%' },
+                    { color: '#43a2ca', text: '40–60%' },
+                    { color: '#7bccc4', text: '20–40%' },
+                    { color: '#bae4bc', text: '<20%' }
+                ]
+            },
         }
     ],
     [Category.Community]: [
@@ -355,65 +355,65 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                 title: 'Community',
                 elements: []
             },
-        }   
-/*         {
-            mapStyle: 'typology_likes',
-            legend: {
-                title: 'Likes für Gebäudetyp',
-                elements: [
-                    { color: '#bd0026', text: '👍👍👍👍 100+' },
-                    { color: '#e31a1c', text: '👍👍👍 50–99' },
-                    { color: '#fc4e2a', text: '👍👍 20–49' },
-                    { color: '#fd8d3c', text: '👍👍 10–19' },
-                    { color: '#feb24c', text: '👍 3–9' },
-                    { color: '#fed976', text: '👍 2' },
-                    { color: '#ffe8a9', text: '👍 1'}
-                ]
-            }
-        },
-        {
-            mapStyle: 'community_local_significance_total',
-            legend: {
-                title: 'Lokales Interesse',
-                description: 'Anzahl Menschen die der Meinung sind, dass das Gebäude von lokalem Interesse ist',
-                elements: [
-                    { color: '#bd0026', text: '100+' },
-                    { color: '#e31a1c', text: '50–99' },
-                    { color: '#fc4e2a', text: '20–49' },
-                    { color: '#fd8d3c', text: '10–19' },
-                    { color: '#feb24c', text: '3–9' },
-                    { color: '#fed976', text: '2' },
-                    { color: '#ffe8a9', text: '1'}
-                ]
-            }
-        },
-        {
-            mapStyle: 'community_expected_planning_application_total',
-            legend: {
-                title: 'Erwartete Bauanträge',
-                disclaimer: 'Sites identified by users as likely to be subject to planning application over the next six months',
-                elements: [
-                    { color: '#bd0026', text: '100+' },
-                    { color: '#e31a1c', text: '50–99' },
-                    { color: '#fc4e2a', text: '20–49' },
-                    { color: '#fd8d3c', text: '10–19' },
-                    { color: '#feb24c', text: '3–9' },
-                    { color: '#fed976', text: '2' },
-                    { color: '#ffe8a9', text: '1'}
-                ]
-            }
-        },
-        {
-            mapStyle: 'community_in_public_ownership',
-            legend: {
-                title: 'Public Ownership',
-                description: 'Is the building in some form of public/community ownership',
-                elements: [
-                    {color: '#1166ff', text: 'Yes'},
-                    {color: '#ffaaa0', text: 'No'}
-                ]
-            }
-        } */
+        }
+        /*         {
+                    mapStyle: 'typology_likes',
+                    legend: {
+                        title: 'Likes für Gebäudetyp',
+                        elements: [
+                            { color: '#bd0026', text: '👍👍👍👍 100+' },
+                            { color: '#e31a1c', text: '👍👍👍 50–99' },
+                            { color: '#fc4e2a', text: '👍👍 20–49' },
+                            { color: '#fd8d3c', text: '👍👍 10–19' },
+                            { color: '#feb24c', text: '👍 3–9' },
+                            { color: '#fed976', text: '👍 2' },
+                            { color: '#ffe8a9', text: '👍 1'}
+                        ]
+                    }
+                },
+                {
+                    mapStyle: 'community_local_significance_total',
+                    legend: {
+                        title: 'Lokales Interesse',
+                        description: 'Anzahl Menschen die der Meinung sind, dass das Gebäude von lokalem Interesse ist',
+                        elements: [
+                            { color: '#bd0026', text: '100+' },
+                            { color: '#e31a1c', text: '50–99' },
+                            { color: '#fc4e2a', text: '20–49' },
+                            { color: '#fd8d3c', text: '10–19' },
+                            { color: '#feb24c', text: '3–9' },
+                            { color: '#fed976', text: '2' },
+                            { color: '#ffe8a9', text: '1'}
+                        ]
+                    }
+                },
+                {
+                    mapStyle: 'community_expected_planning_application_total',
+                    legend: {
+                        title: 'Erwartete Bauanträge',
+                        disclaimer: 'Sites identified by users as likely to be subject to planning application over the next six months',
+                        elements: [
+                            { color: '#bd0026', text: '100+' },
+                            { color: '#e31a1c', text: '50–99' },
+                            { color: '#fc4e2a', text: '20–49' },
+                            { color: '#fd8d3c', text: '10–19' },
+                            { color: '#feb24c', text: '3–9' },
+                            { color: '#fed976', text: '2' },
+                            { color: '#ffe8a9', text: '1'}
+                        ]
+                    }
+                },
+                {
+                    mapStyle: 'community_in_public_ownership',
+                    legend: {
+                        title: 'Public Ownership',
+                        description: 'Is the building in some form of public/community ownership',
+                        elements: [
+                            {color: '#1166ff', text: 'Yes'},
+                            {color: '#ffaaa0', text: 'No'}
+                        ]
+                    }
+                } */
     ],
     [Category.Planning]: [
 
@@ -425,148 +425,149 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             },
         }
 
-        
-/*         {
-            // this database commad allows to see statistics about decision dates per year
-            // SELECT COUNT(*), date_part('year', decision_date) as year from planning_data WHERE decision_date IS NOT NULL GROUP BY year ORDER BY year ASC;
-            // SELECT COUNT(*), date_part('year', registered_with_local_authority_date) as year from planning_data WHERE decision_date IS NOT NULL GROUP BY year ORDER BY year ASC;
-            mapStyle: 'planning_applications_status_all',
-            legend: {
-                title: 'All planning applications available from GLA (official data)',
-                disclaimer: 'The map shows official data available from the GLA Planning London Datahub. What you are looking at is mainly applications from 2019 onwards.',
-                elements: [
-                    { color: '#a040a0', text: 'Submitted, awaiting decision' },
-                    { color: '#fff200', text: 'Appeal In Progress' },
-                    { color: '#16cf15', text: 'Approved' },
-                    { color: '#e31d23', text: 'Rejected' },
-                    { color: '#7a84a0', text: 'Withdrawn' },
-                    { color: '#eacad0', text: 'Other' },
-                ]
-            }
-        },
-        {
-            mapStyle: 'planning_applications_status_recent',
-            legend: {
-                title: 'The last 12 months - planning applications submissions/decisions (official data)',
-                disclaimer: 'The map shows applications where the submission or decision data falls within the last 12 months.',
-                elements: [
-                    { color: '#a040a0', text: 'Submitted, awaiting decision' },
-                    { color: '#fff200', text: 'Appeal In Progress' },
-                    { color: '#16cf15', text: 'Approved' },
-                    { color: '#e31d23', text: 'Rejected' },
-                    { color: '#7a84a0', text: 'Withdrawn' },
-                    { color: '#eacad0', text: 'Other' },
-                ]
-            }
-        },
-        {
-            mapStyle: 'planning_applications_status_very_recent',
-            legend: {
-                title: 'Last 30 days - planning applications submissions/decisions (official data)',
-                disclaimer: 'The map shows applications where the submission or decision data falls within last 30 days.',
-                elements: [
-                    { color: '#a040a0', text: 'Submitted, awaiting decision' },
-                    { color: '#fff200', text: 'Appeal In Progress' },
-                    { color: '#16cf15', text: 'Approved' },
-                    { color: '#e31d23', text: 'Rejected' },
-                    { color: '#7a84a0', text: 'Withdrawn' },
-                    { color: '#eacad0', text: 'Other' },
-                ]
-            }
-        },
-        {
-            mapStyle: 'community_expected_planning_application_total',
-            legend: {
-                title: 'Erwartete Bauanträge',
-                disclaimer: 'Von den Citizen Scientists identifizierte Standorte, für die in den nächsten sechs Monaten wahrscheinlich ein Bauantrag gestellt wird',
-                elements: [
-                    { color: '#bd0026', text: '100+' },
-                    { color: '#e31a1c', text: '50–99' },
-                    { color: '#fc4e2a', text: '20–49' },
-                    { color: '#fd8d3c', text: '10–19' },
-                    { color: '#feb24c', text: '3–9' },
-                    { color: '#fed976', text: '2' },
-                    { color: '#ffe8a9', text: '1'}
-                ]
-            }
-        },
-        {
-            mapStyle: 'planning_combined',
-            legend: {
-                title: 'Designation/protection (official and crowdsourced data)',
-                disclaimer: 'All data relating to designated buildings should be checked against the National Heritage List for England and local authority websites. Designation data is currently incomplete. We are aiming for 100% coverage by December 2023.',
-                elements: [
-                    { color: '#95beba', text: 'In Conservation Area'},
-                    { color: '#c72e08', text: 'Grade I Listed'},
-                    { color: '#e75b42', text: 'Grade II* Listed'},
-                    { color: '#ffbea1', text: 'Grade II Listed'},
-                    { color: '#85ffd4', text: 'Heritage at Risk'},
-                    { color: '#858ed4', text: 'Locally Listed'},
-                    { color: '#858eff', text: 'In World Heritage Site'},
-                    { color: '#8500d4', text: 'In Archaeological Priority Area'},
-                ]
-            },
-        } */
+
+        /*         {
+                    // this database commad allows to see statistics about decision dates per year
+                    // SELECT COUNT(*), date_part('year', decision_date) as year from planning_data WHERE decision_date IS NOT NULL GROUP BY year ORDER BY year ASC;
+                    // SELECT COUNT(*), date_part('year', registered_with_local_authority_date) as year from planning_data WHERE decision_date IS NOT NULL GROUP BY year ORDER BY year ASC;
+                    mapStyle: 'planning_applications_status_all',
+                    legend: {
+                        title: 'All planning applications available from GLA (official data)',
+                        disclaimer: 'The map shows official data available from the GLA Planning London Datahub. What you are looking at is mainly applications from 2019 onwards.',
+                        elements: [
+                            { color: '#a040a0', text: 'Submitted, awaiting decision' },
+                            { color: '#fff200', text: 'Appeal In Progress' },
+                            { color: '#16cf15', text: 'Approved' },
+                            { color: '#e31d23', text: 'Rejected' },
+                            { color: '#7a84a0', text: 'Withdrawn' },
+                            { color: '#eacad0', text: 'Other' },
+                        ]
+                    }
+                },
+                {
+                    mapStyle: 'planning_applications_status_recent',
+                    legend: {
+                        title: 'The last 12 months - planning applications submissions/decisions (official data)',
+                        disclaimer: 'The map shows applications where the submission or decision data falls within the last 12 months.',
+                        elements: [
+                            { color: '#a040a0', text: 'Submitted, awaiting decision' },
+                            { color: '#fff200', text: 'Appeal In Progress' },
+                            { color: '#16cf15', text: 'Approved' },
+                            { color: '#e31d23', text: 'Rejected' },
+                            { color: '#7a84a0', text: 'Withdrawn' },
+                            { color: '#eacad0', text: 'Other' },
+                        ]
+                    }
+                },
+                {
+                    mapStyle: 'planning_applications_status_very_recent',
+                    legend: {
+                        title: 'Last 30 days - planning applications submissions/decisions (official data)',
+                        disclaimer: 'The map shows applications where the submission or decision data falls within last 30 days.',
+                        elements: [
+                            { color: '#a040a0', text: 'Submitted, awaiting decision' },
+                            { color: '#fff200', text: 'Appeal In Progress' },
+                            { color: '#16cf15', text: 'Approved' },
+                            { color: '#e31d23', text: 'Rejected' },
+                            { color: '#7a84a0', text: 'Withdrawn' },
+                            { color: '#eacad0', text: 'Other' },
+                        ]
+                    }
+                },
+                {
+                    mapStyle: 'community_expected_planning_application_total',
+                    legend: {
+                        title: 'Erwartete Bauanträge',
+                        disclaimer: 'Von den Citizen Scientists identifizierte Standorte, für die in den nächsten sechs Monaten wahrscheinlich ein Bauantrag gestellt wird',
+                        elements: [
+                            { color: '#bd0026', text: '100+' },
+                            { color: '#e31a1c', text: '50–99' },
+                            { color: '#fc4e2a', text: '20–49' },
+                            { color: '#fd8d3c', text: '10–19' },
+                            { color: '#feb24c', text: '3–9' },
+                            { color: '#fed976', text: '2' },
+                            { color: '#ffe8a9', text: '1'}
+                        ]
+                    }
+                },
+                {
+                    mapStyle: 'planning_combined',
+                    legend: {
+                        title: 'Designation/protection (official and crowdsourced data)',
+                        disclaimer: 'All data relating to designated buildings should be checked against the National Heritage List for England and local authority websites. Designation data is currently incomplete. We are aiming for 100% coverage by December 2023.',
+                        elements: [
+                            { color: '#95beba', text: 'In Conservation Area'},
+                            { color: '#c72e08', text: 'Grade I Listed'},
+                            { color: '#e75b42', text: 'Grade II* Listed'},
+                            { color: '#ffbea1', text: 'Grade II Listed'},
+                            { color: '#85ffd4', text: 'Heritage at Risk'},
+                            { color: '#858ed4', text: 'Locally Listed'},
+                            { color: '#858eff', text: 'In World Heritage Site'},
+                            { color: '#8500d4', text: 'In Archaeological Priority Area'},
+                        ]
+                    },
+                } */
 
 
     ],
     [Category.Sustainability]: [
-        
-        {
+
+        /*{
             mapStyle: 'sust_average_consumption_m2',
             legend: {
                 title: 'Haus: Durchschnittlicher Energieverbrauch (Gas und Strom) pro m2',
                 elements: [ 
-                    { color: '#70a805', text: 'Bis 50 kWh'},
-                    { color: '#9ed30d', text: 'Bis 75 kWh'},
-                    { color: '#f7ba00', text: 'Bis 100 kWh'},
-                    { color: '#fa6f05', text: 'Bis 125 kWh'},
-                    { color: '#c94106', text: 'Bis 150 kWh'},
-                    { color: '#9a2313', text: 'Bis 175 kWh'},
+                    { color: '#c6f51b', text: 'Bis 50 kWh'},
+                    { color: '#daeb26', text: 'Bis 75 kWh'},
+                    { color: '#d9bb29', text: 'Bis 100 kWh'},
+                    { color: '#bf7815', text: 'Bis 125 kWh'},
+                    { color: '#a63505', text: 'Bis 150 kWh'},
+                    { color: '#801c0f', text: 'Bis 175 kWh'},
                     { color: '#5c0f05', text: 'Mehr als 175 kWh'},
                 ]
             },
-        },
+        },*/
         {
             mapStyle: 'energy_qm',
-            legend: {
-                title: 'Durchschnittlicher Energieverbrauch pro m2 pro Jahr',
-                elements: [ 
-                    { color: '#70a805', text: 'Bis 50 kWh'},
-                    { color: '#9ed30d', text: 'Bis 75 kWh'},
-                    { color: '#f7ba00', text: 'Bis 100 kWh'},
-                    { color: '#fa6f05', text: 'Bis 125 kWh'},
-                    { color: '#c94106', text: 'Bis 150 kWh'},
-                    { color: '#9a2313', text: 'Bis 175 kWh'},
-                    { color: '#5c0f05', text: 'Mehr als 175 kWh'},
+            legend:
+            {
+                title: 'Energie: Durchschnittlicher Verbrauch pro m2 pro Jahr',
+                elements: [
+                    { color: '#c6f51b', text: 'Bis 50 kWh' },
+                    { color: '#daeb26', text: 'Bis 75 kWh' }, 
+                    { color: '#d9bb29', text: 'Bis 100 kWh' }, 
+                    { color: '#bf7815', text: 'Bis 125 kWh' }, 
+                    { color: '#a63505', text: 'Bis 150 kWh' },
+                    { color: '#801c0f', text: 'Bis 175 kWh' },
+                    { color: '#5c0f05', text: 'Mehr als 175 kWh' },
                 ]
             }
-        },  
+        },
         {
             mapStyle: 'gas_qm',
             legend: {
-                title: 'Durchschnittlicher Gasverbrauch pro m2 pro Jahr',
-                elements: [ 
-                    { color: '#70a805', text: 'Bis 50 kWh'},
-                    { color: '#9ed30d', text: 'Bis 75 kWh'},
-                    { color: '#f7ba00', text: 'Bis 100 kWh'},
-                    { color: '#fa6f05', text: 'Bis 125 kWh'},
-                    { color: '#c94106', text: 'Bis 150 kWh'},
-                    { color: '#9a2313', text: 'Mehr als 150 kWh'}
+                title: 'Gas: Durchschnittlicher Verbrauch pro m2 pro Jahr',
+                elements: [
+                    { color: '#c6f51b', text: 'Bis 50 kWh' },
+                    { color: '#daeb26', text: 'Bis 75 kWh' },
+                    { color: '#d9bb29', text: 'Bis 100 kWh' },
+                    { color: '#bf7815', text: 'Bis 125 kWh' },
+                    { color: '#a63505', text: 'Bis 150 kWh' },
+                    { color: '#801c0f', text: 'Mehr als 150 kWh' }
                 ]
             }
-        },  
+        },
         {
             mapStyle: 'elect_qm',
             legend: {
-                title: 'Durchschnittlicher Stromverbrauch pro m2 pro Jahr',
-                elements: [ 
-                    { color: '#70a805', text: 'Bis 5 kWh'},
-                    { color: '#9ed30d', text: 'Bis 10 kWh'},
-                    { color: '#f7ba00', text: 'Bis 15 kWh'},
-                    { color: '#fa6f05', text: 'Bis 20 kWh'},
-                    { color: '#c94106', text: 'Bis 25 kWh'},
-                    { color: '#9a2313', text: 'Mehr als 25 kWh'}
+                title: 'Strom: Durchschnittlicher Verbrauch pro m2 pro Jahr',
+                elements: [
+                    { color: '#c6f51b', text: 'Bis 5 kWh' },
+                    { color: '#daeb26', text: 'Bis 10 kWh' },
+                    { color: '#d9bb29', text: 'Bis 15 kWh' },
+                    { color: '#bf7815', text: 'Bis 20 kWh' },
+                    { color: '#a63505', text: 'Bis 25 kWh' },
+                    { color: '#801c0f', text: 'Mehr als 25 kWh' }
                 ]
             }
         },
@@ -574,32 +575,32 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             mapStyle: 'count_contributors',
             legend: {
                 title: 'Anzahl der teilnehmenden Haushalte',
-                elements: [ 
-                    { color: '#FFFFFF', text: 'Keine'},
-                    { color: '#FFD0D0', text: 'Bis 5'},
-                    { color: '#FFA2A2', text: 'Bis 10'},
-                    { color: '#FF7373', text: 'Bis 15'},
-                    { color: '#FF5C5C', text: 'Bis 20'},
-                    { color: '#FF4545', text: 'Mehr als 20'}
+                elements: [
+                    //{ color: '#FFFFFF', text: 'Keine'},
+                    { color: '#FFD0D0', text: 'Bis 5' },
+                    { color: '#FFA2A2', text: 'Bis 10' },
+                    { color: '#FF7373', text: 'Bis 15' },
+                    { color: '#fa3c3c', text: 'Bis 20' },
+                    { color: '#ed0505', text: 'Mehr als 20' }
                 ]
             }
-        }                  
-/*         {
-            mapStyle: 'sust_dec',
-            legend: {
-                title: 'Energie',
-                description: 'DEC Rating',
-                elements: [
-                    { color: "#007f3d", text: 'A' },
-                    { color: "#2c9f29", text: 'B' },
-                    { color: "#9dcb3c", text: 'C' },
-                    { color: "#fff200", text: 'D' },
-                    { color: "#f7af1d", text: 'E' },
-                    { color: "#ed6823", text: 'F' },
-                    { color: "#e31d23", text: 'G' },
-                ]
-            },
-        } */
+        }
+        /*         {
+                    mapStyle: 'sust_dec',
+                    legend: {
+                        title: 'Energie',
+                        description: 'DEC Rating',
+                        elements: [
+                            { color: "#007f3d", text: 'A' },
+                            { color: "#2c9f29", text: 'B' },
+                            { color: "#9dcb3c", text: 'C' },
+                            { color: "#fff200", text: 'D' },
+                            { color: "#f7af1d", text: 'E' },
+                            { color: "#ed6823", text: 'F' },
+                            { color: "#e31d23", text: 'G' },
+                        ]
+                    },
+                } */
     ],
     [Category.Type]: [
         {
@@ -635,7 +636,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
                 ]
             }
-        }, 
+        },
 
         {
             mapStyle: 'building_owner',
@@ -656,11 +657,11 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
                 ]
             }
-        }, 
+        },
 
 
 
-],
+    ],
     [Category.LandUse]: [
         {
             mapStyle: 'is_domestic',
@@ -672,7 +673,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ff2121', text: 'Nichtwohngebäude' },
                 ]
             }
-        }, 
+        },
 
 
         {
@@ -703,7 +704,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#cccccc', text: 'Sonstige Nichtwohngebäude' },
                 ]
             }
-        }, 
+        },
 
         {
             mapStyle: 'use_building_current',
@@ -734,7 +735,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ffffff', text: 'Leerstand' },
                 ]
             }
-        }, 
+        },
 
 
 
@@ -750,7 +751,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#7025a6', text: 'vollunterkellert + Tiefgarage' },
                 ]
             }
-        }, 
+        },
 
 
         {
@@ -767,7 +768,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#fed976', text: '0' },
                 ]
             }
-        }, 
+        },
 
 
 
@@ -784,7 +785,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ffffff', text: 'Leerstand' },
                 ]
             }
-        }, 
+        },
 
 
         {
@@ -812,7 +813,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ffffff', text: 'Leerstand' },
                 ]
             }
-        }, 
+        },
 
 
 
@@ -841,7 +842,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ffffff', text: 'Leerstand' },
                 ]
             }
-        }, 
+        },
 
 
 
@@ -861,9 +862,9 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
                 ]
             }
-        }, 
-        
-        
+        },
+
+
         {
             mapStyle: 'use_number_businesses',
             legend: {
@@ -878,7 +879,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
                     { color: '#ffe8a9', text: '0' },
                 ]
             }
-        }, 
+        },
 
 
 
@@ -888,33 +889,33 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
 
 
-/* 
-        {
-            mapStyle: 'landuse',
-            legend: {
-                title: 'Land Use',
-                elements: [
-                    { color: '#e5050d', text: 'Mixed Use' },
-                    { subtitle: 'Single use:'},
-                    { color: '#252aa6', text: 'Residential (unverified)' },
-                    { color: '#7025a6', text: 'Residential (verified)' },
-                    { color: '#ff8c00', text: 'Retail' },
-                    { color: '#f5f58f', text: 'Industry & Business' },
-                    { color: '#fa667d', text: 'Community Services' },
-                    { color: '#ffbfbf', text: 'Recreation & Leisure' },
-                    { color: '#b3de69', text: 'Transport' },
-                    { color: '#cccccc', text: 'Utilities & Infrastructure' },
-                    { color: '#898944', text: 'Defence' },
-                    { color: '#73ccd1', text: 'Agriculture' },
-                    { color: '#45cce3', text: 'Minerals' },
-                    { color: '#ffffff', text: 'Vacant & Derelict' },
-                    { color: '#6c6f8e', text: 'Unclassified, presumed non-residential' }
-                ]
-            },
-        } */
+        /* 
+                {
+                    mapStyle: 'landuse',
+                    legend: {
+                        title: 'Land Use',
+                        elements: [
+                            { color: '#e5050d', text: 'Mixed Use' },
+                            { subtitle: 'Single use:'},
+                            { color: '#252aa6', text: 'Residential (unverified)' },
+                            { color: '#7025a6', text: 'Residential (verified)' },
+                            { color: '#ff8c00', text: 'Retail' },
+                            { color: '#f5f58f', text: 'Industry & Business' },
+                            { color: '#fa667d', text: 'Community Services' },
+                            { color: '#ffbfbf', text: 'Recreation & Leisure' },
+                            { color: '#b3de69', text: 'Transport' },
+                            { color: '#cccccc', text: 'Utilities & Infrastructure' },
+                            { color: '#898944', text: 'Defence' },
+                            { color: '#73ccd1', text: 'Agriculture' },
+                            { color: '#45cce3', text: 'Minerals' },
+                            { color: '#ffffff', text: 'Vacant & Derelict' },
+                            { color: '#6c6f8e', text: 'Unclassified, presumed non-residential' }
+                        ]
+                    },
+                } */
     ],
     [Category.Streetscape]: [
-        
+
         {
             mapStyle: undefined,
             legend: {
@@ -1004,7 +1005,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             mapStyle: 'thermal_stress_objective_count',
             legend: {
                 title: 'Obj. Temperatur (Anzahl)',
-                description: 'Anzahl erfasster Messungen', 
+                description: 'Anzahl erfasster Messungen',
                 elements: [
                     {
                         text: '7+',
@@ -1038,7 +1039,7 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
             mapStyle: 'thermal_stress_subjective_count',
             legend: {
                 title: 'Subj. Temperatur (Anzahl)',
-                description: 'Anzahl erfasster Messungen', 
+                description: 'Anzahl erfasster Messungen',
                 elements: [
                     {
                         text: '7+',
@@ -1124,5 +1125,5 @@ export const categoryMapsConfig: {[key in Category]: CategoryMapDefinition[]} = 
 
 
     ]
-    
+
 };
