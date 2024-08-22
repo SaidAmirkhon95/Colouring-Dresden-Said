@@ -86,6 +86,9 @@ export const MapApp: React.FC<MapAppProps> = props => {
     const displayCategory = useLastNotEmpty(currentCategory) ?? defaultMapCategory;
 
     const [selectedBuildingId, setSelectedBuildingId] = useUrlBuildingParam('view', displayCategory);
+    //const [ownElectricity, setOwnElectricity = useUrlBuildingParam('view', displayCategory);
+
+
 
     const [building, updateBuilding, reloadBuilding] = useBuildingData(selectedBuildingId, props.building, user != undefined);
     const [userVerified, updateUserVerified, reloadUserVerified] = useUserVerifiedData(selectedBuildingId, props.user_verified);
@@ -184,18 +187,38 @@ export const MapApp: React.FC<MapAppProps> = props => {
                 sustIsShown ?
                     /*<div/>*/
                     <SustReport
-                    ownElectricity ={1000}
-                    ownGas={1000}
-                    averageElectricity={2000}
-                    averageGas={3000}
-                    count_contributors={3}
-                    count_district={7}
-                    name_district='Johannstadt'
-                    place_district_ranking={3}
-                    co2effect_min={3682}
-                    co2effect_max={4614}
-                    destination_near='Paris, Frankreich'
-                    destination_far='Stockholm, Schweden '
+                        selectedBuildingId={selectedBuildingId}
+                        /* GUTE WERTE
+                        ownElectricity={3733}
+                        ownGas={18305}
+                        living_area={100}
+                        averageElectricity={20} // pro m2
+                        averageGas={125} //pro m2
+                        count_contributors={5}
+                        count_district={4}
+                        name_district='Johannstadt'
+                        place_district_ranking={3}
+                        co2effect_min={ 3799} //904 km
+                        co2effect_max={5538} // 1318 km
+                        destination_near='Paris, Frankreich'
+                        destination_far='Dublin, Irland'
+                        */
+                        ownElectricity={3733}
+                        ownGas={18305}
+
+                        living_area={150}
+
+                        averageElectricity={20} // pro m2
+                        averageGas={125} //pro m2
+                        count_contributors={5}
+                        count_district={4}
+                        name_district='Johannstadt'
+                        place_district_ranking={3}
+                        co2effect_min={3799} //904 km
+                        co2effect_max={5538} // 1318 km
+                        destination_near='Paris, Frankreich'
+                        destination_far='Dublin, Irland'
+
                     /> :
                     <ColouringMap
                         selectedBuildingId={selectedBuildingId}
