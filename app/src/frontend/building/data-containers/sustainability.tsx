@@ -36,7 +36,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
 
 
             <InfoBox>
-                Die Daten werden von <a href="#">Building Trust</a> verarbeitet und annonymisiert an Colouring Dresden weitergegeben.
+                Die Daten werden von <a href="https://www.ioer.de/projekte/buildingtrust">Building Trust</a> verarbeitet und annonymisiert an Colouring Dresden weitergegeben.
             </InfoBox>
 
             <NumericDataEntry
@@ -107,6 +107,7 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 slug="agreement_dsgv_sust"
                 value={props.building.agreement_dsgv_sust}
                 onChange={props.onChange}
+                tooltip={dataFields.agreement_dsgv_sust.tooltip}
             />
             <CheckboxDataEntry
                 title={dataFields.agreement_science_sust.title}
