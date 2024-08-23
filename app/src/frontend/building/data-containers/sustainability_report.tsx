@@ -197,7 +197,7 @@ export const SustReport: FC<SustReportProps> = ({
                                         <XAxis type="number" />
                                         <Tooltip />
                                         <Legend formatter={renderLegend} />
-                                        <Bar dataKey="Durchschnittsverbrauch" fill="#6bb1e3" name="Durchschnittlicher Verbrauch in kWh/m²"  >
+                                        <Bar dataKey="Durchschnittsverbrauch" fill="#6bb1e3" name="Durchschnittlicher Verbrauch in kWh/m² pro Jahr"  >
                                             <LabelList dataKey="Bezirk" position="insideLeft" fill='black' />
                                         </Bar>
                                     </BarChart>

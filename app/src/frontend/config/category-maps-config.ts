@@ -531,7 +531,7 @@ export const categoryMapsConfig: { [key in Category]: CategoryMapDefinition[] } 
             mapStyle: 'energy_qm',
             legend:
             {
-                title: 'Energie: Durchschnittlicher Verbrauch pro m2 pro Jahr',
+                title: 'Energieverbrauch: Durchschnitt pro m² pro Jahr',
                 elements: [
                     { color: '#c6f51b', text: 'Bis 50 kWh' },
                     { color: '#daeb26', text: 'Bis 75 kWh' }, 
@@ -546,7 +546,7 @@ export const categoryMapsConfig: { [key in Category]: CategoryMapDefinition[] } 
         {
             mapStyle: 'gas_qm',
             legend: {
-                title: 'Gas: Durchschnittlicher Verbrauch pro m2 pro Jahr',
+                title: 'Gasverbrauch: Durchschnitt pro m² pro Jahr',
                 elements: [
                     { color: '#c6f51b', text: 'Bis 50 kWh' },
                     { color: '#daeb26', text: 'Bis 75 kWh' },
@@ -560,7 +560,7 @@ export const categoryMapsConfig: { [key in Category]: CategoryMapDefinition[] } 
         {
             mapStyle: 'elect_qm',
             legend: {
-                title: 'Strom: Durchschnittlicher Verbrauch pro m2 pro Jahr',
+                title: 'Stromverbrauch: Durchschnitt pro m² pro Jahr',
                 elements: [
                     { color: '#c6f51b', text: 'Bis 5 kWh' },
                     { color: '#daeb26', text: 'Bis 10 kWh' },

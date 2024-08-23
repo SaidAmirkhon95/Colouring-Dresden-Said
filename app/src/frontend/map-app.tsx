@@ -205,9 +205,7 @@ export const MapApp: React.FC<MapAppProps> = props => {
                         */
                         ownElectricity={3733}
                         ownGas={18305}
-
                         living_area={150}
-
                         averageElectricity={20} // pro m2
                         averageGas={125} //pro m2
                         count_contributors={5}
