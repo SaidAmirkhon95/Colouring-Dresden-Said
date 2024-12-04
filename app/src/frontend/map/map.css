@@ -70,3 +70,18 @@
     object-fit: contain;
 
 }
+
+.radius-warning {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    display: none;
+}
+
+.radius-warning.active {
+    display: block;
+}

@@ -51,7 +51,84 @@ import { Historic_1880_DataSwitcher } from './historic-1880-data-switcher';
 import { Historic_1911_DataSwitcher } from './historic-1911-data-switcher';
 import { Historic_1945_DataSwitcher } from './historic-1945-data-switcher';
 
+import { Circle, useMapEvents } from 'react-leaflet';
+import L from 'leaflet';
+
 /* import Geolocation_Button from './geolocation'; */
+
+interface RadiusSelectorProps {
+    households: { lat: number; lng: number }[]; // Liste der Haushalte mit Positionen
+    onRadiusChange: (radius: number, center: [number, number]) => void;
+}
+
+const RadiusSelector: React.FC<RadiusSelectorProps> = ({ households, onRadiusChange }) => {
+    const map = useMap();
+    const [center, setCenter] = useState<[number, number] | null>(null);
+    const [radius, setRadius] = useState(0);
+    const [isDrawing, setIsDrawing] = useState(false);
+
+    useEffect(() => {
+        const handleMouseDown = (e: L.LeafletMouseEvent) => {
+            if (e.originalEvent.button === 2) { // Rechte Maustaste
+                setCenter([e.latlng.lat, e.latlng.lng]);
+                setRadius(0); // Start-Radius
+                setIsDrawing(true);
+                map.dragging.disable(); // Karte nicht verschieben während des Zeichnens
+            }
+        };
+
+        const handleMouseMove = (e: L.LeafletMouseEvent) => {
+            if (isDrawing && center) {
+                const distance = map.distance(
+                    L.latLng(center[0], center[1]),
+                    L.latLng(e.latlng.lat, e.latlng.lng)
+                );
+                setRadius(distance);
+            }
+        };
+
+        const handleMouseUp = () => {
+            if (isDrawing) {
+                setIsDrawing(false);
+                map.dragging.enable(); // Karte wieder verschiebbar machen
+
+                // Überprüfe, ob mindestens 3 Haushalte im Radius sind
+                const householdsInRadius = households.filter(household => {
+                    const distance = map.distance(
+                        L.latLng(center![0], center![1]),
+                        L.latLng(household.lat, household.lng)
+                    );
+                    return distance <= radius;
+                });
+
+                // Mindestens 3 Haushalte sicherstellen
+                if (householdsInRadius.length < 3) {
+                    alert('Bitte wählen Sie einen größeren Radius, um mindestens 3 Haushalte einzuschließen.');
+                } else {
+                    onRadiusChange(radius, center!);
+                }
+            }
+        };
+
+        map.on('contextmenu', handleMouseDown);
+        map.on('mousemove', handleMouseMove);
+        map.on('mouseup', handleMouseUp);
+
+        return () => {
+            map.off('contextmenu', handleMouseDown);
+            map.off('mousemove', handleMouseMove);
+            map.off('mouseup', handleMouseUp);
+        };
+    }, [map, center, radius, isDrawing, households, onRadiusChange]);
+
+    return center && radius > 0 ? (
+        <Circle
+            center={center}
+            radius={radius}
+            pathOptions={{ color: 'lightblue', fillOpacity: 0.2 }}
+        />
+    ) : null;
+};
 
 interface ColouringMapProps {
     selectedBuildingId: number;
@@ -96,6 +173,17 @@ export const ColouringMap : FC<ColouringMapProps> = ({
         [onBuildingAction],
     )
 
+    const [householdLocations, setHouseholdLocations] = useState<{ lat: number; lng: number }[]>([]);
+
+    useEffect(() => {
+        const fetchHouseholds = async () => {
+            const data = await apiGet('/api/households');
+            setHouseholdLocations(data.map(h => ({ lat: h.latitude, lng: h.longitude })));
+        };
+        fetchHouseholds();
+    }, []);
+
+
     return (
         <div className="map-container">
             <MapContainer
@@ -107,6 +195,12 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                 zoomControl={false}
                 attributionControl={false}
             >
+                <RadiusSelector
+                    households={householdLocations} // Daten der Haushalte
+                    onRadiusChange={(radius, center) => {
+                        console.log(`Radius: ${radius} Meter, Zentrum:`, center);
+                    }}
+                />
                 <ClickHandler onClick={handleClick} />
                 <MapBackgroundColor theme={darkLightTheme} />
                 <MapViewport position={position} zoom={zoom} />

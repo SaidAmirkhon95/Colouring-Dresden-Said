@@ -1,12 +1,14 @@
 import React, { FC } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, Cell, LabelList } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, Cell, LabelList, ResponsiveContainer } from 'recharts';
 import './sust_report.css';
 import {
-    EmailIcon, FacebookMessengerIcon,
-    TelegramIcon, WhatsappIcon,
-    EmailShareButton, FacebookShareButton,
-    TelegramShareButton, WhatsappShareButton
-} from "react-share";
+    EmailIcon, EmailShareButton,
+    FacebookMessengerIcon, FacebookShareButton,
+    TelegramIcon, TelegramShareButton, 
+    WhatsappIcon, WhatsappShareButton,
+    TwitterShareButton, TwitterIcon,
+    LinkedinShareButton, LinkedinIcon
+} from "react-share"; //Fix share func 
 
 
 //Please install recharts!
@@ -43,6 +45,7 @@ export const SustReport: FC<SustReportProps> = ({
 }) => {
     const shareUrl = 'https://colouring.dresden.ioer.de/view/sustainability';
     const shareUrl_current_window = window.location.href;
+    const title = 'Check out this awesome website!';
     const ownE_m2 = Math.round(ownElectricity*100 / living_area)/100;
     const ownG_m2 = Math.round(ownGas*100/ living_area)/100;
     const totalOwnEnergy = ownGas + ownElectricity;
@@ -102,51 +105,51 @@ export const SustReport: FC<SustReportProps> = ({
                 <div className='withTitle'>
                     <h4>Vergleich des Verbrauchs pro Quadratmeter mit der Nachbarschaft</h4>
                     <div className="chart">
-                        <div className='chartSideBySide'>
-                            <BarChart width={500} height={250} data={energyUse_s}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="name" />
-                                <YAxis>
-                                    <Label
-                                        value="Verbrauch in kWh/m²"
-                                        angle={-90}
-                                        position="insideLeft"
-                                        style={{ textAnchor: 'middle' }}
-                                    />
-                                </YAxis>
-                                <Tooltip />
-                                {/*<Legend formatter={renderLegend} />
-                                */}
-                                <Bar dataKey="Ihr_Verbrauch" name="Ihr Wert" >
-                                    {energyUse_s.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={entry.fillColor} />
-                                    ))}
-                                </Bar>
-                                <Bar dataKey="Durchschnitt" fill="#aaaaaa" name="Durchschnitt" />
-                            </BarChart>
+                        <div className="chartSideBySide">
+                            <ResponsiveContainer width="100%" height={250}>
+                                <BarChart data={energyUse_s}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="name" />
+                                    <YAxis>
+                                        <Label
+                                            value="Verbrauch in kWh/m²"
+                                            angle={-90}
+                                            position="insideLeft"
+                                            style={{ textAnchor: 'middle' }}
+                                        />
+                                    </YAxis>
+                                    <Tooltip />
+                                    <Bar dataKey="Ihr_Verbrauch" name="Ihr Wert">
+                                        {energyUse_s.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={entry.fillColor} />
+                                        ))}
+                                    </Bar>
+                                    <Bar dataKey="Durchschnitt" fill="#aaaaaa" name="Durchschnitt" />
+                                </BarChart>
+                            </ResponsiveContainer>
                         </div>
                         <div className="chartSideBySide">
-                            <BarChart width={500} height={250} data={energyUse_g}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="name" />
-                                <YAxis>
-                                    <Label
-                                        value="Verbrauch in kWh/m²"
-                                        angle={-90}
-                                        position="insideLeft"
-                                        style={{ textAnchor: 'middle' }}
-                                    />
-                                </YAxis>
-                                <Tooltip />
-                                {/*<Legend formatter={renderLegend} />
-                                */}
-                                <Bar dataKey="Ihr_Verbrauch" name="Ihr Wert" >
-                                    {energyUse_g.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={entry.fillColor} />
-                                    ))} </Bar>
-                                <Bar dataKey="Durchschnitt" fill="#aaaaaa" name="Durchschnitt" />
-
-                            </BarChart>
+                            <ResponsiveContainer width="100%" height={250}>
+                                <BarChart data={energyUse_g}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="name" />
+                                    <YAxis>
+                                        <Label
+                                            value="Verbrauch in kWh/m²"
+                                            angle={-90}
+                                            position="insideLeft"
+                                            style={{ textAnchor: 'middle' }}
+                                        />
+                                    </YAxis>
+                                    <Tooltip />
+                                    <Bar dataKey="Ihr_Verbrauch" name="Ihr Wert">
+                                        {energyUse_g.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={entry.fillColor} />
+                                        ))}
+                                    </Bar>
+                                    <Bar dataKey="Durchschnitt" fill="#aaaaaa" name="Durchschnitt" />
+                                </BarChart>
+                            </ResponsiveContainer>
                         </div>
                     </div>
                     <img className="legend" src={require('../../../../public/images/Legende_option2.png')} alt="Legende der ersten beiden Diagramme: Grün bzw rot steht für Ihre Werte, grau für den Durchschnitt der Nachbarschaft" />
@@ -160,18 +163,18 @@ export const SustReport: FC<SustReportProps> = ({
                         <div className='withTitle'>
                             <h4>Die CO2-Emissionen je nach Art der Stromgewinnung</h4>
                             <div className="chart">
-
-                                <BarChart width={500} height={250} data={co2_impact} layout="vertical" >
+                                <BarChart width={500} height={250} data={co2_impact} layout="vertical">
                                     <XAxis type="number" />
                                     <YAxis dataKey="art" type="category" tickMargin={100} />
                                     <Tooltip />
                                     <Legend formatter={renderLegend} />
-                                    <Bar dataKey="gas" fill="#ab8fb0" stackId="a" name="CO2 Emissionen durch Gas-Verbrauch in kg" >
-                                        <LabelList dataKey="art" position="insideLeft" fill='black' />
+                                    <Bar dataKey="gas" fill="#ab8fb0" stackId="a" name="CO2 Emissionen durch Gas-Verbrauch in kg">
+                                        <LabelList dataKey="gas" position="inside" fill="black" />
                                     </Bar>
-                                    <Bar dataKey="strom" fill="#ffe14c" stackId="a" name="CO2 Emissionen durch Strom-Verbrauch in kg" />
+                                    <Bar dataKey="strom" fill="#ffe14c" stackId="a" name="CO2 Emissionen durch Strom-Verbrauch in kg">
+                                        <LabelList dataKey="strom" position="inside" fill="black" />
+                                    </Bar>
                                 </BarChart>
-
                             </div>
                         </div>
                         <p>
@@ -222,16 +225,48 @@ export const SustReport: FC<SustReportProps> = ({
                         </div>
                     </details>
                 </p>
-                {/*<p>
-                    <FacebookShareButton url={shareUrl}>
-                        <FacebookMessengerIcon size={32} round={true} />
-                    </FacebookShareButton>
-
-                </p>*/}
                 <p>
-                <img className="share_img" src={require('../../../../public/images/share_icon.png')} alt="Symbol fürs Teilen der Website" />
-                <a href={shareUrl}>Hier können Sie Ihre Nachbar*innen einladen auch mitzumachen. </a>
-            
+                    <img 
+                        className="share_img" 
+                        src={require('../../../../public/images/share_icon.png')} 
+                        alt="Symbol fürs Teilen der Website" 
+                    />
+                    <a href={shareUrl}>Hier können Sie Ihre Nachbar*innen einladen auch mitzumachen. </a>
+                    
+                    <div className="share-buttons">
+                        {/* Twitter Share */}
+                        <TwitterShareButton url={shareUrl} title={title}>
+                            <TwitterIcon size={32} round />
+                        </TwitterShareButton>
+
+                        {/* Facebook Share */}
+                        <FacebookShareButton url={shareUrl} hashtag="#Sustainability">
+                            <FacebookMessengerIcon size={32} round />
+                        </FacebookShareButton>
+
+                        {/* WhatsApp Share */}
+                        <WhatsappShareButton url={shareUrl} title={title} separator=" - ">
+                            <WhatsappIcon size={32} round />
+                        </WhatsappShareButton>
+
+                        {/* Telegram Share */}
+                        <TelegramShareButton url={shareUrl} title={title}>
+                            <TelegramIcon size={32} round />
+                        </TelegramShareButton>
+
+                        {/* LinkedIn Share */}
+                        <LinkedinShareButton url={shareUrl} title={title}>
+                            <LinkedinIcon size={32} round />
+                        </LinkedinShareButton>
+
+                        <EmailShareButton 
+                          url={shareUrl} 
+                          subject="Check out this awesome website!" 
+                          body={`Hi there,\n\nI found this great resource and thought of sharing it with you: ${shareUrl}\n\nTake a look!`}
+                        >
+                          <EmailIcon size={32} round />
+                        </EmailShareButton>
+                    </div>
                 </p>
                 <p>
                     <details className="rightSided">

@@ -9,11 +9,9 @@
 }
 
 .chart {
-
   display: flex;
-  /* Use flexbox for layout */
-  justify-content: space-between;
-  /* Space between charts */
+  flex-wrap: wrap;
+  gap: 16px; /* Abstand zwischen Diagrammen */
 }
 
 .withTitle {
@@ -25,10 +23,7 @@
 }
 
 .chartSideBySide {
-
-  padding: 10px;
-  width: 90%;
-
+  flex: 1 1 calc(50% - 16px); /* Zwei Diagramme nebeneinander auf Desktop */
 }
 
 .rightSided {
@@ -59,4 +54,10 @@
   height: 60px;
   vertical-align: middle;
   margin-right: 0px;
+}
+
+@media (max-width: 768px) {
+  .chartSideBySide {
+      flex: 1 1 100%; /* Diagramme untereinander auf kleinen Bildschirmen */
+  }
 }

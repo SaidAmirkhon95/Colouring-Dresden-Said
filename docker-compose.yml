@@ -1,0 +1,58 @@
+version: '3.8'  # Specify the version of the Docker Compose file format
+
+services:  # Define the services
+  postgres:
+    image: postgres:12  # Use the official PostgreSQL 12 image
+    container_name: dresden-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${PGUSER}  # Use environment variables
+      POSTGRES_PASSWORD: ${PGPASSWORD}
+      POSTGRES_DB: ${PGDATABASE}
+    volumes:
+      - dresden-volume:/var/lib/postgresql/data  # Persistent data volume
+      - ./migrations:/migrations
+      - ./run_migrations.sh:/run_migrations.sh  
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${PGUSER}"]  # Check if the DB is ready
+      interval: 5s
+      retries: 5
+    ports:
+      - 5432:5432
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 2GB
+        reservations:
+          cpus: "2"
+          memory: 2GB
+    networks:
+      - dresden_core
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: dresden-adminer
+    restart: always
+    ports:
+      - 8077:8080
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1GB
+        reservations:
+          cpus: "1"
+          memory: "1GB"
+    networks:
+      - dresden_core
+    volumes:
+      - ./uploads.ini:/etc/php/7.4/cli/conf.d/uploads.ini
+
+volumes:
+  dresden-volume:
+    name: dresden-volume
+
+networks:
+  dresden_core:
+    name: dresden_core
