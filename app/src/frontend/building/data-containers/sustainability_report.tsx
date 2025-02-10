@@ -28,6 +28,7 @@ interface SustReportProps {
     co2effect_max: number;
     destination_near: string;
     destination_far: string;
+    buildings?: any[]; // Array of buildings within selected radius
 }
 
 export const SustReport: FC<SustReportProps> = ({
@@ -42,6 +43,8 @@ export const SustReport: FC<SustReportProps> = ({
     count_district,
     name_district,
     place_district_ranking,
+    selectedBuildingId,
+    buildings,
 }) => {
     const shareUrl = 'https://colouring.dresden.ioer.de/view/sustainability';
     const shareUrl_current_window = window.location.href;
@@ -51,12 +54,20 @@ export const SustReport: FC<SustReportProps> = ({
     const totalOwnEnergy = ownGas + ownElectricity;
     const totalOwnEnergy_m2 = Math.round(totalOwnEnergy*100 / living_area)/100;
     const totalAverageEnergy = averageGas + averageElectricity;
+    const tolerance = 500; // ±500 kWh
+    const isAboveAverage = totalOwnEnergy_m2 > totalAverageEnergy + tolerance;
+    const isBelowAverage = totalOwnEnergy_m2 < totalAverageEnergy - tolerance;
+    const isWithinTolerance = !isAboveAverage && !isBelowAverage;
     const energyUse_s = [
         {
             name: 'Strom',
             Ihr_Verbrauch: ownE_m2,
             Durchschnitt: averageElectricity,
-            fillColor: ownE_m2 > averageElectricity ? '#ff6161' : '#8bc800',
+            fillColor: ownE_m2 > averageElectricity + tolerance 
+            ? '#ff6161' // rot: über Durchschnitt + Toleranz
+            : ownE_m2 < averageElectricity - tolerance 
+            ? '#8bc800' // grün: unter Durchschnitt - Toleranz
+            : '#ffd700', // gelb: im Toleranzbereich
         },
     ];
     const energyUse_g = [
@@ -64,7 +75,11 @@ export const SustReport: FC<SustReportProps> = ({
             name: 'Gas',
             Ihr_Verbrauch: ownG_m2,
             Durchschnitt: averageGas,
-            fillColor: ownG_m2 > averageGas ? '#ff6161' : '#8bc800',
+            fillColor: ownG_m2 > averageGas + tolerance
+            ? '#ff6161'
+            : ownG_m2 < averageGas - tolerance
+            ? '#8bc800'
+            : '#ffd700',
         }
     ];
     const co2gas =
@@ -76,6 +91,25 @@ export const SustReport: FC<SustReportProps> = ({
         { art: 'Erneuerbare Energie', gas: co2gas, strom: co2stom_eco },
         { art: 'Konventionelle Energie', gas: co2gas, strom: co2strom_convent },
     ];
+
+    // Calculate total energy consumption in the selected radius
+    const buildingsEnergyData = buildings.map((building) => ({
+        electricity: building.electricity, // Replace with actual building data fields
+        gas: building.gas, // Replace with actual building data fields
+    }));
+
+    const totalRadiusEnergy = buildingsEnergyData.reduce((acc, building) => {
+        acc.electricity += building.electricity;
+        acc.gas += building.gas;
+        return acc;
+    }, { electricity: 0, gas: 0 });
+
+    const averageRadiusEnergy = {
+        electricity: totalRadiusEnergy.electricity / buildings.length,
+        gas: totalRadiusEnergy.gas / buildings.length,
+    };
+
+    // Sample district data for comparison
     const districtData = [
         { Bezirk: 'Innere Altstadt', Contributors: 13, Durchschnittsverbrauch: 80 }, //Energie pro m2
         { Bezirk: 'Wilsdruffer Vorstadt', Contributors: 9, Durchschnittsverbrauch: 110 },
@@ -95,13 +129,17 @@ export const SustReport: FC<SustReportProps> = ({
                 </h1>
                 <h4>Ihr Verbrauch pro Quadratmeter:</h4>
                 <p>
-                    {totalOwnEnergy_m2 > totalAverageEnergy ?
-                        <img className="smiley" src={require('../../../../public/images/smiley_frowning.png')} alt="Smiley" />
-                        : <img className="smiley" src={require('../../../../public/images/smiley_happy.png')} alt="Smiley" />}
+                    {isWithinTolerance ? (
+                        <img className="smiley" src={require('../../../../public/images/smiley_neutral.png')} alt="Smiley neutral" />
+                    ) : isBelowAverage ? (
+                        <img className="smiley" src={require('../../../../public/images/smiley_happy.png')} alt="Smiley glücklich" />
+                    ) : (
+                        <img className="smiley" src={require('../../../../public/images/smiley_frowning.png')} alt="Smiley traurig" />
+                    )}
 
-                    In Ihrem Haushalt wurde pro Quadratmeter {totalOwnEnergy_m2} kWh Energie verbraucht, Sie liegen damit {totalOwnEnergy_m2 > totalAverageEnergy ? 'über' : 'unter'} dem Durchschnitt von {totalAverageEnergy} kWh/m² in Ihrer unmittelbaren Nachbarschaft.
+                    In Ihrem Haushalt wurde pro Quadratmeter {totalOwnEnergy_m2} kWh Energie verbraucht. 
+                    Sie liegen damit {isAboveAverage ? 'über' : isBelowAverage ? 'unter' : 'im Toleranzbereich von'} dem Durchschnitt von {totalAverageEnergy} kWh/m² in Ihrer unmittelbaren Nachbarschaft.
                 </p>
-
                 <div className='withTitle'>
                     <h4>Vergleich des Verbrauchs pro Quadratmeter mit der Nachbarschaft</h4>
                     <div className="chart">

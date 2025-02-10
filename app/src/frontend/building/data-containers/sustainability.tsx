@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'; //useState for the checkbox
+import React, { Fragment, useState, useEffect } from 'react'; // Added useState for dynamic fields
 import { dataFields } from '../../config/data-fields-config';
 import NumericDataEntry from '../data-components/numeric-data-entry';
 import withCopyEdit from '../data-container';
@@ -9,36 +9,88 @@ import InfoBox from '../../components/info-box';
 
 const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) => {
     const [showNewButton, setShowNewButton] = useState(false);
+    const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+
+    // State for dynamic text fields
+    const [textFields, setTextFields] = useState<string[]>([]);
+
     const showReport = () => {
-        props.onShowReportButtonClicked(true)
+        props.onShowReportButtonClicked(true);
         setShowNewButton(true);
-    }
+    };
 
     const hideReport = () => {
         props.onShowReportButtonClicked(false);
         setShowNewButton(false);
-    }
-    const { isLoading, user, userError, logout, generateApiKey, deleteAccount } = useAuth();
+    };
+
+    const { isLoading, user } = useAuth();
+
+    // Function to validate input fields and checkbox state
+    const validateInputs = () => {
+        const { number_persons, reference_period, electricity_usage, gas_usage, living_area, agreement_dsgv_sust } = props.building;
+
+        const allFieldsFilled =
+            number_persons > 0 &&
+            reference_period > 0 &&
+            electricity_usage >= 0 &&
+            gas_usage >= 0 &&
+            living_area > 0;
+
+        const firstCheckboxChecked = agreement_dsgv_sust;
+
+        // Enable button if all fields are filled and first checkbox is checked
+        setIsButtonEnabled(allFieldsFilled && firstCheckboxChecked);
+    };
+
+    // Effect to validate inputs whenever props.building changes
+    useEffect(() => {
+        validateInputs();
+    }, [props.building]);
+
+    // Add a new text field dynamically
+    const addTextField = () => {
+        setTextFields([...textFields, ""]); // Add an empty string to represent a new text field
+    };
+
+    // Update the value of a specific text field
+    const handleTextFieldChange = (index: number, value: string) => {
+        const updatedFields = [...textFields];
+        updatedFields[index] = value;
+        setTextFields(updatedFields);
+    };
 
     return (
-
         <Fragment>
             {user && user.username !== undefined ? (
                 <div>
-                    <button id="showReportButton" className="btn btn-warning" onClick={showReport}>Vergleich anzeigen</button>
+                    <button
+                        id="showReportButton"
+                        className="btn btn-warning"
+                        onClick={showReport}
+                        disabled={!isButtonEnabled} // Disable button based on validation
+                    >
+                        Vergleich anzeigen
+                    </button>
                     {showNewButton && (
-                        <button id="hideReportButton" className="btn btn-secondary" onClick={hideReport}>Zurück zur Karte</button>
+                        <button
+                            id="hideReportButton"
+                            className="btn btn-secondary"
+                            onClick={hideReport}
+                        >
+                            Zurück zur Karte
+                        </button>
                     )}
                 </div>
             ) : (
                 <p></p>
             )}
 
-
             <InfoBox>
                 Die Daten werden von <a href="https://www.ioer.de/projekte/buildingtrust">Building Trust</a> verarbeitet und annonymisiert an Colouring Dresden weitergegeben.
             </InfoBox>
 
+            {/* Numeric Data Inputs */}
             <NumericDataEntry
                 title={dataFields.number_persons.title}
                 value={props.building.number_persons}
@@ -94,7 +146,6 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 title={dataFields.living_area.title}
                 slug="living_area"
                 value={props.building.living_area}
-                //tooltip={dataFields.living_area.tooltip}
                 step={0.01}
                 min={5}
                 max={1000}
@@ -102,6 +153,31 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 copy={props.copy}
                 onChange={props.onChange}
             />
+
+            {/* Dynamic Text Fields */}
+            <div>
+                <h5>Zusätzliche Daten:</h5>
+                {textFields.map((field, index) => (
+                    <div key={index} style={{ marginBottom: '10px' }}>
+                        <input
+                            type="text"
+                            value={field}
+                            onChange={(e) => handleTextFieldChange(index, e.target.value)}
+                            placeholder={`Zusatzfeld ${index + 1}`}
+                            className="form-control"
+                        />
+                    </div>
+                ))}
+                <button
+                    className="btn btn-primary"
+                    onClick={addTextField}
+                    style={{ marginTop: '10px' }}
+                >
+                    (+) Neues Feld hinzufügen
+                </button>
+            </div>
+
+            {/* Checkbox Data Entries */}
             <CheckboxDataEntry
                 title={dataFields.agreement_dsgv_sust.title}
                 slug="agreement_dsgv_sust"
@@ -115,10 +191,10 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 value={props.building.agreement_science_sust}
                 onChange={props.onChange}
             />
-
-        </Fragment >
+        </Fragment>
     );
 };
+
 const SustainabilityContainer = withCopyEdit(SustainabilityView);
 
 export default SustainabilityContainer;
