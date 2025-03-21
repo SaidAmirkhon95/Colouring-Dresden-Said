@@ -1,0 +1,29 @@
+{
+  "realm": "building-data-trustee-realm",
+  "clients": [
+    {
+      "clientId": "building-data-trustee",
+      "clientAuthenticatorType": "client-secret",
+      "secret": "pOQE2Vpl7Hqi06PzJAHuDb3B42PRPIIG",
+      "redirectUris": [
+        "http://localhost:3000/*"
+      ],
+      "authorizationServicesEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin"
+        }
+      ],
+      "realmRoles": [
+        "admin"
+      ]
+    }
+  ]
+}

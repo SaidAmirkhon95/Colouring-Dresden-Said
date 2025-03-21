@@ -49,9 +49,53 @@ services:  # Define the services
     volumes:
       - ./uploads.ini:/etc/php/7.4/cli/conf.d/uploads.ini
 
+  komdatis_customer_be:
+    image: container-registry.gitlab.cc-asp.fraunhofer.de/steinert1/komdatis/customer-be:0.1.2
+    container_name: komdatis-customer-be
+    restart: always
+    environment:
+      NODE_ENV: dev
+      PORT: 3001
+      SESSION_SECRET: pOQE2Vpl7Hqi06PzJAHuDb3B42PRPIIG
+      INIT_CONNECTOR: "false"
+      FRONTEND_URL: "http://localhost:8080"
+      CUSTOMER_DB_URI: "mongodb+srv://michaelsteinert:Kj2hTEHnIxeZmvJ6@komdatis.pqjrpij.mongodb.net/?retryWrites=true&w=majority"
+      PRIVATE_KEY_PATH: private-keys/private-key.pem
+      REGISTRATION_SERVICE_URL: "http://host.docker.internal:8184/api/authority/registry"
+      CERTIFICATE_API_BASE_URL: http://localhost:39191/api
+      AGGREGATION_API_BASE_URL: "http://host.docker.internal:49191/api" 
+      AGGREGATION_PROVIDER_BASE_URL: http://localhost:3004
+    ports:
+      - "3003:3001"
+    networks:
+      - dresden_core
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: dresden-keycloak
+    depends_on:
+      - postgres
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://dresden-postgres/${PGDATABASE}
+      KC_DB_USERNAME: ${PGUSER}
+      KC_DB_PASSWORD: ${PGPASSWORD}
+    ports:
+      - 8080:8080
+    volumes:
+      - ./app/src/keycloak/dresden-realm.json:/opt/keycloak/data/import/dresden-realm.json  # Mount realm configuration file
+    command: ["start-dev"]
+    networks:
+      - dresden_core
+
+
 volumes:
   dresden-volume:
     name: dresden-volume
+  keycloak-db-volume:
+    name: keycloak-db-volume
 
 networks:
   dresden_core:
