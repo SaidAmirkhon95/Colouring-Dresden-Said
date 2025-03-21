@@ -1,4 +1,4 @@
-/* import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const Keycloak = require('keycloak-js').default;
 
@@ -30,7 +30,7 @@ export const KeycloakAuthProvider: React.FC<{ children: React.ReactNode }> = ({ 
     const initKeycloak = async () => {
       try {
         const auth = await keycloak.init({
-          onLoad: "login-required",
+          onLoad: "login",
           checkLoginIframe: false,
         });
         console.log("Authenticated:", auth);
@@ -93,10 +93,10 @@ export const useKeycloakAuth = () => {
     throw new Error("useKeycloakAuth must be used within a KeycloakAuthProvider");
   }
   return context;
-}; */
+};
 
 
-import React, { createContext, useContext, useState, useEffect, PropsWithChildren, ReactNode } from "react";
+/* import React, { createContext, useContext, useState, useEffect, PropsWithChildren, ReactNode } from "react";
 const Keycloak = require("keycloak-js").default;
 
 const keycloak = new Keycloak({
@@ -125,9 +125,8 @@ export const KeycloakAuthProvider: React.FC<PropsWithChildren<{ children: ReactN
       try {
         const authenticated = await keycloak.init(
           {
-            onLoad: "login-required", // Forces login immediately
-            checkLoginIframe: false,  // Disable iframe checking if causing issues
-            pkceMethod: "S256",       // Ensure PKCE is used if Keycloak requires it
+            onLoad: "login",
+            checkLoginIframe: false,
           }
         );
 
@@ -170,5 +169,5 @@ export const useKeycloakAuth = () => {
     throw new Error("useKeycloakAuth must be used within a KeycloakAuthProvider");
   }
   return context;
-};
+}; */
 
