@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+<<<<<<< HEAD
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, Cell, LabelList, ResponsiveContainer } from 'recharts';
 import './sust_report.css';
 import {
@@ -9,6 +10,16 @@ import {
     TwitterShareButton, TwitterIcon,
     LinkedinShareButton, LinkedinIcon
 } from "react-share"; //Fix share func 
+=======
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Label, Cell, LabelList } from 'recharts';
+import './sust_report.css';
+import {
+    EmailIcon, FacebookMessengerIcon,
+    TelegramIcon, WhatsappIcon,
+    EmailShareButton, FacebookShareButton,
+    TelegramShareButton, WhatsappShareButton
+} from "react-share";
+>>>>>>> upstream/main
 
 
 //Please install recharts!
@@ -28,7 +39,10 @@ interface SustReportProps {
     co2effect_max: number;
     destination_near: string;
     destination_far: string;
+<<<<<<< HEAD
     buildings?: any[]; // Array of buildings within selected radius
+=======
+>>>>>>> upstream/main
 }
 
 export const SustReport: FC<SustReportProps> = ({
@@ -43,31 +57,44 @@ export const SustReport: FC<SustReportProps> = ({
     count_district,
     name_district,
     place_district_ranking,
+<<<<<<< HEAD
     selectedBuildingId,
     buildings,
 }) => {
     const shareUrl = 'https://colouring.dresden.ioer.de/view/sustainability';
     const shareUrl_current_window = window.location.href;
     const title = 'Check out this awesome website!';
+=======
+}) => {
+    const shareUrl = 'https://colouring.dresden.ioer.de/view/sustainability';
+    const shareUrl_current_window = window.location.href;
+>>>>>>> upstream/main
     const ownE_m2 = Math.round(ownElectricity*100 / living_area)/100;
     const ownG_m2 = Math.round(ownGas*100/ living_area)/100;
     const totalOwnEnergy = ownGas + ownElectricity;
     const totalOwnEnergy_m2 = Math.round(totalOwnEnergy*100 / living_area)/100;
     const totalAverageEnergy = averageGas + averageElectricity;
+<<<<<<< HEAD
     const tolerance = 500; // ±500 kWh
     const isAboveAverage = totalOwnEnergy_m2 > totalAverageEnergy + tolerance;
     const isBelowAverage = totalOwnEnergy_m2 < totalAverageEnergy - tolerance;
     const isWithinTolerance = !isAboveAverage && !isBelowAverage;
+=======
+>>>>>>> upstream/main
     const energyUse_s = [
         {
             name: 'Strom',
             Ihr_Verbrauch: ownE_m2,
             Durchschnitt: averageElectricity,
+<<<<<<< HEAD
             fillColor: ownE_m2 > averageElectricity + tolerance 
             ? '#ff6161' // rot: über Durchschnitt + Toleranz
             : ownE_m2 < averageElectricity - tolerance 
             ? '#8bc800' // grün: unter Durchschnitt - Toleranz
             : '#ffd700', // gelb: im Toleranzbereich
+=======
+            fillColor: ownE_m2 > averageElectricity ? '#ff6161' : '#8bc800',
+>>>>>>> upstream/main
         },
     ];
     const energyUse_g = [
@@ -75,11 +102,15 @@ export const SustReport: FC<SustReportProps> = ({
             name: 'Gas',
             Ihr_Verbrauch: ownG_m2,
             Durchschnitt: averageGas,
+<<<<<<< HEAD
             fillColor: ownG_m2 > averageGas + tolerance
             ? '#ff6161'
             : ownG_m2 < averageGas - tolerance
             ? '#8bc800'
             : '#ffd700',
+=======
+            fillColor: ownG_m2 > averageGas ? '#ff6161' : '#8bc800',
+>>>>>>> upstream/main
         }
     ];
     const co2gas =
@@ -91,6 +122,7 @@ export const SustReport: FC<SustReportProps> = ({
         { art: 'Erneuerbare Energie', gas: co2gas, strom: co2stom_eco },
         { art: 'Konventionelle Energie', gas: co2gas, strom: co2strom_convent },
     ];
+<<<<<<< HEAD
 
     // Calculate total energy consumption in the selected radius
     const buildingsEnergyData = buildings.map((building) => ({
@@ -110,6 +142,8 @@ export const SustReport: FC<SustReportProps> = ({
     };
 
     // Sample district data for comparison
+=======
+>>>>>>> upstream/main
     const districtData = [
         { Bezirk: 'Innere Altstadt', Contributors: 13, Durchschnittsverbrauch: 80 }, //Energie pro m2
         { Bezirk: 'Wilsdruffer Vorstadt', Contributors: 9, Durchschnittsverbrauch: 110 },
@@ -129,6 +163,7 @@ export const SustReport: FC<SustReportProps> = ({
                 </h1>
                 <h4>Ihr Verbrauch pro Quadratmeter:</h4>
                 <p>
+<<<<<<< HEAD
                     {isWithinTolerance ? (
                         <img className="smiley" src={require('../../../../public/images/smiley_neutral.png')} alt="Smiley neutral" />
                     ) : isBelowAverage ? (
@@ -188,6 +223,63 @@ export const SustReport: FC<SustReportProps> = ({
                                     <Bar dataKey="Durchschnitt" fill="#aaaaaa" name="Durchschnitt" />
                                 </BarChart>
                             </ResponsiveContainer>
+=======
+                    {totalOwnEnergy_m2 > totalAverageEnergy ?
+                        <img className="smiley" src={require('../../../../public/images/smiley_frowning.png')} alt="Smiley" />
+                        : <img className="smiley" src={require('../../../../public/images/smiley_happy.png')} alt="Smiley" />}
+
+                    In Ihrem Haushalt wurde pro Quadratmeter {totalOwnEnergy_m2} kWh Energie verbraucht, Sie liegen damit {totalOwnEnergy_m2 > totalAverageEnergy ? 'über' : 'unter'} dem Durchschnitt von {totalAverageEnergy} kWh/m² in Ihrer unmittelbaren Nachbarschaft.
+                </p>
+
+                <div className='withTitle'>
+                    <h4>Vergleich des Verbrauchs pro Quadratmeter mit der Nachbarschaft</h4>
+                    <div className="chart">
+                        <div className='chartSideBySide'>
+                            <BarChart width={500} height={250} data={energyUse_s}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis>
+                                    <Label
+                                        value="Verbrauch in kWh/m²"
+                                        angle={-90}
+                                        position="insideLeft"
+                                        style={{ textAnchor: 'middle' }}
+                                    />
+                                </YAxis>
+                                <Tooltip />
+                                {/*<Legend formatter={renderLegend} />
+                                */}
+                                <Bar dataKey="Ihr_Verbrauch" name="Ihr Wert" >
+                                    {energyUse_s.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={entry.fillColor} />
+                                    ))}
+                                </Bar>
+                                <Bar dataKey="Durchschnitt" fill="#aaaaaa" name="Durchschnitt" />
+                            </BarChart>
+                        </div>
+                        <div className="chartSideBySide">
+                            <BarChart width={500} height={250} data={energyUse_g}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis>
+                                    <Label
+                                        value="Verbrauch in kWh/m²"
+                                        angle={-90}
+                                        position="insideLeft"
+                                        style={{ textAnchor: 'middle' }}
+                                    />
+                                </YAxis>
+                                <Tooltip />
+                                {/*<Legend formatter={renderLegend} />
+                                */}
+                                <Bar dataKey="Ihr_Verbrauch" name="Ihr Wert" >
+                                    {energyUse_g.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={entry.fillColor} />
+                                    ))} </Bar>
+                                <Bar dataKey="Durchschnitt" fill="#aaaaaa" name="Durchschnitt" />
+
+                            </BarChart>
+>>>>>>> upstream/main
                         </div>
                     </div>
                     <img className="legend" src={require('../../../../public/images/Legende_option2.png')} alt="Legende der ersten beiden Diagramme: Grün bzw rot steht für Ihre Werte, grau für den Durchschnitt der Nachbarschaft" />
@@ -201,11 +293,17 @@ export const SustReport: FC<SustReportProps> = ({
                         <div className='withTitle'>
                             <h4>Die CO2-Emissionen je nach Art der Stromgewinnung</h4>
                             <div className="chart">
+<<<<<<< HEAD
                                 <BarChart width={500} height={250} data={co2_impact} layout="vertical">
+=======
+
+                                <BarChart width={500} height={250} data={co2_impact} layout="vertical" >
+>>>>>>> upstream/main
                                     <XAxis type="number" />
                                     <YAxis dataKey="art" type="category" tickMargin={100} />
                                     <Tooltip />
                                     <Legend formatter={renderLegend} />
+<<<<<<< HEAD
                                     <Bar dataKey="gas" fill="#ab8fb0" stackId="a" name="CO2 Emissionen durch Gas-Verbrauch in kg">
                                         <LabelList dataKey="gas" position="inside" fill="black" />
                                     </Bar>
@@ -213,6 +311,14 @@ export const SustReport: FC<SustReportProps> = ({
                                         <LabelList dataKey="strom" position="inside" fill="black" />
                                     </Bar>
                                 </BarChart>
+=======
+                                    <Bar dataKey="gas" fill="#ab8fb0" stackId="a" name="CO2 Emissionen durch Gas-Verbrauch in kg" >
+                                        <LabelList dataKey="art" position="insideLeft" fill='black' />
+                                    </Bar>
+                                    <Bar dataKey="strom" fill="#ffe14c" stackId="a" name="CO2 Emissionen durch Strom-Verbrauch in kg" />
+                                </BarChart>
+
+>>>>>>> upstream/main
                             </div>
                         </div>
                         <p>
@@ -263,6 +369,7 @@ export const SustReport: FC<SustReportProps> = ({
                         </div>
                     </details>
                 </p>
+<<<<<<< HEAD
                 <p>
                     <img 
                         className="share_img" 
@@ -305,6 +412,18 @@ export const SustReport: FC<SustReportProps> = ({
                           <EmailIcon size={32} round />
                         </EmailShareButton>
                     </div>
+=======
+                {/*<p>
+                    <FacebookShareButton url={shareUrl}>
+                        <FacebookMessengerIcon size={32} round={true} />
+                    </FacebookShareButton>
+
+                </p>*/}
+                <p>
+                <img className="share_img" src={require('../../../../public/images/share_icon.png')} alt="Symbol fürs Teilen der Website" />
+                <a href={shareUrl}>Hier können Sie Ihre Nachbar*innen einladen auch mitzumachen. </a>
+            
+>>>>>>> upstream/main
                 </p>
                 <p>
                     <details className="rightSided">

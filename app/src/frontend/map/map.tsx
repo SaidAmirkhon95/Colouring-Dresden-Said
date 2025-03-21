@@ -51,6 +51,7 @@ import { Historic_1880_DataSwitcher } from './historic-1880-data-switcher';
 import { Historic_1911_DataSwitcher } from './historic-1911-data-switcher';
 import { Historic_1945_DataSwitcher } from './historic-1945-data-switcher';
 
+<<<<<<< HEAD
 import { Circle, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 
@@ -129,6 +130,9 @@ const RadiusSelector: React.FC<RadiusSelectorProps> = ({ households, onRadiusCha
         />
     ) : null;
 };
+=======
+/* import Geolocation_Button from './geolocation'; */
+>>>>>>> upstream/main
 
 interface ColouringMapProps {
     selectedBuildingId: number;

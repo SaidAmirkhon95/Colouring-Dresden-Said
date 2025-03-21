@@ -17,6 +17,7 @@
         "./src/index.ts",
         "./src/client.tsx"
     ],
+<<<<<<< HEAD
   "include": [
     "./src/**/*.test.*",
     "./src/**/*.spec.*",
@@ -26,3 +27,11 @@
     "globals.d.ts"
   ]
 }
+=======
+    "include": [
+        "./src/**/*.test.*",
+        "./src/**/*.spec.*",
+        //"./src/types/index.d.ts"
+    ]
+}
+>>>>>>> upstream/main

@@ -45,7 +45,10 @@ server.use('/users', usersRouter);
 server.use('/extracts', extractsRouter);
 server.use('/leaderboard', leaderboardRouter);
 server.use('/statistics', statisticsRouter);
+<<<<<<< HEAD
 server.use('/sustainability', keycloak.protect(), sustainabilityRouter);
+=======
+>>>>>>> upstream/main
 
 server.get('/history', editHistoryController.getGlobalEditHistory);
 server.get('/autofill', autofillController.getAutofillOptions);
