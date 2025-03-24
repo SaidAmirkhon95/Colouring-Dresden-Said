@@ -9,17 +9,9 @@
 }
 
 .chart {
-<<<<<<< HEAD
   display: flex;
   flex-wrap: wrap;
   gap: 16px; /* Abstand zwischen Diagrammen */
-=======
-
-  display: flex;
-  /* Use flexbox for layout */
-  justify-content: space-between;
-  /* Space between charts */
->>>>>>> upstream/main
 }
 
 .withTitle {
@@ -31,14 +23,7 @@
 }
 
 .chartSideBySide {
-<<<<<<< HEAD
   flex: 1 1 calc(50% - 16px); /* Zwei Diagramme nebeneinander auf Desktop */
-=======
-
-  padding: 10px;
-  width: 90%;
-
->>>>>>> upstream/main
 }
 
 .rightSided {
@@ -69,13 +54,10 @@
   height: 60px;
   vertical-align: middle;
   margin-right: 0px;
-<<<<<<< HEAD
 }
 
 @media (max-width: 768px) {
   .chartSideBySide {
       flex: 1 1 100%; /* Diagramme untereinander auf kleinen Bildschirmen */
   }
-=======
->>>>>>> upstream/main
 }

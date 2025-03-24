@@ -69,7 +69,6 @@
     max-height: 2.8rem;
     object-fit: contain;
 
-<<<<<<< HEAD
 }
 
 .radius-warning {
@@ -86,6 +85,3 @@
 .radius-warning.active {
     display: block;
 }
-=======
-}
->>>>>>> upstream/main

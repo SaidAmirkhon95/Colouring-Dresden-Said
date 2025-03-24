@@ -216,10 +216,7 @@ export const MapApp: React.FC<MapAppProps> = props => {
                         co2effect_max={5538} // 1318 km
                         destination_near='Paris, Frankreich'
                         destination_far='Dublin, Irland'
-<<<<<<< HEAD
                         buildings={[]}
-=======
->>>>>>> upstream/main
 
                     /> :
                     <ColouringMap
