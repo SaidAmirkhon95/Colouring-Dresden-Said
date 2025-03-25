@@ -1,8 +1,5 @@
 import bodyParser from 'body-parser';
 import express from 'express';
-import session from "express-session";
-import { keycloak, memoryStore } from "./server";
-import cors from "cors";
 
 import autofillController from './controllers/autofillController';
 import * as editHistoryController from './controllers/editHistoryController';
@@ -15,39 +12,17 @@ import statisticsRouter from './routes/statisticsRouter';
 import usersRouter from './routes/usersRouter';
 import { queryLocation } from './services/search';
 import { authUser, getNewUserAPIKey, logout } from './services/user';
-import sustainabilityRouter from './routes/sustainabilityRouter';
 
-const app = express();
 const server = express.Router();
-
-app.use(
-    session({
-      secret: "pOQE2Vpl7Hqi06PzJAHuDb3B42PRPIIG",
-      resave: false,
-      saveUninitialized: true,
-      store: memoryStore,
-    })
-  );
-
-app.use(express.json());
 
   // parse POSTed json body
 server.use(bodyParser.json());  
-
-app.use(keycloak.middleware());
-
-app.use(cors({
-    origin: "http://localhost:3000", // Replace with frontend URL
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type, Authorization"
-}));
 
 server.use('/buildings', buildingsRouter);
 server.use('/users', usersRouter);
 server.use('/extracts', extractsRouter);
 server.use('/leaderboard', leaderboardRouter);
 server.use('/statistics', statisticsRouter);
-server.use('/sustainability', keycloak.protect(), sustainabilityRouter);
 
 server.get('/history', editHistoryController.getGlobalEditHistory);
 server.get('/autofill', autofillController.getAutofillOptions);
