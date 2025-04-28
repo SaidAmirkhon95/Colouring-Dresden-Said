@@ -8,7 +8,8 @@ import {
     WhatsappIcon, WhatsappShareButton,
     TwitterShareButton, TwitterIcon,
     LinkedinShareButton, LinkedinIcon
-} from "react-share"; //Fix share func 
+} from "react-share"; //Fix share func
+import { useRadiusModus } from "../../radiusModusContext";
 
 
 //Please install recharts!
@@ -46,6 +47,7 @@ export const SustReport: FC<SustReportProps> = ({
     selectedBuildingId,
     buildings,
 }) => {
+    const { radiusDrawn, radiusEnergyData, districtEnergyData, isRadiusModus } = useRadiusModus();
     const shareUrl = 'https://colouring.dresden.ioer.de/view/sustainability';
     const shareUrl_current_window = window.location.href;
     const title = 'Check out this awesome website!';
@@ -53,31 +55,39 @@ export const SustReport: FC<SustReportProps> = ({
     const ownG_m2 = Math.round(ownGas*100/ living_area)/100;
     const totalOwnEnergy = ownGas + ownElectricity;
     const totalOwnEnergy_m2 = Math.round(totalOwnEnergy*100 / living_area)/100;
-    const totalAverageEnergy = averageGas + averageElectricity;
+    const shouldUseRadius = radiusDrawn && isRadiusModus;
+    const usedAverageElectricity = shouldUseRadius
+        ? radiusEnergyData?.averageElectricity ?? 20
+        : districtEnergyData?.averageElectricity ?? 0;
+    const usedAverageGas = shouldUseRadius
+        ? radiusEnergyData?.averageGas ?? 50
+        : districtEnergyData?.averageGas ?? 0;
+    const totalAverageEnergy = usedAverageElectricity + usedAverageGas;
     const tolerance = 500; // ±500 kWh
     const isAboveAverage = totalOwnEnergy_m2 > totalAverageEnergy + tolerance;
     const isBelowAverage = totalOwnEnergy_m2 < totalAverageEnergy - tolerance;
     const isWithinTolerance = !isAboveAverage && !isBelowAverage;
     const energyUse_s = [
         {
-            name: 'Strom',
+            name: 'Haushaltsstrom',
             Ihr_Verbrauch: ownE_m2,
-            Durchschnitt: averageElectricity,
-            fillColor: ownE_m2 > averageElectricity + tolerance 
+            Durchschnitt: usedAverageElectricity,
+            fillColor: ownE_m2 > usedAverageElectricity + tolerance 
             ? '#ff6161' // rot: über Durchschnitt + Toleranz
-            : ownE_m2 < averageElectricity - tolerance 
+            : ownE_m2 < usedAverageElectricity - tolerance 
             ? '#8bc800' // grün: unter Durchschnitt - Toleranz
             : '#ffd700', // gelb: im Toleranzbereich
         },
     ];
     const energyUse_g = [
         {
-            name: 'Gas',
+            name: 'Heizenergieverbrauch',
             Ihr_Verbrauch: ownG_m2,
-            Durchschnitt: averageGas,
-            fillColor: ownG_m2 > averageGas + tolerance
+            Durchschnitt: usedAverageGas,
+            Note: 'Vergleich mit Umkreis',
+            fillColor: ownG_m2 > usedAverageGas + tolerance
             ? '#ff6161'
-            : ownG_m2 < averageGas - tolerance
+            : ownG_m2 < usedAverageGas - tolerance
             ? '#8bc800'
             : '#ffd700',
         }
@@ -121,11 +131,32 @@ export const SustReport: FC<SustReportProps> = ({
     //für eine bessere Lesbarkeit der Legende
     const renderLegend = (value: string) => <span style={{ color: 'black' }}>{value}</span>;
 
+    const CustomTooltip = ({ active, payload, label }: any) => {
+        if (active && payload && payload.length) {
+            const { radiusDrawn, isRadiusModus } = useRadiusModus();
+            const additionalNote = radiusDrawn && isRadiusModus ? 'Vergleich nach Umkreis' : 'Vergleich nach Stadtviertel';
+    
+            return (
+                <div className="custom-tooltip" style={{ backgroundColor: '#fff', border: '1px solid #ccc', padding: '2px' }}>
+                    <p><strong>{label}</strong></p>
+                    {payload.map((entry: any, index: number) => (
+                        <p key={index} style={{ color: entry.color }}>
+                            {entry.name}: {entry.value} kWh/m²
+                        </p>
+                    ))}
+                    <p>{additionalNote}</p>
+                </div>
+            );
+        }
+    
+        return null;
+    };    
+
     return (
         <article>
             <section>
                 <h1>
-                    Ihr Energieverbrauch im Vergleich
+                    Ihr Energieverbrauch im Vergleich (Umkreis/Stadtviertel)
                 </h1>
                 <h4>Ihr Verbrauch pro Quadratmeter:</h4>
                 <p>
@@ -136,9 +167,9 @@ export const SustReport: FC<SustReportProps> = ({
                     ) : (
                         <img className="smiley" src={require('../../../../public/images/smiley_frowning.png')} alt="Smiley traurig" />
                     )}
-
-                    In Ihrem Haushalt wurde pro Quadratmeter {totalOwnEnergy_m2} kWh Energie verbraucht. 
-                    Sie liegen damit {isAboveAverage ? 'über' : isBelowAverage ? 'unter' : 'im Toleranzbereich von'} dem Durchschnitt von {totalAverageEnergy} kWh/m² in Ihrer unmittelbaren Nachbarschaft.
+                    In Ihrem Haushalt wurde pro Quadratmeter {totalOwnEnergy_m2} kWh Energie verbraucht.
+                    Sie liegen damit {isAboveAverage ? 'über' : isBelowAverage ? 'unter' : 'im Toleranzbereich von'} dem Durchschnitt von {totalAverageEnergy} kWh/m² in Ihrer
+                    {shouldUseRadius ? ' Umgebung (gezeichneter Radius)' : ' Nachbarschaft (Bezirk)'}.
                 </p>
                 <div className='withTitle'>
                     <h4>Vergleich des Verbrauchs pro Quadratmeter mit der Nachbarschaft</h4>
@@ -156,7 +187,7 @@ export const SustReport: FC<SustReportProps> = ({
                                             style={{ textAnchor: 'middle' }}
                                         />
                                     </YAxis>
-                                    <Tooltip />
+                                    <Tooltip content={<CustomTooltip />} />
                                     <Bar dataKey="Ihr_Verbrauch" name="Ihr Wert">
                                         {energyUse_s.map((entry, index) => (
                                             <Cell key={`cell-${index}`} fill={entry.fillColor} />
@@ -179,7 +210,7 @@ export const SustReport: FC<SustReportProps> = ({
                                             style={{ textAnchor: 'middle' }}
                                         />
                                     </YAxis>
-                                    <Tooltip />
+                                    <Tooltip content={<CustomTooltip />} />
                                     <Bar dataKey="Ihr_Verbrauch" name="Ihr Wert">
                                         {energyUse_g.map((entry, index) => (
                                             <Cell key={`cell-${index}`} fill={entry.fillColor} />

@@ -7,12 +7,30 @@ import { CategoryViewProps } from './category-view-props';
 import CheckboxDataEntry from '../data-components/checkbox-data-entry';
 import { useAuth } from '../../auth-context';
 import InfoBox from '../../components/info-box';
+import { useRadiusModus } from "../../radiusModusContext";
 
 const API_BASE_URL = 'http://localhost:3003/households/';
+
+const getDummyDistrictId = (building: any): number => {
+    // Fake calculation based on postal code or coordinates
+    if (!building) return 0;
+    const { location_postcode, location_latitude, location_longitude } = building;
+  
+    // Create a reproducible dummy ID
+    const hash = Math.abs(
+      (location_postcode?.length || 0) +
+      Math.floor(location_latitude * 100) +
+      Math.floor(location_longitude * 100)
+    );
+  
+    return hash % 10; // Simulate up to 10 districts
+  };
+  
 
 const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) => {
     const [showNewButton, setShowNewButton] = useState(false);
     const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+    const { isRadiusModus, setIsRadiusModus, radiusEnergyData, radiusDrawn, setRadiusDrawn, setDistrictEnergyData } = useRadiusModus();
 
     // State for dynamic text fields
     const [textFields, setTextFields] = useState<string[]>([]);
@@ -26,15 +44,15 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
         props.onShowReportButtonClicked(false);
         setShowNewButton(false);
     };
+
     const [aggregatedData, setAggregatedData] = useState({
-        electricityUsage: 0,
-        gasUsage: 0,
+        electricityUsage: 123, // Dummy value
+        gasUsage: 456,         // Dummy value
     });
 
     // Get authentication states from both hooks
     const { isLoading, user } = useAuth();
     const { initialized, authenticated, token, login } = useKeycloakAuth();
-
     const [isAuthenticated, setIsAuthenticated] = useState(authenticated);
 
     useEffect(() => {
@@ -81,14 +99,21 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
         setTextFields(updatedFields);
     };
 
-    useEffect(() => {
+    /* useEffect(() => {
         if (!token) return;
         fetchAggregatedData();
-    }, [token]);
+    }, [token]); */
 
-    const fetchAggregatedData = async () => {
+    useEffect(() => {
+        validateInputs();
+        if (token && props.building) {
+          fetchDistrictAggregatedData(props.building);
+        }
+      }, [props.building, token]);      
+
+    /* const fetchAggregatedData = async () => {
         try {
-            const response = await fetch(`${API_BASE_URL}/aggregated?districtId=${props.building.building_id}`, {
+            const response = await fetch(`${API_BASE_URL}aggregated?districtId=${props.building.building_id}`, {
               method: 'GET',
               headers: {
                 'Authorization': `Bearer ${token}`,
@@ -108,7 +133,48 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
         } catch (error) {
             console.error("Netzwerkfehler", error);
         }
-    };
+    }; */
+
+    const fetchDistrictAggregatedData = async (building: any) => {
+        const dummyDistrictId = getDummyDistrictId(building);
+      
+        try {
+          const response = await fetch(`${API_BASE_URL}aggregated?districtId=${dummyDistrictId}`, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+          });
+      
+          if (response.ok) {
+            const data = await response.json();
+            setAggregatedData({
+              electricityUsage: data.electricityUsage,
+              gasUsage: data.gasUsage,
+            });
+          } else {
+            console.warn("Using fallback values (dummy) because endpoint failed:", response.status);
+            // 👇 Dummy fallback
+            setAggregatedData({
+              electricityUsage: 12 + dummyDistrictId * 100,
+              gasUsage: 50 + dummyDistrictId * 300,
+            });
+            setDistrictEnergyData({
+                averageElectricity: 12 + dummyDistrictId * 100,
+                averageGas: 50 + dummyDistrictId * 300,
+                name: "Dummy District", // or get from building or map later
+                contributors: 8 + dummyDistrictId,
+            });
+          }
+        } catch (error) {
+          console.warn("District endpoint not available — using dummy values");
+          setAggregatedData({
+            electricityUsage: 12 + dummyDistrictId * 100,
+            gasUsage: 50 + dummyDistrictId * 300,
+          });
+        }
+    };      
 
     const sendData = async () => {
         if (!token) {
@@ -116,53 +182,66 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
             return;
         }
         try {
-          const response = await fetch(`${API_BASE_URL}/`, {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${token}`,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              locationName: props.building.location_name,
-              locationNumber: props.building.location_number,
-              locationStreet: props.building.location_street,
-              locationTown: props.building.location_town,
-              locationPostcode: props.building.location_postcode,
-              locationLatitude: props.building.location_latitude,
-              locationLongitude: props.building.location_longitude,
-              numberOfPersons: props.building.number_persons,
-              referencePeriod: props.building.reference_period,
-              electricityUsage: props.building.electricity_usage,
-              gasUsage: props.building.gas_usage,
-              livingArea: props.building.living_area,
-              districtId: props.building.building_id,
-            }),
-          });
+            const requestBody = {
+                locationName: props.building.location_name,
+                locationNumber: props.building.location_number,
+                locationStreet: props.building.location_street,
+                locationTown: props.building.location_town,
+                locationPostcode: props.building.location_postcode,
+                locationLatitude: props.building.location_latitude,
+                locationLongitude: props.building.location_longitude,
+                numberOfPersons: props.building.number_persons,
+                referencePeriod: props.building.reference_period,
+                electricityUsage: props.building.electricity_usage,
+                gasUsage: props.building.gas_usage,
+                livingArea: props.building.living_area,
+                districtId: props.building.building_id,
+            };
     
-          if (response.ok) {
-            const data = await response.json();
-            console.log("Haushalt erfolgreich erstellt:", data);
-            fetchAggregatedData();
-          } else {
-            const errorText = await response.text();
-            console.error("Fehler beim Senden der Daten:", response.status, errorText);
-          }
-
-          if (response.status === 403) {
-            console.error("Zugriff verweigert. Überprüfen Sie die Berechtigungen.");
-          } else if (response.status === 400) {
-            console.error("Ungültige Anfrage. Überprüfen Sie die gesendeten Daten.");
-          }
+            console.log("Sending data:", requestBody); 
+    
+            const response = await fetch(`${API_BASE_URL}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestBody),
+            });
+    
+            if (response.ok) {
+                const data = await response.json();
+                console.log("Haushalt erfolgreich erstellt:", data);
+                //fetchAggregatedData();
+            } else {
+                const errorText = await response.text();
+                console.error("Fehler beim Senden der Daten:", response.status, errorText);
+            }
+    
+            if (response.status === 403) {
+                console.error("Zugriff verweigert. Überprüfen Sie die Berechtigungen.");
+            } else if (response.status === 400) {
+                console.error("Ungültige Anfrage. Überprüfen Sie die gesendeten Daten.");
+            }
         } catch (error) {
-          console.error("Fehler beim Senden der Daten", error);
+            console.error("Fehler beim Senden der Daten", error);
         }
-      };
+    };
+
+    const onRadiusClick = async () => {
+        const newState = !isRadiusModus;
+        setIsRadiusModus(newState);
+        // 👇 Reset radiusDrawn when turning radius mode OFF
+        if (!newState) {
+          setRadiusDrawn(false);
+        }
+    }      
 
     return (
 
         <Fragment>
             {user && user.username !== undefined ? (
-                <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <button
                         id="showReportButton"
                         className="btn btn-warning"
@@ -190,13 +269,29 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
             </InfoBox>
             {isAuthenticated ? (
                 <>
-                    <button
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <button
                         className="btn btn-success"
                         onClick={sendData}
                         disabled={!isButtonEnabled}
-                    >
+                      >
                         Daten senden
-                    </button>
+                      </button>
+                      <button
+                        className={`btn ${isRadiusModus ? "btn-secondary" : "btn-success"}`}
+                        onClick={() => {
+                            const newState = !isRadiusModus;
+                            setIsRadiusModus(newState);
+
+                            // 🔁 Reset radiusDrawn when turning radius mode OFF
+                            if (!newState) {
+                            setRadiusDrawn(false);
+                            }
+                        }}
+                        >
+                        {isRadiusModus ? "Vergleichen Aktiviert" : "Vergleichen"}
+                        </button>
+                    </div>
                     <NumericDataEntry
                         title={dataFields.number_persons.title}
                         value={props.building.number_persons}
@@ -259,6 +354,31 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                         copy={props.copy}
                         onChange={props.onChange}
                     />
+                    {radiusDrawn && isRadiusModus ? (
+                        <div style={{ marginTop: '20px' }}>
+                            <h4>Daten nach Nachbarschaft (Umkreis)</h4>
+                            <div>
+                            <label>Ø Haushaltsstrom im Radius (kWh)</label>
+                            <input
+                                type="number"
+                                //value={radiusEnergyData?.averageElectricity?.toFixed(2) ?? ""}
+                                value={(1234.56).toFixed(2)}
+                                readOnly
+                                className="form-control"
+                            />
+                            </div>
+                            <div>
+                            <label>Ø Heizenergieverbrauch im Radius (kWh)</label>
+                            <input
+                                type="number"
+                                //value={radiusEnergyData?.averageGas?.toFixed(2) ?? ""}
+                                value={(7890.12).toFixed(2)}
+                                readOnly
+                                className="form-control"
+                            />
+                            </div>
+                        </div>
+                        ) : null}
                     <div>
                         <h5>Zusätzliche Daten:</h5>
                         {textFields.map((field, index) => (
@@ -303,13 +423,13 @@ const SustainabilityView: React.FunctionComponent<CategoryViewProps> = (props) =
                 </button>
             )}
 
-            <h3>Aggregierte Daten</h3>
+            <h3>Daten nach Stadtviertel</h3>
             <div>
-                <label>Aggregierter Stromverbrauch (kWh/Jahr):</label>
+                <label>Haushaltsstrom</label>
                 <input type="number" value={aggregatedData.electricityUsage} readOnly className="form-control" />
             </div>
             <div>
-                <label>Aggregierter Gasverbrauch (kWh/Jahr):</label>
+                <label>Heizenergieverbrauch</label>
                 <input type="number" value={aggregatedData.gasUsage} readOnly className="form-control" />
             </div>
         </Fragment>

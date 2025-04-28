@@ -31,7 +31,7 @@ import { NotFound } from './pages/not-found';
 import SurveyPage from './pages/survey';
 import DeclarationOfAccessibilityPage from './pages/declaration-on-accessibility';
 import { KeycloakAuthProvider } from './keycloakAuthProvider';
-
+import { RadiusModusProvider } from "./radiusModusContext";
 
 
 
@@ -61,44 +61,46 @@ export const App: React.FC<AppProps> = props => {
     return (
         <DisplayPreferencesProvider>
             <KeycloakAuthProvider>
-                <AuthProvider preloadedUser={props.user}>
-                    <Switch>
-                        <Route exact path={mapAppPaths}>
-                            <Header animateLogo={false} />
-                        </Route>
-                        <Route>
-                            <Header animateLogo={true} />
-                        </Route>
-                    </Switch>
-                    <Switch>
-                        <Route exact path="/about.html" component={AboutPage} />
-                        <AuthRoute exact path="/login.html" component={Login} />
-                        <AuthRoute exact path="/forgotten-password.html" component={ForgottenPassword} />
-                        <AuthRoute exact path="/password-reset.html" component={PasswordReset} />
-                        <AuthRoute exact path="/sign-up.html" component={SignUp} />
-                        <PrivateRoute exact path="/my-account.html" component={MyAccountPage} />
-                        <Route exact path="/privacy-policy.html" component={PrivacyPolicyPage} />
-                        <Route exact path="/contributor-agreement.html" component={ContributorAgreementPage} />
-                        <Route exact path="/ordnance-survey-licence.html" component={OrdnanceSurveyLicencePage} />
-                        <Route exact path="/ordnance-survey-uprn.html" component={OrdnanceSurveyUprnPage} />
-                        <Route exact path="/data-accuracy.html" component={DataAccuracyPage} />
-                        <Route exact path="/data-extracts.html" component={DataExtracts} />
-                        <Route exact path="/contact.html" component={ContactPage} />
-                        <Route exact path="/code-of-conduct.html" component={CodeOfConductPage} />
-                        <Route exact path="/leaderboard.html" component={LeaderboardPage} />
-                        <Route exact path="/survey.html" component={SurveyPage} />
-                        <Route exact path="/declaration-on-accessibility.html" component={DeclarationOfAccessibilityPage} />
-                        <Route exact path="/history.html" component={ChangesPage} />
-                        <Route exact path={mapAppPaths} >
-                            <MapApp
-                                building={props.building}
-                                user_verified={props.user_verified}
-                                revisionId={props.revisionId}
-                            />
-                        </Route>
-                        <Route component={NotFound} />
-                    </Switch>
-                </AuthProvider>
+                <RadiusModusProvider>
+                    <AuthProvider preloadedUser={props.user}>
+                        <Switch>
+                            <Route exact path={mapAppPaths}>
+                                <Header animateLogo={false} />
+                            </Route>
+                            <Route>
+                                <Header animateLogo={true} />
+                            </Route>
+                        </Switch>
+                        <Switch>
+                            <Route exact path="/about.html" component={AboutPage} />
+                            <AuthRoute exact path="/login.html" component={Login} />
+                            <AuthRoute exact path="/forgotten-password.html" component={ForgottenPassword} />
+                            <AuthRoute exact path="/password-reset.html" component={PasswordReset} />
+                            <AuthRoute exact path="/sign-up.html" component={SignUp} />
+                            <PrivateRoute exact path="/my-account.html" component={MyAccountPage} />
+                            <Route exact path="/privacy-policy.html" component={PrivacyPolicyPage} />
+                            <Route exact path="/contributor-agreement.html" component={ContributorAgreementPage} />
+                            <Route exact path="/ordnance-survey-licence.html" component={OrdnanceSurveyLicencePage} />
+                            <Route exact path="/ordnance-survey-uprn.html" component={OrdnanceSurveyUprnPage} />
+                            <Route exact path="/data-accuracy.html" component={DataAccuracyPage} />
+                            <Route exact path="/data-extracts.html" component={DataExtracts} />
+                            <Route exact path="/contact.html" component={ContactPage} />
+                            <Route exact path="/code-of-conduct.html" component={CodeOfConductPage} />
+                            <Route exact path="/leaderboard.html" component={LeaderboardPage} />
+                            <Route exact path="/survey.html" component={SurveyPage} />
+                            <Route exact path="/declaration-on-accessibility.html" component={DeclarationOfAccessibilityPage} />
+                            <Route exact path="/history.html" component={ChangesPage} />
+                            <Route exact path={mapAppPaths} >
+                                <MapApp
+                                    building={props.building}
+                                    user_verified={props.user_verified}
+                                    revisionId={props.revisionId}
+                                />
+                            </Route>
+                            <Route component={NotFound} />
+                        </Switch>
+                    </AuthProvider>
+                </RadiusModusProvider>
             </KeycloakAuthProvider>
         </DisplayPreferencesProvider>
     );

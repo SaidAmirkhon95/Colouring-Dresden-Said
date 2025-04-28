@@ -53,82 +53,8 @@ import { Historic_1945_DataSwitcher } from './historic-1945-data-switcher';
 
 import { Circle, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
-
-/* import Geolocation_Button from './geolocation'; */
-
-interface RadiusSelectorProps {
-    households: { lat: number; lng: number }[]; // Liste der Haushalte mit Positionen
-    onRadiusChange: (radius: number, center: [number, number]) => void;
-    onBuildingsInRadiusChange: (buildings: Building[]) => void; // New callback to send building data
-}
-
-const RadiusSelector: React.FC<RadiusSelectorProps> = ({ households, onRadiusChange, onBuildingsInRadiusChange }) => {
-    const map = useMap();
-    const [center, setCenter] = useState<[number, number] | null>(null);
-    const [radius, setRadius] = useState(0);
-    const [isDrawing, setIsDrawing] = useState(false);
-
-    useEffect(() => {
-        const handleMouseDown = (e: L.LeafletMouseEvent) => {
-            if (e.originalEvent.button === 2) { // Rechte Maustaste
-                setCenter([e.latlng.lat, e.latlng.lng]);
-                setRadius(0); // Start-Radius
-                setIsDrawing(true);
-                map.dragging.disable(); // Karte nicht verschieben während des Zeichnens
-            }
-        };
-
-        const handleMouseMove = (e: L.LeafletMouseEvent) => {
-            if (isDrawing && center) {
-                const distance = map.distance(
-                    L.latLng(center[0], center[1]),
-                    L.latLng(e.latlng.lat, e.latlng.lng)
-                );
-                setRadius(distance);
-            }
-        };
-
-        const handleMouseUp = async () => {
-            if (isDrawing) {
-                setIsDrawing(false);
-                map.dragging.enable(); // Enable map dragging after drawing
-
-                // Fetch buildings within the radius
-                const buildingsData = await apiGet(`/api/buildings/within-radius?lat=${center![0]}&lng=${center![1]}&radius=${radius}`);
-                const buildingsInRadius = buildingsData || [];
-                onBuildingsInRadiusChange(buildingsInRadius);
-
-                // Validate radius and selected buildings
-                if (households.filter(household => {
-                    const distance = map.distance(L.latLng(center![0], center![1]), L.latLng(household.lat, household.lng));
-                    return distance <= radius;
-                }).length < 3) {
-                    alert('Please choose a larger radius to include at least 3 households.');
-                } else {
-                    onRadiusChange(radius, center!);
-                }
-            }
-        };
-
-        map.on('contextmenu', handleMouseDown);
-        map.on('mousemove', handleMouseMove);
-        map.on('mouseup', handleMouseUp);
-
-        return () => {
-            map.off('contextmenu', handleMouseDown);
-            map.off('mousemove', handleMouseMove);
-            map.off('mouseup', handleMouseUp);
-        };
-    }, [map, center, radius, isDrawing, households, onRadiusChange, onBuildingsInRadiusChange]);
-
-    return center && radius > 0 ? (
-        <Circle
-            center={center}
-            radius={radius}
-            pathOptions={{ color: 'lightblue', fillOpacity: 0.2 }}
-        />
-    ) : null;
-};
+import { useRadiusModus } from "../radiusModusContext";
+import RadiusSelector from "./RadiusSelector";
 
 interface ColouringMapProps {
     selectedBuildingId: number;
@@ -175,15 +101,50 @@ export const ColouringMap : FC<ColouringMapProps> = ({
     )
 
     const [householdLocations, setHouseholdLocations] = useState<{ lat: number; lng: number }[]>([]);
-
+    const [isRadiusDrawing, setIsRadiusDrawing] = useState(false);
+    const [aggregatedConsumption, setAggregatedConsumption] = useState<{ averageElectricity: number; averageGas: number } | null>(null);
+    const [buildings, setBuildings] = useState<Building[]>([]);
+    const [districtData, setDistrictData] = useState<{ electricityUsage: number; gasUsage: number } | null>(null);
+    const [circleData, setCircleData] = useState<{ averageElectricity: number; averageGas: number } | null>(null);
+  
     useEffect(() => {
         const fetchHouseholds = async () => {
             const data = await apiGet('/api/households');
-            setHouseholdLocations(data.map(h => ({ lat: h.latitude, lng: h.longitude })));
+            setHouseholdLocations(data.map((h: any) => ({ lat: h.latitude, lng: h.longitude })));
         };
         fetchHouseholds();
     }, []);
 
+  // Building selection – only active when radius is not being drawn.
+  const handleClickOld = useCallback(
+    async (e: L.LeafletMouseEvent) => {
+      const { lat, lng } = e.latlng;
+      const data = await apiGet(`/api/buildings/locate?lat=${lat}&lng=${lng}`);
+      const building = data?.[0];
+      if (building) {
+        onBuildingAction(building);
+        const districtData = await apiGet(`/api/households/aggregated?districtId=${building.building_id}`);
+        setDistrictData({
+          electricityUsage: districtData.electricityUsage,
+          gasUsage: districtData.gasUsage,
+        });
+      }
+    },
+    [onBuildingAction]
+  );  
+  /* const handleClickOld = useCallback( //Originale Version
+    async (e: L.LeafletMouseEvent) => {
+      const { lat, lng } = e.latlng;
+      const data = await apiGet(`/api/buildings/locate?lat=${lat}&lng=${lng}`);
+      const building = data?.[0];
+      onBuildingAction(building);
+    },
+    [onBuildingAction],
+  ); */
+
+
+  // Only render building click handler if we are not drawing a radius
+  const renderClickHandler = !isRadiusDrawing;
 
     return (
         <div className="map-container">
@@ -196,14 +157,28 @@ export const ColouringMap : FC<ColouringMapProps> = ({
                 zoomControl={false}
                 attributionControl={false}
             >
+              {/** When radius mode is enabled, render the radius selector */}
+              {useRadiusModus().isRadiusModus ? (
                 <RadiusSelector
-                    households={householdLocations}
-                    onRadiusChange={(radius, center) => {
-                        console.log(`Radius: ${radius} Meter, Zentrum:`, center);
-                    }}
-                    onBuildingsInRadiusChange={setBuildingsInRadius} // Pass the building data to state
-                />
-                <ClickHandler onClick={handleClick} />
+                  households={householdLocations}
+                  onRadiusChange={(radius, center) => {
+                    console.log(`Radius: ${radius} Meter, Zentrum:`, center);
+                  }}
+                  onBuildingsInRadiusChange={setBuildingsInRadius}
+                  onAggregatedDataChange={(data: any) => setCircleData(data)}
+                  onDrawingStateChange={setIsRadiusDrawing}
+                  onInitialClick={async (latlng) => {
+                    const { lat, lng } = latlng;
+                    const data = await apiGet(`/api/buildings/locate?lat=${lat}&lng=${lng}`);
+                    const building = data?.[0];
+                    if (building) {
+                      onBuildingAction(building);
+                    }
+                  }}
+                />          
+              ) : null}
+              {/** Only register clicks for building selection when not drawing */}
+              {renderClickHandler && <ClickHandler onClick={handleClickOld} />}
                 <MapBackgroundColor theme={darkLightTheme} />
                 <MapViewport position={position} zoom={zoom} />
 
